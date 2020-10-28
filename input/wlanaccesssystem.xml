@@ -18,6 +18,10 @@
       <subject>Initial Release</subject>
     </entry>
   </RevisionHistory>
+  
+  
+  <!-- TODO: no open items -->
+  
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
       This Protection Profile Module (PP-Module) describes
