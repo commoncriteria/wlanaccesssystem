@@ -24,12 +24,17 @@
   
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      This Protection Profile Module (PP-Module) describes
-      security requirements for a Wireless Local Area Network (WLAN) Access System. A WLAN Access System is
-      defined to be a device or system at the edge of a private network that establishes an encrypted IEEE 802.11 link that
-      protects wireless data in transit from disclosure and modification. This PP-Module is intended to provide a minimal baseline
-      set of requirements that are targeted at mitigating well-defined and described threats. This PP-Module
-      extends the collaborative Protection Profile for Network Devices (NDcPP).
+      The scope of this PP-Module is to describe the security functionality of a Wireless Local Area Network (WLAN) Access System in terms of [CC] 
+      and to define functional and assurance requirements for such products. This PPModule is intended for use with the following Base-PPs:
+      <h:ul>
+        <h:li>Collaborative Protection Profile for Network Devices (NDcPP) Version 2.2e</h:li>
+      </h:ul>
+      This Base-PP is valid because a WLAN Access System is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
+      This is functionality that typically will be implemented by a network device.
+      <h:p/>
+      A TOE that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
+      defined in the NDcPP. The TOE functionality may reside entirely within a single device or be spread across multiple distributed physical components.
+      
 </section>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
@@ -87,18 +92,23 @@
   </chapter>
   <chapter title="Conformance Claims" id="ConformanceClaims">
     <cclaims>
-      <cclaim title="Conformance Statement">
+      <cclaim name="Conformance Statement">
         <description> This PP-Module inherits exact conformance as required from the specified
           Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
           SFRs, and Optional SFRs (dated May 2017).<h:p/> 
-          No additional PPs or PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module. 
+          
+          The following PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
+          <h:ul>
+            <h:li>PP-Module for Stateful Traffic Filter Firewalls, Version 1.4 + Errata 20200625</h:li>
+            <h:li>PP-Module for Virtual Private Network (VPN) Gateways, Version 1.1</h:li>
+          </h:ul> 
         </description>
       </cclaim>
-      <cclaim title="CC Conformance Claims">
+      <cclaim name="CC Conformance Claims">
         <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common
           Criteria Version 3.1, Release 5 [CC]. </description>
       </cclaim>
-      <cclaim title="Package Claims">
+      <cclaim name="Package Claims">
         <description>This PP-Module does not
           claim conformance to any packages.</description>
       </cclaim>
@@ -127,6 +137,7 @@
     threats of the NDcPP and those defined in this PP-Module define the comprehensive set of
     security threats addressed by a WLAN Access System TOE. 
     <section title="Threats" id="threats">
+      aaaaaaaaaaaaa
       <threats>
         <threat name="T.NETWORK_DISCLOSURE">
           <description>Devices on a protected network may be exposed to threats presented by devices located outside the
@@ -212,6 +223,10 @@
       </threats>
     </section>
     <section title="Assumptions" id="assumption">
+      <h:p/>
+      All assumptions for the operational environment of the Base-PP also apply to this PP-Module.
+      A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
+      defined by the Base-PP and not the PP-Module.      
       <assumptions>
         <assumption name="A.CONNECTIONS">
           <description> It is assumed that the TOE is connected to distinct networks in a manner
@@ -352,9 +367,12 @@
       </SOs>
     </section>
     <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment"> 
-      The following security objectives for the operational
-      environment assist the TOE in correctly providing its security functionality. These track the
-      assumptions about the environment. <SOEs>
+      <h:p/>
+      All objectives for the operational environment of the Base-PP also apply to this PP-Module.
+      OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
+      defined by the Base-PP and not the PP-Module.
+      
+      <SOEs>
         <SOE name="OE.CONNECTIONS">
           <description> TOE administrators will ensure that the TOE is installed in a manner that
             will allow the TOE to effectively enforce its policies on the network traffic of
@@ -400,7 +418,7 @@
                     <selectable><h:b>no other standards</h:b></selectable>
                   </selectables>. 
               </title>
-              <note role="application">This SFR is defined in the Base-PP as FCS_COP.1/DataEncryption.<h:p/>
+              <note role="application"><!-- This SFR is defined in the Base-PP as FCS_COP.1/DataEncryption.<h:p/> -->
                 
                 This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 128 bit key sizes
                 while also defining additional AES mode and key size selections not present in the original definition. <h:p/>
@@ -1281,8 +1299,8 @@
             <title>The TSF shall implement <selectables>
               <selectable>TLS 1.2 (RFC 5246)</selectable>
               <selectable>TLS 1.1 (RFC 4346)</selectable>
-            </selectables> and reject all other TLS and SSL versions. 
-              The TLS implementation shall support the following cipher suites for use when acting as a RADIUS over TLS client: <selectables linebreak="yes">
+            </selectables> and no earlier TLS versions when acting as a RADIUS over TLS client that supports the following cipher suites: 
+              <selectables linebreak="yes">
                 <selectable>TLS_PSK_WITH_AES_128_CBC_SHA</selectable>
                 <selectable>TLS_PSK_WITH_AES_256_CBC_SHA</selectable>
                 <selectable>TLS_DHE_PSK_WITH_AES_128_CBC_SHA</selectable>
@@ -1301,7 +1319,7 @@
               <title>The TSF shall implement <assignable>list of allowed TLS versions</assignable> and reject all other TLS and SSL versions. 
                 The TLS implementation shall support the following cipher suites for use when acting as a RADIUS over TLS client: <assignable>list of supported cipher suites</assignable>.</title>
             </ext-comp-def-title>
-            <note role="application">
+            <note role="application">If any of the TLS_RSA_PSK cipher suites are selected by the ST author, it is necessary to claim the selection-based requirement FCS_RADSEC_EXT.3.<h:p/>
               The above cipher suites are only for use when the TSF is acting as a RADIUS over TLS client, not for other uses of the TLS protocol. 
               The cipher suites to be tested in the evaluated configuration are limited by this requirement. 
               The ST author should select the cipher suites that are supported. If "X.509v3 certificates" is selected in FCS_RADSEC_EXT.1.2, 
@@ -1313,58 +1331,19 @@
               <selectable>accept</selectable>
               <selectable>generate using the random bit generator specified in FCS_RBG_EXT.1</selectable>
             </selectables> bit-based pre-shared keys.</title>
-          </f-element>
-          <f-element>
-            <title>
-              If cipher suites beginning with TLS_RSA_PSK are selected in FCS_RADSEC_EXT.2.1, the TSF shall, when any are used for a RADIUS over TLS connection, 
-              verify that the presented identifier matches the reference identifier per RFC 6125 section 6.
-            </title>
-            <note role="application">The rules for verification of identity are described in Section 6 of RFC 6125. 
-              The reference identifier is typically established by configuration (e.g. configuring the name of the authentication server). 
-              Based on a singular reference identifier’s source domain and application service type (e.g. HTTP, SIP, LDAP), 
-              the client establishes all reference identifiers which are acceptable, such as a Common Name for the Subject Name field of the certificate and a (case-insensitive) DNS name for the Subject Alternative Name field. 
-              The client then compares this list of all acceptable reference identifiers to the presented identifiers in the TLS server’s certificate.<h:p/>
-
-              The preferred method for verification is the Subject Alternative Name using DNS names, URI names, or Service Names. 
-              Verification using the Common Name is required for the purposes of backwards compatibility. 
-              Additionally, support for use of IP addresses in the Subject Name or Subject Alternative name is discouraged as against best practices but may be implemented. 
-              Finally, support for wildcards is discouraged but may be implemented. 
-              If the client supports wildcards, the client must follow the best practices regarding matching; these best practices are captured in the evaluation activity.<h:p/>
-              If no cipher suites beginning with TLS_RSA_PSK are selected in FCS_RADSEC_EXT.2.1, then this requirement is satisfied by default. 
-            </note>
-          </f-element>
-          <f-element>
-            <title>If cipher suites beginning with TLS_RSA_PSK are selected in FCS_RADSEC_EXT.2.1, the TSF shall, when any are used for a RADIUS over TLS connection, only establish a trusted channel if the server certificate is valid. 
-              If the server certificate is deemed invalid, then the TSF shall <selectables>
-                <selectable>not establish the connection</selectable>
-                <selectable>request authorization to establish the connection</selectable>
-                <selectable><assignable>other action</assignable></selectable>
-              </selectables>.</title>
-            <note role="application">This SFR must be claimed if "pre-shared keys" is selected in FCS_RADSEC_EXT.1.2.<h:p/>
-            
-            Validity is determined by the identifier verification, certificate path, the expiration date, and the revocation status in accordance with RFC 5280. 
-            Certificate validity is tested in accordance with testing performed for FIA_X509_EXT.1/Rev in the NDcPP.<h:p/>
-             
-            If no cipher suites beginning with TLS_RSA_PSK are selected in FCS_RADSEC_EXT.2.1, then this requirement is satisfied by default. </note>
             <aactivity>
               <TSS>The evaluator shall check the description of the implementation of this protocol in the TSS to ensure that the cipher suites supported are specified. 
                 The evaluator shall check the TSS to ensure that the cipher suites specified are identical to those listed for this component. 
                 The evaluator shall also verify that the TSS contains a description of the denial of old SSL and TLS versions.<h:p/>
                 
                 The evaluator shall examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are generated (if the TOE supports this functionality), 
-                and confirm that this process uses the RBG specified in FCS_RBG_EXT.1.<h:p/>
-                
-                The evaluator shall ensure that the TSS describes the client’s method of establishing all reference identifiers from the administrator/application-configured reference identifier, 
-                including which types of reference identifiers are supported (e.g., Common Name, DNS Name, URI Name, Service Name, or other application-specific Subject Alternative Names) and whether IP addresses and wildcards are supported. 
-                The evaluator shall ensure that this description identifies whether and the manner in which certificate pinning is supported or used by the TOE.<h:p/></TSS>
+                and confirm that this process uses the RBG specified in FCS_RBG_EXT.1.<h:p/></TSS>
               <Guidance>The evaluator shall verify that any configuration necessary to meet the requirement must be contained in the guidance.<h:p/>
                 
                 The evaluator shall also check the guidance documentation to ensure that it contains instructions on configuring the TOE so that RADIUS over TLS conforms to the description in the TSS 
                 (for instance, the set of cipher suites advertised by the TOE may have to be restricted to meet the requirements).<h:p/>
                 
-                The evaluator shall confirm the operational guidance contains instructions for either entering bit-based pre-shared keys, or generating a bit-based pre-shared key (or both).<h:p/>
-                
-                The evaluator shall verify that the operational guidance includes instructions for setting the reference identifier to be used for the purposes of certificate validation in TLS.<h:p/>    </Guidance>
+                The evaluator shall confirm the operational guidance contains instructions for either entering bit-based pre-shared keys, or generating a bit-based pre-shared key (or both).<h:p/></Guidance>
               <Tests>The evaluator shall perform the following tests:
               <testlist>
                 <test>The evaluator shall establish a RADIUS over TLS connection using each of the cipher suites selected in FCS_RADSEC_EXT.2.1. 
@@ -1382,36 +1361,6 @@
                   <h:li>Modify a byte in the Server Finished handshake message, and verify that the client rejects the connection and does not send any application data.</h:li>
                   <h:li>Send a garbled message from the server after the server has issued the ChangeCipherSpec message and verify that the client denies the connection.</h:li>
                 </h:ul></test>
-                <test>[conditional] If any of the TLS_RSA_PSK cipher suites are selected:</test>
-                <h:ul>
-                  <h:li>The evaluator shall attempt to establish the connection using a server with a server certificate that contains the Server Authentication purpose in the extendedKeyUsage field and 
-                    verify that a connection is established. The evaluator will then verify that the client rejects an otherwise valid server certificate that lacks the Server Authentication purpose in the extendedKeyUsage 
-                    field and a connection is not established. Ideally, the two certificates should be identical except for the extendedKeyUsage field.</h:li>
-                  <h:li>The evaluator shall present a server certificate that does not contain an identifier in either the Subject Alternative Name (SAN) or Common Name (CN) that matches the reference identifier. 
-                    The evaluator shall verify that the connection fails.</h:li>
-                  <h:li>The evaluator shall present a server certificate that contains a CN that matches the reference identifier, 
-                    contains the SAN extension, but does not contain an identifier in the SAN that matches the reference identifier. 
-                    The evaluator shall verify that the connection fails. The evaluator shall repeat this test for each supported SAN type.</h:li>
-                  <h:li>The evaluator shall present a server certificate that contains a CN that does not match the reference identifier but does contain an identifier in the SAN that matches. 
-                    The evaluator shall verify that the connection succeeds.</h:li>
-                  <h:li>If the TOE does not mandate the presence of the SAN extension, the evaluator shall present a server certificate that contains a CN that matches the reference identifier and does not contain the SAN extension. 
-                    The evaluator shall verify that the connection succeeds. If the TOE does mandate the presence of the SAN extension, this Test shall be omitted.</h:li>
-                  <h:li>If wildcards are supported by the TOE, the evaluator shall perform the following tests: <h:ul>
-                    <h:li>The evaluator shall present a server certificate containing a wildcard that is not in the left-most label of the presented identifier (e.g. foo.*.example.com) and verify that the connection fails.</h:li>
-                    <h:li>The evaluator shall present a server certificate containing a wildcard in the left-most label but not preceding the public suffix (e.g. *.example.com). 
-                      The evaluator shall configure the reference identifier with a single left-most label (e.g. foo.example.com). 
-                      The evaluator shall verify that the connection succeeds. The evaluator shall configure the reference identifier without a left-most label as in the certificate (e.g. example.com) and verify that the connection fails. 
-                      The evaluator shall configure the reference identifier with two left-most labels (e.g. bar.foo.example.com) and verify that the connection fails.</h:li>
-                    <h:li>The evaluator shall present a server certificate containing a wildcard in the left-most label immediately preceding the public suffix (e.g. *.com). 
-                      The evaluator shall configure the reference identifier with a single left-most label (e.g. foo.com) and verify that the connection fails. 
-                      The evaluator shall configure the reference identifier with two left-most labels (e.g. bar.foo.com) and verify that the connection fails.</h:li>
-                  </h:ul>
-                  </h:li>
-                  <h:li>If wildcards are not supported by the TOE, the evaluator shall present a server certificate containing a wildcard and verify that the connection fails.</h:li>
-                  <h:li>[conditional] If URI or Service name reference identifiers are supported, the evaluator shall configure the DNS name and the service identifier. 
-                    The evaluator shall present a server certificate containing the correct DNS name and service identifier in the URIName or SRVName fields of the SAN and verify that the connection succeeds. 
-                    The evaluator shall repeat this test with the wrong service identifier (but correct DNS name) and verify that the connection fails.</h:li>
-                </h:ul>
                 <test>[conditional] If the TOE does not generate bit-based pre-shared keys, the evaluator shall obtain a bit-based pre-shared key of the appropriate length and enter it according to the instructions in the operational guidance. 
                   The evaluator shall then demonstrate that a successful protocol negotiation can be performed with the key.</test>
                 <test>[conditional] If the TOE does generate bit-based pre-shared keys, the evaluator shall generate a bit-based pre-shared key of the appropriate length and use it according to the instructions in the operational guidance. 
@@ -1421,6 +1370,89 @@
             </aactivity>
           </f-element>
         </f-component>
+        
+        
+        <f-component name="RadSec using Pre-Shared Keys and RSA" cc-id="fcs_radsec_ext.3">
+          <consistency-rationale>This SFR defines the implementation of RadSec when pre-shared key authentication with RSA is used. This functionality is outside the original scope of the Base-PP but it relies on 
+            the TLS client protocol implementation, cryptographic algorithms, and random bit generation functions defined by the Base-PP.</consistency-rationale>
+          
+          <comp-lev>requires the TSF to validate the external entity used for trusted communications.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>FCS_RADSEC_EXT.2 RadSec using Pre-Shared Keys<h:p/>
+            <no-link>FIA_X509_EXT.1</no-link> X.509 Certificate Validation
+            <h:p/></dependencies>
+          
+          <f-element>
+            <title>
+              When the TSF negotiates a TLS_RSA_PSK cipher suite, the TSF shall verify that the presented identifier matches the reference identifier per RFC 6125 section 6.
+            </title>
+            <note role="application">This requirement must be claimed if any cipher suites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.<h:p/>
+              The rules for verification of identity are described in Section 6 of RFC 6125. 
+              The reference identifier is typically established by configuration (e.g. configuring the name of the authentication server). 
+              Based on a singular reference identifier’s source domain and application service type (e.g. HTTP, SIP, LDAP), 
+              the client establishes all reference identifiers which are acceptable, such as a Common Name for the Subject Name field of the certificate and a (case-insensitive) DNS name for the Subject Alternative Name field. 
+              The client then compares this list of all acceptable reference identifiers to the presented identifiers in the TLS server’s certificate.<h:p/>
+              
+              The preferred method for verification is the Subject Alternative Name using DNS names, URI names, or Service Names. 
+              Verification using the Common Name is required for the purposes of backwards compatibility. 
+              Additionally, support for use of IP addresses in the Subject Name or Subject Alternative name is discouraged as against best practices but may be implemented. 
+              Finally, support for wildcards is discouraged but may be implemented. 
+              If the client supports wildcards, the client must follow the best practices regarding matching; these best practices are captured in the evaluation activity.<h:p/>
+            </note>
+          </f-element>
+          <f-element>
+            <title>When the TSF negotiates a TLS_RSA_PSK cipher suite, the TSF shall  <selectables>
+                <selectable>not establish the connection</selectable>
+                <selectable>request authorization to establish the connection</selectable>
+                <selectable><assignable>other action</assignable></selectable>
+              </selectables> if the presented server certificate is deemed invalid.</title>
+            <note role="application">This requirement must be claimed if any cipher suites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.<h:p/>
+              
+              Validity is determined by the identifier verification, certificate path, the expiration date, and the revocation status in accordance with RFC 5280. 
+              Certificate validity is tested in accordance with testing performed for FIA_X509_EXT.1/Rev in the NDcPP.</note>
+            <aactivity>
+              <TSS>
+                The evaluator shall ensure that the TSS describes the client’s method of establishing all reference identifiers from the administrator/application-configured reference identifier, 
+                including which types of reference identifiers are supported (e.g., Common Name, DNS Name, URI Name, Service Name, or other application-specific Subject Alternative Names) and whether IP addresses and wildcards are supported. 
+                The evaluator shall ensure that this description identifies whether and the manner in which certificate pinning is supported or used by the TOE.<h:p/></TSS>
+              <Guidance>
+                The evaluator shall verify that the operational guidance includes instructions for setting the reference identifier to be used for the purposes of certificate validation in TLS.<h:p/>    </Guidance>
+              <Tests>The evaluator shall perform the following tests:
+                <testlist>
+                    <test>The evaluator shall attempt to establish the connection using a server with a server certificate that contains the Server Authentication purpose in the extendedKeyUsage field and 
+                      verify that a connection is established. The evaluator will then verify that the client rejects an otherwise valid server certificate that lacks the Server Authentication purpose in the extendedKeyUsage 
+                      field and a connection is not established. Ideally, the two certificates should be identical except for the extendedKeyUsage field.</test>
+                    <test>The evaluator shall present a server certificate that does not contain an identifier in either the Subject Alternative Name (SAN) or Common Name (CN) that matches the reference identifier. 
+                      The evaluator shall verify that the connection fails.</test>
+                    <test>The evaluator shall present a server certificate that contains a CN that matches the reference identifier, 
+                      contains the SAN extension, but does not contain an identifier in the SAN that matches the reference identifier. 
+                      The evaluator shall verify that the connection fails. The evaluator shall repeat this test for each supported SAN type.</test>
+                    <test>The evaluator shall present a server certificate that contains a CN that does not match the reference identifier but does contain an identifier in the SAN that matches. 
+                      The evaluator shall verify that the connection succeeds.</test>
+                  <test>[conditional] If the TOE does not mandate the presence of the SAN extension, the evaluator shall present a server certificate that contains a CN that matches the reference identifier and does not contain the SAN extension. 
+                      The evaluator shall verify that the connection succeeds. If the TOE does mandate the presence of the SAN extension, this Test shall be omitted.</test>
+                  <test>[conditional] If wildcards are supported by the TOE, the evaluator shall perform the following tests: <h:ul>
+                      <h:li>The evaluator shall present a server certificate containing a wildcard that is not in the left-most label of the presented identifier (e.g. foo.*.example.com) and verify that the connection fails.</h:li>
+                      <h:li>The evaluator shall present a server certificate containing a wildcard in the left-most label but not preceding the public suffix (e.g. *.example.com). 
+                        The evaluator shall configure the reference identifier with a single left-most label (e.g. foo.example.com). 
+                        The evaluator shall verify that the connection succeeds. The evaluator shall configure the reference identifier without a left-most label as in the certificate (e.g. example.com) and verify that the connection fails. 
+                        The evaluator shall configure the reference identifier with two left-most labels (e.g. bar.foo.example.com) and verify that the connection fails.</h:li>
+                      <h:li>The evaluator shall present a server certificate containing a wildcard in the left-most label immediately preceding the public suffix (e.g. *.com). 
+                        The evaluator shall configure the reference identifier with a single left-most label (e.g. foo.com) and verify that the connection fails. 
+                        The evaluator shall configure the reference identifier with two left-most labels (e.g. bar.foo.com) and verify that the connection fails.</h:li>
+                    </h:ul>
+                    </test>
+                    <test>[conditional] If wildcards are not supported by the TOE, the evaluator shall present a server certificate containing a wildcard and verify that the connection fails.</test>
+                    <test>[conditional] If URI or Service name reference identifiers are supported, the evaluator shall configure the DNS name and the service identifier. 
+                      The evaluator shall present a server certificate containing the correct DNS name and service identifier in the URIName or SRVName fields of the SAN and verify that the connection succeeds. 
+                      The evaluator shall repeat this test with the wrong service identifier (but correct DNS name) and verify that the connection fails.</test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
       </subsection> 
       
       <subsection title="Identification and Authentication (FIA)" id="fia">
