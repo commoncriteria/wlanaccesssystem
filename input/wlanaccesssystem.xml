@@ -1476,10 +1476,8 @@
             <title>The TSF shall be able to use pre-shared keys for <selectables>
               <selectable>RADIUS over TLS (RadSec)</selectable>
               <selectable>IPsec</selectable>
-            </selectables> and <selectables>
               <selectable>IEEE 802.11 WPA2-PSK</selectable>
               <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
-              <selectable>no other protocols</selectable>
             </selectables>. 
             </title>
           </f-element>
@@ -1504,9 +1502,8 @@
           
           <note role="application">
           This requirement must be included if IPsec or another protocol that uses pre-shared keys is claimed, and pre-shared key authentication is selected 
-          (i.e. "Pre-shared Keys" is selected in FCS_IPSEC_EXT.1.13 or "pre-shared keys" is selected in FCS_RADSEC_EXT.1.2). 
-          In the second selection, if other protocols can use pre-shared keys, they should be listed in the assignment as well; 
-          otherwise “no other protocols” should be chosen. The intent of this requirement is that all protocols will support both text-based and bit-based pre-shared keys.<h:p/>
+          (e.g., "Pre-shared Keys" is selected in FCS_IPSEC_EXT.1.13 or "pre-shared keys" is selected in FCS_RADSEC_EXT.1.2). 
+          The intent of this requirement is that all protocols will support both text-based and bit-based pre-shared keys.<h:p/>
           
           For the length of the text-based pre-shared keys, a common length (22 characters) is required to help
           promote interoperability. If other lengths are supported they should be listed in the assignment; this
