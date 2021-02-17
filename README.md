@@ -2,6 +2,8 @@
 Protection Profile or Extended Package for Wireless Local Area Network (WLAN) Access System
 ===============
 
+![Build](https://github.com/commoncriteria/wlanaccesssystem/workflows/Build/badge.svg)
+
 This repository hosts the draft version of the Protection Profile for QQQQ based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/QQQQ/QQQQ-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
