@@ -393,7 +393,7 @@
  
 
         <subsection title="Cryptographic Support (FCS)" id="FCS">
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
+          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DATAENCRYPTION"> 
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP, and by mandating specific selections that are
             relevant to the technology type of the PP-Module.</consistency-rationale>
             <f-element>
