@@ -137,7 +137,7 @@
     threats of the NDcPP and those defined in this PP-Module define the comprehensive set of
     security threats addressed by a WLAN Access System TOE. 
     <section title="Threats" id="threats">
-      aaaaaaaaaaaaa
+      
       <threats>
         <threat name="T.NETWORK_DISCLOSURE">
           <description>Devices on a protected network may be exposed to threats presented by devices located outside the
@@ -265,10 +265,10 @@
           <description>The TOE will provide means to encrypt and decrypt data to maintain confidentiality and allow for detection of modification of TSF data that is transmitted outside the TOE.
           </description>
           <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for cryptographic functions. This objective is consistent with the functional behavior required by the Base-PP.</consistency-rationale>
-          <addressed-by>FCS_COP.1/DATAENCRYPTION (modified from Base-PP), FCS_IPSEC_EXT.1 (from Base-PP), FCS_TLSC_EXT.1 (from Base-PP), FCS_TLSC_EXT.2 (from Base-PP), FCS_CKM.1/WPA, FCS_CKM.2/GTK, FCS_CKM.2/PMK, 
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP), FCS_IPSEC_EXT.1 (from Base-PP), FCS_TLSC_EXT.1 (from Base-PP), FCS_TLSC_EXT.2 (from Base-PP), FCS_CKM.1/WPA, FCS_CKM.2/GTK, FCS_CKM.2/PMK, 
             FCS_CKM.2/DISTRIB (optional)</addressed-by>
           <rationale>
-            FCS_COP.1/DATAENCRYPTION supports the objective by requiring the TSF to implement AES in the modes needed to support its other functions.
+            FCS_COP.1/DataEncryption supports the objective by requiring the TSF to implement AES in the modes needed to support its other functions.
             <h:p/>
             FCS_IPSEC_EXT.1 supports the objective by requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1. 
             <h:p/>
@@ -393,7 +393,7 @@
  
 
         <subsection title="Cryptographic Support (FCS)" id="FCS">
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DATAENCRYPTION"> 
+          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP, and by mandating specific selections that are
             relevant to the technology type of the PP-Module.</consistency-rationale>
             <f-element>
