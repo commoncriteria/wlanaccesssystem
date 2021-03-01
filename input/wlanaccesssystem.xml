@@ -393,7 +393,7 @@
  
 
         <subsection title="Cryptographic Support (FCS)" id="FCS">
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DATAENCRYPTION"> 
+          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP, and by mandating specific selections that are
             relevant to the technology type of the PP-Module.</consistency-rationale>
             <f-element>
@@ -418,7 +418,7 @@
                     <selectable><h:b>no other standards</h:b></selectable>
                   </selectables>. 
               </title>
-              <note role="application"><!-- This SFR is defined in the Base-PP as FCS_COP.1/DataEncryption.<h:p/> -->
+              <note role="application">
                 
                 This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 128 bit key sizes
                 while also defining additional AES mode and key size selections not present in the original definition. <h:p/>
@@ -429,7 +429,7 @@
                 requirements, CBC mode is mandated, and to comply with IEEE 802.11-2012, AES-CCMP (which uses AES
                 in CCM as specified in SP 800-38C) must be implemented.<h:p/>
                 
-                For the first selection of FCS_COP.1.1/DATAENCRYPTION, the ST author should choose the additional mode or modes in
+                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in
                 which AES operates. For the second selection, the ST author should choose the key sizes that are
                 supported by this functionality. 128-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
                 Note that optionally AES-CCMP-256 or AES-GCMP-256, with cryptographic key size of 256 bits, may be
