@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xsl-stylesheet type="text/xsl" href="../transforms/module/module2html.xsl"?>
 
-<?xml-model href="../../wlanclient/transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../wlanaccesssystem/transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Module boilerplate="yes" target-products="Wireless Local Area Network (WLAN) Access System" xmlns="https://niap-ccevs.org/cc/v1" name="Wireless Local Area Network (WLAN) Access System" xmlns:h="http://www.w3.org/1999/xhtml">
   <PPReference>
     <ReferenceTable>
