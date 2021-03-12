@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xsl-stylesheet type="text/xsl" href="../transforms/module/module2html.xsl"?>
+<?xsl-stylesheet type="text/xsl" href="../transforms/xsl/module/module2html.xsl"?>
 
-<?xml-model href="../../wlanaccesssystem/transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<Module boilerplate="yes" target-products="Wireless Local Area Network (WLAN) Access System" xmlns="https://niap-ccevs.org/cc/v1" name="Wireless Local Area Network (WLAN) Access System" xmlns:h="http://www.w3.org/1999/xhtml">
+<?xml-model href="https://github.com/commoncriteria/transforms/raw/master/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+
+
+<Module boilerplate="yes" target-products="Wireless Local Area Network (WLAN) Access System" 
+  name="Wireless Local Area Network (WLAN) Access System"
+  xmlns="https://niap-ccevs.org/cc/v1"
+  xmlns:sec="https://niap-ccevs.org/cc/v1/section"
+  xmlns:h="http://www.w3.org/1999/xhtml">
+ 
   <PPReference>
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-10-28</PPPubDate>
+      <PPPubDate>2021-03-10</PPPubDate>
       <Keywords>WLAN, Wireless LAN</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -22,8 +30,8 @@
   
   <!-- TODO: no open items -->
   
-  <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> 
+  <sec:Introduction>
+    <sec:Overview> 
       The scope of this PP-Module is to describe the security functionality of a Wireless Local Area Network (WLAN) Access System in terms of [CC] 
       and to define functional and assurance requirements for such products. This PPModule is intended for use with the following Base-PPs:
       <h:ul>
@@ -35,7 +43,7 @@
       A TOE that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
       defined in the NDcPP. The TOE functionality may reside entirely within a single device or be spread across multiple distributed physical components.
       
-</section>
+</sec:Overview>
     <tech-terms>
       <term abbr="AES" full="Advanced Encryption Standard"/>
       <term abbr="AP" full="Access Point"> 
@@ -65,7 +73,7 @@
       <term abbr="WPA" full="Wi-Fi Protected Access"/>
     </tech-terms>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      <subsection title="TOE Boundary" id="TOEboundary"> 
+      <sec:TOE_Boundary> 
         This PP-Module specifically addresses WLAN (IEEE 802.11) Access Systems. A compliant WLAN Access System is a
         system composed of hardware and software that is connected to a network and has an infrastructure
         role in the overall enterprise network. In particular, a WLAN Access System establishes a secure wireless
@@ -75,22 +83,22 @@
         Since this PP-Module extends the NDcPP, conformant TOEs are obligated to implement the functionality
         required in the NDcPP along with the additional functionality defined in this PP-Module in response to the threat
         environment discussed subsequently herein.
-      </subsection>
+      </sec:TOE_Boundary>
     </section>
     
-    <section title="Use Cases" id="usecases">
+    <sec:Use_Cases>
       <usecases>
         <usecase id="usecase1" title="Standalone Device">
           <description>The TOE is a standalone network device that serves as a single network endpoint that provides connectivity to wireless clients.</description>
         </usecase>
-        <usecase id="usecase1" title="Distributed System">
+        <usecase id="usecase2" title="Distributed System">
           <description>The TOE is a distributed system consisting of multiple network devices that collectively serve as the wireless network endpoint. In addition to claiming the relevant "Distributed TOE" requirement in the NDcPP,
           this use case also requires the TOE to claim the optional SFR FCS_CKM.2/DISTRIB to describe the key distribution method between distributed TOE components.</description>
         </usecase>
       </usecases> 
-    </section> 
-  </chapter>
-  <chapter title="Conformance Claims" id="ConformanceClaims">
+    </sec:Use_Cases> 
+  </sec:Introduction>
+  <sec:Conformance_Claims>
     <cclaims>
       <cclaim name="Conformance Statement">
         <description> This PP-Module inherits exact conformance as required from the specified
@@ -113,8 +121,8 @@
           claim conformance to any packages.</description>
       </cclaim>
     </cclaims>
-  </chapter>
-  <chapter title="Security Problem Description" id="spd">  
+  </sec:Conformance_Claims>
+  <sec:Security_Problem_Description>  
     This PP-Module is written to address the situation when network packets cross the boundary
     between a wired private network and a wireless client via a WLAN Access System. The WLAN Access
     System provides secure communication between a user (wireless client) and a wired (trusted) network
@@ -241,25 +249,14 @@
         </assumption>
       </assumptions>
     </section>
-    <section title="Organizational Security Policies" id="osp">
-      This PP-Module defines no additional organizational security policies beyond those specified in the NDcPP.
-      <!--
-      <OSPs>
-        <OSP id="P.ANALYZE">
-          <description>Analytical processes and information to derive conclusions about potential
-            intrusions must be applied to WIDS data and appropriate response actions
-            taken.</description>
-          <objective-refer ref="O.WIDS_ANALYZE">
-            <rationale>The organizational security policy P.ANALYZE is facilitated through
-              O.WIDS_ANALYZE. </rationale>
-          </objective-refer>
-        </OSP>
-      </OSPs> -->
-    </section>
-  </chapter>
-  <chapter title="Security Objectives" id="obj">
-    <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      
+    <sec:Organizational_Security_Policies>
+      <!-- This PP-Module defines no additional organizational security policies beyond those specified in the NDcPP. -->
+      <OSPs/>
+    </sec:Organizational_Security_Policies>
+  </sec:Security_Problem_Description>
+  <sec:Security_Objectives>
+    <sec:Security_Objectives_for_the_TOE>
+
       <SOs>
         <SO name="O.CRYPTOGRAPHIC_FUNCTIONS">
           <description>The TOE will provide means to encrypt and decrypt data to maintain confidentiality and allow for detection of modification of TSF data that is transmitted outside the TOE.
@@ -365,7 +362,8 @@
                     </SO>
   
       </SOs>
-    </section>
+      </sec:Security_Objectives_for_the_TOE>
+      
     <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment"> 
       <h:p/>
       All objectives for the operational environment of the Base-PP also apply to this PP-Module.
@@ -385,14 +383,14 @@
     <section title="Security Objectives Rationale" id="SOR">
       <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
     </section>
-  </chapter>
-  <chapter title="Security Requirements" id="sfrs">
+  </sec:Security_Objectives>
+  <sec:Security_Requirements>
     <!-- Kevin: What to do if base is not in github?? -->
-    <base-pp version="2.2e" name="Network Device" product="Network Device" short="NDc" url="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf" xmlurl="test">
+    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="NDc" plural="NDs" url="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf">
       <modified-sfrs>
  
 
-        <subsection title="Cryptographic Support (FCS)" id="FCS">
+        <sec:from_nd_fcs title="Cryptographic Support (FCS)">
           <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP, and by mandating specific selections that are
             relevant to the technology type of the PP-Module.</consistency-rationale>
@@ -501,9 +499,9 @@
             </f-element>
           </f-component>
           
-        </subsection>
+        </sec:from_nd_fcs>
         
-        <subsection title="Protection of the TSF (FPT)" id="FPT">
+        <sec:from_nd_fpt title="Protection of the TSF (FPT)">
           <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
               may still be specified by the ST author.</consistency-rationale>
@@ -548,9 +546,9 @@
               </aactivity>
             </f-element>
           </f-component>
-        </subsection>
+        </sec:from_nd_fpt>
         
-        <subsection title="Trusted Path/Channels (FTP)" id="FTP">
+        <sec:from_nd_ftp title="Trusted Path/Channels (FTP)">
           <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel">
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
               defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
@@ -621,7 +619,7 @@
               </aactivity>
             </f-element>
           </f-component>
-        </subsection>
+        </sec:from_nd_ftp>
  
       </modified-sfrs>
       <additional-sfrs/>
@@ -639,7 +637,7 @@
     </base-pp>
     <man-sfrs>
       
-      <subsection title="Security Audit (FAU)" id="fau">
+      <sec:man_fau title="Security Audit (FAU)">
         <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="WLAN">
           <consistency-rationale>This SFR iterates the FAU_GEN.1 SFR defined in the Base-PP to define auditable events for the functionality that is specific to this PP-Module.</consistency-rationale>
 <f-element>
@@ -647,7 +645,7 @@
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the [not specified] level of audit;</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<ctr-ref ref-id="auditWLAN"/>);</h:i></h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWLAN"/>);</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>].</h:li>
               </h:ol>
             <h:table>
@@ -737,11 +735,11 @@
             </h:table>
               <ctr ctr-type="Table" id="auditWLAN">: Auditable Events</ctr>
             </title>
-  <note role="application"> The auditable events defined in <ctr-ref ref-id="auditWLAN"/>
+  <note role="application"> The auditable events defined in <xref to="auditWLAN"/>
     are for the SFRs that are explicitly defined in this PP-Module and are intended to
     extend FAU_GEN.1 in the Base-PP. The events in the Auditable Events table should
     be combined with those of the NDcPP in the context of a conforming Security
-    Target.<h:p/> The Auditable Events (<ctr-ref ref-id="auditWLAN"/>) includes
+    Target.<h:p/> The Auditable Events (<xref to="auditWLAN"/>) includes
     optional and objective SFRs. The auditing of optional and objective SFRs is only
     required if that SFR is included in the ST. <h:p/> Per FAU_STG_EXT.1 in the
     Base-PP, the TOE must support transfer of the audit data to an external IT entity
@@ -762,9 +760,9 @@
   </aactivity>
 </f-element> 
         </f-component>
-      </subsection>
+      </sec:man_fau>
       
-      <subsection title="Cryptographic Support (FCS)" id="fcs">
+      <sec:man_fcs title="Cryptographic Support (FCS)">
         
         <!-- previously FCS_CKM.1(2) -->
         <f-component name="Cryptographic Key Generation (Symmetric Keys for WPA2 Connections)" cc-id="fcs_ckm.1" iteration="WPA">
@@ -971,10 +969,10 @@
           </f-element>
         </f-component>
         
-      </subsection>
+      </sec:man_fcs>
       
       
-      <subsection title="Identification and Authentication (FIA)" id="fia">
+      <sec:man_fia title="Identification and Authentication (FIA)">
       <!-- FIA_AFL.1 no longer needed, removed -->
         
         
@@ -1091,9 +1089,9 @@
       </f-component>
         
         <!-- FIA_PSK_EXT.1 moved to sel-based -->
-      </subsection>
+      </sec:man_fia>
       
-      <subsection title="Security Management (FMT)" id="fmt">
+      <sec:man_fmt title="Security Management (FMT)">
         
         <ext-comp-def title="Security Management Restrictions" fam-id="FMT_SMR_EXT">
           <fam-behavior>Components in this family describe architectural restrictions on security administration that are not defined in CC Part 2.</fam-behavior> 
@@ -1127,10 +1125,10 @@
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </sec:man_fmt>
       
       
-      <subsection title="Protection of the TSF (FPT)" id="fpt">
+      <sec:man_fpt title="Protection of the TSF (FPT)">
         <!-- FPT_FLS.1 no change -->
         <f-component name="Failure with Preservation of Secure State" cc-id="fpt_fls.1">
           <consistency-rationale>This SFR extends the functionality described by FPT_TST_EXT.1 in the Base-PP by defining the specific TSF reaction in the event of a failed self-test.</consistency-rationale>
@@ -1155,9 +1153,9 @@
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </sec:man_fpt>
       
-      <subsection title="TOE Access (FTA)" id="fta">
+      <sec:man_fta title="TOE Access (FTA)">
         <!-- FTA_TSE.1 no change -->
         <f-component name="TOE Session Establishment" cc-id="fta_tse.1">
           <consistency-rationale>This SFR applies restrictions on establishment of wireless communications, which is a logical interface that extends the scope of what the Base-PP originally defined.</consistency-rationale>
@@ -1196,11 +1194,11 @@
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>
+      </sec:man_fta>
       
     </man-sfrs>
     <opt-sfrs>
-      <subsection title="Cryptographic Support (FCS)" id="fcs">
+      <sec:opt_fcs title="Cryptographic Support (FCS)">
         
         <!-- previously FCS_CKM.2(4) -->
         <f-component name="Cryptographic Key Distribution (802.11 Keys)" cc-id="fcs_ckm.2" iteration="DISTRIB">
@@ -1228,14 +1226,14 @@
             </aactivity>
           </f-element>
         </f-component>
-      </subsection>   
+      </sec:opt_fcs>   
 
     <!-- FPT_ITT.1 removed because it exists in the NDcPP now  -->
 
     </opt-sfrs>
     <sel-sfrs>
       
-      <subsection title="Cryptographic Support (FCS)" id="fcs">
+      <sec:sel_fcs title="Cryptographic Support (FCS)">
         
         <ext-comp-def title="RadSec" fam-id="FCS_RADSEC_EXT">
           <fam-behavior>Components in this family describe requirements for implementation of the RadSec (RADIUS over TLS) protocol.</fam-behavior> 
@@ -1453,9 +1451,9 @@
           </f-element>
         </f-component>
         
-      </subsection> 
+      </sec:sel_fcs> 
       
-      <subsection title="Identification and Authentication (FIA)" id="fia">
+      <sec:sel_fia title="Identification and Authentication (FIA)">
         
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describe requirements for the creation and composition of pre-shared keys used to establish trusted communications channels.</fam-behavior> 
@@ -1559,13 +1557,14 @@
             </aactivity>
           </f-element>
         </f-component>
-      </subsection> 
+      </sec:sel_fia> 
 
     </sel-sfrs>
     <obj-sfrs>
  
     </obj-sfrs>
-  </chapter>
+    <impl-dep-sfrs></impl-dep-sfrs>
+  </sec:Security_Requirements>
   
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
     This PP-Module has no implicitly satisfied requirements. All SFR dependencies are explicitly met either through SFRs defined by the PP-Module or inherited from the Base-PP. 
