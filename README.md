@@ -19,7 +19,7 @@ A list of products that have passed evaluation against this Protection Profile c
 * [Protection Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem.html) (html)
 
 ## Release Version
-* [Protection Profile for QQQQ](QQQQ)
+No previous releases
 
 ## Contributing
 
