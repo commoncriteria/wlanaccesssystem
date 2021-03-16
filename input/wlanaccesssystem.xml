@@ -386,7 +386,8 @@
   </sec:Security_Objectives>
   <sec:Security_Requirements>
     <!-- Kevin: What to do if base is not in github?? -->
-    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="NDc" plural="NDs" url="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf">
+    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="NDc" plural="NDs">
+      <url>https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf</url>
       <modified-sfrs>
  
 
