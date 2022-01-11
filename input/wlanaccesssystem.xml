@@ -404,16 +404,16 @@
                   <selectable>GCM</selectable>
                   <selectable><h:b>GCMP</h:b></selectable>
                   <selectable><h:b>no other</h:b></selectable>
-                </selectables> <h:b>modes</h:b> and cryptographic key sizes <h:b>128 bits and</h:b> <selectables>
+                </selectables> <h:b>modes</h:b> and cryptographic key sizes <h:b>256 bits and</h:b> <selectables>
+                  <selectable>128 bits</selectable>
                   <selectable>192 bits</selectable>
-                  <selectable>256 bits</selectable>
                   <selectable><h:b>no other key sizes</h:b></selectable>
                 </selectables> that meet the following: AES as specified in ISO 18033-3, 
                 <h:b>CBC as specified in ISO 10116, 
                   CCMP as specified in NIST SP 800-38C and IEEE 802.11-2012,</h:b> <selectables>
                     <selectable>CTR as specified in ISO 10116</selectable>
                     <selectable>GCM as specified in ISO 19772</selectable>
-                    <selectable><h:b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ac-2013</h:b></selectable>
+                    <selectable><h:b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021</h:b></selectable>
                     <selectable><h:b>no other standards</h:b></selectable>
                   </selectables>. 
               </title>
@@ -432,7 +432,7 @@
                 which AES operates. For the second selection, the ST author should choose the key sizes that are
                 supported by this functionality. 128-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
                 Note that optionally AES-CCMP-256 or AES-GCMP-256, with cryptographic key size of 256 bits, may be
-                implemented for IEEE 802.11ac connections. In the future, one of these modes may be required.<h:p/>
+                implemented for IEEE 802.11ax connections. In the future, one of these modes may be required.<h:p/>
               
               CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
               </note>
@@ -779,14 +779,14 @@
                 <selectable>no other key sizes</selectable>
               </selectables></h:i>] <h:b>using a Random Bit Generator as specified in FCS_RBG_EXT.1</h:b> that meet the following: 
               [<h:i>IEEE 802.11-2012 and <selectables>
-                <selectable>IEEE 802.11ac-2013</selectable>
+                <selectable>IEEE 802.11ax-2021</selectable>
                 <selectable>no other standards</selectable>
               </selectables></h:i>].
             </title>
             <note role="application">
               The cryptographic key derivation algorithm required by IEEE 802.11-2012 (Section
               11.6.1.2) and verified in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and
-              outputs 384 bits. The use of GCMP is defined in IEEE 802.11ac-2013 (Section 11.4.5) and requires a KDF
+              outputs 384 bits. The use of GCMP is defined in IEEE 802.11ax-2021 (Section 11.4.5) and requires a KDF
               based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys).
               This KDF outputs 704 bits.<h:p/><h:p/>
               
