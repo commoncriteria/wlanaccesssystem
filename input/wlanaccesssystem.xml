@@ -291,7 +291,8 @@
                 <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for authentication of both users and remote entities. 
                   This objective is consistent with the functional behavior required by the Base-PP.</consistency-rationale>
                 <addressed-by>FCS_IPSEC_EXT.1 (from Base-PP), FCS_TLSC_EXT.1 (from Base-PP), FCS_TLSC_EXT.2 (from Base-PP), FIA_X509_EXT.1/Rev (from Base-PP), FTP_ITC.1 (modified from Base-PP), 
-                  FIA_8021X_EXT.1, FIA_UAU.6, FTA_TSE.1, FCS_RADSEC_EXT.1 (selection-based), FCS_RADSEC_EXT.2 (selection-based), FIA_PSK_EXT.1 (selection-based)</addressed-by>
+                  FIA_8021X_EXT.1, FIA_UAU.6, FTA_TSE.1, FTP_ITC_1/Client,
+					FCS_RADSEC_EXT.1 (selection-based), FCS_RADSEC_EXT.2 (selection-based), FIA_PSK_EXT.1 (selection-based)</addressed-by>
                 <rationale>
                   FCS_IPSEC_EXT.1 supports the objective by optionally requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1. 
                   IPsec includes authenticating using X.509 certificates or pre-shared keys.
