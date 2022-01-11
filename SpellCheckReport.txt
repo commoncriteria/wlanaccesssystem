@@ -34,6 +34,7 @@ output/wlanaccesssystem-release-linkable.html: PSK
 output/wlanaccesssystem-release-linkable.html: PTK
 output/wlanaccesssystem-release-linkable.html: RADSEC
 output/wlanaccesssystem-release-linkable.html: RadSec
+output/wlanaccesssystem-release-linkable.html: SAE
 output/wlanaccesssystem-release-linkable.html: SMR
 output/wlanaccesssystem-release-linkable.html: SSID
 output/wlanaccesssystem-release-linkable.html: STG
@@ -43,6 +44,7 @@ output/wlanaccesssystem-release-linkable.html: TSE
 output/wlanaccesssystem-release-linkable.html: UAU
 output/wlanaccesssystem-release-linkable.html: WPA
 output/wlanaccesssystem-release-linkable.html: WPA2
+output/wlanaccesssystem-release-linkable.html: WPA3
 output/wlanaccesssystem-release-linkable.html: Wi
 output/wlanaccesssystem-release-linkable.html: authorised
 output/wlanaccesssystem-release-linkable.html: cryptogpraphic
@@ -85,6 +87,7 @@ output/wlanaccesssystem-release.html: PSK
 output/wlanaccesssystem-release.html: PTK
 output/wlanaccesssystem-release.html: RADSEC
 output/wlanaccesssystem-release.html: RadSec
+output/wlanaccesssystem-release.html: SAE
 output/wlanaccesssystem-release.html: SMR
 output/wlanaccesssystem-release.html: SSID
 output/wlanaccesssystem-release.html: STG
@@ -94,6 +97,7 @@ output/wlanaccesssystem-release.html: TSE
 output/wlanaccesssystem-release.html: UAU
 output/wlanaccesssystem-release.html: WPA
 output/wlanaccesssystem-release.html: WPA2
+output/wlanaccesssystem-release.html: WPA3
 output/wlanaccesssystem-release.html: Wi
 output/wlanaccesssystem-release.html: authorised
 output/wlanaccesssystem-release.html: cryptogpraphic
@@ -123,6 +127,7 @@ output/wlanaccesssystem-sd.html: PMK
 output/wlanaccesssystem-sd.html: PRF
 output/wlanaccesssystem-sd.html: PSK
 output/wlanaccesssystem-sd.html: PTK
+output/wlanaccesssystem-sd.html: QQQQQQ
 output/wlanaccesssystem-sd.html: RADSEC
 output/wlanaccesssystem-sd.html: RadSec
 output/wlanaccesssystem-sd.html: SMR
@@ -174,8 +179,10 @@ output/wlanaccesssystem.html: PPModule
 output/wlanaccesssystem.html: PRF
 output/wlanaccesssystem.html: PSK
 output/wlanaccesssystem.html: PTK
+output/wlanaccesssystem.html: QQQQQQ
 output/wlanaccesssystem.html: RADSEC
 output/wlanaccesssystem.html: RadSec
+output/wlanaccesssystem.html: SAE
 output/wlanaccesssystem.html: SMR
 output/wlanaccesssystem.html: SRVName
 output/wlanaccesssystem.html: SSID
@@ -187,6 +194,7 @@ output/wlanaccesssystem.html: TSE
 output/wlanaccesssystem.html: UAU
 output/wlanaccesssystem.html: WPA
 output/wlanaccesssystem.html: WPA2
+output/wlanaccesssystem.html: WPA3
 output/wlanaccesssystem.html: Wi
 output/wlanaccesssystem.html: Wireshark
 output/wlanaccesssystem.html: authorised
