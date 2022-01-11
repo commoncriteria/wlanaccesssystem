@@ -554,7 +554,7 @@
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
               defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
             <f-element>
-              <title>The TSF shall be capable of using <h:b>IEEE 802.11-2012 (WPA2), IEEE 802.1X, <selectables>
+              <title>The TSF shall be capable of using <h:b>IEEE 802.1X, <selectables>
                 <selectable>IPsec</selectable>
                 <selectable>RADIUS over TLS</selectable>
               </selectables>, and</h:b> <selectables>
@@ -564,7 +564,7 @@
                   <selectable>HTTPS</selectable>
                   <selectable><h:b>no other protocols</h:b></selectable>
                 </selectables> to provide a trusted communication channel
-                between itself and authorized IT entities supporting the following capabilities: <h:b>WLAN client, 802.1x authentication server,</h:b> audit
+                between itself and authorized IT entities supporting the following capabilities: <h:b>802.1x authentication server,</h:b> audit
                 server, <selectables>
                   <selectable>authentication server</selectable>
                   <selectable><assignable>other capabilities</assignable></selectable>
@@ -574,12 +574,25 @@
                 of the channel data from disclosure and detection of modification of the channel data.
               </title>
               <note role="application">
-                This requirement has been modified from its definition in the NDcPP to mandate the communications protocols and environmental components that 
-                a WLAN Access System must use. IEEE 802.11-2012 (WPA2) with IEEE 802.1X is required for communications with wireless clients; IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
-                Other selections may be made if needed by other parts of the TSF. The requirement implies that not only are communications protected when they are initially established, but also on resumption after an outage.<h:p/>
-                
-                The IT entity of "802.1X authentication server" is distinct from "authentication server" because the latter may be used for administrator authentication rather than authorization of WLAN clients.<h:p/>
-                If "IPsec" is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed. If RADIUS over TLS is selected in FTP_ITC.1.1, then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the NDcPP.
+                <h:p>
+                  This requirement has been modified from its definition in the NDcPP to 
+                  mandate the communications protocols and environmental components that 
+                  a WLAN Access System must use for infrastructure communications
+                  (802.11 support is also required for wireless client communications but this is covered
+                  by the FTP_ITC.1/Client.
+                  IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
+                  Other selections may be made if needed by other parts of the TSF.
+                  The requirement implies that not only are communications protected when they are initially established,
+                  but also on resumption after an outage.</h:p>
+                <h:p>
+                   The IT entity of "802.1X authentication server" is distinct from "authentication server",
+                   because the latter may be used for administrator authentication rather 
+                   than authorization of WLAN clients.
+                </h:p><h:p>
+                   If "IPsec" is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
+                   If "RADIUS over TLS" is selected in FTP_ITC.1.1,
+                   then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the NDcPP.
+                </h:p>
               </note>
             </f-element>
             <f-element>
@@ -1196,7 +1209,37 @@
           </f-element>
         </f-component>
       </sec:man_fta>
-      
+	  <sec:man_ftp title="Trusted Path/Channels (FTP)">
+		  <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (WLAN Client Communications)" iteration="Client">
+		  <consistency-rationale>
+			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
+			  </consistency-rationale>
+			  <f-element>
+			  <title>The TSF shall be capable of using WPA3-Enterprise, WPA2-Enterprise and 
+				  <selectables>
+					  <selectable>WPA3-SAE</selectable>
+					  <selectable>WPA2-PSK</selectable>
+					  <selectable exclusive="yes">no other mode</selectable>
+				  </selectables>
+				  as defined by IEEE 802.11-2020 to provide a trusted communication channel
+				  between itself and WLAN clients that is logically distinct from 
+				  other communication channels and provides assured identification of its end
+				  points and protection of the channel data from disclosure and detection of
+				  modification of the channel data.
+				  </title>
+				</f-element>
+			    <f-element>
+		<title>
+			The TSF shall permit the authorized IT entities to initiate communication via the trusted channel.
+		</title>
+	</f-element>
+			  <f-element>
+			  <title>The TSF shall initiate communication via the trusted channel for [no services].</title>
+				  <aactivity><Tests>QQQQQQ</Tests></aactivity>	  
+			  </f-element>
+		  </f-component>
+      </sec:man_ftp>
+        
     </man-sfrs>
     <opt-sfrs>
       <sec:opt_fcs title="Cryptographic Support (FCS)">
