@@ -4,16 +4,18 @@ Protection Profile or Extended Package for Wireless Local Area Network (WLAN) Ac
 
 ![Build](https://github.com/commoncriteria/wlanaccesssystem/workflows/Build/badge.svg)
 
-This repository hosts the draft version of the Protection Profile for QQQQ based on the 
+This repository hosts the draft version of the Protection Profile for Wireless Local Area Network (WLAN) Access System based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/QQQQ/QQQQ-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
-A list of products that have passed evaluation against this Protection Profile can be found [here](QQQQ).
+A list of products that have passed evaluation against this Protection Profile can be found [here](https://www.niap-ccevs.org/Product/PCL.cfm?ID624=32).
 
 ## Draft Version
 
 * [Protection Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-release.html) (html)
 * [Protection Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-release.pdf) (pdf)
+* [SD for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-sd.html) (html)
+* [SD Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-sd.pdf) (pdf)
 
 ## Combined Module/SD Version
 * [Protection Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem.html) (html)
@@ -28,13 +30,13 @@ If you are interested in contributing directly to future versions the this Prote
 
 ## Feedback
 
-Questions, comments, and fixes can be submitted to the [repository issue tracker](https://github.com/commoncriteria/QQQQ/issues)
+Questions, comments, and fixes can be submitted to the [repository issue tracker](https://github.com/commoncriteria/wlanaccesssystem/issues)
 
 ## Quickstart
 To clone this project along with its _transforms_ submodule run:
 
 ````
-  git clone --recursive git@github.com:commoncriteria/qqqq.git
+  git clone --recursive git@github.com:commoncriteria/wlanaccesssystem.git
 ````
 To pull updates from the upstream _transforms_ submodule and commit them run:
 ````
