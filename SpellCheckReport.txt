@@ -1,4 +1,5 @@
 output/wlanaccesssystem-esr.html: CESG
+output/wlanaccesssystem-release-linkable.html: 11ax
 output/wlanaccesssystem-release-linkable.html: 1X
 output/wlanaccesssystem-release-linkable.html: 1x
 output/wlanaccesssystem-release-linkable.html: 2e
@@ -49,6 +50,7 @@ output/wlanaccesssystem-release-linkable.html: functionailty
 output/wlanaccesssystem-release-linkable.html: multicast
 output/wlanaccesssystem-release-linkable.html: succesul
 output/wlanaccesssystem-release-linkable.html: wirless
+output/wlanaccesssystem-release.html: 11ax
 output/wlanaccesssystem-release.html: 1X
 output/wlanaccesssystem-release.html: 1x
 output/wlanaccesssystem-release.html: 2e
@@ -137,6 +139,7 @@ output/wlanaccesssystem-sd.html: multicast
 output/wlanaccesssystem-sd.html: preshared
 output/wlanaccesssystem-sd.html: superset
 output/wlanaccesssystem.html: 0x4208
+output/wlanaccesssystem.html: 11ax
 output/wlanaccesssystem.html: 1X
 output/wlanaccesssystem.html: 1x
 output/wlanaccesssystem.html: 2e
