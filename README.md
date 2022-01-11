@@ -1,8 +1,15 @@
 
 Protection Profile or Extended Package for Wireless Local Area Network (WLAN) Access System
 ===============
-
+![Master Badges](https://img.shields.io/badge/Build-master-black.svg)
 ![Build](https://github.com/commoncriteria/wlanaccesssystem/workflows/Build/badge.svg)
+![Validate](https://github.com/commoncriteria/wlanaccesssystem/workflows/Validate/badge.svg)
+
+![Last QuickBuilt Branch](https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/build-branch-badge.svg)
+[![Validation](https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/validation.svg)](https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/ValidationReport.txt)
+[![SanityChecks](https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/warnings.svg)](https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/SanityChecksOutput.md)
+[![SpellCheck](https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/spell-badge.svg)](https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/SpellCheckReport.txt)
+[![QuickBuild](https://github.com/commoncriteria/wlanaccesssystem/actions/workflows/quick_build.yml/badge.svg)](https://commoncriteria.github.io/wlanaccesssystem)
 
 This repository hosts the draft version of the Protection Profile for Wireless Local Area Network (WLAN) Access System. 
 This repository is used to facilitate collaboration and development on the draft document. 
@@ -15,6 +22,8 @@ A list of products that have passed evaluation against this Protection Profile c
 * [Protection Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-release.pdf) (pdf)
 * [SD for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-sd.html) (html)
 * [SD Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-sd.pdf) (pdf)
+* [PP with EAs (not release version)](https://commoncriteria.github.io/wlanaccesssystem/wlanaccesssystem.html) (html)
+
 
 ## Combined Module/SD Version
 * [Protection Profile for Wireless Local Area Network (WLAN) Access System](https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem.html) (html)
