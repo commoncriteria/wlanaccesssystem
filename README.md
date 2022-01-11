@@ -4,9 +4,8 @@ Protection Profile or Extended Package for Wireless Local Area Network (WLAN) Ac
 
 ![Build](https://github.com/commoncriteria/wlanaccesssystem/workflows/Build/badge.svg)
 
-This repository hosts the draft version of the Protection Profile for Wireless Local Area Network (WLAN) Access System based on the 
-[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/QQQQ/QQQQ-esr.html) for this technology class of 
-products. This repository is used to facilitate collaboration and development on the draft document. 
+This repository hosts the draft version of the Protection Profile for Wireless Local Area Network (WLAN) Access System. 
+This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 A list of products that have passed evaluation against this Protection Profile can be found [here](https://www.niap-ccevs.org/Product/PCL.cfm?ID624=32).
 
