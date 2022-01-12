@@ -795,9 +795,9 @@ The IT entity of \"802.1X authentication server\" is distinct from			The IT enti
 administrator authentication rather than authorization of				administrator authentication rather than authorization of
 [WLAN](#abbr_WLAN) clients.								[WLAN](#abbr_WLAN) clients.
 
-If \"[IPsec](#abbr_IPsec)\" is selected in [FTP\_ITC.1.1](#FTP_ITC.1.1),		If \"[IPsec](#abbr_IPsec)\" is selected in [FTP\_ITC.1.1](#FTP_ITC.1.1),
-then FCS\_IPSEC\_EXT.1 from the [NDcPP](#abbr_NDcPP) must be claimed. If		then FCS\_IPSEC\_EXT.1 from the [NDcPP](#abbr_NDcPP) must be claimed. If
-RADIUS over [TLS](#abbr_TLS) is selected in					      |	\"RADIUS over [TLS](#abbr_TLS)\" is selected in
+If \"[IPsec](#abbr_IPsec)\" is selected in [FTP\_ITC.1.1](#FTP_ITC.1.1),	      |	If [IPsec](#s-ipsec) is selected in [FTP\_ITC.1.1](#FTP_ITC.1.1), then
+then FCS\_IPSEC\_EXT.1 from the [NDcPP](#abbr_NDcPP) must be claimed. If	      |	FCS\_IPSEC\_EXT.1 from the [NDcPP](#abbr_NDcPP) must be claimed. If
+RADIUS over [TLS](#abbr_TLS) is selected in					      |	[RADIUS over TLS](#s-radius) is selected in
 [FTP\_ITC.1.1](#FTP_ITC.1.1), then							[FTP\_ITC.1.1](#FTP_ITC.1.1), then
 [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1) in this						[FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1) in this
 [PP-Module](#abbr_PP-Module) must be claimed, as well as				[PP-Module](#abbr_PP-Module) must be claimed, as well as
@@ -1797,6 +1797,8 @@ FCS\_COP.1 and FPT\_ITT.1 are defined in the [NDcPP](#abbr_NDcPP).			FCS\_COP.1 
 #### FCS\_RADSEC\_EXT.1 RadSec								#### FCS\_RADSEC\_EXT.1 RadSec
 
 										      >	::: {.statustag}
+										      >	***The inclusion of this selection-based component depends upon
+										      >	selection in [FTP\_ITC.1.1](#FTP_ITC.1.1).***
 										      >	:::
 										      >
 ::: {.element}										::: {.element}
@@ -1824,10 +1826,11 @@ The [TSF](#abbr_TSF) shall perform peer authentication using				The [TSF](#abbr_
 if \"RADIUS over [TLS](#abbr_TLS)\" is selected in					if \"RADIUS over [TLS](#abbr_TLS)\" is selected in
 [FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}							[FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}
 
-If \"X.509v3 certificates\" is selected in						If \"X.509v3 certificates\" is selected in
+If \"X.509v3 certificates\" is selected in					      |	If [X.509v3 certificates](#s-x509-certs) is selected in
 [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then FCS\_TLSC\_EXT.2 from			[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then FCS\_TLSC\_EXT.2 from
-the [NDcPP](#abbr_NDcPP) must be claimed. If \"pre-shared keys\" is			the [NDcPP](#abbr_NDcPP) must be claimed. If \"pre-shared keys\" is
-selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then				selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then
+the [NDcPP](#abbr_NDcPP) must be claimed. If \"pre-shared keys\" is		      |	the [NDcPP](#abbr_NDcPP) must be claimed. If [pre-shared
+selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then			      |	keys](#s-radsec-psk) is selected in
+										      >	[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then
 [FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) and						[FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) and
 [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) in this [PP-Module](#abbr_PP-Module)			[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) in this [PP-Module](#abbr_PP-Module)
 must be claimed.									must be claimed.
@@ -1840,6 +1843,8 @@ must be claimed.									must be claimed.
 #### FCS\_RADSEC\_EXT.2 RadSec using Pre-Shared Keys					#### FCS\_RADSEC\_EXT.2 RadSec using Pre-Shared Keys
 
 										      >	::: {.statustag}
+										      >	***The inclusion of this selection-based component depends upon
+										      >	selection in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2).***
 										      >	:::
 										      >
 ::: {.element}										::: {.element}
@@ -1904,6 +1909,8 @@ bit-based pre-shared keys.								bit-based pre-shared keys.
 #### FCS\_RADSEC\_EXT.3 RadSec using Pre-Shared Keys and RSA				#### FCS\_RADSEC\_EXT.3 RadSec using Pre-Shared Keys and RSA
 
 										      >	::: {.statustag}
+										      >	***The inclusion of this selection-based component depends upon
+										      >	selection in [FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).***
 										      >	:::
 										      >
 ::: {.element}										::: {.element}
@@ -1978,6 +1985,8 @@ performed for FIA\_X509\_EXT.1/Rev in the [NDcPP](#abbr_NDcPP).				performed for
 #### FIA\_PSK\_EXT.1 Pre-Shared Key Composition						#### FIA\_PSK\_EXT.1 Pre-Shared Key Composition
 
 										      >	::: {.statustag}
+										      >	***The inclusion of this selection-based component depends upon
+										      >	selection in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2).***
 										      >	:::
 										      >
 ::: {.element}										::: {.element}
@@ -2309,7 +2318,7 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	#### FCS\_RADSEC\_EXT.1.2 {#ext-comp-FCS_RADSEC_EXT.1.2}
 										      >
 										      >	The [TSF](#abbr_TSF) shall perform peer authentication using
-										      >	\[**selection**: *X.509v3 certificates*, *pre-shared keys*\].
+										      >	\[**assignment**: [some authentication method]{.assignable-content}\].
 										      >	:::
 										      >
 										      >	#### Management: FCS\_RADSEC\_EXT.2
