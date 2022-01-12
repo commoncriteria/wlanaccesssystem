@@ -261,85 +261,114 @@
         <SO name="O.CRYPTOGRAPHIC_FUNCTIONS">
           <description>The TOE will provide means to encrypt and decrypt data to maintain confidentiality and allow for detection of modification of TSF data that is transmitted outside the TOE.
           </description>
-          <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for cryptographic functions. This objective is consistent with the functional behavior required by the Base-PP.</consistency-rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP), FCS_IPSEC_EXT.1 (from Base-PP), FCS_TLSC_EXT.1 (from Base-PP), FCS_TLSC_EXT.2 (from Base-PP), FCS_CKM.1/WPA, FCS_CKM.2/GTK, FCS_CKM.2/PMK, 
-            FCS_CKM.2/DISTRIB (optional)</addressed-by>
-          <rationale>
-            <h:p>
-              FCS_COP.1/DataEncryption supports the objective by requiring the TSF to implement AES in the modes needed to support its other functions.
-            </h:p>
-            <h:p>
-              FCS_IPSEC_EXT.1 supports the objective by requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1. 
-            </h:p>
-            <h:p>
-              FCS_TLSC_EXT.1 supports the objective by requiring the TSF to use RADIUS over TLS (RadSec) to implement a trusted communications channel if selected in FTP_ITC.1.
-            </h:p>
-            <h:p>
-              FCS_TLSC_EXT.2 supports the objective by requiring the TSF to use X.509 certificates as the authentication method used for RadSec.
-            </h:p>
-            <h:p>
-              FCS_CKM.1/WPA supports the objective by requiring the TSF to generate symmetric keys used for WPA2. 
-            </h:p>
-            <h:p>
-              FCS_CKM.2/GTK supports the objective by requiring the TSF to distribute group temporal keys used for IEEE 802.11.
-            </h:p>
-            <h:p>
-              FCS_CKM.2/PMK supports the objective by requiring the TSF to distribute pairwise master keys used for IEEE 802.11.
-            </h:p>
-            <h:p>
-              FCS_CKM.2/DISTRIB supports the objective by optionally requiring the TSF to distribute IEEE 802.11 keys to any distributed TOE components using a secured method. 
-            </h:p>
-            
-          </rationale>
-        </SO>
+          <consistency-rationale>
+            The Base-PP does not define TOE objectives but it does define requirements for cryptographic functions.
+			This objective is consistent with the functional behavior required by the Base-PP.
+		  </consistency-rationale>
+			
+  <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by>
+  <rationale>
+    FCS_COP.1/DataEncryption supports the objective by requiring the TSF to implement AES in the modes needed to support its other functions.
+  </rationale>
+			<addressed-by> FCS_IPSEC_EXT.1 (from Base-PP)</addressed-by>
+  <rationale>
+    FCS_IPSEC_EXT.1 supports the objective by requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1. 
+  </rationale>
+			<addressed-by> FCS_TLSC_EXT.1 (from Base-PP)</addressed-by>
+  <rationale>
+    FCS_TLSC_EXT.1 supports the objective by requiring the TSF to use RADIUS over TLS (RadSec) to implement a trusted communications channel if selected in FTP_ITC.1.
+  </rationale>
+  <addressed-by> FCS_TLSC_EXT.2 (from Base-PP)</addressed-by>
+  <rationale>
+    FCS_TLSC_EXT.2 supports the objective by requiring the TSF to use X.509 certificates as the authentication method used for RadSec.
+  </rationale>
+  <addressed-by> FCS_CKM.1/WPA</addressed-by>
+  <rationale>
+    FCS_CKM.1/WPA supports the objective by requiring the TSF to generate symmetric keys used for WPA2. 
+  </rationale>
+  <addressed-by> FCS_CKM.2/GTK</addressed-by>
+  <rationale>
+    FCS_CKM.2/GTK supports the objective by requiring the TSF to distribute group temporal keys used for IEEE 802.11.
+  </rationale>
+  <addressed-by> FCS_CKM.2/PMK</addressed-by>
+  <rationale>
+    FCS_CKM.2/PMK supports the objective by requiring the TSF to distribute pairwise master keys used for IEEE 802.11.
+  </rationale>
+  <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by>
+  <rationale>
+    FCS_CKM.2/DISTRIB supports the objective by optionally requiring the TSF to distribute IEEE 802.11 keys to any distributed TOE components using a secured method. 
+  </rationale>
+
+		  </SO>
             
               <SO name="O.AUTHENTICATION">
                 <description>The TOE will provide a means to authenticate the user to ensure they are communicating with an authorized external IT entity.
                 </description>
                 <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for authentication of both users and remote entities. 
-                  This objective is consistent with the functional behavior required by the Base-PP.</consistency-rationale>
-                <addressed-by>FCS_IPSEC_EXT.1 (from Base-PP), FCS_TLSC_EXT.1 (from Base-PP), FCS_TLSC_EXT.2 (from Base-PP), FIA_X509_EXT.1/Rev (from Base-PP), FTP_ITC.1 (modified from Base-PP), 
-                  FIA_8021X_EXT.1, FIA_UAU.6, FTA_TSE.1, FTP_ITC_1/Client,
-					FCS_RADSEC_EXT.1 (selection-based), FCS_RADSEC_EXT.2 (selection-based), FIA_PSK_EXT.1 (selection-based)</addressed-by>
-                <rationale>
-                  FCS_IPSEC_EXT.1 supports the objective by optionally requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1. 
-                  IPsec includes authenticating using X.509 certificates or pre-shared keys.
-                  <h:p/>
-                  FCS_TLSC_EXT.1 supports the objective by optionally requiring the TSF to use RADIUS over TLS (RadSec) to implement a trusted communications channel if selected in FTP_ITC.1. 
-                  TLS includes authenticating using X.509 certificates or pre-shared keys.
-                  <h:p/>
-                  FCS_TLSC_EXT.2 supports the objective by optionally requiring the TSF to use X.509 certificates as the authentication method used for RadSec. 
-                  <h:p/>
-                  FIA_X509_EXT.1/Rev supports the objective by optionally requiring the TSF to implement X.509 certificate validation if certificates are used for authentication. 
-                  <h:p/>
-                  FTP_ITC.1 supports the objective by requiring the TSF to identify the trusted communications channels it implements, each of which is able to support authentication.
-                  <h:p/>
-                  FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
-                  <h:p/>
-                  FIA_UAU.6 supports the objective by requiring the TSF to re-authenticate a security administrator under certain circumstances.
-                  <h:p/>
-                  FTA_TSE.1 supports the objective by requiring the TSF to deny the establishment of a wirless client session for reasons unrelated to the correctness of an authentication credential.
-                  <h:p/>
-                  FCS_RADSEC_EXT.1 supports the objective by optionally requiring the TSF to implement RadSec in accordance with a defined specification.
-                  <h:p/>
-                  FCS_RADSEC_EXT.2 supports the objective by optionally requiring the TSF to implement RadSec using pre-shared keys if that is the method chosen for peer authentication.
-                  <h:p/>
-                  FIA_PSK_EXT.1 supports the objective by optionally requiring the TSF to implement pre-shared key authentication if any trusted protocols require its use. 
-                  <h:p/>
-                </rationale>
-              </SO>
+                  This objective is consistent with the functional behavior required by the Base-PP.
+				</consistency-rationale>
+  <addressed-by>FCS_IPSEC_EXT.1 (from Base-PP)</addressed-by>
+  <rationale>
+    FCS_IPSEC_EXT.1 supports the objective by optionally requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1. 
+    IPsec includes authenticating using X.509 certificates or pre-shared keys.
+  </rationale>
+  <addressed-by>FCS_TLSC_EXT.1 (from Base-PP)</addressed-by>
+  <rationale>
+    FCS_TLSC_EXT.1 supports the objective by optionally requiring the TSF to use RADIUS over TLS (RadSec) to implement a trusted communications channel if selected in FTP_ITC.1. 
+    TLS includes authenticating using X.509 certificates or pre-shared keys.
+  </rationale>
+  <addressed-by>FCS_TLSC_EXT.2 (from Base-PP)</addressed-by>
+  <rationale>
+    FCS_TLSC_EXT.2 supports the objective by optionally requiring the TSF to use X.509 certificates as the authentication method used for RadSec. 
+  </rationale>
+  <addressed-by>FIA_X509_EXT.1/Rev (from Base-PP)</addressed-by>
+  <rationale>
+    FIA_X509_EXT.1/Rev supports the objective by optionally requiring the TSF to implement X.509 certificate validation if certificates are used for authentication. 
+  </rationale>
+  <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by>
+  <rationale>
+    FTP_ITC.1 supports the objective by requiring the TSF to identify the trusted communications channels it implements, each of which is able to support authentication.
+  </rationale>
+  <addressed-by>FIA_8021X_EXT.1</addressed-by>
+  <rationale>
+    FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
+  </rationale>
+  <addressed-by>FIA_UAU.6</addressed-by>
+  <rationale>
+    FIA_UAU.6 supports the objective by requiring the TSF to re-authenticate a security administrator under certain circumstances.
+  </rationale>
+  <addressed-by>FTA_TSE.1</addressed-by>
+  <rationale>
+    FTA_TSE.1 supports the objective by requiring the TSF to deny the establishment of a wirless client session for reasons unrelated to the correctness of an authentication credential.
+  </rationale>
+  <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by>
+  <rationale>
+    FCS_RADSEC_EXT.1 supports the objective by optionally requiring the TSF to implement RadSec in accordance with a defined specification.
+  </rationale>
+  <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by>
+  <rationale>
+    FCS_RADSEC_EXT.2 supports the objective by optionally requiring the TSF to implement RadSec using pre-shared keys if that is the method chosen for peer authentication.
+  </rationale>
+  <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
+  <rationale>
+    FIA_PSK_EXT.1 supports the objective by optionally requiring the TSF to implement pre-shared key authentication if any trusted protocols require its use. 
+  </rationale>
+
+		  
+		  </SO>
               
                 <SO name="O.FAIL_SECURE">
                   <description>Upon a self-test failure, the TOE will shut down to ensure that data cannot be passed without adhering to the TOE's security policies.
                   </description>
                   <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for self-testing. 
                     This PP-Module is consistent with that by defining an objective to enter a secure state if a self-test does fail.</consistency-rationale>
-                  <addressed-by>FPT_TST_EXT.1 (modified from Base-PP), FPT_FLS.1</addressed-by>
+                  <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by>
                   <rationale>
                     FPT_TST_EXT.1 supports the objective by requiring the TSF to perform self-tests that may aid in the detection of a TSF failure.
-                    <h:p/>
+                  </rationale>
+				  <addressed-by>FPT_FLS.1</addressed-by>
+				  <rationale>
                     FPT_FLS.1 supports the objective by requiring the TSF to preserve a secure state in the event of a self-test failure.
-                    <h:p/>
                   </rationale>
                 </SO>
   
