@@ -86,7 +86,8 @@ The scope of this [PP-Module](#abbr_PP-Module) is to describe the			The scope of
 security functionality of a Wireless Local Area Network					security functionality of a Wireless Local Area Network
 ([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to		([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to
 define functional and assurance requirements for such products. This			define functional and assurance requirements for such products. This
-PPModule is intended for use with the following Base-PPs:				PPModule is intended for use with the following Base-PPs:
+PPModule is intended for use with the following Base-PPs:			      |	[PP-Module](#abbr_PP-Module) is intended for use with the following
+										      >	Base-PPs:
 
 -   Collaborative Protection Profile for Network Devices				-   Collaborative Protection Profile for Network Devices
     ([NDcPP](#abbr_NDcPP)) Version 2.2e							    ([NDcPP](#abbr_NDcPP)) Version 2.2e
@@ -481,7 +482,7 @@ O.FAIL\_SECURE										O.FAIL\_SECURE
 
 O.SYSTEM\_MONITORING									O.SYSTEM\_MONITORING
 :   The [TOE](#abbr_TOE) will provide a means to audit events specific			:   The [TOE](#abbr_TOE) will provide a means to audit events specific
-    to [WLAN](#abbr_WLAN) functionailty and security.					    to [WLAN](#abbr_WLAN) functionailty and security.
+    to [WLAN](#abbr_WLAN) functionailty and security.				      |	    to [WLAN](#abbr_WLAN) functionality and security.
 
 O.TOE\_ADMINISTRATION									O.TOE\_ADMINISTRATION
 :   The [TOE](#abbr_TOE) will provide the functions necessary to address		:   The [TOE](#abbr_TOE) will provide the functions necessary to address
@@ -542,7 +543,7 @@ unauthorized subject.									unauthorized subject.
 
 The threat [T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE) is countered			The threat [T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE) is countered
 by [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as				by [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as
-implementation of cryptogpraphic functions ensures that network data is			implementation of cryptogpraphic functions ensures that network data is
+implementation of cryptogpraphic functions ensures that network data is		      |	implementation of cryptographic functions ensures that network data is
 not subject to unauthorized disclosure in transit.					not subject to unauthorized disclosure in transit.
 
 [T.NETWORK\_ACCESS](#T.NETWORK_ACCESS)\							[T.NETWORK\_ACCESS](#T.NETWORK_ACCESS)\
@@ -730,7 +731,7 @@ part of the [TSF](#abbr_TSF).								part of the [TSF](#abbr_TSF).
 The [TSF](#abbr_TSF) shall run a suite of the following self-tests			The [TSF](#abbr_TSF) shall run a suite of the following self-tests
 **during initial start-up (on power on) and** \[**selection**:				**during initial start-up (on power on) and** \[**selection**:
 *periodically during normal operation*, *at the request of the				*periodically during normal operation*, *at the request of the
-authorised user*, *at the conditions \[**assignment**: [conditions under		authorised user*, *at the conditions \[**assignment**: [conditions under
+authorised user*, *at the conditions \[**assignment**: [conditions under	      |	authorized user*, *at the conditions \[**assignment**: [conditions under
 which self-tests should occur]{.assignable-content}\]*, ***in no other			which self-tests should occur]{.assignable-content}\]*, ***in no other
 circumstances***\] to demonstrate the correct operation of the				circumstances***\] to demonstrate the correct operation of the
 [TSF](#abbr_TSF): **integrity verification of stored [TSF](#abbr_TSF)			[TSF](#abbr_TSF): **integrity verification of stored [TSF](#abbr_TSF)
@@ -1431,7 +1432,7 @@ based.											based.
 										      >	[FTA\_TSE.1](#FTA_TSE.1)
 										      >
 										      >	[FTA\_TSE.1](#FTA_TSE.1) supports the objective by requiring the
-										      >	[TSF](#abbr_TSF) to deny the establishment of a wirless client session
+										      >	[TSF](#abbr_TSF) to deny the establishment of a wireless client session
 										      >	for reasons unrelated to the correctness of an authentication
 										      >	credential.
 										      >
@@ -2118,7 +2119,7 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	The following actions should be auditable if FAU\_GEN Security Audit
 										      >	Data Generation is included in the [PP](#abbr_PP)/[ST](#abbr_ST):
 										      >
-										      >	-   Attempts to access the 802.1X controlled port prior to succesul
+										      >	-   Attempts to access the 802.1X controlled port prior to successful
 										      >	    completion of the authentication exchange.
 										      >
 										      >	#### FIA\_8021X\_EXT.1 802.1X Port Access Entity (Authenticator) Authentication
@@ -2444,7 +2445,7 @@ The table below specifies how each of the SFRs in this					The table below speci
   [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)           Cryptographic Key Generation (Symmetric 	  [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)           Cryptographic Key Generation (Symmetric 
   [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)           Cryptographic Key Distribution ([GTK](#a	  [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)           Cryptographic Key Distribution ([GTK](#a
   [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)           Cryptographic Key Distribution ([PMK](#a	  [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)           Cryptographic Key Distribution ([PMK](#a
-  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authentictaor	  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authentictaor
+  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authentictaor |	  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authenticator
   [FIA\_UAU.6](#FIA_UAU.6)                   Re-Authenticating                       	  [FIA\_UAU.6](#FIA_UAU.6)                   Re-Authenticating                       
   [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)          No Administration from Client           	  [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)          No Administration from Client           
   [FPT\_FLS.1](#FPT_FLS.1)                   Failure with Preservation of Secure Stat	  [FPT\_FLS.1](#FPT_FLS.1)                   Failure with Preservation of Secure Stat
