@@ -14,7 +14,6 @@ output/wlanaccesssystem-release-linkable.html: DISTRIB
 output/wlanaccesssystem-release-linkable.html: DataEncryption
 output/wlanaccesssystem-release-linkable.html: EAP
 output/wlanaccesssystem-release-linkable.html: EAPOL
-output/wlanaccesssystem-release-linkable.html: ENT
 output/wlanaccesssystem-release-linkable.html: FLS
 output/wlanaccesssystem-release-linkable.html: FTA
 output/wlanaccesssystem-release-linkable.html: Fi
@@ -67,7 +66,6 @@ output/wlanaccesssystem-release.html: DISTRIB
 output/wlanaccesssystem-release.html: DataEncryption
 output/wlanaccesssystem-release.html: EAP
 output/wlanaccesssystem-release.html: EAPOL
-output/wlanaccesssystem-release.html: ENT
 output/wlanaccesssystem-release.html: FLS
 output/wlanaccesssystem-release.html: FTA
 output/wlanaccesssystem-release.html: Fi
@@ -160,7 +158,6 @@ output/wlanaccesssystem.html: DISTRIB
 output/wlanaccesssystem.html: DataEncryption
 output/wlanaccesssystem.html: EAP
 output/wlanaccesssystem.html: EAPOL
-output/wlanaccesssystem.html: ENT
 output/wlanaccesssystem.html: FLS
 output/wlanaccesssystem.html: FTA
 output/wlanaccesssystem.html: Fi
