@@ -1533,6 +1533,7 @@
             <title>The TSF shall be able to use pre-shared keys for <selectables>
               <selectable>RADIUS over TLS (RadSec)</selectable>
               <selectable>IPsec</selectable>
+			  <selectable>WPA3-SAE</selectable>
               <selectable>IEEE 802.11 WPA2-PSK</selectable>
               <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
             </selectables>. 
