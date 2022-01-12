@@ -361,13 +361,17 @@
                       </description>
                       <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for management. This PP-Module is consistent with that by applying security restrictions on how the TOE's
                         management interface can be invoked.</consistency-rationale>
-                      <addressed-by>FIA_AFL.1 (from Base-PP), FMT_SMR_EXT.1</addressed-by>
+                      <addressed-by>FIA_AFL.1 (from Base-PP)</addressed-by>
                       <rationale>
                         FIA_AFL.1 supports the objective by requiring the TSF to block authentication if there is evidence of an attempt to compromise an administrator account through brute force.
-                        <h:p/>
-                        FMT_SMR_EXT.1 supports the objective by requiring the TSF to prevent any administrative actions that originate from the 'external' network.
-                        <h:p/>
-                      </rationale>
+						</rationale>
+						<addressed-by>
+							FMT_SMR_EXT.1
+						</addressed-by>
+						<rationale>
+							FMT_SMR_EXT.1 supports the objective by requiring the TSF to prevent any administrative actions that originate from the 'external' network.</rationale>
+ 						<addressed-by>FMT_SMF.1/AccessSystem</addressed-by>
+						<rationale>FMT_SMF.1/AccessSystem supports the objective by defining management functionality that is specific to WLAN Access System devices.</rationale>
                     </SO>
   
       </SOs>
@@ -1121,7 +1125,20 @@
       </sec:man_fia>
       
       <sec:man_fmt title="Security Management (FMT)">
-        
+        <f-component name="Specification of Management Functions" cc-id="fmt_smf.1" iteration="AccessSystem">
+			<consistency-rationale>This SFR defines additional management functionality that is specific to the Module’s product type and would therefore not be expected to be present in the Base-PP.</consistency-rationale>
+			<f-element>
+			<title>The TSF shall be capable of performing the following management functions: [<h:i>set allowed wireless frequency band to 
+				<selectables>
+				<selectable>2.4 GHz</selectable>
+				<selectable>5 GHz</selectable>
+				<selectable>6 GHz</selectable>
+				</selectables></h:i>].</title>
+			<aactivity>
+				<Tests>QQQQQ</Tests>
+			</aactivity>
+		</f-element>
+		</f-component>
         <ext-comp-def title="Security Management Restrictions" fam-id="FMT_SMR_EXT">
           <fam-behavior>Components in this family describe architectural restrictions on security administration that are not defined in CC Part 2.</fam-behavior> 
         </ext-comp-def>
