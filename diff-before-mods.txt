@@ -654,11 +654,11 @@ https://www.niap-ccevs.org/MMO/[PP](#abbr_PP)/CPP\_ND\_V2.2E.pdf		      |	This c
 										      >	Requirements](#man-sfrs){.dynref}.
 										      >
 										      >	### 5.1.1 Modified SFRs {#modsfr-ND .indexable data-level="3"}
-										      >
-										      >	The SFRs listed in this section are defined in the NDc [PP](#abbr_PP)
-										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
 
-### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
+### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	The SFRs listed in this section are defined in the NDc [PP](#abbr_PP)
+										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
+										      >
+										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
 
 ::: {#FCS_COP.1/DataEncryption .comp}							::: {#FCS_COP.1/DataEncryption .comp}
 #### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio	#### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio
@@ -833,17 +833,14 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 
 When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a		      |	----------------------------------------
-network device. This [PP-Module](#abbr_PP-Module) just defines the		      <
-[TOE](#abbr_TOE) as a specific type of network device with functional		      <
-capabilities distinct to that type.						      <
-
-### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	The following section describes the SFRs that must be satisfied by any
-										      >	[TOE](#abbr_TOE) that claims conformance to this
+network device. This [PP-Module](#abbr_PP-Module) just defines the		      |
+[TOE](#abbr_TOE) as a specific type of network device with functional		      |	The following section describes the SFRs that must be satisfied by any
+capabilities distinct to that type.						      |	[TOE](#abbr_TOE) that claims conformance to this
 										      >	[PP-Module](#abbr_PP-Module). These SFRs must be claimed regardless of
 										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
 										      >	[TOE](#abbr_TOE).
-										      >
-										      >	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
+
+### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
 
 ::: {#FAU_GEN.1/WLAN .comp}								::: {#FAU_GEN.1/WLAN .comp}
 #### FAU\_GEN.1/WLAN Audit Data Generation						#### FAU\_GEN.1/WLAN Audit Data Generation
@@ -1336,39 +1333,48 @@ based.											based.
 										      >	[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)\
 										      >
 										      >	[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption) (modified from
-										      >	[Base-PP](#abbr_Base-PP)), FCS\_IPSEC\_EXT.1 (from
-										      >	[Base-PP](#abbr_Base-PP)), FCS\_TLSC\_EXT.1 (from
-										      >	[Base-PP](#abbr_Base-PP)), FCS\_TLSC\_EXT.2 (from
-										      >	[Base-PP](#abbr_Base-PP)), [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA),
-										      >	[FCS\_CKM.2/GTK](#FCS_CKM.2/GTK), [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK),
-										      >	[FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) (optional)
+										      >	[Base-PP](#abbr_Base-PP))
 										      >
 										      >	[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption) supports the
 										      >	objective by requiring the [TSF](#abbr_TSF) to implement
 										      >	[AES](#abbr_AES) in the modes needed to support its other functions.
 										      >
+										      >	FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
+										      >
 										      >	FCS\_IPSEC\_EXT.1 supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted
 										      >	communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).
+										      >
+										      >	FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
 										      >
 										      >	FCS\_TLSC\_EXT.1 supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to
 										      >	implement a trusted communications channel if selected in
 										      >	[FTP\_ITC.1](#FTP_ITC.1).
 										      >
+										      >	FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))
+										      >
 										      >	FCS\_TLSC\_EXT.2 supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to use X.509 certificates as the authentication method
 										      >	used for RadSec.
 										      >
+										      >	[FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)
+										      >
 										      >	[FCS\_CKM.1/WPA](#FCS_CKM.1/WPA) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to generate symmetric keys used for WPA2.
+										      >
+										      >	[FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)
 										      >
 										      >	[FCS\_CKM.2/GTK](#FCS_CKM.2/GTK) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to distribute group temporal keys used for IEEE 802.11.
 										      >
+										      >	[FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)
+										      >
 										      >	[FCS\_CKM.2/PMK](#FCS_CKM.2/PMK) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to distribute pairwise master keys used for IEEE
 										      >	802.11.
+										      >
+										      >	[FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) (optional)
 										      >
 										      >	[FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) supports the objective by
 										      >	optionally requiring the [TSF](#abbr_TSF) to distribute IEEE 802.11 keys
@@ -1376,15 +1382,7 @@ based.											based.
 										      >
 										      >	[O.AUTHENTICATION](#O.AUTHENTICATION)\
 										      >
-										      >	FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP)), FCS\_TLSC\_EXT.1
-										      >	(from [Base-PP](#abbr_Base-PP)), FCS\_TLSC\_EXT.2 (from
-										      >	[Base-PP](#abbr_Base-PP)), FIA\_X509\_EXT.1/Rev (from
-										      >	[Base-PP](#abbr_Base-PP)), [FTP\_ITC.1](#FTP_ITC.1) (modified from
-										      >	[Base-PP](#abbr_Base-PP)), [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1),
-										      >	[FIA\_UAU.6](#FIA_UAU.6), [FTA\_TSE.1](#FTA_TSE.1), FTP\_ITC\_1/Client,
-										      >	[FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1) (selection-based),
-										      >	[FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) (selection-based),
-										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) (selection-based)
+										      >	FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
 										      >
 										      >	FCS\_IPSEC\_EXT.1 supports the objective by optionally requiring the
 										      >	[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted
@@ -1392,44 +1390,64 @@ based.											based.
 										      >	[IPsec](#abbr_IPsec) includes authenticating using X.509 certificates or
 										      >	pre-shared keys.
 										      >
+										      >	FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
+										      >
 										      >	FCS\_TLSC\_EXT.1 supports the objective by optionally requiring the
 										      >	[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to
 										      >	implement a trusted communications channel if selected in
 										      >	[FTP\_ITC.1](#FTP_ITC.1). [TLS](#abbr_TLS) includes authenticating using
 										      >	X.509 certificates or pre-shared keys.
 										      >
+										      >	FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))
+										      >
 										      >	FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the
 										      >	[TSF](#abbr_TSF) to use X.509 certificates as the authentication method
 										      >	used for RadSec.
+										      >
+										      >	FIA\_X509\_EXT.1/Rev (from [Base-PP](#abbr_Base-PP))
 										      >
 										      >	FIA\_X509\_EXT.1/Rev supports the objective by optionally requiring the
 										      >	[TSF](#abbr_TSF) to implement X.509 certificate validation if
 										      >	certificates are used for authentication.
 										      >
+										      >	[FTP\_ITC.1](#FTP_ITC.1) (modified from [Base-PP](#abbr_Base-PP))
+										      >
 										      >	[FTP\_ITC.1](#FTP_ITC.1) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to identify the trusted communications channels it
 										      >	implements, each of which is able to support authentication.
+										      >
+										      >	[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)
 										      >
 										      >	[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1) supports the objective by
 										      >	requiring the [TSF](#abbr_TSF) to act as the authenticator for 802.1X
 										      >	authentication.
 										      >
+										      >	[FIA\_UAU.6](#FIA_UAU.6)
+										      >
 										      >	[FIA\_UAU.6](#FIA_UAU.6) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to re-authenticate a security administrator under
 										      >	certain circumstances.
+										      >
+										      >	[FTA\_TSE.1](#FTA_TSE.1)
 										      >
 										      >	[FTA\_TSE.1](#FTA_TSE.1) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to deny the establishment of a wirless client session
 										      >	for reasons unrelated to the correctness of an authentication
 										      >	credential.
 										      >
+										      >	[FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1) (selection-based)
+										      >
 										      >	[FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1) supports the objective by
 										      >	optionally requiring the [TSF](#abbr_TSF) to implement RadSec in
 										      >	accordance with a defined specification.
 										      >
+										      >	[FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) (selection-based)
+										      >
 										      >	[FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) supports the objective by
 										      >	optionally requiring the [TSF](#abbr_TSF) to implement RadSec using
 										      >	pre-shared keys if that is the method chosen for peer authentication.
+										      >
+										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) (selection-based)
 										      >
 										      >	[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1) supports the objective by optionally
 										      >	requiring the [TSF](#abbr_TSF) to implement pre-shared key
@@ -1438,11 +1456,13 @@ based.											based.
 										      >	[O.FAIL\_SECURE](#O.FAIL_SECURE)\
 										      >
 										      >	[FPT\_TST\_EXT.1](#FPT_TST_EXT.1) (modified from
-										      >	[Base-PP](#abbr_Base-PP)), [FPT\_FLS.1](#FPT_FLS.1)
+										      >	[Base-PP](#abbr_Base-PP))
 										      >
 										      >	[FPT\_TST\_EXT.1](#FPT_TST_EXT.1) supports the objective by requiring
 										      >	the [TSF](#abbr_TSF) to perform self-tests that may aid in the detection
 										      >	of a [TSF](#abbr_TSF) failure.
+										      >
+										      >	[FPT\_FLS.1](#FPT_FLS.1)
 										      >
 										      >	[FPT\_FLS.1](#FPT_FLS.1) supports the objective by requiring the
 										      >	[TSF](#abbr_TSF) to preserve a secure state in the event of a self-test
