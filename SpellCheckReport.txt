@@ -8,6 +8,7 @@ output/wlanaccesssystem-release-linkable.html: 38D
 output/wlanaccesssystem-release-linkable.html: 38F
 output/wlanaccesssystem-release-linkable.html: 8021X
 output/wlanaccesssystem-release-linkable.html: AFL
+output/wlanaccesssystem-release-linkable.html: AccessSystem
 output/wlanaccesssystem-release-linkable.html: Authentictaor
 output/wlanaccesssystem-release-linkable.html: CEM
 output/wlanaccesssystem-release-linkable.html: DISTRIB
@@ -60,6 +61,7 @@ output/wlanaccesssystem-release.html: 38D
 output/wlanaccesssystem-release.html: 38F
 output/wlanaccesssystem-release.html: 8021X
 output/wlanaccesssystem-release.html: AFL
+output/wlanaccesssystem-release.html: AccessSystem
 output/wlanaccesssystem-release.html: Authentictaor
 output/wlanaccesssystem-release.html: CEM
 output/wlanaccesssystem-release.html: DISTRIB
@@ -108,6 +110,7 @@ output/wlanaccesssystem-sd.html: 1X
 output/wlanaccesssystem-sd.html: 2e
 output/wlanaccesssystem-sd.html: 362r6
 output/wlanaccesssystem-sd.html: 8021X
+output/wlanaccesssystem-sd.html: AccessSystem
 output/wlanaccesssystem-sd.html: CEM
 output/wlanaccesssystem-sd.html: DISTRIB
 output/wlanaccesssystem-sd.html: DataEncryption
@@ -125,6 +128,7 @@ output/wlanaccesssystem-sd.html: PMK
 output/wlanaccesssystem-sd.html: PRF
 output/wlanaccesssystem-sd.html: PSK
 output/wlanaccesssystem-sd.html: PTK
+output/wlanaccesssystem-sd.html: QQQQQ
 output/wlanaccesssystem-sd.html: QQQQQQ
 output/wlanaccesssystem-sd.html: RADSEC
 output/wlanaccesssystem-sd.html: RadSec
@@ -152,6 +156,7 @@ output/wlanaccesssystem.html: 38D
 output/wlanaccesssystem.html: 38F
 output/wlanaccesssystem.html: 8021X
 output/wlanaccesssystem.html: AFL
+output/wlanaccesssystem.html: AccessSystem
 output/wlanaccesssystem.html: Authentictaor
 output/wlanaccesssystem.html: CEM
 output/wlanaccesssystem.html: DISTRIB
@@ -176,6 +181,7 @@ output/wlanaccesssystem.html: PPModule
 output/wlanaccesssystem.html: PRF
 output/wlanaccesssystem.html: PSK
 output/wlanaccesssystem.html: PTK
+output/wlanaccesssystem.html: QQQQQ
 output/wlanaccesssystem.html: QQQQQQ
 output/wlanaccesssystem.html: RADSEC
 output/wlanaccesssystem.html: RadSec
