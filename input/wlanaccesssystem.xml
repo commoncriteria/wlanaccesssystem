@@ -715,10 +715,14 @@
                 <h:td>Non-TOE endpoint of connection.</h:td>
               </h:tr>
               <h:tr>
-                <h:td>FIA_8021X_EXT.1</h:td>
+                <h:td rowspan="2">FIA_8021X_EXT.1</h:td>
                 <h:td>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</h:td>
-                <h:td>Provided client identity (MAC address).</h:td>
+                <h:td>Provided client identity (e.g. MAC address).</h:td>
               </h:tr>
+			  <h:tr>
+				<h:td>Failed authentication attempt</h:td>
+				<h:td>Provided client identity (e.g. MAC address).</h:td>
+			  </h:tr>
               <h:tr>
                 <h:td>FIA_PSK_EXT.1 (selection-based)</h:td>
                 <h:td colspan="2">None.</h:td>
