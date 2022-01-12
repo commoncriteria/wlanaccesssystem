@@ -33,7 +33,7 @@
   <sec:Introduction>
     <sec:Overview> 
       The scope of this PP-Module is to describe the security functionality of a Wireless Local Area Network (WLAN) Access System in terms of [CC] 
-      and to define functional and assurance requirements for such products. This PPModule is intended for use with the following Base-PPs:
+      and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       <h:ul>
         <h:li>Collaborative Protection Profile for Network Devices (NDcPP) Version 2.2e</h:li>
       </h:ul>
@@ -162,7 +162,7 @@
               ensures that network data is not disclosed to an unauthorized subject.<h:p/></rationale>
           </objective-refer>
           <objective-refer ref="O.CRYPTOGRAPHIC_FUNCTIONS">
-            <rationale>The threat T.NETWORK_DISCLOSURE is countered by O.CRYPTOGRAPHIC_FUNCTIONS as implementation of cryptogpraphic functions ensures 
+            <rationale>The threat T.NETWORK_DISCLOSURE is countered by O.CRYPTOGRAPHIC_FUNCTIONS as implementation of cryptographic functions ensures 
               that network data is not subject to unauthorized disclosure in transit.</rationale>
           </objective-refer>
         </threat>
@@ -339,7 +339,7 @@
   </rationale>
   <addressed-by>FTA_TSE.1</addressed-by>
   <rationale>
-    FTA_TSE.1 supports the objective by requiring the TSF to deny the establishment of a wirless client session for reasons unrelated to the correctness of an authentication credential.
+    FTA_TSE.1 supports the objective by requiring the TSF to deny the establishment of a wireless client session for reasons unrelated to the correctness of an authentication credential.
   </rationale>
   <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by>
   <rationale>
@@ -373,7 +373,7 @@
                 </SO>
   
                   <SO name="O.SYSTEM_MONITORING">
-                    <description>The TOE will provide a means to audit events specific to WLAN functionailty and security.
+                    <description>The TOE will provide a means to audit events specific to WLAN functionality and security.
                     </description>
                     <consistency-rationale>The Base-PP does not define TOE objectives but it does define requirements for auditing. 
                       This PP-Module is consistent with that by ensuring that auditable events are appropriately defined for 
@@ -552,7 +552,7 @@
               <title>
                 The TSF shall run a suite of the following self-tests <h:b>during initial start-up (on power on) and </h:b> <selectables>
                   <selectable>periodically during normal operation</selectable>
-                  <selectable>at the request of the authorised user</selectable>
+                  <selectable>at the request of the authorized user</selectable>
                   <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
                   <selectable><h:b>in no other circumstances</h:b></selectable>
                 </selectables> to demonstrate the correct operation of the TSF: <h:b>integrity verification of stored TSF executable code when it is loaded for execution
@@ -572,8 +572,8 @@
                   operational guidance to ensure that any actions required by the administrator to initialize or operate
                   this functionality are present.<h:p/>
                 
-                The evaluator shall also ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful exection of the integrity test.<h:p/></TSS>
-                <Guidance>The evaluator shall ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful exection of the integrity test.<h:p/></Guidance>
+                The evaluator shall also ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful execution of the integrity test.<h:p/></TSS>
+                <Guidance>The evaluator shall ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful execution of the integrity test.<h:p/></Guidance>
                 <Tests>The evaluator shall perform the following tests:
                 <testlist>
                   <test>Following the operational guidance, the evaluator shall initialize the integrity protection system.
@@ -1051,7 +1051,7 @@
           <management>No specific management functions are identified.</management>
           <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the
             PP/ST: <h:ul>
-              <h:li>Attempts to access the 802.1X controlled port prior to succesul completion of the authentication exchange.</h:li>
+              <h:li>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</h:li>
             </h:ul>
           </audit>
           <dependencies>No dependencies</dependencies>
@@ -1632,7 +1632,8 @@
                 sequence entered by the user (e.g., ASCII representation) to the bit string used by the protocol, and that
                 this conditioning is consistent with the last selection in the FIA_PSK_EXT.1.3 requirement.<h:p/>
                 
-                The evaluator shall also examine the TSS to ensure it describes the process by which the bit-based preshared keys are generated (if the TOE supports this functionality), and confirm that this process uses the
+                The evaluator shall also examine the TSS to ensure it describes the process by which the bit-based
+				pre-shared keys are generated (if the TOE supports this functionality), and confirm that this process uses the
                 RBG specified in FCS_RBG_EXT.1.<h:p/>
               </TSS>
               <Guidance>The evaluator shall examine the operational guidance to determine that it provides guidance to
@@ -1721,7 +1722,7 @@
       </h:tr>
       <h:tr>
         <h:td>FIA_8021X_EXT.1</h:td>
-        <h:td>802.1X Port Access Entity (Authentictaor) Authentication</h:td>
+        <h:td>802.1X Port Access Entity (Authenticator) Authentication</h:td>
         <h:td>All</h:td>
       </h:tr>
       <h:tr>
