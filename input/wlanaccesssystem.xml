@@ -597,8 +597,8 @@
               defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
             <f-element>
               <title>The TSF shall be capable of using <h:b>IEEE 802.1X, <selectables>
-                <selectable>IPsec</selectable>
-                <selectable>RADIUS over TLS</selectable>
+                <selectable id="s-ipsec">IPsec</selectable>
+                <selectable id="s-radius">RADIUS over TLS</selectable>
               </selectables>, and</h:b> <selectables>
                   <selectable>SSH</selectable>
                   <selectable>TLS</selectable>
@@ -631,8 +631,8 @@
                    because the latter may be used for administrator authentication rather 
                    than authorization of WLAN clients.
                 </h:p><h:p>
-                   If "IPsec" is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
-                   If "RADIUS over TLS" is selected in FTP_ITC.1.1,
+                   If <xref to="s-ipsec"/> is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
+                   If <xref to="s-radius"/> is selected in FTP_ITC.1.1,
                    then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the NDcPP.
                 </h:p>
               </note>
@@ -1345,6 +1345,7 @@
         </ext-comp-def>
         <!-- added by TD0271 -->
         <f-component name="RadSec" cc-id="fcs_radsec_ext.1">
+		  <depends on="s-radius"/>
           <consistency-rationale>This SFR defines the implementation of RadSec and the peer authentication method that it uses. 
             This relies on the TLS requirements defined by the Base-PP and may also use the X.509 certificate validation methods
             specified in the Base-PP, depending on the selected peer authentication method.</consistency-rationale>
@@ -1364,14 +1365,17 @@
           <f-element>
             <title>
             The TSF shall perform peer authentication using <selectables>
-              <selectable>X.509v3 certificates</selectable>
-              <selectable>pre-shared keys</selectable>
+              <selectable id="s-x509-certs">X.509v3 certificates</selectable>
+              <selectable id="s-radsec-psk">pre-shared keys</selectable>
             </selectables>.
             </title>
+			  <ext-comp-def-title><title>
+              The TSF shall perform peer authentication using <assignable>some authentication method</assignable>.
+              </title></ext-comp-def-title>
             <note role="application">
               This SFR is applicable if "RADIUS over TLS" is selected in FTP_ITC.1.1.<h:p/>
-              If "X.509v3 certificates" is selected in FCS_RADSEC_EXT.1.2, then FCS_TLSC_EXT.2 from the NDcPP must be claimed. 
-              If "pre-shared keys" is selected in FCS_RADSEC_EXT.1.2, then FCS_RADSEC_EXT.2 and FIA_PSK_EXT.1 in this PP-Module must be claimed. 
+              If <xref to="s-x509-certs"/> is selected in FCS_RADSEC_EXT.1.2, then FCS_TLSC_EXT.2 from the NDcPP must be claimed. 
+              If <xref to="s-radsec-psk"/> is selected in FCS_RADSEC_EXT.1.2, then FCS_RADSEC_EXT.2 and FIA_PSK_EXT.1 in this PP-Module must be claimed. 
             </note>
             <aactivity>
               <TSS>The evaluator shall verify that the TSS description includes the use of RADIUS over TLS, as described in RFC 6614.<h:p/>
@@ -1386,6 +1390,7 @@
         
         <!-- added by TD0271 -->
         <f-component name="RadSec using Pre-Shared Keys" cc-id="fcs_radsec_ext.2">
+		  <depends on="s-radsec-psk"/>
           <consistency-rationale>This SFR defines the implementation of RadSec when pre-shared key authentication is used. This functionality is outside the original scope of the Base-PP but it relies on 
             the TLS client protocol implementation, cryptographic algorithms, and random bit generation functions defined by the Base-PP.</consistency-rationale>
           
@@ -1408,14 +1413,14 @@
                 <selectable>TLS_PSK_WITH_AES_256_CBC_SHA</selectable>
                 <selectable>TLS_DHE_PSK_WITH_AES_128_CBC_SHA</selectable>
                 <selectable>TLS_DHE_PSK_WITH_AES_256_CBC_SHA</selectable>
-                <selectable>TLS_RSA_PSK_WITH_AES_128_CBC_SHA</selectable>
-                <selectable>TLS_RSA_PSK_WITH_AES_256_CBC_SHA</selectable>
+                <selectable id="s-rsa_psk_aes_128_cbc">TLS_RSA_PSK_WITH_AES_128_CBC_SHA</selectable>
+                <selectable id="s-rsa_psk_aes_256_cbc">TLS_RSA_PSK_WITH_AES_256_CBC_SHA</selectable>
                 <selectable>TLS_PSK_WITH_AES_128_GCM_SHA256</selectable>
                 <selectable>TLS_PSK_WITH_AES_256_GCM_SHA384</selectable>
                 <selectable>TLS_DHE_PSK_WITH_AES_128_GCM_SHA256</selectable>
                 <selectable>TLS_DHE_PSK_WITH_AES_256_GCM_SHA384</selectable>
-                <selectable>TLS_RSA_PSK_WITH_AES_128_GCM_SHA256</selectable>
-                <selectable>TLS_RSA_PSK_WITH_AES_256_GCM_SHA384</selectable>
+                <selectable id="s-rsa_psk_aes_128_gcm">TLS_RSA_PSK_WITH_AES_128_GCM_SHA256</selectable>
+                <selectable id="s-rsa_psk_aes_256_gcm">TLS_RSA_PSK_WITH_AES_256_GCM_SHA384</selectable>
               </selectables>.
             </title>
             <ext-comp-def-title>
@@ -1476,6 +1481,7 @@
         
         
         <f-component name="RadSec using Pre-Shared Keys and RSA" cc-id="fcs_radsec_ext.3">
+		  <depends on="s-rsa_psk_aes_128_cbc" on1="s-rsa_psk_aes_256_cbc" on2="s-rsa_psk_aes_128_gcm" on3="s-rsa_psk_aes_256_gcm"/>
           <consistency-rationale>This SFR defines the implementation of RadSec when pre-shared key authentication with RSA is used. This functionality is outside the original scope of the Base-PP but it relies on 
             the TLS client protocol implementation, cryptographic algorithms, and random bit generation functions defined by the Base-PP.</consistency-rationale>
           
@@ -1566,6 +1572,7 @@
         
         <!-- moved from mandatory by TD0277 -->
         <f-component name="Pre-Shared Key Composition" cc-id="fia_psk_ext.1">
+		  <depends on="s-radsec-psk"/>
           <consistency-rationale>This SFR defines parameters for pre-shared key generation. The Base-PP supports pre-shared keys as a potential authentication method for IPsec. This PP-Module 
             does not prevent this from being used but does define restrictions on how pre-shared keys may be generated and what constitutes an acceptable key. 
             This may also be used for RadSec, which is outside the original scope of the Base-PP.</consistency-rationale>
