@@ -1150,9 +1150,9 @@ authentication method ([TLS](#abbr_TLS) in this case) is opaque to the			authent
 [TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in			[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in
 this [PP-Module](#abbr_PP-Module). However, the base RADIUS protocol			this [PP-Module](#abbr_PP-Module). However, the base RADIUS protocol
 (2865) has an update (3579) that will need to be addressed in the			(2865) has an update (3579) that will need to be addressed in the
-implementation and assurance activities. Additionally, RFC 5080 contains		implementation and assurance activities. Additionally, RFC 5080 contains
-implementation issues that will need to be addressed by developers, but			implementation issues that will need to be addressed by developers, but
-which levy no new requirements.								which levy no new requirements.
+implementation and assurance activities. Additionally, RFC 5080 contains	      |	implementation and evaluation activities. Additionally, RFC 5080
+implementation issues that will need to be addressed by developers, but		      |	contains implementation issues that will need to be addressed by
+which levy no new requirements.							      |	developers, but which levy no new requirements.
 
 The point of performing 802.1X authentication is to provide access to			The point of performing 802.1X authentication is to provide access to
 the network (assuming the authentication was successful and that all			the network (assuming the authentication was successful and that all
