@@ -45,32 +45,32 @@
       
 </sec:Overview>
     <tech-terms>
-      <term abbr="AES" full="Advanced Encryption Standard"/>
-      <term abbr="AP" full="Access Point"> 
+      <term abbr="AES"   full="Advanced Encryption Standard"/>
+      <term abbr="AP"    full="Access Point"> 
         A device that provides the network interface that enables
         wireless client hosts to access a wired network. </term>
-      <term abbr="AS" full="Access System"/>
-      <term abbr="CBC" full="Cipher Block Chaining"/>
-      <term abbr="CCM" full="Counter Mode with CBC-MAC"/>
-      <term abbr="CCMP" full="CCM mode Protocol"/>
-      <term abbr="CTR" full="Counter (encryption mode)"/>
-      <term abbr="EAP" full="Extensible Authentication Protocol"/>
-      <term abbr="GCM" full="Galois-Counter Mode"/>
-      <term abbr="GTK" full="Group Temporal Key"/>
+      <term abbr="AS"    full="Access System"/>
+      <term abbr="CBC"   full="Cipher Block Chaining"/>
+      <term abbr="CCM"   full="Counter Mode with CBC-MAC"/>
+      <term abbr="CCMP"  full="CCM mode Protocol"/>
+      <term abbr="CTR"   full="Counter (encryption mode)"/>
+      <term abbr="EAP"   full="Extensible Authentication Protocol"/>
+      <term abbr="GCM"   full="Galois-Counter Mode"/>
+      <term abbr="GTK"   full="Group Temporal Key"/>
       <term abbr="IPsec" full="Internet Protocol Security"/>
-      <term abbr="MAC" full="Media Access Control or Message Authentication Code"/>
+      <term abbr="MAC"   full="Media Access Control or Message Authentication Code"/>
       <term abbr="NDcPP" full="Network Device collaborative Protection Profile"/>
-      <term abbr="PAE" full="Port Access Entity"/>
-      <term abbr="PMK" full="Pairwise Master Key"/>
-      <term abbr="SSID" full="Service Set Identifier"> 
+      <term abbr="PAE"   full="Port Access Entity"/>
+      <term abbr="PMK"   full="Pairwise Master Key"/>
+      <term abbr="SSID"  full="Service Set Identifier"> 
         The primary name associated with an 802.11
         wireless local area network (WLAN). </term>
-      <term abbr="TLS" full="Transport Layer Security"/>
-      <term abbr="WLAN" full="Wireless Local Area Network"> 
+      <term abbr="TLS"   full="Transport Layer Security"/>
+      <term abbr="WLAN"  full="Wireless Local Area Network"> 
         A wireless computer network that links
         two or more devices using wireless communication to form a local area network (LAN) within a
         limited area such as a home, school, computer laboratory, campus, office building etc. </term>
-      <term abbr="WPA" full="Wi-Fi Protected Access"/>
+      <term abbr="WPA"   full="Wi-Fi Protected Access"/>
     </tech-terms>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <sec:TOE_Boundary> 
