@@ -1164,7 +1164,14 @@
 				<selectable>6 GHz</selectable>
 				</selectables></h:i>].</title>
 			<aactivity>
-				<Tests>QQQQQ</Tests>
+				<Guidance> 
+					The evaluator shall review the operational guidance to ensure it contains instructions 
+					for configuring the specified frequency band that the TOE is operating on.
+				</Guidance>
+				<Tests>
+				The evaluator shall configure the TOE to operate in each of the selected frequency bands
+				and ensure it functions correctly in each selected band.
+				</Tests>
 			</aactivity>
 		</f-element>
 		</f-component>
