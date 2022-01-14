@@ -428,8 +428,9 @@
   </sec:Security_Objectives>
   <sec:Security_Requirements>
     <!-- Kevin: What to do if base is not in github?? -->
-    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="NDc" plural="NDs">
+    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="NDs">
       <url>https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf</url>
+  	  <cPP/>
       <modified-sfrs>
  
 
@@ -1170,7 +1171,7 @@
 				</Guidance>
 				<Tests>
 				The evaluator shall configure the TOE to operate in each of the selected frequency bands
-				and ensure it functions correctly in each selected band.
+				and ensure it functions correctly each selected band.
 				</Tests>
 			</aactivity>
 		</f-element>
