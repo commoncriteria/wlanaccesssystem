@@ -1,10 +1,8 @@
 output/wlanaccesssystem-release-linkable.html: ITT
 output/wlanaccesssystem-release.html: ITT
 output/wlanaccesssystem-sd.html: ITT
-output/wlanaccesssystem-sd.html: QQQQQ
 output/wlanaccesssystem-sd.html: QQQQQQ
 output/wlanaccesssystem-sd.html: superset
 output/wlanaccesssystem.html: ITT
-output/wlanaccesssystem.html: QQQQQ
 output/wlanaccesssystem.html: QQQQQQ
 output/wlanaccesssystem.html: superset
