@@ -657,11 +657,11 @@ https://www.niap-ccevs.org/MMO/[PP](#abbr_PP)/CPP\_ND\_V2.2E.pdf		      |	This c
 										      >	Requirements](#man-sfrs){.dynref}.
 										      >
 										      >	### 5.1.1 Modified SFRs {#modsfr-ND .indexable data-level="3"}
-
-### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	The SFRs listed in this section are defined in the [NDcPP](#abbr_NDcPP)
-										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
 										      >
-										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
+										      >	The SFRs listed in this section are defined in the [NDcPP](#abbr_NDcPP)
+										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
+
+### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
 
 ::: {#FCS_COP.1/DataEncryption .comp}							::: {#FCS_COP.1/DataEncryption .comp}
 #### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio	#### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio
@@ -688,12 +688,12 @@ IEEE 802.11ac-2013***, ***no other standards***\].				      |	IEEE 802.11ax-2021
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ This requirement is modified from			[Application Note: ]{.note-header}[ This requirement is modified from
 its definition in the [NDcPP](#abbr_NDcPP) by mandating the selection of		its definition in the [NDcPP](#abbr_NDcPP) by mandating the selection of
-[CBC](#abbr_CBC) mode and 128 bit key sizes while also defining				[CBC](#abbr_CBC) mode and 128 bit key sizes while also defining
+[CBC](#abbr_CBC) mode and 128 bit key sizes while also defining			      |	[CBC](#abbr_CBC) mode and 256 bit key sizes while also defining
 additional [AES](#abbr_AES) mode and key size selections not present in			additional [AES](#abbr_AES) mode and key size selections not present in
 the original definition. ]{.note}							the original definition. ]{.note}
 
 This requirement mandates two modes for [AES](#abbr_AES) with key size			This requirement mandates two modes for [AES](#abbr_AES) with key size
-of 128 bits be implemented. It is not expected that these modes will			of 128 bits be implemented. It is not expected that these modes will
+of 128 bits be implemented. It is not expected that these modes will		      |	of 256 bits be implemented. It is not expected that these modes will
 both be used for all encryption/decryption functionality. Rather, the			both be used for all encryption/decryption functionality. Rather, the
 mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1		mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1
 requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE		requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE
@@ -705,10 +705,11 @@ For the first selection of								For the first selection of
 [ST](#abbr_ST) author should choose the additional mode or modes in			[ST](#abbr_ST) author should choose the additional mode or modes in
 which [AES](#abbr_AES) operates. For the second selection, the				which [AES](#abbr_AES) operates. For the second selection, the
 [ST](#abbr_ST) author should choose the key sizes that are supported by			[ST](#abbr_ST) author should choose the key sizes that are supported by
-this functionality. 128-bit [CCMP](#abbr_CCMP) is required in order to			this functionality. 128-bit [CCMP](#abbr_CCMP) is required in order to
+this functionality. 128-bit [CCMP](#abbr_CCMP) is required in order to		      |	this functionality. 256-bit [CCMP](#abbr_CCMP) is required in order to
 comply with [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA). Note that optionally			comply with [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA). Note that optionally
-[AES](#abbr_AES)-CCMP-256 or [AES](#abbr_AES)-GCMP-256, with				[AES](#abbr_AES)-CCMP-256 or [AES](#abbr_AES)-GCMP-256, with
-cryptographic key size of 256 bits, may be implemented for IEEE 802.11ac	      |	cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax
+[AES](#abbr_AES)-CCMP-256 or [AES](#abbr_AES)-GCMP-256, with			      |	[AES](#abbr_AES)-CCMP-192, [AES](#abbr_AES)-CCMP-128,
+cryptographic key size of 256 bits, may be implemented for IEEE 802.11ac	      |	,[AES](#abbr_AES)-GCMP-192, and [AES](#abbr_AES)-GCMP-128 with
+										      >	cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax
 connections. In the future, one of these modes may be required.				connections. In the future, one of these modes may be required.
 
 [CTR](#abbr_CTR) mode is not used for [WLAN](#abbr_WLAN) [AS](#abbr_AS)			[CTR](#abbr_CTR) mode is not used for [WLAN](#abbr_WLAN) [AS](#abbr_AS)
@@ -836,14 +837,17 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 
 When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a		      |	----------------------------------------
-network device. This [PP-Module](#abbr_PP-Module) just defines the		      |
-[TOE](#abbr_TOE) as a specific type of network device with functional		      |	The following section describes the SFRs that must be satisfied by any
-capabilities distinct to that type.						      |	[TOE](#abbr_TOE) that claims conformance to this
+network device. This [PP-Module](#abbr_PP-Module) just defines the		      <
+[TOE](#abbr_TOE) as a specific type of network device with functional		      <
+capabilities distinct to that type.						      <
+
+### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	The following section describes the SFRs that must be satisfied by any
+										      >	[TOE](#abbr_TOE) that claims conformance to this
 										      >	[PP-Module](#abbr_PP-Module). These SFRs must be claimed regardless of
 										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
 										      >	[TOE](#abbr_TOE).
-
-### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
+										      >
+										      >	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
 
 ::: {#FAU_GEN.1/WLAN .comp}								::: {#FAU_GEN.1/WLAN .comp}
 #### FAU\_GEN.1/WLAN Audit Data Generation						#### FAU\_GEN.1/WLAN Audit Data Generation
@@ -988,7 +992,7 @@ IT entity using a trusted channel.							IT entity using a trusted channel.
 ### 5.0.2 Cryptographic Support (FCS) {#man_fcs .indexable data-level="3"}	      |	### 5.2.2 Cryptographic Support (FCS) {#man_fcs .indexable data-level="3"}
 
 ::: {#FCS_CKM.1/WPA .comp}								::: {#FCS_CKM.1/WPA .comp}
-#### FCS\_CKM.1/WPA Cryptographic Key Generation (Symmetric Keys for WPA2 Connections	#### FCS\_CKM.1/WPA Cryptographic Key Generation (Symmetric Keys for WPA2 Connections
+#### FCS\_CKM.1/WPA Cryptographic Key Generation (Symmetric Keys for WPA2 Connections |	#### FCS\_CKM.1/WPA Cryptographic Key Generation
 
 ::: {.element}										::: {.element}
 ::: {#FCS_CKM.1.1/WPA .reqid}								::: {#FCS_CKM.1.1/WPA .reqid}
@@ -998,11 +1002,12 @@ IT entity using a trusted channel.							IT entity using a trusted channel.
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall generate **symmetric** cryptographic keys in			The [TSF](#abbr_TSF) shall generate **symmetric** cryptographic keys in
 accordance with a specified cryptographic key generation algorithm			accordance with a specified cryptographic key generation algorithm
-\[*PRF-384 and \[**selection**: *PRF-704*, *no other algorithm*\]*\] and		\[*PRF-384 and \[**selection**: *PRF-704*, *no other algorithm*\]*\] and
-specified key sizes \[*128 bits and \[**selection**: *256 bits*, *no			specified key sizes \[*128 bits and \[**selection**: *256 bits*, *no
-other key sizes*\]*\] **using a Random Bit Generator as specified in			other key sizes*\]*\] **using a Random Bit Generator as specified in
-FCS\_RBG\_EXT.1** that meet the following: \[*IEEE 802.11-2012 and		      |	FCS\_RBG\_EXT.1** that meet the following: \[*IEEE 802.11-2016 and
-\[**selection**: *IEEE 802.11ac-2013*, *no other standards*\]*\].		      |	\[**selection**: *IEEE 802.11ax-2021*, *no other standards*\]*\].
+\[*PRF-384 and \[**selection**: *PRF-704*, *no other algorithm*\]*\] and	      |	\[*PRF-384 and \[**selection**: *PRF-512*, *PRF-704*, *no other
+specified key sizes \[*128 bits and \[**selection**: *256 bits*, *no		      |	algorithm*\]*\] and specified key sizes \[*256 bits and \[**selection**:
+other key sizes*\]*\] **using a Random Bit Generator as specified in		      |	*128 bits*, *192 bits*, *no other key sizes*\]*\] **using a Random Bit
+FCS\_RBG\_EXT.1** that meet the following: \[*IEEE 802.11-2012 and		      |	Generator as specified in FCS\_RBG\_EXT.1** that meet the following:
+\[**selection**: *IEEE 802.11ac-2013*, *no other standards*\]*\].		      |	\[*IEEE 802.11-2016 and \[**selection**: *IEEE 802.11ax-2021*, *no other
+										      >	standards*\]*\].
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ The cryptographic key derivation			[Application Note: ]{.note-header}[ The cryptographic key derivation
@@ -1195,8 +1200,17 @@ conditions*\]*\].									conditions*\]*\].
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall be capable of performing the following
-										      >	management functions: \[*set allowed wireless frequency band to
-										      >	\[**selection**: *2.4 GHz*, *5 GHz*, *6 GHz*\]*\].
+										      >	management functions:
+										      >
+										      >	configure the security policy for each wireless network, including:
+										      >
+										      >	-   security type
+										      >	-   authentication protocol
+										      >	-   client credentials to be used for authentication
+										      >	-   [SSID](#abbr_SSID)
+										      >	-   if the [SSID](#abbr_SSID) is broadcasted
+										      >	-   frequency band set to \[**selection**: *2.4 Ghz*, *5 Ghz*, *6 Ghz*\]
+										      >	-   transmit power level
 										      >	:::
 										      >	:::
 										      >	:::
