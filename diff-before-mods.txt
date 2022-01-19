@@ -11,11 +11,18 @@ Version: 1.0\										Version: 1.0\
 Revision History {#revision-history style="page-break-before:always;"}			Revision History {#revision-history style="page-break-before:always;"}
 ----------------									----------------
 
+										      >	  -----------------------------------------------------------------------------------
   Version   Date         Comment							  Version   Date         Comment
   --------- ------------ -----------------					      |	  --------- ------------ ------------------------------------------------------------
   1.0       2020-10-28   Initial Release						  1.0       2020-10-28   Initial Release
-										      >	  1.0       2022-01-20   Conversion to [PP-Module](#abbr_PP-Module); Updated to inclu
 
+										      >	  0.5       2022-01-20   Conversion to [PP-Module](#abbr_PP-Module);\
+										      >	                         Updated to include [WPA](#abbr_WPA) 3 and Wi-Fi 6.\
+										      >	                         [WPA](#abbr_WPA) 3 is required. [WPA](#abbr_WPA) 2 can addit
+										      >	                         256 bit keys are required. 128 and 192 bit keys can addition
+										      >	                         Mandated Distributed [TOE](#abbr_TOE)
+										      >	  -----------------------------------------------------------------------------------
+										      >
 Contents										Contents
 --------										--------
 
@@ -657,11 +664,11 @@ https://www.niap-ccevs.org/MMO/[PP](#abbr_PP)/CPP\_ND\_V2.2E.pdf		      |	This c
 										      >	Requirements](#man-sfrs){.dynref}.
 										      >
 										      >	### 5.1.1 Modified SFRs {#modsfr-ND .indexable data-level="3"}
-										      >
-										      >	The SFRs listed in this section are defined in the [NDcPP](#abbr_NDcPP)
-										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
 
-### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
+### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	The SFRs listed in this section are defined in the [NDcPP](#abbr_NDcPP)
+										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
+										      >
+										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
 
 ::: {#FCS_COP.1/DataEncryption .comp}							::: {#FCS_COP.1/DataEncryption .comp}
 #### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio	#### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio
@@ -837,17 +844,14 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 
 When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a		      |	----------------------------------------
-network device. This [PP-Module](#abbr_PP-Module) just defines the		      <
-[TOE](#abbr_TOE) as a specific type of network device with functional		      <
-capabilities distinct to that type.						      <
-
-### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	The following section describes the SFRs that must be satisfied by any
-										      >	[TOE](#abbr_TOE) that claims conformance to this
+network device. This [PP-Module](#abbr_PP-Module) just defines the		      |
+[TOE](#abbr_TOE) as a specific type of network device with functional		      |	The following section describes the SFRs that must be satisfied by any
+capabilities distinct to that type.						      |	[TOE](#abbr_TOE) that claims conformance to this
 										      >	[PP-Module](#abbr_PP-Module). These SFRs must be claimed regardless of
 										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
 										      >	[TOE](#abbr_TOE).
-										      >
-										      >	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
+
+### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
 
 ::: {#FAU_GEN.1/WLAN .comp}								::: {#FAU_GEN.1/WLAN .comp}
 #### FAU\_GEN.1/WLAN Audit Data Generation						#### FAU\_GEN.1/WLAN Audit Data Generation
