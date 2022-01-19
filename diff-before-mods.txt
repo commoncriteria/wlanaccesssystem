@@ -102,10 +102,10 @@ typically will be implemented by a network device.					typically will be impleme
 
 A [TOE](#abbr_TOE) that conforms to a							A [TOE](#abbr_TOE) that conforms to a
 [PP-Configuration](#abbr_PP-Configuration) containing this				[PP-Configuration](#abbr_PP-Configuration) containing this
-[PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as			[PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as
-defined in the [NDcPP](#abbr_NDcPP). The [TOE](#abbr_TOE) functionality			defined in the [NDcPP](#abbr_NDcPP). The [TOE](#abbr_TOE) functionality
-may reside entirely within a single device or be spread across multiple			may reside entirely within a single device or be spread across multiple
-distributed physical components.							distributed physical components.
+[PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as		      |	[PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as
+defined in the [NDcPP](#abbr_NDcPP). The [TOE](#abbr_TOE) functionality		      |	defined in the [NDcPP](#abbr_NDcPP). The expectation for this
+may reside entirely within a single device or be spread across multiple		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) access system
+distributed physical components.						      |	must include a controller and one or more access points (APs).
 
 1.2 Terms {#glossary .indexable data-level="2"}						1.2 Terms {#glossary .indexable data-level="2"}
 ---------										---------
@@ -2457,21 +2457,24 @@ component:										component:
 The table below specifies how each of the SFRs in this					The table below specifies how each of the SFRs in this
 [PP-Module](#abbr_PP-Module) must be met, using the categories above.			[PP-Module](#abbr_PP-Module) must be met, using the categories above.
 
-  ------------------------------------------ ----------------------------------------	  ------------------------------------------ ----------------------------------------
-  Requirement                                Description                             	  Requirement                                Description                             
-  [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)           Cryptographic Key Generation (Symmetric 	  [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)           Cryptographic Key Generation (Symmetric 
-  [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)           Cryptographic Key Distribution ([GTK](#a	  [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)           Cryptographic Key Distribution ([GTK](#a
-  [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)           Cryptographic Key Distribution ([PMK](#a	  [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)           Cryptographic Key Distribution ([PMK](#a
-  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authentictaor |	  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authenticator
-  [FIA\_UAU.6](#FIA_UAU.6)                   Re-Authenticating                       	  [FIA\_UAU.6](#FIA_UAU.6)                   Re-Authenticating                       
-  [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)          No Administration from Client           	  [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)          No Administration from Client           
-  [FPT\_FLS.1](#FPT_FLS.1)                   Failure with Preservation of Secure Stat	  [FPT\_FLS.1](#FPT_FLS.1)                   Failure with Preservation of Secure Stat
-  [FTA\_TSE.1](#FTA_TSE.1)                   [TOE](#abbr_TOE) Session Establishment  	  [FTA\_TSE.1](#FTA_TSE.1)                   [TOE](#abbr_TOE) Session Establishment  
-  [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)   Cryptographic Key Distribution (802.11 K	  [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)   Cryptographic Key Distribution (802.11 K
-  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)    RadSec                                  	  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)    RadSec                                  
-  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)    RadSec using Pre-Shared Keys            	  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)    RadSec using Pre-Shared Keys            
-  [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)          Pre-Shared Key Composition              	  [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)          Pre-Shared Key Composition              
-  ------------------------------------------ ----------------------------------------	  ------------------------------------------ ----------------------------------------
+  ------------------------------------------ ---------------------------------------- |	  ---------------------------------------------------- ------------------------------
+  Requirement                                Description                              |	  Requirement                                          Description                   
+  [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)           Cryptographic Key Generation (Symmetric  |	  [FAU\_GEN.1/WLAN](#FAU_GEN.1/WLAN)                   Audit Data Generation         
+  [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)           Cryptographic Key Distribution ([GTK](#a |	  [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)                     Cryptographic Key Generation (
+  [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)           Cryptographic Key Distribution ([PMK](#a |	  [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)                     Cryptographic Key Distribution
+  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)      802.1X Port Access Entity (Authentictaor |	  [FCS\_CKM.2/PMK](#FCS_CKM.2/PMK)                     Cryptographic Key Distribution
+  [FIA\_UAU.6](#FIA_UAU.6)                   Re-Authenticating                        |	  [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)                802.1X Port Access Entity (Aut
+  [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)          No Administration from Client            |	  [FIA\_UAU.6](#FIA_UAU.6)                             Re-Authenticating             
+  [FPT\_FLS.1](#FPT_FLS.1)                   Failure with Preservation of Secure Stat |	  [FMT\_SMF.1/AccessSystem](#FMT_SMF.1/AccessSystem)   Specification of Management Fu
+  [FTA\_TSE.1](#FTA_TSE.1)                   [TOE](#abbr_TOE) Session Establishment   |	  [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)                    No Administration from Client 
+  [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)   Cryptographic Key Distribution (802.11 K |	  [FPT\_FLS.1](#FPT_FLS.1)                             Failure with Preservation of S
+  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)    RadSec                                   |	  [FTA\_TSE.1](#FTA_TSE.1)                             [TOE](#abbr_TOE) Session Estab
+  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)    RadSec using Pre-Shared Keys             |	  [FTP\_ITC.1/Client](#FTP_ITC.1/Client)               Inter-TSF Trusted Channel ([WL
+  [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)          Pre-Shared Key Composition               |	  [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)             Cryptographic Key Distribution
+  ------------------------------------------ ---------------------------------------- |	  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec                        
+										      >	  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec using Pre-Shared Keys  
+										      >	  [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)                    Pre-Shared Key Composition    
+										      >	  ---------------------------------------------------- ------------------------------
 
 Appendix C - Entropy Documentation and Assessment {#EAR .indexable data-level="A"}    |	Appendix F - Entropy Documentation and Assessment {#EAR .indexable data-level="A"}
 =================================================					=================================================
