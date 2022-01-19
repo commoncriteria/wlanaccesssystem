@@ -467,22 +467,10 @@
               </title>
               <note role="application">
                 
-                This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 128 bit key sizes
-                while also defining additional AES mode and key size selections not present in the original definition. <h:p/>
-                
-                This requirement mandates two modes for AES with key size of 128 bits be
-                implemented. It is not expected that these modes will both be used for all encryption/decryption
-                functionality. Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1
-                requirements, CBC mode is mandated, and to comply with IEEE 802.11-2016, AES-CCMP (which uses AES
-                in CCM as specified in SP 800-38C) must be implemented.<h:p/>
-                
-                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in
-                which AES operates. For the second selection, the ST author should choose the key sizes that are
-                supported by this functionality. 128-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
-                Note that optionally AES-CCMP-256 or AES-GCMP-256, with cryptographic key size of 256 bits, may be
-                implemented for IEEE 802.11ax connections. In the future, one of these modes may be required.<h:p/>
-              
-              CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
+                This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 256 bit key sizes while also defining additional AES mode and key size selections not present in the original definition. <h:p/>              
+                This requirement mandates two modes for AES with key size of 256 bits be implemented. It is not expected that these modes will both be used for all encryption/decryption functionality. Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements, CBC mode is mandated, and to comply with IEEE 802.11-2016, AES-CCMP (which uses AES in CCM as specified in SP 800-38C) must be implemented. <h:p/>
+                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates. For the second selection, the ST author should choose the key sizes that are supported by this functionality. 256-bit CCMP is required in order to comply with FCS_CKM.1/WPA. Note that optionally AES-CCMP-192, AES-CCMP-128, ,AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax connections. In the future, one of these modes may be required. <h:p/>
+                CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
               </note>
               <aactivity>
                 <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:p/></TSS>
@@ -671,11 +659,6 @@
                     <test>The evaluator shall, for each protocol associated with each authorized IT entity tested during
                       test 1, physically interrupt an established connection. The evaluator shall ensure that when physical
                       connectivity is restored, communications are appropriately protected.</test>
-                    <test>The evaluator shall first configure the access system to use only WPA2 (AES, with no fallback to
-                      TKIP), then ensure that a WPA2 (AES) connection can be made between the access system and a client
-                      device. Finally, the evaluator shall attempt to connect a client device that does not support AES to the
-                      access system and ensure that the access system rejects the connection (does not fall back to TKIP).
-                    </test>
                   </testlist>
                 </Tests>
               </aactivity>
@@ -831,16 +814,18 @@
       <sec:man_fcs title="Cryptographic Support (FCS)">
         
         <!-- previously FCS_CKM.1(2) -->
-        <f-component name="Cryptographic Key Generation (Symmetric Keys for WPA2 Connections)" cc-id="fcs_ckm.1" iteration="WPA">
+        <f-component name="Cryptographic Key Generation" cc-id="fcs_ckm.1" iteration="WPA">
             <consistency-rationale>This SFR defines additional cryptographic functionality not defined in the Base-PP but it implements this using the DRBG mechanism already defined in the Base-PP.</consistency-rationale>
           <f-element>
             <title>
               The TSF shall generate <h:b>symmetric</h:b> cryptographic keys in accordance with a
               specified cryptographic key generation algorithm [<h:i>PRF-384 and <selectables>
+                <selectable>PRF-512</selectable>
                 <selectable>PRF-704</selectable>
                 <selectable>no other algorithm</selectable>
-              </selectables></h:i>] and specified key sizes [<h:i>128 bits and <selectables>
-                <selectable>256 bits</selectable>
+              </selectables></h:i>] and specified key sizes [<h:i>256 bits and <selectables>
+                <selectable>128 bits</selectable>
+                <selectable>192 bits</selectable>
                 <selectable>no other key sizes</selectable>
               </selectables></h:i>] <h:b>using a Random Bit Generator as specified in FCS_RBG_EXT.1</h:b> that meet the following: 
               [<h:i>IEEE 802.11-2016 and <selectables>
@@ -1163,21 +1148,32 @@
         <f-component name="Specification of Management Functions" cc-id="fmt_smf.1" iteration="AccessSystem">
 			<consistency-rationale>This SFR defines additional management functionality that is specific to the Module’s product type and would therefore not be expected to be present in the Base-PP.</consistency-rationale>
 			<f-element>
-			<title>The TSF shall be capable of performing the following management functions: [<h:i>set allowed wireless frequency band to 
-				<selectables>
-				<selectable>2.4 GHz</selectable>
-				<selectable>5 GHz</selectable>
-				<selectable>6 GHz</selectable>
-				</selectables></h:i>].</title>
+			<title>The TSF shall be capable of performing the following management functions: 
+			  <h:ul>
+			    <h:li>configure the security policy for each wireless network, including:</h:li>
+			    <h:ul> 
+			      <h:li>security type</h:li>
+			      <h:li>authentication protocol</h:li>
+			      <h:li>client credentials to be used for authentication</h:li>
+			      <h:li>SSID</h:li>
+			      <h:li>if the SSID is broadcasted</h:li>
+			      <h:li>frequency band set to <selectables><selectable>2.4 Ghz</selectable><selectable>5 Ghz</selectable><selectable>6 Ghz</selectable></selectables></h:li>
+			      <h:li>transmit power level</h:li>
+			    </h:ul></h:ul></title>
 			<aactivity>
-				<Guidance> 
-					The evaluator shall review the operational guidance to ensure it contains instructions 
-					for configuring the specified frequency band that the TOE is operating on.
-				</Guidance>
-				<Tests>
-				The evaluator shall configure the TOE to operate in each of the selected frequency bands
-				and ensure it functions correctly each selected band.
-				</Tests>
+			  <TSS>The evalutator shall confirm that the TSS includes which security types (e.g., WPA3), authentication protocol (e.g., SAE) and frequency bands the WLAN access system supports. The evaluator shall confirm that the TSS includes how connection attempts from clients the are not operating on an approved security type are handled.</TSS>
+			  <Guidance> 
+			    The evaluator shall confirm that the operational guidance includes instructions for configuring the WLAN access system for each feature listed.
+			  </Guidance>
+			  <Tests>
+			  <testlist>
+			    <test>For each security type specified in the TSS, configure the network to the approved security type and verify that the client can establish a connection.  Maintaining the same SSID, change the security type of the client to a non-approved security type and attempt to establish a connection.  Verify that the connection was unsuccessful. </test>
+			    <test>For each authentication protocol specified in the TSS, configure the network accordingly per the AGD. Verify that the client connection attempt is succesful when using the correct client credentials and that the connection is unsuccessful when incorrect authentication credentials are used. </test>		  
+			    <test>Configure the SSID to be broadcasted. Using a network sniffing tool capture a beacon frame and confirm that the SSID is included. Configure the SSID to be hidden. Using a network sniffing tool capture a beacon frame and confirm that the SSID is not listed. </test>		  
+			    <test>The evaluator shall configure the access system to operate in each of the selected frequency bands and verify using a network sniffing tool. </test>	
+			    <test>The evaluator shall demonstrate that the client can establish a connection to the access system on the default power level.  After disconnecting,  the power level should be adjusted and then the client should be able to successfully connect to the access system again.</test>
+			  </testlist>
+			  </Tests>
 			</aactivity>
 		</f-element>
 		</f-component>
