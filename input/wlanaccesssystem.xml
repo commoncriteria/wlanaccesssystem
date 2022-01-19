@@ -15,7 +15,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-01-19</PPPubDate>
+      <PPPubDate>2022-01-20</PPPubDate>
       <Keywords>WLAN, Wireless LAN</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -27,7 +27,7 @@
     </entry>
     <entry>
       <version>1.0</version>
-      <date>2022-01-19</date>
+      <date>2022-01-20</date>
       <subject>Conversion to PP-Module; Updated to include WPA 3 and Wi-Fi 6</subject>
     </entry>
   </RevisionHistory>
@@ -432,7 +432,6 @@
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <!-- Kevin: What to do if base is not in github?? -->
     <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="NDs">
       <url>https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf</url>
   	  <cPP/>
@@ -813,7 +812,7 @@
       
       <sec:man_fcs title="Cryptographic Support (FCS)">
         
-        <!-- previously FCS_CKM.1(2) -->
+        <!-- previously FCS_CKM.1(2). Covers key gen for both WPA2 and WPA3 -->
         <f-component name="Cryptographic Key Generation" cc-id="fcs_ckm.1" iteration="WPA">
             <consistency-rationale>This SFR defines additional cryptographic functionality not defined in the Base-PP but it implements this using the DRBG mechanism already defined in the Base-PP.</consistency-rationale>
           <f-element>
@@ -1029,7 +1028,7 @@
       <!-- FIA_AFL.1 no longer needed, removed -->
         
         
-        <!-- FIA_8021X_EXT.1 no change -->
+        
         <ext-comp-def title="802.1X Port Access Entity (Authenticator) Authentication" fam-id="FIA_8021X_EXT">
           <fam-behavior>Components in this family describe requirements for implementation of 802.1X port-based network access control.</fam-behavior> 
         </ext-comp-def>   
@@ -1118,7 +1117,7 @@
           </f-element>
         </f-component>
       
-      <!-- FIA_UAU.6 no change -->
+    
       <f-component name="Re-Authenticating" cc-id="fia_uau.6">
         <consistency-rationale>This SFR defines support for re-authentication of wireless users, which are a type of subject beyond the scope of what the Base-PP originally defined.</consistency-rationale>
         <f-element>
@@ -1140,8 +1139,6 @@
           </aactivity>
         </f-element>
       </f-component>
-        
-        <!-- FIA_PSK_EXT.1 moved to sel-based -->
       </sec:man_fia>
       
       <sec:man_fmt title="Security Management (FMT)">
@@ -1180,7 +1177,6 @@
         <ext-comp-def title="Security Management Restrictions" fam-id="FMT_SMR_EXT">
           <fam-behavior>Components in this family describe architectural restrictions on security administration that are not defined in CC Part 2.</fam-behavior> 
         </ext-comp-def>
-        <!-- previously FMT_SMR.1 -->
         <f-component name="No Administration from Client" cc-id="fmt_smr_ext.1">
           <consistency-rationale>This SFR applies restrictions on when the execution of management functions is authorized. It does not prevent proper administration of the TSF.</consistency-rationale>
           
@@ -1213,7 +1209,7 @@
       
       
       <sec:man_fpt title="Protection of the TSF (FPT)">
-        <!-- FPT_FLS.1 no change -->
+        
         <f-component name="Failure with Preservation of Secure State" cc-id="fpt_fls.1">
           <consistency-rationale>This SFR extends the functionality described by FPT_TST_EXT.1 in the Base-PP by defining the specific TSF reaction in the event of a failed self-test.</consistency-rationale>
           <f-element>
@@ -1240,7 +1236,7 @@
       </sec:man_fpt>
       
       <sec:man_fta title="TOE Access (FTA)">
-        <!-- FTA_TSE.1 no change -->
+       
         <f-component name="TOE Session Establishment" cc-id="fta_tse.1">
           <consistency-rationale>This SFR applies restrictions on establishment of wireless communications, which is a logical interface that extends the scope of what the Base-PP originally defined.</consistency-rationale>
           <f-element>
@@ -1330,7 +1326,7 @@ The evaluator shall perform the following tests:
     <opt-sfrs>
       <sec:opt_fcs title="Cryptographic Support (FCS)">
         
-        <!-- previously FCS_CKM.2(4) -->
+       
         <f-component name="Cryptographic Key Distribution (802.11 Keys)" cc-id="fcs_ckm.2" iteration="DISTRIB">
           <consistency-rationale>This SFR defines an additional use for the cryptographic and self-protection mechanisms defined in the Base-PP.</consistency-rationale>
           <f-element>
