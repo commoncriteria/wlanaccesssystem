@@ -15,7 +15,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2021-03-10</PPPubDate>
+      <PPPubDate>2022-01-19</PPPubDate>
       <Keywords>WLAN, Wireless LAN</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -24,6 +24,11 @@
       <version>1.0</version>
       <date>2020-10-28</date>
       <subject>Initial Release</subject>
+    </entry>
+    <entry>
+      <version>1.0</version>
+      <date>2022-01-19</date>
+      <subject>Conversion to PP-Module; Updated to include WPA 3 and Wi-Fi 6</subject>
     </entry>
   </RevisionHistory>
   
