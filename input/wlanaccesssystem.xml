@@ -45,8 +45,8 @@
       This Base-PP is valid because a WLAN Access System is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
       This is functionality that typically will be implemented by a network device.
       <h:p/>
-      A TOE that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
-      defined in the NDcPP. The TOE functionality may reside entirely within a single device or be spread across multiple distributed physical components.
+      A TOE that conforms to a PP-Configuration containing this PP-Module must be a ‘Distributed TOE’ as
+      defined in the NDcPP. The expectation for this PP-Module is that a WLAN access system must include a controller and one or more access points (APs). 
       
 </sec:Overview>
     <tech-terms>
@@ -1726,29 +1726,56 @@ The evaluator shall perform the following tests:
         <h:td>Description</h:td>
         <h:td>Distributed TOE SFR Allocation</h:td>
       </h:tr>
+      <!--  
+      <h:tr>
+        <h:td>FCS_COP.1/DataEncryption</h:td>
+        <h:td>Cryptographic Operation (AES Data Encryption/Decryption)</h:td>
+        <h:td>All</h:td>
+      </h:tr>
+     <h:tr>
+     <h:td>FPT_TST_EXT.1</h:td>
+       <h:td>TSF Testing</h:td>
+       <h:td>All</h:td> 
+     </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1</h:td>
+        <h:td>Inter-TSF Trusted Channel</h:td>
+        <h:td>One</h:td>
+        </h:tr>
+     -->
+      <h:tr>
+        <h:td>FAU_GEN.1/WLAN</h:td>
+        <h:td>Audit Data Generation</h:td>
+        <h:td>All</h:td>
+      </h:tr>
       <h:tr>
         <h:td>FCS_CKM.1/WPA</h:td>
         <h:td>Cryptographic Key Generation (Symmetric Keys for WPA2 Connections)</h:td>
-        <h:td>All</h:td>
+        <h:td>One</h:td>
       </h:tr>
       <h:tr>
         <h:td>FCS_CKM.2/GTK</h:td>
         <h:td>Cryptographic Key Distribution (GTK)</h:td>
-        <h:td>All</h:td>
+        <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
         <h:td>FCS_CKM.2/PMK</h:td>
         <h:td>Cryptographic Key Distribution (PMK)</h:td>
-        <h:td>All</h:td>
+        <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
         <h:td>FIA_8021X_EXT.1</h:td>
         <h:td>802.1X Port Access Entity (Authenticator) Authentication</h:td>
-        <h:td>All</h:td>
+        <h:td>One</h:td>
       </h:tr>
       <h:tr>
         <h:td>FIA_UAU.6</h:td>
         <h:td>Re-Authenticating</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FMT_SMF.1/AccessSystem</h:td>
+        <h:td>Specification of Management Functions</h:td>
         <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
@@ -1764,6 +1791,11 @@ The evaluator shall perform the following tests:
       <h:tr>
         <h:td>FTA_TSE.1</h:td>
         <h:td>TOE Session Establishment</h:td>
+        <h:td>All</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/Client</h:td>
+        <h:td>Inter-TSF Trusted Channel (WLAN Client Communications)</h:td>
         <h:td>All</h:td>
       </h:tr>
       <h:tr>
