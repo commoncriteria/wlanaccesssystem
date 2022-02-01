@@ -1315,22 +1315,9 @@
 			  <f-element>
 			  <title>The TSF shall initiate communication via the trusted channel for [<h:i>no services</h:i>].</title>
 				  <aactivity>
-
-The evaluator shall perform the following activities in addition to the evaluation activity specified in the base NDcPP for this SFR:
-<TSS> 
-   The evaluator shall examine the TSS to determine that all communication mechanisms are identified in terms of the allowed protocols.
-   The evaluator shall also confirm that all protocols listed in the TSS are specified and included in the requirements in the ST.
-</TSS>
-<Guidance>
-  The evaluator shall confirm that the guidance documentation contains instructions for establishing the allowed protocols and 
-  that it contains recovery instructions should a connection be unintentionally broken.
-</Guidance>
-<Tests>
-The evaluator shall perform the following tests:
-<testlist>
-  <test>The evaluator shall first configure the access system to use only WPA2 (AES, with no fallback to TKIP), then ensure that a WPA2 (AES) connection can be made between the access system and a client device.  Finally, the evaluator shall attempt to connect a client device that does not support AES to the access system and ensure that the access system rejects the connection (does not fall back to TKIP).</test>
-  <test>The evaluator shall first configure the access system to use only WPA3, then ensure that a WPA3 connection can be made between the access system device.  Finally, the evaluator shall attempt to connect a client device that does not support WPA3 to the access system and ensure that the access system rejects the connection (does not fall back to WPA2). </test></testlist>
-   </Tests></aactivity>	  
+				    This component is adequately evaluated when performing the evaluation activities for <no-link>FTP_ITC.1</no-link> in the <xref to="ND"/> base-PP.
+				    <no-tests/>
+				  </aactivity>	  
 			  </f-element>
 		  </f-component>
       </sec:man_ftp>
