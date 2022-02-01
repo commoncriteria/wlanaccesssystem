@@ -795,19 +795,28 @@
             </h:table>
               <ctr ctr-type="Table" id="auditWLAN">: Auditable Events</ctr>
             </title>
-  <note role="application"> The auditable events defined in <xref to="auditWLAN"/>
-    are for the SFRs that are explicitly defined in this PP-Module and are intended to
-    extend FAU_GEN.1 in the Base-PP. The events in the Auditable Events table should
-    be combined with those of the NDcPP in the context of a conforming Security
-    Target.<h:p/> The Auditable Events (<xref to="auditWLAN"/>) includes
-    optional and objective SFRs. The auditing of optional and objective SFRs is only
-    required if that SFR is included in the ST. <h:p/> Per FAU_STG_EXT.1 in the
-    Base-PP, the TOE must support transfer of the audit data to an external IT entity
-    using a trusted channel. </note>
+	    <note role="application">
+	      <h:p>
+		The auditable events defined in <xref to="auditWLAN"/> are for the SFRs that
+		are explicitly defined in this PP-Module and are intended to extend FAU_GEN.1 in the Base-PP.
+	      </h:p>
+	      <h:p>
+		The events in the Auditable Events table should be combined with those of the NDcPP in the
+		context of a conforming Security Target.
+	      </h:p>
+	      <h:p>
+		The Auditable Events (<xref to="auditWLAN"/>) includes optional and objective SFRs.
+		The auditing of optional and objective SFRs is only required if that SFR is included in the ST.
+	      </h:p>
+	      <h:p>
+		Per FAU_STG_EXT.1 in the Base-PP, the TOE must support transfer of the audit data to an
+		external IT entity using a trusted channel.
+	      </h:p>
+	    </note>
   <aactivity>
-    <TSS> There are no TSS evaluation activities for this SFR.<h:p/>
+    <TSS> There are no TSS evaluation activities for this SFR.
     </TSS>
-    <Guidance> There are no operational guidance activities for this SFR.<h:p/>
+    <Guidance> There are no operational guidance activities for this SFR.
     </Guidance>
     <Tests> The evaluator shall test the TOE’s ability to correctly generate audit records
       by having the TOE generate audit records in accordance with the evaluation activities
