@@ -736,10 +736,6 @@
                 <h:td>Non-TOE endpoint of connection.</h:td>
               </h:tr>
               <h:tr>
-                <h:td>Negotiation "down" from an IKEv2 to IKEv1 exchange.</h:td>
-                <h:td>Non-TOE endpoint of connection.</h:td>
-              </h:tr>
-              <h:tr>
                 <h:td rowspan="2">FIA_8021X_EXT.1</h:td>
                 <h:td>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</h:td>
                 <h:td>Provided client identity (e.g. MAC address).</h:td>
