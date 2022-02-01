@@ -15,7 +15,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2021-03-10</PPPubDate>
+      <PPPubDate>2022-01-20</PPPubDate>
       <Keywords>WLAN, Wireless LAN</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -24,6 +24,15 @@
       <version>1.0</version>
       <date>2020-10-28</date>
       <subject>Initial Release</subject>
+    </entry>
+    <entry>
+      <version>0.5</version>
+      <date>2022-01-20</date>
+      <subject>Conversion to PP-Module; <h:br/> 
+        Updated to include WPA 3 and Wi-Fi 6. <h:br/>
+        WPA 3 is required. WPA 2 can additionally be included in the ST.<h:br/>
+        256 bit keys are required. 128 and 192 bit keys can additionally be included in the ST.<h:br/>
+        Mandated Distributed TOE</subject>
     </entry>
   </RevisionHistory>
   
@@ -40,37 +49,37 @@
       This Base-PP is valid because a WLAN Access System is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
       This is functionality that typically will be implemented by a network device.
       <h:p/>
-      A TOE that conforms to a PP-Configuration containing this PP-Module may be a ‘Distributed TOE’ as
-      defined in the NDcPP. The TOE functionality may reside entirely within a single device or be spread across multiple distributed physical components.
+      A TOE that conforms to a PP-Configuration containing this PP-Module must be a ‘Distributed TOE’ as
+      defined in the NDcPP. The expectation for this PP-Module is that a WLAN access system must include a controller and one or more access points (APs). 
       
 </sec:Overview>
     <tech-terms>
-      <term abbr="AES" full="Advanced Encryption Standard"/>
-      <term abbr="AP" full="Access Point"> 
+      <term abbr="AES"   full="Advanced Encryption Standard"/>
+      <term abbr="AP"    full="Access Point"> 
         A device that provides the network interface that enables
         wireless client hosts to access a wired network. </term>
-      <term abbr="AS" full="Access System"/>
-      <term abbr="CBC" full="Cipher Block Chaining"/>
-      <term abbr="CCM" full="Counter Mode with CBC-MAC"/>
-      <term abbr="CCMP" full="CCM mode Protocol"/>
-      <term abbr="CTR" full="Counter (encryption mode)"/>
-      <term abbr="EAP" full="Extensible Authentication Protocol"/>
-      <term abbr="GCM" full="Galois-Counter Mode"/>
-      <term abbr="GTK" full="Group Temporal Key"/>
+      <term abbr="AS"    full="Access System"/>
+      <term abbr="CBC"   full="Cipher Block Chaining"/>
+      <term abbr="CCM"   full="Counter Mode with CBC-MAC"/>
+      <term abbr="CCMP"  full="CCM mode Protocol"/>
+      <term abbr="CTR"   full="Counter (encryption mode)"/>
+      <term abbr="EAP"   full="Extensible Authentication Protocol"/>
+      <term abbr="GCM"   full="Galois-Counter Mode"/>
+      <term abbr="GTK"   full="Group Temporal Key"/>
       <term abbr="IPsec" full="Internet Protocol Security"/>
-      <term abbr="MAC" full="Media Access Control or Message Authentication Code"/>
+      <term abbr="MAC"   full="Media Access Control or Message Authentication Code"/>
       <term abbr="NDcPP" full="Network Device collaborative Protection Profile"/>
-      <term abbr="PAE" full="Port Access Entity"/>
-      <term abbr="PMK" full="Pairwise Master Key"/>
-      <term abbr="SSID" full="Service Set Identifier"> 
+      <term abbr="PAE"   full="Port Access Entity"/>
+      <term abbr="PMK"   full="Pairwise Master Key"/>
+      <term abbr="SSID"  full="Service Set Identifier"> 
         The primary name associated with an 802.11
         wireless local area network (WLAN). </term>
-      <term abbr="TLS" full="Transport Layer Security"/>
-      <term abbr="WLAN" full="Wireless Local Area Network"> 
+      <term abbr="TLS"   full="Transport Layer Security"/>
+      <term abbr="WLAN"  full="Wireless Local Area Network"> 
         A wireless computer network that links
         two or more devices using wireless communication to form a local area network (LAN) within a
         limited area such as a home, school, computer laboratory, campus, office building etc. </term>
-      <term abbr="WPA" full="Wi-Fi Protected Access"/>
+      <term abbr="WPA"   full="Wi-Fi Protected Access"/>
     </tech-terms>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <sec:TOE_Boundary> 
@@ -427,9 +436,9 @@
     </section>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <!-- Kevin: What to do if base is not in github?? -->
-    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="NDc" plural="NDs">
+    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="NDs">
       <url>https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf</url>
+  	  <cPP/>
       <modified-sfrs>
  
 
@@ -461,22 +470,10 @@
               </title>
               <note role="application">
                 
-                This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 128 bit key sizes
-                while also defining additional AES mode and key size selections not present in the original definition. <h:p/>
-                
-                This requirement mandates two modes for AES with key size of 128 bits be
-                implemented. It is not expected that these modes will both be used for all encryption/decryption
-                functionality. Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1
-                requirements, CBC mode is mandated, and to comply with IEEE 802.11-2016, AES-CCMP (which uses AES
-                in CCM as specified in SP 800-38C) must be implemented.<h:p/>
-                
-                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in
-                which AES operates. For the second selection, the ST author should choose the key sizes that are
-                supported by this functionality. 128-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
-                Note that optionally AES-CCMP-256 or AES-GCMP-256, with cryptographic key size of 256 bits, may be
-                implemented for IEEE 802.11ax connections. In the future, one of these modes may be required.<h:p/>
-              
-              CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
+                This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 256 bit key sizes while also defining additional AES mode and key size selections not present in the original definition. <h:p/>              
+                This requirement mandates two modes for AES with key size of 256 bits be implemented. It is not expected that these modes will both be used for all encryption/decryption functionality. Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements, CBC mode is mandated, and to comply with IEEE 802.11-2016, AES-CCMP (which uses AES in CCM as specified in SP 800-38C) must be implemented. <h:p/>
+                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates. For the second selection, the ST author should choose the key sizes that are supported by this functionality. 256-bit CCMP is required in order to comply with FCS_CKM.1/WPA. Note that optionally AES-CCMP-192, AES-CCMP-128, ,AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax connections. In the future, one of these modes may be required. <h:p/>
+                CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
               </note>
               <aactivity>
                 <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:p/></TSS>
@@ -665,11 +662,6 @@
                     <test>The evaluator shall, for each protocol associated with each authorized IT entity tested during
                       test 1, physically interrupt an established connection. The evaluator shall ensure that when physical
                       connectivity is restored, communications are appropriately protected.</test>
-                    <test>The evaluator shall first configure the access system to use only WPA2 (AES, with no fallback to
-                      TKIP), then ensure that a WPA2 (AES) connection can be made between the access system and a client
-                      device. Finally, the evaluator shall attempt to connect a client device that does not support AES to the
-                      access system and ensure that the access system rejects the connection (does not fall back to TKIP).
-                    </test>
                   </testlist>
                 </Tests>
               </aactivity>
@@ -833,17 +825,19 @@
       
       <sec:man_fcs title="Cryptographic Support (FCS)">
         
-        <!-- previously FCS_CKM.1(2) -->
-        <f-component name="Cryptographic Key Generation (Symmetric Keys for WPA2 Connections)" cc-id="fcs_ckm.1" iteration="WPA">
+        <!-- previously FCS_CKM.1(2). Covers key gen for both WPA2 and WPA3 -->
+        <f-component name="Cryptographic Key Generation" cc-id="fcs_ckm.1" iteration="WPA">
             <consistency-rationale>This SFR defines additional cryptographic functionality not defined in the Base-PP but it implements this using the DRBG mechanism already defined in the Base-PP.</consistency-rationale>
           <f-element>
             <title>
               The TSF shall generate <h:b>symmetric</h:b> cryptographic keys in accordance with a
               specified cryptographic key generation algorithm [<h:i>PRF-384 and <selectables>
+                <selectable>PRF-512</selectable>
                 <selectable>PRF-704</selectable>
                 <selectable>no other algorithm</selectable>
-              </selectables></h:i>] and specified key sizes [<h:i>128 bits and <selectables>
-                <selectable>256 bits</selectable>
+              </selectables></h:i>] and specified key sizes [<h:i>256 bits and <selectables>
+                <selectable>128 bits</selectable>
+                <selectable>192 bits</selectable>
                 <selectable>no other key sizes</selectable>
               </selectables></h:i>] <h:b>using a Random Bit Generator as specified in FCS_RBG_EXT.1</h:b> that meet the following: 
               [<h:i>IEEE 802.11-2016 and <selectables>
@@ -1047,7 +1041,7 @@
       <!-- FIA_AFL.1 no longer needed, removed -->
         
         
-        <!-- FIA_8021X_EXT.1 no change -->
+        
         <ext-comp-def title="802.1X Port Access Entity (Authenticator) Authentication" fam-id="FIA_8021X_EXT">
           <fam-behavior>Components in this family describe requirements for implementation of 802.1X port-based network access control.</fam-behavior> 
         </ext-comp-def>   
@@ -1086,7 +1080,7 @@
             endpoint and transfers them to the other endpoint. Because the specific authentication method (TLS in
             this case) is opaque to the TOE, there are no requirements with respect to RFC 5126 in this PP-Module.
             However, the base RADIUS protocol (2865) has an update (3579) that will need to be addressed in the
-            implementation and assurance activities. Additionally, RFC 5080 contains implementation issues that
+            implementation and evaluation activities. Additionally, RFC 5080 contains implementation issues that
             will need to be addressed by developers, but which levy no new requirements.<h:p/>
             
             The point of performing 802.1X authentication is to provide access to the network (assuming the
@@ -1136,7 +1130,7 @@
           </f-element>
         </f-component>
       
-      <!-- FIA_UAU.6 no change -->
+    
       <f-component name="Re-Authenticating" cc-id="fia_uau.6">
         <consistency-rationale>This SFR defines support for re-authentication of wireless users, which are a type of subject beyond the scope of what the Base-PP originally defined.</consistency-rationale>
         <f-element>
@@ -1158,29 +1152,44 @@
           </aactivity>
         </f-element>
       </f-component>
-        
-        <!-- FIA_PSK_EXT.1 moved to sel-based -->
       </sec:man_fia>
       
       <sec:man_fmt title="Security Management (FMT)">
         <f-component name="Specification of Management Functions" cc-id="fmt_smf.1" iteration="AccessSystem">
 			<consistency-rationale>This SFR defines additional management functionality that is specific to the Module’s product type and would therefore not be expected to be present in the Base-PP.</consistency-rationale>
 			<f-element>
-			<title>The TSF shall be capable of performing the following management functions: [<h:i>set allowed wireless frequency band to 
-				<selectables>
-				<selectable>2.4 GHz</selectable>
-				<selectable>5 GHz</selectable>
-				<selectable>6 GHz</selectable>
-				</selectables></h:i>].</title>
+			<title>The TSF shall be capable of performing the following management functions: 
+			  <h:ul>
+			    <h:li>configure the security policy for each wireless network, including:</h:li>
+			    <h:ul> 
+			      <h:li>security type</h:li>
+			      <h:li>authentication protocol</h:li>
+			      <h:li>client credentials to be used for authentication</h:li>
+			      <h:li>SSID</h:li>
+			      <h:li>if the SSID is broadcasted</h:li>
+			      <h:li>frequency band set to <selectables><selectable>2.4 Ghz</selectable><selectable>5 Ghz</selectable><selectable>6 Ghz</selectable></selectables></h:li>
+			      <h:li>transmit power level</h:li>
+			    </h:ul></h:ul></title>
 			<aactivity>
-				<Tests>QQQQQ</Tests>
+			  <TSS>The evalutator shall confirm that the TSS includes which security types (e.g., WPA3), authentication protocol (e.g., SAE) and frequency bands the WLAN access system supports. The evaluator shall confirm that the TSS includes how connection attempts from clients the are not operating on an approved security type are handled.</TSS>
+			  <Guidance> 
+			    The evaluator shall confirm that the operational guidance includes instructions for configuring the WLAN access system for each feature listed.
+			  </Guidance>
+			  <Tests>
+			  <testlist>
+			    <test>For each security type specified in the TSS, configure the network to the approved security type and verify that the client can establish a connection.  Maintaining the same SSID, change the security type of the client to a non-approved security type and attempt to establish a connection.  Verify that the connection was unsuccessful. </test>
+			    <test>For each authentication protocol specified in the TSS, configure the network accordingly per the AGD. Verify that the client connection attempt is succesful when using the correct client credentials and that the connection is unsuccessful when incorrect authentication credentials are used. </test>		  
+			    <test>Configure the SSID to be broadcasted. Using a network sniffing tool capture a beacon frame and confirm that the SSID is included. Configure the SSID to be hidden. Using a network sniffing tool capture a beacon frame and confirm that the SSID is not listed. </test>		  
+			    <test>The evaluator shall configure the access system to operate in each of the selected frequency bands and verify using a network sniffing tool. </test>	
+			    <test>The evaluator shall demonstrate that the client can establish a connection to the access system on the default power level.  After disconnecting,  the power level should be adjusted and then the client should be able to successfully connect to the access system again.</test>
+			  </testlist>
+			  </Tests>
 			</aactivity>
 		</f-element>
 		</f-component>
         <ext-comp-def title="Security Management Restrictions" fam-id="FMT_SMR_EXT">
           <fam-behavior>Components in this family describe architectural restrictions on security administration that are not defined in CC Part 2.</fam-behavior> 
         </ext-comp-def>
-        <!-- previously FMT_SMR.1 -->
         <f-component name="No Administration from Client" cc-id="fmt_smr_ext.1">
           <consistency-rationale>This SFR applies restrictions on when the execution of management functions is authorized. It does not prevent proper administration of the TSF.</consistency-rationale>
           
@@ -1213,7 +1222,7 @@
       
       
       <sec:man_fpt title="Protection of the TSF (FPT)">
-        <!-- FPT_FLS.1 no change -->
+        
         <f-component name="Failure with Preservation of Secure State" cc-id="fpt_fls.1">
           <consistency-rationale>This SFR extends the functionality described by FPT_TST_EXT.1 in the Base-PP by defining the specific TSF reaction in the event of a failed self-test.</consistency-rationale>
           <f-element>
@@ -1240,7 +1249,7 @@
       </sec:man_fpt>
       
       <sec:man_fta title="TOE Access (FTA)">
-        <!-- FTA_TSE.1 no change -->
+       
         <f-component name="TOE Session Establishment" cc-id="fta_tse.1">
           <consistency-rationale>This SFR applies restrictions on establishment of wireless communications, which is a logical interface that extends the scope of what the Base-PP originally defined.</consistency-rationale>
           <f-element>
@@ -1305,7 +1314,23 @@
 	</f-element>
 			  <f-element>
 			  <title>The TSF shall initiate communication via the trusted channel for [<h:i>no services</h:i>].</title>
-				  <aactivity><Tests>QQQQQQ</Tests></aactivity>	  
+				  <aactivity>
+
+The evaluator shall perform the following activities in addition to the evaluation activity specified in the base NDcPP for this SFR:
+<TSS> 
+   The evaluator shall examine the TSS to determine that all communication mechanisms are identified in terms of the allowed protocols.
+   The evaluator shall also confirm that all protocols listed in the TSS are specified and included in the requirements in the ST.
+</TSS>
+<Guidance>
+  The evaluator shall confirm that the guidance documentation contains instructions for establishing the allowed protocols and 
+  that it contains recovery instructions should a connection be unintentionally broken.
+</Guidance>
+<Tests>
+The evaluator shall perform the following tests:
+<testlist>
+  <test>The evaluator shall first configure the access system to use only WPA2 (AES, with no fallback to TKIP), then ensure that a WPA2 (AES) connection can be made between the access system and a client device.  Finally, the evaluator shall attempt to connect a client device that does not support AES to the access system and ensure that the access system rejects the connection (does not fall back to TKIP).</test>
+  <test>The evaluator shall first configure the access system to use only WPA3, then ensure that a WPA3 connection can be made between the access system device.  Finally, the evaluator shall attempt to connect a client device that does not support WPA3 to the access system and ensure that the access system rejects the connection (does not fall back to WPA2). </test></testlist>
+   </Tests></aactivity>	  
 			  </f-element>
 		  </f-component>
       </sec:man_ftp>
@@ -1314,7 +1339,7 @@
     <opt-sfrs>
       <sec:opt_fcs title="Cryptographic Support (FCS)">
         
-        <!-- previously FCS_CKM.2(4) -->
+       
         <f-component name="Cryptographic Key Distribution (802.11 Keys)" cc-id="fcs_ckm.2" iteration="DISTRIB">
           <consistency-rationale>This SFR defines an additional use for the cryptographic and self-protection mechanisms defined in the Base-PP.</consistency-rationale>
           <f-element>
@@ -1714,29 +1739,56 @@
         <h:td>Description</h:td>
         <h:td>Distributed TOE SFR Allocation</h:td>
       </h:tr>
+      <!--  
+      <h:tr>
+        <h:td>FCS_COP.1/DataEncryption</h:td>
+        <h:td>Cryptographic Operation (AES Data Encryption/Decryption)</h:td>
+        <h:td>All</h:td>
+      </h:tr>
+     <h:tr>
+     <h:td>FPT_TST_EXT.1</h:td>
+       <h:td>TSF Testing</h:td>
+       <h:td>All</h:td> 
+     </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1</h:td>
+        <h:td>Inter-TSF Trusted Channel</h:td>
+        <h:td>One</h:td>
+        </h:tr>
+     -->
+      <h:tr>
+        <h:td>FAU_GEN.1/WLAN</h:td>
+        <h:td>Audit Data Generation</h:td>
+        <h:td>All</h:td>
+      </h:tr>
       <h:tr>
         <h:td>FCS_CKM.1/WPA</h:td>
         <h:td>Cryptographic Key Generation (Symmetric Keys for WPA2 Connections)</h:td>
-        <h:td>All</h:td>
+        <h:td>One</h:td>
       </h:tr>
       <h:tr>
         <h:td>FCS_CKM.2/GTK</h:td>
         <h:td>Cryptographic Key Distribution (GTK)</h:td>
-        <h:td>All</h:td>
+        <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
         <h:td>FCS_CKM.2/PMK</h:td>
         <h:td>Cryptographic Key Distribution (PMK)</h:td>
-        <h:td>All</h:td>
+        <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
         <h:td>FIA_8021X_EXT.1</h:td>
         <h:td>802.1X Port Access Entity (Authenticator) Authentication</h:td>
-        <h:td>All</h:td>
+        <h:td>One</h:td>
       </h:tr>
       <h:tr>
         <h:td>FIA_UAU.6</h:td>
         <h:td>Re-Authenticating</h:td>
+        <h:td>Feature Dependent</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FMT_SMF.1/AccessSystem</h:td>
+        <h:td>Specification of Management Functions</h:td>
         <h:td>Feature Dependent</h:td>
       </h:tr>
       <h:tr>
@@ -1752,6 +1804,11 @@
       <h:tr>
         <h:td>FTA_TSE.1</h:td>
         <h:td>TOE Session Establishment</h:td>
+        <h:td>All</h:td>
+      </h:tr>
+      <h:tr>
+        <h:td>FTP_ITC.1/Client</h:td>
+        <h:td>Inter-TSF Trusted Channel (WLAN Client Communications)</h:td>
         <h:td>All</h:td>
       </h:tr>
       <h:tr>
