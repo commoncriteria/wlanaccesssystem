@@ -539,7 +539,7 @@ Security Objectives									Security Objectives
 
 Rationale										Rationale
 
-[T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE)\						[T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE)\
+[T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE)\					      |	[T.NETWORK\_​DISCLOSURE](#T.NETWORK_DISCLOSURE)
 
 [O.AUTHENTICATION](#O.AUTHENTICATION)							[O.AUTHENTICATION](#O.AUTHENTICATION)
 
@@ -548,14 +548,14 @@ by [O.AUTHENTICATION](#O.AUTHENTICATION) as proper authentication of			by [O.AUT
 external entities ensures that network data is not disclosed to an			external entities ensures that network data is not disclosed to an
 unauthorized subject.									unauthorized subject.
 
-[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)				[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)
+[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)			      |	[O.CRYPTOGRAPHIC\_​FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)
 
 The threat [T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE) is countered			The threat [T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE) is countered
 by [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as				by [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as
 implementation of cryptogpraphic functions ensures that network data is		      |	implementation of cryptographic functions ensures that network data is
 not subject to unauthorized disclosure in transit.					not subject to unauthorized disclosure in transit.
 
-[T.NETWORK\_ACCESS](#T.NETWORK_ACCESS)\							[T.NETWORK\_ACCESS](#T.NETWORK_ACCESS)\
+[T.NETWORK\_ACCESS](#T.NETWORK_ACCESS)\						      |	[T.NETWORK\_​ACCESS](#T.NETWORK_ACCESS)
 
 [O.AUTHENTICATION](#O.AUTHENTICATION)							[O.AUTHENTICATION](#O.AUTHENTICATION)
 
@@ -565,7 +565,7 @@ ensure that subjects outside the protected network cannot access data			ensure t
 inside the protected network until the [TSF](#abbr_TSF) has				inside the protected network until the [TSF](#abbr_TSF) has
 authenticated them.									authenticated them.
 
-[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)						[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)
+[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)					      |	[O.TOE\_​ADMINISTRATION](#O.TOE_ADMINISTRATION)
 
 The threat [T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE) is countered			The threat [T.NETWORK\_DISCLOSURE](#T.NETWORK_DISCLOSURE) is countered
 by [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION) as the				by [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION) as the
@@ -573,9 +573,9 @@ by [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION) as the				by [O.TOE\_ADMINISTR
 management functions that originate from wireless clients outside the			management functions that originate from wireless clients outside the
 protected network.									protected network.
 
-[T.TSF\_FAILURE](#T.TSF_FAILURE)\							[T.TSF\_FAILURE](#T.TSF_FAILURE)\
+[T.TSF\_FAILURE](#T.TSF_FAILURE)\						      |	[T.TSF\_​FAILURE](#T.TSF_FAILURE)
 
-[O.FAIL\_SECURE](#O.FAIL_SECURE)							[O.FAIL\_SECURE](#O.FAIL_SECURE)
+[O.FAIL\_SECURE](#O.FAIL_SECURE)						      |	[O.FAIL\_​SECURE](#O.FAIL_SECURE)
 
 The threat [T.TSF\_FAILURE](#T.TSF_FAILURE) is countered by				The threat [T.TSF\_FAILURE](#T.TSF_FAILURE) is countered by
 [O.FAIL\_SECURE](#O.FAIL_SECURE) as the [TOE](#abbr_TOE) responds to			[O.FAIL\_SECURE](#O.FAIL_SECURE) as the [TOE](#abbr_TOE) responds to
@@ -583,7 +583,7 @@ self-test failures that are significant enough to show a potential			self-test f
 compromise of the [TSF](#abbr_TSF) by making the [TSF](#abbr_TSF)			compromise of the [TSF](#abbr_TSF) by making the [TSF](#abbr_TSF)
 unavailable until the failure state has been cleared.					unavailable until the failure state has been cleared.
 
-[O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)						[O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)
+[O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)					      |	[O.SYSTEM\_​MONITORING](#O.SYSTEM_MONITORING)
 
 The threat [T.TSF\_FAILURE](#T.TSF_FAILURE) is countered by				The threat [T.TSF\_FAILURE](#T.TSF_FAILURE) is countered by
 [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING) as the [TOE](#abbr_TOE)			[O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING) as the [TOE](#abbr_TOE)
@@ -592,16 +592,16 @@ incorrect configuration, and other behaviors that may indicate a			incorrect con
 degraded ability to enforce its intended security functionality so that			degraded ability to enforce its intended security functionality so that
 issues can be diagnosed and resolved appropriately.					issues can be diagnosed and resolved appropriately.
 
-[T.DATA\_INTEGRITY](#T.DATA_INTEGRITY)\							[T.DATA\_INTEGRITY](#T.DATA_INTEGRITY)\
+[T.DATA\_INTEGRITY](#T.DATA_INTEGRITY)\						      |	[T.DATA\_​INTEGRITY](#T.DATA_INTEGRITY)
 
-[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)				[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)
+[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)			      |	[O.CRYPTOGRAPHIC\_​FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)
 
 The threat [T.DATA\_INTEGRITY](#T.DATA_INTEGRITY) is countered by			The threat [T.DATA\_INTEGRITY](#T.DATA_INTEGRITY) is countered by
 [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as the				[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as the
 [TOE](#abbr_TOE) uses cryptographic functionality to enforce the			[TOE](#abbr_TOE) uses cryptographic functionality to enforce the
 integrity of protected data in transit.							integrity of protected data in transit.
 
-[T.REPLAY\_ATTACK](#T.REPLAY_ATTACK)\							[T.REPLAY\_ATTACK](#T.REPLAY_ATTACK)\
+[T.REPLAY\_ATTACK](#T.REPLAY_ATTACK)\						      |	[T.REPLAY\_​ATTACK](#T.REPLAY_ATTACK)
 
 [O.AUTHENTICATION](#O.AUTHENTICATION)							[O.AUTHENTICATION](#O.AUTHENTICATION)
 
@@ -611,14 +611,14 @@ authentication mechanisms prevent replay attacks because the source of			authent
 the attack will not have the proper authentication data for the				the attack will not have the proper authentication data for the
 [TSF](#abbr_TSF) to process the replayed traffic.					[TSF](#abbr_TSF) to process the replayed traffic.
 
-[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)				[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)
+[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)			      |	[O.CRYPTOGRAPHIC\_​FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)
 
 The threat [T.REPLAY\_ATTACK](#T.REPLAY_ATTACK) is countered by				The threat [T.REPLAY\_ATTACK](#T.REPLAY_ATTACK) is countered by
 [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as the				[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS) as the
 [TOE](#abbr_TOE)\'s use of cryptographic functionality prevents				[TOE](#abbr_TOE)\'s use of cryptographic functionality prevents
 impersonation attempts that use replayed traffic.					impersonation attempts that use replayed traffic.
 
-[A.CONNECTIONS](#A.CONNECTIONS)\							[A.CONNECTIONS](#A.CONNECTIONS)\
+[A.CONNECTIONS](#A.CONNECTIONS)\						      |	[A.CONNECTIONS](#A.CONNECTIONS)
 
 [OE.CONNECTIONS](#OE.CONNECTIONS)							[OE.CONNECTIONS](#OE.CONNECTIONS)
 
@@ -975,13 +975,16 @@ Detection of modification of channel data.						Detection of modification of cha
 data-myid="auditWLAN" data-counter-type="ct-Table"}					data-myid="auditWLAN" data-counter-type="ct-Table"}
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ The auditable events defined in			[Application Note: ]{.note-header}[ The auditable events defined in
-[Table [2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the SFRs that			[Table [2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the SFRs that
-are explicitly defined in this [PP-Module](#abbr_PP-Module) and are			are explicitly defined in this [PP-Module](#abbr_PP-Module) and are
-intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The			intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The
-events in the Auditable Events table should be combined with those of			events in the Auditable Events table should be combined with those of
-the [NDcPP](#abbr_NDcPP) in the context of a conforming Security			the [NDcPP](#abbr_NDcPP) in the context of a conforming Security
-Target.]{.note}										Target.]{.note}
+[Application Note: ]{.note-header}[ The auditable events defined in		      |	[Application Note: ]{.note-header}[ ]{.note}
+[Table [2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the SFRs that		      |
+are explicitly defined in this [PP-Module](#abbr_PP-Module) and are		      |	The auditable events defined in [Table
+intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The		      |	[2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the SFRs that are
+events in the Auditable Events table should be combined with those of		      |	explicitly defined in this [PP-Module](#abbr_PP-Module) and are intended
+the [NDcPP](#abbr_NDcPP) in the context of a conforming Security		      |	to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP).
+Target.]{.note}									      |
+										      >	The events in the Auditable Events table should be combined with those
+										      >	of the [NDcPP](#abbr_NDcPP) in the context of a conforming Security
+										      >	Target.
 
 The Auditable Events ([Table [2]{.counter}](#auditWLAN){.auditWLAN-ref})		The Auditable Events ([Table [2]{.counter}](#auditWLAN){.auditWLAN-ref})
 includes optional and objective SFRs. The auditing of optional and			includes optional and objective SFRs. The auditing of optional and
@@ -1351,7 +1354,7 @@ based.											based.
 										      >
 										      >	Rationale
 										      >
-										      >	[O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)\
+										      >	[O.CRYPTOGRAPHIC\_​FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)\
 										      >
 										      >	[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption) (modified from
 										      >	[Base-PP](#abbr_Base-PP))
@@ -1474,7 +1477,7 @@ based.											based.
 										      >	requiring the [TSF](#abbr_TSF) to implement pre-shared key
 										      >	authentication if any trusted protocols require its use.
 										      >
-										      >	[O.FAIL\_SECURE](#O.FAIL_SECURE)\
+										      >	[O.FAIL\_​SECURE](#O.FAIL_SECURE)\
 										      >
 										      >	[FPT\_TST\_EXT.1](#FPT_TST_EXT.1) (modified from
 										      >	[Base-PP](#abbr_Base-PP))
@@ -1489,7 +1492,7 @@ based.											based.
 										      >	[TSF](#abbr_TSF) to preserve a secure state in the event of a self-test
 										      >	failure.
 										      >
-										      >	[O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)\
+										      >	[O.SYSTEM\_​MONITORING](#O.SYSTEM_MONITORING)\
 										      >
 										      >	[FAU\_GEN.1/WLAN](#FAU_GEN.1/WLAN)
 										      >
@@ -1497,7 +1500,7 @@ based.											based.
 										      >	the [TSF](#abbr_TSF) to generate audit records for security-relevant
 										      >	[WLAN](#abbr_WLAN) behavior.
 										      >
-										      >	[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\
+										      >	[O.TOE\_​ADMINISTRATION](#O.TOE_ADMINISTRATION)\
 										      >
 										      >	FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))
 										      >
