@@ -1,3 +1,0 @@
-output/wlanaccesssystem-release-linkable.html: APs
-output/wlanaccesssystem-release.html: APs
-output/wlanaccesssystem.html: APs
