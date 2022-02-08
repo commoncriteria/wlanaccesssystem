@@ -112,7 +112,8 @@ A [TOE](#abbr_TOE) that conforms to a							A [TOE](#abbr_TOE) that conforms to 
 [PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as		      |	[PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as
 defined in the [NDcPP](#abbr_NDcPP). The [TOE](#abbr_TOE) functionality		      |	defined in the [NDcPP](#abbr_NDcPP). The expectation for this
 may reside entirely within a single device or be spread across multiple		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) access system
-distributed physical components.						      |	must include a controller and one or more access points (APs).
+distributed physical components.						      |	must include a controller and one or more access points
+										      >	([APs](#abbr_AP)).
 
 1.2 Terms {#glossary .indexable data-level="2"}						1.2 Terms {#glossary .indexable data-level="2"}
 ---------										---------
@@ -1216,7 +1217,7 @@ conditions*\]*\].									conditions*\]*\].
 										      >	-   client credentials to be used for authentication
 										      >	-   [SSID](#abbr_SSID)
 										      >	-   if the [SSID](#abbr_SSID) is broadcasted
-										      >	-   frequency band set to \[**selection**: *2.4 Ghz*, *5 Ghz*, *6 Ghz*\]
+										      >	-   frequency band set to \[**selection**: *2.4 GHz*, *5 GHz*, *6 GHz*\]
 										      >	-   transmit power level
 										      >	:::
 										      >	:::
@@ -2532,7 +2533,7 @@ outlined in the [Base-PP](#abbr_Base-PP).						outlined in the [Base-PP](#abbr_B
   Acronym                                                                      Meanin	  Acronym                                                                      Meanin
   ---------------------------------------------------------------------------- ------	  ---------------------------------------------------------------------------- ------
   [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan	  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan
-  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces	  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces
+  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces |	  [[AP](#abbr_AP)]{#abbr_AP .term data-plural="APs"}                           [Acces
   [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces	  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces
   [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base 	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base 
   [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe	  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe
