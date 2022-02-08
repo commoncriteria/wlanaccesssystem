@@ -1,6 +1,8 @@
 output/wlanaccesssystem-release-linkable.html: APs
 output/wlanaccesssystem-release-linkable.html: Ghz
 output/wlanaccesssystem-release-linkable.html: broadcasted
+output/wlanaccesssystem-release-linkable.html: evalutator
+output/wlanaccesssystem-release-linkable.html: succesful
 output/wlanaccesssystem-release.html: APs
 output/wlanaccesssystem-release.html: Ghz
 output/wlanaccesssystem-release.html: broadcasted
