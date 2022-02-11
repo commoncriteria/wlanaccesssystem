@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xsl-stylesheet type="text/xsl" href="../transforms/xsl/module/module2html.xsl"?>
+p<?xsl-stylesheet type="text/xsl" href="../transforms/xsl/module/module2html.xsl"?>
 
 <?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
@@ -469,11 +469,28 @@
                   </selectables>. 
               </title>
               <note role="application">
-                
-                This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 256 bit key sizes while also defining additional AES mode and key size selections not present in the original definition. <h:p/>              
-                This requirement mandates two modes for AES with key size of 256 bits be implemented. It is not expected that these modes will both be used for all encryption/decryption functionality. Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements, CBC mode is mandated, and to comply with IEEE 802.11-2020, AES-CCMP (which uses AES in CCM as specified in SP 800-38C) must be implemented. <h:p/>
-                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates. For the second selection, the ST author should choose the key sizes that are supported by this functionality. 256-bit CCMP is required in order to comply with FCS_CKM.1/WPA. Note that optionally AES-CCMP-192, AES-CCMP-128, ,AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax connections. In the future, one of these modes may be required. <h:p/>
-                CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
+                <h:p>
+                  This requirement is modified from its definition in the NDcPP by mandating the selection of
+		  CBC mode and 256 bit key sizes while also defining additional AES mode and key size selections
+		  not present in the original definition.
+		</h:p>
+		<h:p>
+                  This requirement mandates two modes for AES with key size of 256 bits be implemented.
+		  It is not expected that these modes will both be used for all encryption and decryption functionality.
+		  Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements,
+		  CBC mode is mandated, and to comply with IEEE 802.11-2020, AES-CCMP
+		  (which uses AES in CCM as specified in SP 800-38C) must be implemented.
+		</h:p>
+		<h:p>
+                  For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates.
+		  For the second selection, the ST author should choose the key sizes that are supported by this functionality.
+		  256-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
+		  Note that optionally AES-CCMP-192, AES-CCMP-128, ,AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax connections.
+		  In the future, one of these modes may be required.
+		</h:p>
+		<h:p>
+                  CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
+		</h:p>
               </note>
               <aactivity>
                 <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:p/></TSS>
@@ -624,7 +641,7 @@
                   The requirement implies that not only are communications protected when they are initially established,
                   but also on resumption after an outage.</h:p>
                 <h:p>
-                   The IT entity of "802.1X authentication server" is distinct from "authentication server",
+                   The IT entity of "802.1X authentication server" is distinct from "authentication server,"
                    because the latter may be used for administrator authentication rather 
                    than authorization of WLAN clients.
                 </h:p><h:p>
@@ -1118,7 +1135,7 @@
                     negotiation fails. This should result in the wireless client still being unable to access the test network.</test>
                 </testlist>
                 
-                <h:b>Note: </h:b>Tests 2 and 3 above are not tests that "EAP-TLS works", although that's a by-product of the test.
+                <h:b>Note: </h:b>Tests 2 and 3 above are not tests that "EAP-TLS works," although that's a by-product of the test.
                 The test is actually that a failed authentication (under two failure modes) results in denial of access to
                 the network, which demonstrates the enforcement of FIA_8021X_EXT.1.3.
               </Tests>
