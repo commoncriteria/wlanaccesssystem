@@ -860,7 +860,7 @@
                 The evaluator shall verify that the TSS describes how the primitives defined and implemented by this PP-Module
                 are used by the TOE in establishing and maintaining secure connectivity to the wireless clients. This
                 description shall include how the GTK and PTK are generated or derived. The TSS shall also provide a
-                description of the developer’s method(s) of assuring that their implementation conforms to the
+                description of the developer’s methods of assuring that their implementation conforms to the
                 cryptographic standards; this includes not only testing done by the developing organization, but also
                 proof of third-party testing that is performed (e.g. WPA2 certification). The evaluator shall ensure that
                 the description of the testing methodology is of sufficient detail to determine the extent to which the
@@ -958,7 +958,7 @@
                 
                 Step 7: The evaluator shall repeat Step 6 for the next 2 data frames with frame control value 0x4208.<h:p/>
                 
-                The evaluator shall also perform the following testing based on the supported GTK distribution method(s):<h:p/>
+                The evaluator shall also perform the following testing based on the supported GTK distribution methods:<h:p/>
                 
                 <h:b>AES Key Wrap (AES-KW Tests)</h:b><h:p/>
                 <testlist>
@@ -1257,7 +1257,7 @@
             </title>
             <note role="application">
               The “TOE interface” can be specified in terms of the device in the TOE that the WLAN
-              client is connecting to (e.g. specific WLAN access point(s)). “Time” and “day” refer to time-of-day and
+              client is connecting to (e.g. specific WLAN access points). “Time” and “day” refer to time-of-day and
               day-of-week respectively.<h:p/>
               
               The assignment is to be used by the ST author to specify additional attributes on which denial of session
