@@ -42,17 +42,17 @@
   <sec:Introduction>
     <sec:Overview>
       <h:p>
-      The scope of this PP-Module is to describe the security functionality of a Wireless Local Area Network (WLAN) Access System in terms of [CC] 
+      The scope of this PP-Module is to describe the security functionality of a Wireless Local Area Network (WLAN) Access System (AS) in terms of <xref g='CC'/>
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       <h:ul>
         <h:li>Collaborative Protection Profile for Network Devices (NDcPP) Version 2.2e</h:li>
       </h:ul>
-      This Base-PP is valid because a WLAN Access System is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
+      This Base-PP is valid because a WLAN AS is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
       This is functionality that typically will be implemented by a network device.
       </h:p>
       <h:p>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a ‘Distributed TOE’ as
-      defined in the NDcPP. The expectation for this PP-Module is that a WLAN access system must include a controller and one or more access points (APs).
+      defined in the NDcPP. The expectation for this PP-Module is that a WLAN AS must include a controller and one or more access points (APs).
       </h:p>
       
 </sec:Overview>
@@ -87,9 +87,9 @@
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <sec:TOE_Boundary>
 	<h:p>
-        This PP-Module specifically addresses WLAN (IEEE 802.11) Access Systems. A compliant WLAN Access System is a
+        This PP-Module specifically addresses WLAN (IEEE 802.11) ASs. A compliant WLAN AS is a
         system composed of hardware and software that is connected to a network and has an infrastructure
-        role in the overall enterprise network. In particular, a WLAN Access System establishes a secure wireless
+        role in the overall enterprise network. In particular, a WLAN AS establishes a secure wireless
         (IEEE 802.11) link that provides an authenticated and encrypted path to an enterprise network and
         thereby decreases the risk of exposure of information transiting “over-the-air”.
 	</h:p>
@@ -113,48 +113,49 @@
       </usecases> 
     </sec:Use_Cases> 
   </sec:Introduction>
-  <sec:Conformance_Claims>
-<!--     <cclaims> -->
-<!--       <cclaim name="Conformance Statement"> -->
-<!--         <description> -->
-<!-- 	</description> -->
-<!-- 	This PP-Module inherits exact conformance as required from the specified -->
-<!--         Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based -->
-<!--         SFRs, and Optional SFRs (dated May 2017).</h:p> -->
-<!-- <h:p>  -->
+  <sec:Conformance_Claims boilerplate="no">
+    <cclaims>
+      <cclaim name="Conformance Statement">
+        <description>
+	  <h:p>
+	    This PP-Module inherits exact conformance as required from the specified
+            Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
+          SFRs, and Optional SFRs (dated May 2017).</h:p>
+	  <h:p>
           
-<!--           The following PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module: -->
-<!--           <h:ul> -->
-<!--             <h:li>PP-Module for Stateful Traffic Filter Firewalls, Version 1.4 + Errata 20200625</h:li> -->
-<!--             <h:li>PP-Module for Virtual Private Network (VPN) Gateways, Version 1.1</h:li> -->
-<!--           </h:ul>  -->
-<!--         </description> -->
-<!--       </cclaim> -->
-<!--       <cclaim name="CC Conformance Claims"> -->
-<!--         <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common -->
-<!--           Criteria Version 3.1, Release 5 [CC]. </description> -->
-<!--       </cclaim> -->
-<!--       <cclaim name="Package Claims"> -->
-<!--         <description>This PP-Module does not -->
-<!--           claim conformance to any packages.</description> -->
-<!--       </cclaim> -->
-<!--     </cclaims> -->
+          The following PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
+          <h:ul>
+            <h:li>PP-Module for Stateful Traffic Filter Firewalls, Version 1.4 + Errata 20200625</h:li>
+            <h:li>PP-Module for Virtual Private Network (VPN) Gateways, Version 1.1</h:li>
+          </h:ul>
+	  </h:p>
+        </description>
+      </cclaim>
+      <cclaim name="CC Conformance Claims">
+        <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common
+          Criteria Version 3.1, Release 5 [CC]. </description>
+      </cclaim>
+      <cclaim name="Package Claims">
+        <description>This PP-Module does not
+          claim conformance to any packages.</description>
+      </cclaim>
+    </cclaims>
   </sec:Conformance_Claims>
   <sec:Security_Problem_Description>
     <h:p>
     This PP-Module is written to address the situation when network packets cross the boundary
-    between a wired private network and a wireless client via a WLAN Access System. The WLAN Access
+    between a wired private network and a wireless client via a WLAN AS. The WLAN Access
     System provides secure communication between a user (wireless client) and a wired (trusted) network
     by supporting security functions such as administration, authentication, encryption, and the protection
     and handling of data in transit. To protect the data in-transit from disclosure and modification, a WLAN
-    Access System is used to establish secure communications. The WLAN Access System provides one end
+    AS is used to establish secure communications. The WLAN AS provides one end
     of the secure cryptographic tunnel and performs encryption and decryption of network packets in
-    accordance with a WLAN Access System security policy negotiated with its authenticated wireless client.
+    accordance with a WLAN AS security policy negotiated with its authenticated wireless client.
     It supports multiple simultaneous wireless connections and is capable of establishing and terminating
     multiple cryptographic tunnels to and from those peers.</h:p>
     <h:p>
     
-    The proper installation, configuration, and administration of the WLAN Access System are critical to its
+    The proper installation, configuration, and administration of the WLAN AS are critical to its
     correct operation.</h:p>
     <h:p>
     
@@ -164,7 +165,7 @@
     contains only threats to the ability of the TOE to provide its security functions, this
     PP-Module addresses only threats to resources in the operational environment. Together the
     threats of the NDcPP and those defined in this PP-Module define the comprehensive set of
-    security threats addressed by a WLAN Access System TOE. 
+    security threats addressed by a WLAN AS TOE. 
     </h:p>
     <section title="Threats" id="threats">
       <threats>
@@ -172,8 +173,9 @@
           <description>Devices on a protected network may be exposed to threats presented by devices located outside the
             protected network, which may attempt to conduct unauthorized activities. If malicious external devices
             are able to communicate with devices on the protected network, or if devices on the protected network
-            can establish communications with those external devices (e.g., as a result of nonexistent/insufficient
-            WLAN data encryption that exposes the WLAN data in transit to rogue elements), then those internal
+            can establish communications with those external devices
+	    (e.g., as a result of nonexistent or insufficient  WLAN data encryption that exposes the WLAN data in
+	    transit to rogue elements), then those internal
             devices may be susceptible to the unauthorized disclosure of information.</description>
           <consistency-rationale>This threat extends the security problem defined by the Base-PP to include the threat of a malicious entity in an untrusted network interacting with a protected entity in a trusted network. 
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks. This threat is also consistent with the T.UNTRUSTED_COMMUNICATION_CHANNELS
@@ -430,7 +432,7 @@
 						<rationale>
 							FMT_SMR_EXT.1 supports the objective by requiring the TSF to prevent any administrative actions that originate from the 'external' network.</rationale>
  						<addressed-by>FMT_SMF.1/AccessSystem</addressed-by>
-						<rationale>FMT_SMF.1/AccessSystem supports the objective by defining management functionality that is specific to WLAN Access System devices.</rationale>
+						<rationale>FMT_SMF.1/AccessSystem supports the objective by defining management functionality that is specific to WLAN AS devices.</rationale>
                     </SO>
   
       </SOs>
@@ -675,7 +677,7 @@
                 <h:p>
                   This requirement has been modified from its definition in the NDcPP to 
                   mandate the communications protocols and environmental components that 
-                  a WLAN Access System must use for infrastructure communications
+                  a WLAN AS must use for infrastructure communications
                   (802.11 support is also required for wireless client communications but this is covered
                   by the FTP_ITC.1/Client.
                   IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
@@ -753,10 +755,10 @@
 <f-element>
             <title> The TSF shall be able to generate an audit record of the following auditable
               events: <h:ol type="a">
-                <h:li>Start-up and shutdown of the audit functions;</h:li>
-                <h:li>All auditable events for the [not specified] level of audit;</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWLAN"/>);</h:i></h:li>
-                <h:li><h:i>Failure of wireless sensor communication</h:i>].</h:li>
+                <h:li>Start-up and shutdown of the audit functions</h:li>
+                <h:li>All auditable events for the [not specified] level of audit</h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWLAN"/>)</h:i></h:li>
+                <h:li><h:i>Failure of wireless sensor communication</h:i>]</h:li>
               </h:ol>
             <h:table>
               <h:tr>
@@ -794,7 +796,7 @@
                 <h:td>Reason for failure. Non-TOE endpoint of connection.</h:td>
               </h:tr>
               <h:tr>
-                <h:td>Establishment/Termination of an IPsec SA.</h:td>
+                <h:td>Establishment or Termination of an IPsec SA.</h:td>
                 <h:td>Non-TOE endpoint of connection.</h:td>
               </h:tr>
               <h:tr>
@@ -913,8 +915,8 @@
               based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys).
               This KDF outputs 704 bits.</h:p>
 	      <h:p>
-		This requirement applies only to the keys that are generated/derived for the communications between
-		the access point and the client once the client has been authenticated.
+		This requirement applies only to the keys that are generated or derived for the communications
+		between the AP and the client once the client has been authenticated.
 		It refers to the derivation of the GTK (through the RBG specified in this PP-Module)
 		as well as the derivation of the PTK from the PMK, which is done using a random value
 		generated by the RBG specified in this PP-Module, the HMAC function as specified in
@@ -942,7 +944,7 @@
 		  frames between the TOE and a wireless client:
 		</h:p>
 		<h:p>
-                  Step 1: The evaluator shall configure the access point to an unused channel and configure the WLAN
+                  Step 1: The evaluator shall configure the AP to an unused channel and configure the WLAN
                   sniffer to sniff only on that channel (i.e., lock the sniffer on the selected channel).
 		  The sniffer should also be configured to filter on the MAC address of the TOE and client.
 		</h:p>
@@ -980,8 +982,8 @@
 		<h:p>
                   Additionally, the evaluator shall test the PRF function using the test vectors from:
 		  <h:ul>
-                  <h:li>Section 2.4 “The PRF Function – PRF(key, prefix, data, length)” of the IEEE 802.11-02/362r6 document "Proposed Test vectors for IEEE 802.11 TGi" dated September 10, 2002, and</h:li>
-                  <h:li>Annex J.3 “PRF reference implementation and test vectors” of IEEE 802.11-2020.</h:li>
+                  <h:li>Section 2.4 “The PRF Function – PRF(key, prefix, data, length)” of the IEEE 802.11-02/362r6 document "Proposed Test vectors for IEEE 802.11 TGi" dated September 10, 2002</h:li>
+                  <h:li>Annex J.3 “PRF reference implementation and test vectors” of IEEE 802.11-2020</h:li>
                   </h:ul>
 		</h:p>
               </Tests>
@@ -1022,7 +1024,7 @@
 		  appropriate participating clients.
 		</h:p>
 		<h:p>
-                  Step 1: The evaluator shall configure the access point to an unused channel and configure the WLAN
+                  Step 1: The evaluator shall configure the AP to an unused channel and configure the WLAN
                   sniffer to sniff only on that channel (i.e., lock the sniffer on the selected channel).
 		  The sniffer should also be configured to filter on the MAC address of the TOE and client.
 		</h:p>
@@ -1170,7 +1172,7 @@
           <comp-lev>requires the TSF to securely implement IEEE 802.1X as an authenticator.</comp-lev>
           <management>No specific management functions are identified.</management>
           <audit>The following actions should be auditable if FAU_GEN Security Audit Data Generation is included in the ST: <h:ul>
-              <h:li>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</h:li>
+              <h:li>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange</h:li>
             </h:ul>
           </audit>
           <dependencies>No dependencies</dependencies>
@@ -1209,14 +1211,13 @@
           </note>
             <aactivity>
               <TSS>
-		
                 In order to show that the TSF implements the 802.1X-2010 standard correctly, the evaluator shall ensure
                 that the TSS contains the following information: <h:ul>
-                <h:li>The sections (clauses) of the standard that the TOE implements;</h:li>
+                <h:li>The sections (clauses) of the standard that the TOE implements</h:li>
                 <h:li>For each identified section, any options selected in the implementation allowed by the
-                standards are specified; and</h:li>
+                standards are specified</h:li>
                 <h:li>For each identified section, any non-conformance is identified and described, including a
-                justification for the non-conformance.</h:li>
+                justification for the non-conformance</h:li>
                 </h:ul>
                 Because the connection to the RADIUS server will be contained in an IPsec or RadSec (TLS) tunnel,
                 the security mechanisms detailed in the RFCs identified in the requirement are not relied on to provide
@@ -1293,17 +1294,17 @@
 			      <h:li>transmit power level</h:li>
 			    </h:ul></h:ul></title>
 			<aactivity>
-			  <TSS>The evaluator shall confirm that the TSS includes which security types (e.g., WPA3), authentication protocol (e.g., SAE) and frequency bands the WLAN access system supports. The evaluator shall confirm that the TSS includes how connection attempts from clients the are not operating on an approved security type are handled.</TSS>
+			  <TSS>The evaluator shall confirm that the TSS includes which security types (e.g., WPA3), authentication protocol (e.g., SAE) and frequency bands the WLAN AS supports. The evaluator shall confirm that the TSS includes how connection attempts from clients the are not operating on an approved security type are handled.</TSS>
 			  <Guidance> 
-			    The evaluator shall confirm that the operational guidance includes instructions for configuring the WLAN access system for each feature listed.
+			    The evaluator shall confirm that the operational guidance includes instructions for configuring the WLAN AS for each feature listed.
 			  </Guidance>
 			  <Tests>
 			  <testlist>
 			    <test>For each security type specified in the TSS, configure the network to the approved security type and verify that the client can establish a connection.  Maintaining the same SSID, change the security type of the client to a non-approved security type and attempt to establish a connection.  Verify that the connection was unsuccessful. </test>
 			    <test>For each authentication protocol specified in the TSS, configure the network accordingly per the AGD. Verify that the client connection attempt is successful when using the correct client credentials and that the connection is unsuccessful when incorrect authentication credentials are used. </test>		  
 			    <test>Configure the SSID to be broadcasted. Using a network sniffing tool capture a beacon frame and confirm that the SSID is included. Configure the SSID to be hidden. Using a network sniffing tool capture a beacon frame and confirm that the SSID is not listed. </test>		  
-			    <test>The evaluator shall configure the access system to operate in each of the selected frequency bands and verify using a network sniffing tool. </test>	
-			    <test>The evaluator shall demonstrate that the client can establish a connection to the access system on the default power level.  After disconnecting,  the power level should be adjusted and then the client should be able to successfully connect to the access system again.</test>
+			    <test>The evaluator shall configure the AS to operate in each of the selected frequency bands and verify using a network sniffing tool. </test>	
+			    <test>The evaluator shall demonstrate that the client can establish a connection to the AS on the default power level.  After disconnecting,  the power level should be adjusted and then the client should be able to successfully connect to the AS again.</test>
 			  </testlist>
 			  </Tests>
 			</aactivity>
@@ -1352,7 +1353,8 @@
               the self-tests</h:i>].</title>
             <note role="application">
               The intent of this requirement is to express the fail secure capabilities that the TOE
-              possesses. This means that the TOE must be able to attain a secure/safe state (shutdown) when any of
+              possesses.
+	      This means that the TOE must be able to attain a secure, safe state (shutdown) when any of
               the identified failures occur.
             </note>
             <aactivity>
@@ -1384,7 +1386,7 @@
             <note role="application">
 	      <h:p>
               The “TOE interface” can be specified in terms of the device in the TOE that the WLAN
-              client is connecting to (e.g. specific WLAN access points). “Time” and “day” refer to time-of-day and
+              client is connecting to (e.g. specific WLAN APs). “Time” and “day” refer to time-of-day and
               day-of-week respectively.
 	      </h:p>
 	      <h:p>
@@ -1405,7 +1407,7 @@
                     follows the operational guidance to configure the system so that that client’s access is denied based on
                     a specific value of the attribute. The evaluator shall then attempt to establish a session in contravention
                     to the attribute setting (for instance, the client is denied WLAN access based upon the TOE interface
-                    (e.g. WLAN access point) it is connecting to or the client is denied access based upon the time-of-day or
+                    (e.g. WLAN AP) it is connecting to or the client is denied access based upon the time-of-day or
                     day-of-week it is attempting connection on). The evaluator shall observe that the access attempt fails.
                   </test>
                 </testlist>
@@ -1467,7 +1469,7 @@
 	      <h:p>
               This requirement applies to any key necessary for successful IEEE 802.11 connections
               not covered by FCS_CKM.2/GTK.
-	      In cases where a key must be distributed to other access points, this
+	      In cases where a key must be distributed to other APs, this
               communication must be performed via a mechanism of commensurate cryptographic strength.
 	      Because communications with any component of a distributed TOE are required to be
 	      performed over a trusted connection, the transfer of these keys will be protected.
@@ -1576,7 +1578,7 @@
             <title>The TSF shall implement <selectables>
               <selectable>TLS 1.2 (RFC 5246)</selectable>
               <selectable>TLS 1.1 (RFC 4346)</selectable>
-            </selectables> and no earlier TLS versions when acting as a RADIUS over TLS client that supports the following cipher suites: 
+            </selectables> and no earlier TLS versions when acting as a RADIUS over TLS client that supports the following ciphersuites: 
               <selectables linebreak="yes">
                 <selectable>TLS_PSK_WITH_AES_128_CBC_SHA</selectable>
                 <selectable>TLS_PSK_WITH_AES_256_CBC_SHA</selectable>
@@ -1594,20 +1596,20 @@
             </title>
             <ext-comp-def-title>
               <title>The TSF shall implement <assignable>list of allowed TLS versions</assignable> and reject all other TLS and SSL versions. 
-                The TLS implementation shall support the following cipher suites for use when acting as a RADIUS over TLS client: <assignable>list of supported cipher suites</assignable>.</title>
+                The TLS implementation shall support the following ciphersuites for use when acting as a RADIUS over TLS client: <assignable>list of supported ciphersuites</assignable>.</title>
             </ext-comp-def-title>
             <note role="application">
 	      <h:p>
-		If any of the TLS_RSA_PSK cipher suites are selected by the ST author,
+		If any of the TLS_RSA_PSK ciphersuites are selected by the ST author,
 	        it is necessary to claim the selection-based requirement FCS_RADSEC_EXT.3.
 	      </h:p>
 	      <h:p>
-		The above cipher suites are only for use when the TSF is acting as a RADIUS over TLS client,
+		The above ciphersuites are only for use when the TSF is acting as a RADIUS over TLS client,
 		not for other uses of the TLS protocol. 
-		The cipher suites to be tested in the evaluated configuration are limited by this requirement. 
-		The ST author should select the cipher suites that are supported.
+		The ciphersuites to be tested in the evaluated configuration are limited by this requirement. 
+		The ST author should select the ciphersuites that are supported.
 		If "X.509v3 certificates" is selected in FCS_RADSEC_EXT.1.2, 
-		the cipher suites selected in (and tested by) FCS_TLSC_EXT.2.1 are also supported for
+		the ciphersuites selected in (and tested by) FCS_TLSC_EXT.2.1 are also supported for
 		RADIUS over TLS client use.
 	      </h:p>
             </note>
@@ -1620,8 +1622,8 @@
             <aactivity>
               <TSS>
 		<h:p>
-		The evaluator shall check the description of the implementation of this protocol in the TSS to ensure that the cipher suites supported are specified. 
-                The evaluator shall check the TSS to ensure that the cipher suites specified are identical to those listed for this component. 
+		The evaluator shall check the description of the implementation of this protocol in the TSS to ensure that the ciphersuites supported are specified. 
+                The evaluator shall check the TSS to ensure that the ciphersuites specified are identical to those listed for this component. 
                 The evaluator shall also verify that the TSS contains a description of the denial of old SSL and TLS versions.
 		</h:p>
 		<h:p>
@@ -1633,7 +1635,7 @@
 		<h:p>The evaluator shall verify that any configuration necessary to meet the requirement must be contained in the guidance.</h:p>
 		<h:p>
                   The evaluator shall also check the guidance documentation to ensure that it contains instructions on configuring the TOE so that RADIUS over TLS conforms to the description in the TSS 
-                  (for instance, the set of cipher suites advertised by the TOE may have to be restricted to
+                  (for instance, the set of ciphersuites advertised by the TOE may have to be restricted to
 		  meet the requirements).
 		</h:p>
 		<h:p>
@@ -1642,7 +1644,7 @@
 	      </Guidance>
               <Tests>The evaluator shall perform the following tests:
               <testlist>
-                <test>The evaluator shall establish a RADIUS over TLS connection using each of the cipher suites selected in FCS_RADSEC_EXT.2.1. 
+                <test>The evaluator shall establish a RADIUS over TLS connection using each of the ciphersuites selected in FCS_RADSEC_EXT.2.1. 
                   It is sufficient to observe the successful negotiation of a cipher suite to satisfy the intent of the test; it is not necessary 
                   to examine the characteristics of the encrypted traffic in an attempt to discern the cipher suite being used (for example, 
                   that the cryptographic algorithm is 128-bit AES and not 256-bit AES).</test>
@@ -1686,7 +1688,7 @@
             </title>
             <note role="application">
 	      <h:p>
-	      This requirement must be claimed if any cipher suites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.</h:p>
+	      This requirement must be claimed if any ciphersuites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.</h:p>
 	      <h:p>
               The rules for verification of identity are described in Section 6 of RFC 6125. 
               The reference identifier is typically established by configuration (e.g. configuring the name of the authentication server). 
@@ -1710,7 +1712,7 @@
                 <selectable><assignable>other action</assignable></selectable>
               </selectables> if the presented server certificate is deemed invalid.</title>
               <note role="application">
-		<h:p>This requirement must be claimed if any cipher suites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.</h:p>
+		<h:p>This requirement must be claimed if any ciphersuites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.</h:p>
 		<h:p>
               Validity is determined by the identifier verification, certificate path, the expiration date, and the revocation status in accordance with RFC 5280. 
               Certificate validity is tested in accordance with testing performed for FIA_X509_EXT.1/Rev in the NDcPP.
