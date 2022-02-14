@@ -93,16 +93,16 @@ Assessment](#EAR)								      |	Rationale](#mod-conrat)[6.1collaborative Protec
 
 The scope of this [PP-Module](#abbr_PP-Module) is to describe the			The scope of this [PP-Module](#abbr_PP-Module) is to describe the
 security functionality of a Wireless Local Area Network					security functionality of a Wireless Local Area Network
-([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to		([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to
-define functional and assurance requirements for such products. This			define functional and assurance requirements for such products. This
-PPModule is intended for use with the following Base-PPs:			      |	[PP-Module](#abbr_PP-Module) is intended for use with the following
-										      >	Base-PPs:
+([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to	      |	([WLAN](#abbr_WLAN)) Access System ([AS](#abbr_AS)) in terms of
+define functional and assurance requirements for such products. This		      |	[\[CC\]](#bibCC) and to define functional and assurance requirements for
+PPModule is intended for use with the following Base-PPs:			      |	such products. This [PP-Module](#abbr_PP-Module) is intended for use
+										      >	with the following Base-PPs:
 
 -   Collaborative Protection Profile for Network Devices				-   Collaborative Protection Profile for Network Devices
     ([NDcPP](#abbr_NDcPP)) Version 2.2e							    ([NDcPP](#abbr_NDcPP)) Version 2.2e
 
 This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)			This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)
-Access System is a device at the edge of a private network that				Access System is a device at the edge of a private network that
+Access System is a device at the edge of a private network that			      |	[AS](#abbr_AS) is a device at the edge of a private network that
 establishes an encrypted IEEE 802.11 link that protects wireless data in		establishes an encrypted IEEE 802.11 link that protects wireless data in
 transit from disclosure and modification. This is functionality that			transit from disclosure and modification. This is functionality that
 typically will be implemented by a network device.					typically will be implemented by a network device.
@@ -111,7 +111,7 @@ A [TOE](#abbr_TOE) that conforms to a							A [TOE](#abbr_TOE) that conforms to 
 [PP-Configuration](#abbr_PP-Configuration) containing this				[PP-Configuration](#abbr_PP-Configuration) containing this
 [PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as		      |	[PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as
 defined in the [NDcPP](#abbr_NDcPP). The [TOE](#abbr_TOE) functionality		      |	defined in the [NDcPP](#abbr_NDcPP). The expectation for this
-may reside entirely within a single device or be spread across multiple		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) access system
+may reside entirely within a single device or be spread across multiple		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
 distributed physical components.						      |	must include a controller and one or more access points
 										      >	([APs](#abbr_AP)).
 
@@ -265,14 +265,14 @@ this document.										this document.
 ### 1.3.1 TOE Boundary {#TOE_Boundary .indexable,h3 data-level="3"}		      |	### 1.3.1 TOE Boundary {#TOE_Boundary .indexable data-level="3"}
 
 This [PP-Module](#abbr_PP-Module) specifically addresses				This [PP-Module](#abbr_PP-Module) specifically addresses
-[WLAN](#abbr_WLAN) (IEEE 802.11) Access Systems. A compliant				[WLAN](#abbr_WLAN) (IEEE 802.11) Access Systems. A compliant
-[WLAN](#abbr_WLAN) Access System is a system composed of hardware and			[WLAN](#abbr_WLAN) Access System is a system composed of hardware and
-software that is connected to a network and has an infrastructure role			software that is connected to a network and has an infrastructure role
-in the overall enterprise network. In particular, a [WLAN](#abbr_WLAN)			in the overall enterprise network. In particular, a [WLAN](#abbr_WLAN)
-Access System establishes a secure wireless (IEEE 802.11) link that			Access System establishes a secure wireless (IEEE 802.11) link that
-provides an authenticated and encrypted path to an enterprise network			provides an authenticated and encrypted path to an enterprise network
-and thereby decreases the risk of exposure of information transiting			and thereby decreases the risk of exposure of information transiting
-"over-the-air".										"over-the-air".
+[WLAN](#abbr_WLAN) (IEEE 802.11) Access Systems. A compliant			      |	[WLAN](#abbr_WLAN) (IEEE 802.11) ASs. A compliant [WLAN](#abbr_WLAN)
+[WLAN](#abbr_WLAN) Access System is a system composed of hardware and		      |	[AS](#abbr_AS) is a system composed of hardware and software that is
+software that is connected to a network and has an infrastructure role		      |	connected to a network and has an infrastructure role in the overall
+in the overall enterprise network. In particular, a [WLAN](#abbr_WLAN)		      |	enterprise network. In particular, a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
+Access System establishes a secure wireless (IEEE 802.11) link that		      |	establishes a secure wireless (IEEE 802.11) link that provides an
+provides an authenticated and encrypted path to an enterprise network		      |	authenticated and encrypted path to an enterprise network and thereby
+and thereby decreases the risk of exposure of information transiting		      |	decreases the risk of exposure of information transiting "over-the-air".
+"over-the-air".									      <
 
 Since this [PP-Module](#abbr_PP-Module) extends the					Since this [PP-Module](#abbr_PP-Module) extends the
 [NDcPP](#abbr_NDcPP), conformant TOEs are obligated to implement the			[NDcPP](#abbr_NDcPP), conformant TOEs are obligated to implement the
@@ -309,34 +309,35 @@ Conformance Statement									Conformance Statement
     Conformance, Selection-Based SFRs, and Optional SFRs (dated May			    Conformance, Selection-Based SFRs, and Optional SFRs (dated May
     2017).										    2017).
 
-    The following PPs and [PP](#abbr_PP)-Modules are allowed to be			    The following PPs and [PP](#abbr_PP)-Modules are allowed to be
-    specified in a [PP-Configuration](#abbr_PP-Configuration) with this			    specified in a [PP-Configuration](#abbr_PP-Configuration) with this
-    [PP-Module](#abbr_PP-Module).							    [PP-Module](#abbr_PP-Module).
-
-    -   [Network Device, version							    -   [Network Device, version
-        2.2e](https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf)			        2.2e](https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf)
-
-CC Conformance Claims									CC Conformance Claims
-:   This Module is conformant to Parts 2 (extended) and 3 (conformant)			:   This Module is conformant to Parts 2 (extended) and 3 (conformant)
-    of Common Criteria Version 3.1, Revision 5.						    of Common Criteria Version 3.1, Revision 5.
-
-PP Claim 										PP Claim 
-:   This Module does not claim conformance to any Protection Profile.			:   This Module does not claim conformance to any Protection Profile.
-
-Package Claim										Package Claim
-:   This Module does not claim conformance to any packages.				:   This Module does not claim conformance to any packages.
-
-<!-- -->										<!-- -->
-
-Conformance Statement									Conformance Statement
-:   This [PP-Module](#abbr_PP-Module) inherits exact conformance as			:   This [PP-Module](#abbr_PP-Module) inherits exact conformance as
-    required from the specified [Base-PP](#abbr_Base-PP) and as defined			    required from the specified [Base-PP](#abbr_Base-PP) and as defined
-    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact			    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact
-    Conformance, Selection-Based SFRs, and Optional SFRs (dated May			    Conformance, Selection-Based SFRs, and Optional SFRs (dated May
-    2017).										    2017).
+    The following PPs and [PP](#abbr_PP)-Modules are allowed to be		      <
+    specified in a [PP-Configuration](#abbr_PP-Configuration) with this		      <
+    [PP-Module](#abbr_PP-Module).						      <
+										      <
+    -   [Network Device, version						      <
+        2.2e](https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf)		      <
+										      <
+CC Conformance Claims								      <
+:   This Module is conformant to Parts 2 (extended) and 3 (conformant)		      <
+    of Common Criteria Version 3.1, Revision 5.					      <
+										      <
+PP Claim 									      <
+:   This Module does not claim conformance to any Protection Profile.		      <
+										      <
+Package Claim									      <
+:   This Module does not claim conformance to any packages.			      <
+										      <
+<!-- -->									      <
+										      <
+Conformance Statement								      <
+:   This [PP-Module](#abbr_PP-Module) inherits exact conformance as		      <
+    required from the specified [Base-PP](#abbr_Base-PP) and as defined		      <
+    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact		      <
+    Conformance, Selection-Based SFRs, and Optional SFRs (dated May		      <
+    2017).									      <
     The following [PP](#abbr_PP)-Modules are allowed to be specified in			    The following [PP](#abbr_PP)-Modules are allowed to be specified in
     a [PP-Configuration](#abbr_PP-Configuration) with this				    a [PP-Configuration](#abbr_PP-Configuration) with this
     [PP-Module](#abbr_PP-Module):							    [PP-Module](#abbr_PP-Module):
+										      >
     -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter			    -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter
         Firewalls, Version 1.4 + Errata 20200625					        Firewalls, Version 1.4 + Errata 20200625
     -   [PP-Module](#abbr_PP-Module) for Virtual Private Network (VPN)			    -   [PP-Module](#abbr_PP-Module) for Virtual Private Network (VPN)
@@ -356,23 +357,23 @@ Package Claims										Package Claims
 
 This [PP-Module](#abbr_PP-Module) is written to address the situation			This [PP-Module](#abbr_PP-Module) is written to address the situation
 when network packets cross the boundary between a wired private network			when network packets cross the boundary between a wired private network
-and a wireless client via a [WLAN](#abbr_WLAN) Access System. The			and a wireless client via a [WLAN](#abbr_WLAN) Access System. The
+and a wireless client via a [WLAN](#abbr_WLAN) Access System. The		      |	and a wireless client via a [WLAN](#abbr_WLAN) [AS](#abbr_AS). The
 [WLAN](#abbr_WLAN) Access System provides secure communication between a		[WLAN](#abbr_WLAN) Access System provides secure communication between a
 user (wireless client) and a wired (trusted) network by supporting			user (wireless client) and a wired (trusted) network by supporting
 security functions such as administration, authentication, encryption,			security functions such as administration, authentication, encryption,
 and the protection and handling of data in transit. To protect the data			and the protection and handling of data in transit. To protect the data
-in-transit from disclosure and modification, a [WLAN](#abbr_WLAN) Access		in-transit from disclosure and modification, a [WLAN](#abbr_WLAN) Access
-System is used to establish secure communications. The					System is used to establish secure communications. The
-[WLAN](#abbr_WLAN) Access System provides one end of the secure				[WLAN](#abbr_WLAN) Access System provides one end of the secure
+in-transit from disclosure and modification, a [WLAN](#abbr_WLAN) Access	      |	in-transit from disclosure and modification, a [WLAN](#abbr_WLAN)
+System is used to establish secure communications. The				      |	[AS](#abbr_AS) is used to establish secure communications. The
+[WLAN](#abbr_WLAN) Access System provides one end of the secure			      |	[WLAN](#abbr_WLAN) [AS](#abbr_AS) provides one end of the secure
 cryptographic tunnel and performs encryption and decryption of network			cryptographic tunnel and performs encryption and decryption of network
-packets in accordance with a [WLAN](#abbr_WLAN) Access System security			packets in accordance with a [WLAN](#abbr_WLAN) Access System security
+packets in accordance with a [WLAN](#abbr_WLAN) Access System security		      |	packets in accordance with a [WLAN](#abbr_WLAN) [AS](#abbr_AS) security
 policy negotiated with its authenticated wireless client. It supports			policy negotiated with its authenticated wireless client. It supports
 multiple simultaneous wireless connections and is capable of				multiple simultaneous wireless connections and is capable of
 establishing and terminating multiple cryptographic tunnels to and from			establishing and terminating multiple cryptographic tunnels to and from
 those peers.										those peers.
 
 The proper installation, configuration, and administration of the			The proper installation, configuration, and administration of the
-[WLAN](#abbr_WLAN) Access System are critical to its correct operation.			[WLAN](#abbr_WLAN) Access System are critical to its correct operation.
+[WLAN](#abbr_WLAN) Access System are critical to its correct operation.		      |	[WLAN](#abbr_WLAN) [AS](#abbr_AS) are critical to its correct operation.
 
 Note that this [PP-Module](#abbr_PP-Module) does not repeat the threats			Note that this [PP-Module](#abbr_PP-Module) does not repeat the threats
 identified in the [NDcPP](#abbr_NDcPP), though they all apply given the			identified in the [NDcPP](#abbr_NDcPP), though they all apply given the
@@ -383,7 +384,7 @@ its security functions, this [PP-Module](#abbr_PP-Module) addresses only		its se
 threats to resources in the operational environment. Together the			threats to resources in the operational environment. Together the
 threats of the [NDcPP](#abbr_NDcPP) and those defined in this				threats of the [NDcPP](#abbr_NDcPP) and those defined in this
 [PP-Module](#abbr_PP-Module) define the comprehensive set of security			[PP-Module](#abbr_PP-Module) define the comprehensive set of security
-threats addressed by a [WLAN](#abbr_WLAN) Access System					threats addressed by a [WLAN](#abbr_WLAN) Access System
+threats addressed by a [WLAN](#abbr_WLAN) Access System				      |	threats addressed by a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
 [TOE](#abbr_TOE).									[TOE](#abbr_TOE).
 
 3.1 Threats {#threats .indexable,h2 data-level="2"}				      |	3.1 Threats {#threats .indexable data-level="2"}
@@ -395,11 +396,11 @@ T.NETWORK\_DISCLOSURE									T.NETWORK\_DISCLOSURE
     to conduct unauthorized activities. If malicious external devices			    to conduct unauthorized activities. If malicious external devices
     are able to communicate with devices on the protected network, or if		    are able to communicate with devices on the protected network, or if
     devices on the protected network can establish communications with			    devices on the protected network can establish communications with
-    those external devices (e.g., as a result of					    those external devices (e.g., as a result of
-    nonexistent/insufficient [WLAN](#abbr_WLAN) data encryption that			    nonexistent/insufficient [WLAN](#abbr_WLAN) data encryption that
-    exposes the [WLAN](#abbr_WLAN) data in transit to rogue elements),			    exposes the [WLAN](#abbr_WLAN) data in transit to rogue elements),
-    then those internal devices may be susceptible to the unauthorized			    then those internal devices may be susceptible to the unauthorized
-    disclosure of information.								    disclosure of information.
+    those external devices (e.g., as a result of				      |	    those external devices (e.g., as a result of nonexistent or
+    nonexistent/insufficient [WLAN](#abbr_WLAN) data encryption that		      |	    insufficient [WLAN](#abbr_WLAN) data encryption that exposes the
+    exposes the [WLAN](#abbr_WLAN) data in transit to rogue elements),		      |	    [WLAN](#abbr_WLAN) data in transit to rogue elements), then those
+    then those internal devices may be susceptible to the unauthorized		      |	    internal devices may be susceptible to the unauthorized disclosure
+    disclosure of information.							      |	    of information.
 
 T.NETWORK\_ACCESS									T.NETWORK\_ACCESS
 :   Devices located outside the protected network may seek to exercise			:   Devices located outside the protected network may seek to exercise
@@ -440,13 +441,13 @@ able to ensure that the security functionality specified in the				able to ensur
 [PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If		[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If
 the [TOE](#abbr_TOE) is placed in an Operational Environment that does			the [TOE](#abbr_TOE) is placed in an Operational Environment that does
 not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able			not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able
-to provide all of its security functionality.						to provide all of its security functionality.
-
-All assumptions for the operational environment of the					All assumptions for the operational environment of the
-[Base-PP](#abbr_Base-PP) also apply to this						[Base-PP](#abbr_Base-PP) also apply to this
-[PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still			[PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still
-operative, but only for the interfaces in the [TOE](#abbr_TOE) that are			operative, but only for the interfaces in the [TOE](#abbr_TOE) that are
-defined by the [Base-PP](#abbr_Base-PP) and not the					defined by the [Base-PP](#abbr_Base-PP) and not the
+to provide all of its security functionality.					      |	to provide all of its security functionality. All assumptions for the
+										      |	operational environment of the [Base-PP](#abbr_Base-PP) also apply to
+All assumptions for the operational environment of the				      |	this [PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is
+[Base-PP](#abbr_Base-PP) also apply to this					      |	still operative, but only for the interfaces in the [TOE](#abbr_TOE)
+[PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still		      |	that are defined by the [Base-PP](#abbr_Base-PP) and not the
+operative, but only for the interfaces in the [TOE](#abbr_TOE) that are		      <
+defined by the [Base-PP](#abbr_Base-PP) and not the				      <
 [PP-Module](#abbr_PP-Module).								[PP-Module](#abbr_PP-Module).
 
 A.CONNECTIONS										A.CONNECTIONS
@@ -510,9 +511,9 @@ goals that the Operational Environment should achieve. This section			goals that
 defines the security objectives that are to be addressed by the IT			defines the security objectives that are to be addressed by the IT
 domain or by non-technical or procedural means. The assumptions				domain or by non-technical or procedural means. The assumptions
 identified in Section 3 are incorporated as security objectives for the			identified in Section 3 are incorporated as security objectives for the
-environment.										environment.
-
-All objectives for the operational environment of the					All objectives for the operational environment of the
+environment.									      |	environment. All objectives for the operational environment of the
+										      <
+All objectives for the operational environment of the				      <
 [Base-PP](#abbr_Base-PP) also apply to this						[Base-PP](#abbr_Base-PP) also apply to this
 [PP-Module](#abbr_PP-Module).								[PP-Module](#abbr_PP-Module).
 [OE](#abbr_OE).NO\_THRU\_TRAFFIC\_PROTECTION is still operative, but			[OE](#abbr_OE).NO\_THRU\_TRAFFIC\_PROTECTION is still operative, but
@@ -694,19 +695,21 @@ specified in ISO 19772*, ***GCMP as specified in NIST SP 800-38D and			specified
 IEEE 802.11ac-2013***, ***no other standards***\].				      |	IEEE 802.11ax-2021***, ***no other standards***\].
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ This requirement is modified from			[Application Note: ]{.note-header}[ This requirement is modified from
-its definition in the [NDcPP](#abbr_NDcPP) by mandating the selection of		its definition in the [NDcPP](#abbr_NDcPP) by mandating the selection of
-[CBC](#abbr_CBC) mode and 128 bit key sizes while also defining			      |	[CBC](#abbr_CBC) mode and 256 bit key sizes while also defining
-additional [AES](#abbr_AES) mode and key size selections not present in			additional [AES](#abbr_AES) mode and key size selections not present in
-the original definition. ]{.note}							the original definition. ]{.note}
+[Application Note: ]{.note-header}[ This requirement is modified from		      |	[Application Note: ]{.note-header}[ ]{.note}
+its definition in the [NDcPP](#abbr_NDcPP) by mandating the selection of	      |
+[CBC](#abbr_CBC) mode and 128 bit key sizes while also defining			      |	This requirement is modified from its definition in the
+additional [AES](#abbr_AES) mode and key size selections not present in		      |	[NDcPP](#abbr_NDcPP) by mandating the selection of [CBC](#abbr_CBC) mode
+the original definition. ]{.note}						      |	and 256 bit key sizes while also defining additional [AES](#abbr_AES)
+										      >	mode and key size selections not present in the original definition.
 
 This requirement mandates two modes for [AES](#abbr_AES) with key size			This requirement mandates two modes for [AES](#abbr_AES) with key size
 of 128 bits be implemented. It is not expected that these modes will		      |	of 256 bits be implemented. It is not expected that these modes will
-both be used for all encryption/decryption functionality. Rather, the			both be used for all encryption/decryption functionality. Rather, the
-mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1		mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1
-requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE		requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE
-802.11-2012, [AES](#abbr_AES)-CCMP (which uses [AES](#abbr_AES) in		      |	802.11-2020, [AES](#abbr_AES)-CCMP (which uses [AES](#abbr_AES) in
-[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.			[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.
+both be used for all encryption/decryption functionality. Rather, the		      |	both be used for all encryption and decryption functionality. Rather,
+mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1	      |	the mandates serve particular purposes: to comply with the
+requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE	      |	FCS\_IPSEC\_EXT.1 requirements, [CBC](#abbr_CBC) mode is mandated, and
+802.11-2012, [AES](#abbr_AES)-CCMP (which uses [AES](#abbr_AES) in		      |	to comply with IEEE 802.11-2020, [AES](#abbr_AES)-CCMP (which uses
+[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.		      |	[AES](#abbr_AES) in [CCM](#abbr_CCM) as specified in SP 800-38C) must be
+										      >	implemented.
 
 For the first selection of								For the first selection of
 [FCS\_COP.1.1/DataEncryption](#FCS_COP.1.1/DataEncryption), the				[FCS\_COP.1.1/DataEncryption](#FCS_COP.1.1/DataEncryption), the
@@ -792,7 +795,7 @@ data from disclosure and detection of modification of the channel data.		      |
 from its definition in the [NDcPP](#abbr_NDcPP) to mandate the			      |
 communications protocols and environmental components that a			      |	This requirement has been modified from its definition in the
 [WLAN](#abbr_WLAN) Access System must use. IEEE 802.11-2012 (WPA2) with		      |	[NDcPP](#abbr_NDcPP) to mandate the communications protocols and
-IEEE 802.1X is required for communications with wireless clients;		      |	environmental components that a [WLAN](#abbr_WLAN) Access System must
+IEEE 802.1X is required for communications with wireless clients;		      |	environmental components that a [WLAN](#abbr_WLAN) [AS](#abbr_AS) must
 [IPsec](#abbr_IPsec) or RADIUS over [TLS](#abbr_TLS) (commonly known as		      |	use for infrastructure communications (802.11 support is also required
 \"RadSec\") is required at least for communications with the 802.1X		      |	for wireless client communications but this is covered by the
 authentication server. Other selections may be made if needed by other		      |	[FTP\_ITC.1/Client](#FTP_ITC.1/Client). [IPsec](#abbr_IPsec) or RADIUS
@@ -803,7 +806,7 @@ on resumption after an outage.]{.note}						      |	selections may be made if ne
 										      >	they are initially established, but also on resumption after an outage.
 
 The IT entity of \"802.1X authentication server\" is distinct from			The IT entity of \"802.1X authentication server\" is distinct from
-\"authentication server\" because the latter may be used for			      |	\"authentication server\", because the latter may be used for
+\"authentication server\" because the latter may be used for			      |	\"authentication server,\" because the latter may be used for
 administrator authentication rather than authorization of				administrator authentication rather than authorization of
 [WLAN](#abbr_WLAN) clients.								[WLAN](#abbr_WLAN) clients.
 
@@ -845,14 +848,17 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 
 When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a		      |	----------------------------------------
-network device. This [PP-Module](#abbr_PP-Module) just defines the		      |
-[TOE](#abbr_TOE) as a specific type of network device with functional		      |	The following section describes the SFRs that must be satisfied by any
-capabilities distinct to that type.						      |	[TOE](#abbr_TOE) that claims conformance to this
+network device. This [PP-Module](#abbr_PP-Module) just defines the		      <
+[TOE](#abbr_TOE) as a specific type of network device with functional		      <
+capabilities distinct to that type.						      <
+
+### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	The following section describes the SFRs that must be satisfied by any
+										      >	[TOE](#abbr_TOE) that claims conformance to this
 										      >	[PP-Module](#abbr_PP-Module). These SFRs must be claimed regardless of
 										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
 										      >	[TOE](#abbr_TOE).
-
-### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
+										      >
+										      >	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
 
 ::: {#FAU_GEN.1/WLAN .comp}								::: {#FAU_GEN.1/WLAN .comp}
 #### FAU\_GEN.1/WLAN Audit Data Generation						#### FAU\_GEN.1/WLAN Audit Data Generation
@@ -866,11 +872,11 @@ capabilities distinct to that type.						      |	[TOE](#abbr_TOE) that claims co
 The [TSF](#abbr_TSF) shall be able to generate an audit record of the			The [TSF](#abbr_TSF) shall be able to generate an audit record of the
 following auditable events:								following auditable events:
 
-a.  Start-up and shutdown of the audit functions;					a.  Start-up and shutdown of the audit functions;
-b.  All auditable events for the \[not specified\] level of audit;			b.  All auditable events for the \[not specified\] level of audit;
+a.  Start-up and shutdown of the audit functions;				      |	a.  Start-up and shutdown of the audit functions
+b.  All auditable events for the \[not specified\] level of audit;		      |	b.  All auditable events for the \[not specified\] level of audit
 c.  \[*Auditable events listed in the Auditable Events table ([Table			c.  \[*Auditable events listed in the Auditable Events table ([Table
-    [2]{.counter}](#auditWLAN){.auditWLAN-ref});*					    [2]{.counter}](#auditWLAN){.auditWLAN-ref});*
-d.  *Failure of wireless sensor communication*\].					d.  *Failure of wireless sensor communication*\].
+    [2]{.counter}](#auditWLAN){.auditWLAN-ref});*				      |	    [2]{.counter}](#auditWLAN){.auditWLAN-ref})*
+d.  *Failure of wireless sensor communication*\].				      |	d.  *Failure of wireless sensor communication*\]
 
 Requirement										Requirement
 :::											:::
@@ -911,14 +917,14 @@ Protocol failures.									Protocol failures.
 
 Reason for failure. Non-TOE endpoint of connection.					Reason for failure. Non-TOE endpoint of connection.
 
-Establishment/Termination of an [IPsec](#abbr_IPsec) SA.				Establishment/Termination of an [IPsec](#abbr_IPsec) SA.
-
-Non-TOE endpoint of connection.								Non-TOE endpoint of connection.
-
-Negotiation \"down\" from an IKEv2 to IKEv1 exchange.				      <
+Establishment/Termination of an [IPsec](#abbr_IPsec) SA.			      |	Establishment or Termination of an [IPsec](#abbr_IPsec) SA.
 										      <
 Non-TOE endpoint of connection.							      <
 										      <
+Negotiation \"down\" from an IKEv2 to IKEv1 exchange.				      <
+
+Non-TOE endpoint of connection.								Non-TOE endpoint of connection.
+
 [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)							[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)
 
 Attempts to access the 802.1X controlled port prior to successful			Attempts to access the 802.1X controlled port prior to successful
@@ -1018,17 +1024,18 @@ FCS\_RBG\_EXT.1** that meet the following: \[*IEEE 802.11-2012 and		      |	Gene
 										      >	standards*\]*\].
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ The cryptographic key derivation			[Application Note: ]{.note-header}[ The cryptographic key derivation
-algorithm required by IEEE 802.11-2012 (Section 11.6.1.2) and verified		      |	algorithm required by IEEE 802.11-2020 (Section 11.6.1.2) and verified
-in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and		in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and
-outputs 384 bits. The use of GCMP is defined in IEEE 802.11ac-2013		      |	outputs 384 bits. The use of GCMP is defined in IEEE 802.11ax-2021
-(Section 11.4.5) and requires a KDF based on HMAC-SHA-256 (for 128-bit			(Section 11.4.5) and requires a KDF based on HMAC-SHA-256 (for 128-bit
-symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys). This KDF			symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys). This KDF
-outputs 704 bits.]{.note}								outputs 704 bits.]{.note}
-
-This requirement applies only to the keys that are generated/derived for		This requirement applies only to the keys that are generated/derived for
-the communications between the access point and the client once the			the communications between the access point and the client once the
-client has been authenticated. It refers to the derivation of the			client has been authenticated. It refers to the derivation of the
+[Application Note: ]{.note-header}[ The cryptographic key derivation		      |	[Application Note: ]{.note-header}[ ]{.note}
+algorithm required by IEEE 802.11-2012 (Section 11.6.1.2) and verified		      |
+in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and	      |	The cryptographic key derivation algorithm required by IEEE 802.11-2020
+outputs 384 bits. The use of GCMP is defined in IEEE 802.11ac-2013		      |	(Section 11.6.1.2) and verified in WPA2 certification is PRF-384, which
+(Section 11.4.5) and requires a KDF based on HMAC-SHA-256 (for 128-bit		      |	uses the HMAC-SHA-1 function and outputs 384 bits. The use of GCMP is
+symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys). This KDF		      |	defined in IEEE 802.11ax-2021 (Section 11.4.5) and requires a KDF based
+outputs 704 bits.]{.note}							      |	on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for
+										      |	256-bit symmetric keys). This KDF outputs 704 bits.
+This requirement applies only to the keys that are generated/derived for	      |
+the communications between the access point and the client once the		      |	This requirement applies only to the keys that are generated or derived
+client has been authenticated. It refers to the derivation of the		      |	for the communications between the [AP](#abbr_AP) and the client once
+										      >	the client has been authenticated. It refers to the derivation of the
 [GTK](#abbr_GTK) (through the RBG specified in this					[GTK](#abbr_GTK) (through the RBG specified in this
 [PP-Module](#abbr_PP-Module)) as well as the derivation of the PTK from			[PP-Module](#abbr_PP-Module)) as well as the derivation of the PTK from
 the [PMK](#abbr_PMK), which is done using a random value generated by			the [PMK](#abbr_PMK), which is done using a random value generated by
@@ -1141,12 +1148,13 @@ controlled port is given to the wireless client prior to successful			controlled
 completion of this authentication exchange.						completion of this authentication exchange.
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ This requirement covers the				[Application Note: ]{.note-header}[ This requirement covers the
-[TOE](#abbr_TOE)\'s role as the authenticator in an 802.1X				[TOE](#abbr_TOE)\'s role as the authenticator in an 802.1X
-authentication exchange. If the exchange is completed successfully, the			authentication exchange. If the exchange is completed successfully, the
-[TOE](#abbr_TOE) will obtain the [PMK](#abbr_PMK) from the RADIUS server		[TOE](#abbr_TOE) will obtain the [PMK](#abbr_PMK) from the RADIUS server
-and perform the 4-way handshake with the wireless client (supplicant) to		and perform the 4-way handshake with the wireless client (supplicant) to
-begin 802.11 communications.]{.note}							begin 802.11 communications.]{.note}
+[Application Note: ]{.note-header}[ This requirement covers the			      |	[Application Note: ]{.note-header}[ ]{.note}
+[TOE](#abbr_TOE)\'s role as the authenticator in an 802.1X			      |
+authentication exchange. If the exchange is completed successfully, the		      |	This requirement covers the [TOE](#abbr_TOE)\'s role as the
+[TOE](#abbr_TOE) will obtain the [PMK](#abbr_PMK) from the RADIUS server	      |	authenticator in an 802.1X authentication exchange. If the exchange is
+and perform the 4-way handshake with the wireless client (supplicant) to	      |	completed successfully, the [TOE](#abbr_TOE) will obtain the
+begin 802.11 communications.]{.note}						      |	[PMK](#abbr_PMK) from the RADIUS server and perform the 4-way handshake
+										      >	with the wireless client (supplicant) to begin 802.11 communications.
 
 As indicated previously, there are at least three communication paths			As indicated previously, there are at least three communication paths
 present during the exchange; two with the [TOE](#abbr_TOE) as an			present during the exchange; two with the [TOE](#abbr_TOE) as an
@@ -1257,7 +1265,7 @@ types of failures occur: \[*failure of the self-tests*\].				types of failures o
 [Application Note: ]{.note-header}[ The intent of this requirement is to		[Application Note: ]{.note-header}[ The intent of this requirement is to
 express the fail secure capabilities that the [TOE](#abbr_TOE)				express the fail secure capabilities that the [TOE](#abbr_TOE)
 possesses. This means that the [TOE](#abbr_TOE) must be able to attain a		possesses. This means that the [TOE](#abbr_TOE) must be able to attain a
-secure/safe state (shutdown) when any of the identified failures occur.			secure/safe state (shutdown) when any of the identified failures occur.
+secure/safe state (shutdown) when any of the identified failures occur.		      |	secure, safe state (shutdown) when any of the identified failures occur.
 ]{.note}										]{.note}
 :::											:::
 :::											:::
@@ -1281,11 +1289,12 @@ day, \[**selection**: *\[**assignment**: [other						day, \[**selection**: *\[**
 attributes]{.assignable-content}\]*, *no other attributes*\]*\].			attributes]{.assignable-content}\]*, *no other attributes*\]*\].
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ The "[TOE](#abbr_TOE) interface" can		[Application Note: ]{.note-header}[ The "[TOE](#abbr_TOE) interface" can
-be specified in terms of the device in the [TOE](#abbr_TOE) that the			be specified in terms of the device in the [TOE](#abbr_TOE) that the
-[WLAN](#abbr_WLAN) client is connecting to (e.g. specific				[WLAN](#abbr_WLAN) client is connecting to (e.g. specific
-[WLAN](#abbr_WLAN) access point(s)). "Time" and "day" refer to				[WLAN](#abbr_WLAN) access point(s)). "Time" and "day" refer to
-time-of-day and day-of-week respectively.]{.note}					time-of-day and day-of-week respectively.]{.note}
+[Application Note: ]{.note-header}[ The "[TOE](#abbr_TOE) interface" can	      |	[Application Note: ]{.note-header}[ ]{.note}
+be specified in terms of the device in the [TOE](#abbr_TOE) that the		      |
+[WLAN](#abbr_WLAN) client is connecting to (e.g. specific			      |	The "[TOE](#abbr_TOE) interface" can be specified in terms of the device
+[WLAN](#abbr_WLAN) access point(s)). "Time" and "day" refer to			      |	in the [TOE](#abbr_TOE) that the [WLAN](#abbr_WLAN) client is connecting
+time-of-day and day-of-week respectively.]{.note}				      |	to (e.g. specific [WLAN](#abbr_WLAN) [APs](#abbr_AP)). "Time" and "day"
+										      >	refer to time-of-day and day-of-week respectively.
 
 The assignment is to be used by the [ST](#abbr_ST) author to specify			The assignment is to be used by the [ST](#abbr_ST) author to specify
 additional attributes on which denial of session establishment can be			additional attributes on which denial of session establishment can be
@@ -1519,7 +1528,7 @@ based.											based.
 										      >
 										      >	[FMT\_SMF.1/AccessSystem](#FMT_SMF.1/AccessSystem) supports the
 										      >	objective by defining management functionality that is specific to
-										      >	[WLAN](#abbr_WLAN) Access System devices.
+										      >	[WLAN](#abbr_WLAN) [AS](#abbr_AS) devices.
 										      >
 										      >	5.4 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
 										      >	---------------------------------------
@@ -1784,13 +1793,14 @@ protocol specified in FPT\_ITT.1*\] that meets the following:				protocol specif
 does not expose the cryptographic keys**.						does not expose the cryptographic keys**.
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[This requirement is only applicable			[Application Note: ]{.note-header}[This requirement is only applicable
-when the [TOE](#abbr_TOE) is distributed (i.e., FPT\_ITT.1 from the			when the [TOE](#abbr_TOE) is distributed (i.e., FPT\_ITT.1 from the
-[NDcPP](#abbr_NDcPP) is claimed).]{.note}						[NDcPP](#abbr_NDcPP) is claimed).]{.note}
+[Application Note: ]{.note-header}[This requirement is only applicable		      |	[Application Note: ]{.note-header}[ ]{.note}
+when the [TOE](#abbr_TOE) is distributed (i.e., FPT\_ITT.1 from the		      |
+[NDcPP](#abbr_NDcPP) is claimed).]{.note}					      |	This requirement is only applicable when the [TOE](#abbr_TOE) is
+										      >	distributed (i.e., FPT\_ITT.1 from the [NDcPP](#abbr_NDcPP) is claimed).
 
 This requirement applies to any key necessary for successful IEEE 802.11		This requirement applies to any key necessary for successful IEEE 802.11
 connections not covered by [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK). In cases			connections not covered by [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK). In cases
-where a key must be distributed to other access points, this				where a key must be distributed to other access points, this
+where a key must be distributed to other access points, this			      |	where a key must be distributed to other [APs](#abbr_AP), this
 communication must be performed via a mechanism of commensurate				communication must be performed via a mechanism of commensurate
 cryptographic strength. Because communications with any component of a			cryptographic strength. Because communications with any component of a
 distributed [TOE](#abbr_TOE) are required to be performed over a trusted		distributed [TOE](#abbr_TOE) are required to be performed over a trusted
@@ -1848,11 +1858,14 @@ The [TSF](#abbr_TSF) shall perform peer authentication using				The [TSF](#abbr_
 \[**selection**: *X.509v3 certificates*, *pre-shared keys*\].				\[**selection**: *X.509v3 certificates*, *pre-shared keys*\].
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ This [SFR](#abbr_SFR) is applicable			[Application Note: ]{.note-header}[ This [SFR](#abbr_SFR) is applicable
-if \"RADIUS over [TLS](#abbr_TLS)\" is selected in					if \"RADIUS over [TLS](#abbr_TLS)\" is selected in
-[FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}							[FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}
+[Application Note: ]{.note-header}[ This [SFR](#abbr_SFR) is applicable		      |	[Application Note: ]{.note-header}[ ]{.note}
+if \"RADIUS over [TLS](#abbr_TLS)\" is selected in				      <
+[FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}						      <
 
-If \"X.509v3 certificates\" is selected in					      |	If [X.509v3 certificates](#s-x509-certs) is selected in
+If \"X.509v3 certificates\" is selected in					      |	This [SFR](#abbr_SFR) is applicable if \"RADIUS over [TLS](#abbr_TLS)\"
+										      >	is selected in [FTP\_ITC.1.1](#FTP_ITC.1.1).
+										      >
+										      >	If [X.509v3 certificates](#s-x509-certs) is selected in
 [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then FCS\_TLSC\_EXT.2 from			[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then FCS\_TLSC\_EXT.2 from
 the [NDcPP](#abbr_NDcPP) must be claimed. If \"pre-shared keys\" is		      |	the [NDcPP](#abbr_NDcPP) must be claimed. If [pre-shared
 selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then			      |	keys](#s-radsec-psk) is selected in
@@ -1882,7 +1895,7 @@ must be claimed.									must be claimed.
 The [TSF](#abbr_TSF) shall implement \[**selection**: *[TLS](#abbr_TLS)			The [TSF](#abbr_TSF) shall implement \[**selection**: *[TLS](#abbr_TLS)
 1.2 (RFC 5246)*, *[TLS](#abbr_TLS) 1.1 (RFC 4346)*\] and no earlier			1.2 (RFC 5246)*, *[TLS](#abbr_TLS) 1.1 (RFC 4346)*\] and no earlier
 [TLS](#abbr_TLS) versions when acting as a RADIUS over [TLS](#abbr_TLS)			[TLS](#abbr_TLS) versions when acting as a RADIUS over [TLS](#abbr_TLS)
-client that supports the following cipher suites: \[**selection**:			client that supports the following cipher suites: \[**selection**:
+client that supports the following cipher suites: \[**selection**:		      |	client that supports the following ciphersuites: \[**selection**:
 
 -   *TLS\_PSK\_WITH\_AES\_128\_CBC\_SHA*,						-   *TLS\_PSK\_WITH\_AES\_128\_CBC\_SHA*,
 -   *TLS\_PSK\_WITH\_AES\_256\_CBC\_SHA*,						-   *TLS\_PSK\_WITH\_AES\_256\_CBC\_SHA*,
@@ -1900,18 +1913,19 @@ client that supports the following cipher suites: \[**selection**:			client that
 \].											\].
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[If any of the TLS\_RSA\_PSK cipher			[Application Note: ]{.note-header}[If any of the TLS\_RSA\_PSK cipher
-suites are selected by the [ST](#abbr_ST) author, it is necessary to			suites are selected by the [ST](#abbr_ST) author, it is necessary to
-claim the selection-based requirement							claim the selection-based requirement
-[FCS\_RADSEC\_EXT.3](#FCS_RADSEC_EXT.3).]{.note}					[FCS\_RADSEC\_EXT.3](#FCS_RADSEC_EXT.3).]{.note}
+[Application Note: ]{.note-header}[If any of the TLS\_RSA\_PSK cipher		      |	[Application Note: ]{.note-header}[ ]{.note}
+suites are selected by the [ST](#abbr_ST) author, it is necessary to		      |
+claim the selection-based requirement						      |	If any of the TLS\_RSA\_PSK ciphersuites are selected by the
+[FCS\_RADSEC\_EXT.3](#FCS_RADSEC_EXT.3).]{.note}				      |	[ST](#abbr_ST) author, it is necessary to claim the selection-based
+										      >	requirement [FCS\_RADSEC\_EXT.3](#FCS_RADSEC_EXT.3).
 
-The above cipher suites are only for use when the [TSF](#abbr_TSF) is			The above cipher suites are only for use when the [TSF](#abbr_TSF) is
+The above cipher suites are only for use when the [TSF](#abbr_TSF) is		      |	The above ciphersuites are only for use when the [TSF](#abbr_TSF) is
 acting as a RADIUS over [TLS](#abbr_TLS) client, not for other uses of			acting as a RADIUS over [TLS](#abbr_TLS) client, not for other uses of
-the [TLS](#abbr_TLS) protocol. The cipher suites to be tested in the			the [TLS](#abbr_TLS) protocol. The cipher suites to be tested in the
+the [TLS](#abbr_TLS) protocol. The cipher suites to be tested in the		      |	the [TLS](#abbr_TLS) protocol. The ciphersuites to be tested in the
 evaluated configuration are limited by this requirement. The				evaluated configuration are limited by this requirement. The
-[ST](#abbr_ST) author should select the cipher suites that are				[ST](#abbr_ST) author should select the cipher suites that are
-supported. If \"X.509v3 certificates\" is selected in					supported. If \"X.509v3 certificates\" is selected in
-[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), the cipher suites selected			[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), the cipher suites selected
+[ST](#abbr_ST) author should select the cipher suites that are			      |	[ST](#abbr_ST) author should select the ciphersuites that are supported.
+supported. If \"X.509v3 certificates\" is selected in				      |	If \"X.509v3 certificates\" is selected in
+[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), the cipher suites selected		      |	[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), the ciphersuites selected
 in (and tested by) FCS\_TLSC\_EXT.2.1 are also supported for RADIUS over		in (and tested by) FCS\_TLSC\_EXT.2.1 are also supported for RADIUS over
 [TLS](#abbr_TLS) client use.								[TLS](#abbr_TLS) client use.
 :::											:::
@@ -1950,9 +1964,11 @@ When the [TSF](#abbr_TSF) negotiates a TLS\_RSA\_PSK cipher suite, the			When th
 reference identifier per RFC 6125 section 6.						reference identifier per RFC 6125 section 6.
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[This requirement must be claimed if			[Application Note: ]{.note-header}[This requirement must be claimed if
-any cipher suites beginning with \'TLS\_RSA\_PSK\' are selected in			any cipher suites beginning with \'TLS\_RSA\_PSK\' are selected in
-[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).]{.note}					[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).]{.note}
+[Application Note: ]{.note-header}[This requirement must be claimed if		      |	[Application Note: ]{.note-header}[ ]{.note}
+any cipher suites beginning with \'TLS\_RSA\_PSK\' are selected in		      |
+[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).]{.note}				      |	This requirement must be claimed if any ciphersuites beginning with
+										      >	\'TLS\_RSA\_PSK\' are selected in
+										      >	[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).
 
 The rules for verification of identity are described in Section 6 of RFC		The rules for verification of identity are described in Section 6 of RFC
 6125. The reference identifier is typically established by configuration		6125. The reference identifier is typically established by configuration
@@ -1991,9 +2007,11 @@ When the [TSF](#abbr_TSF) negotiates a TLS\_RSA\_PSK cipher suite, the			When th
 certificate is deemed invalid.								certificate is deemed invalid.
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[This requirement must be claimed if			[Application Note: ]{.note-header}[This requirement must be claimed if
-any cipher suites beginning with \'TLS\_RSA\_PSK\' are selected in			any cipher suites beginning with \'TLS\_RSA\_PSK\' are selected in
-[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).]{.note}					[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).]{.note}
+[Application Note: ]{.note-header}[This requirement must be claimed if		      |	[Application Note: ]{.note-header}[ ]{.note}
+any cipher suites beginning with \'TLS\_RSA\_PSK\' are selected in		      |
+[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).]{.note}				      |	This requirement must be claimed if any ciphersuites beginning with
+										      >	\'TLS\_RSA\_PSK\' are selected in
+										      >	[FCS\_RADSEC\_EXT.2.1](#FCS_RADSEC_EXT.2.1).
 
 Validity is determined by the identifier verification, certificate path,		Validity is determined by the identifier verification, certificate path,
 the expiration date, and the revocation status in accordance with RFC			the expiration date, and the revocation status in accordance with RFC
@@ -2057,13 +2075,15 @@ The [TSF](#abbr_TSF) shall be able to \[**selection**: *accept*,			The [TSF](#ab
 bit-based pre-shared keys.								bit-based pre-shared keys.
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[ This requirement must be included if		[Application Note: ]{.note-header}[ This requirement must be included if
-[IPsec](#abbr_IPsec) or another protocol that uses pre-shared keys is			[IPsec](#abbr_IPsec) or another protocol that uses pre-shared keys is
-claimed, and pre-shared key authentication is selected (e.g.,				claimed, and pre-shared key authentication is selected (e.g.,
-\"Pre-shared Keys\" is selected in FCS\_IPSEC\_EXT.1.13 or \"pre-shared			\"Pre-shared Keys\" is selected in FCS\_IPSEC\_EXT.1.13 or \"pre-shared
-keys\" is selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2)). The			keys\" is selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2)). The
-intent of this requirement is that all protocols will support both			intent of this requirement is that all protocols will support both
-text-based and bit-based pre-shared keys.]{.note}					text-based and bit-based pre-shared keys.]{.note}
+[Application Note: ]{.note-header}[ This requirement must be included if	      |	[Application Note: ]{.note-header}[ ]{.note}
+[IPsec](#abbr_IPsec) or another protocol that uses pre-shared keys is		      |
+claimed, and pre-shared key authentication is selected (e.g.,			      |	This requirement must be included if [IPsec](#abbr_IPsec) or another
+\"Pre-shared Keys\" is selected in FCS\_IPSEC\_EXT.1.13 or \"pre-shared		      |	protocol that uses pre-shared keys is claimed, and pre-shared key
+keys\" is selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2)). The		      |	authentication is selected (e.g., \"Pre-shared Keys\" is selected in
+intent of this requirement is that all protocols will support both		      |	FCS\_IPSEC\_EXT.1.13 or \"pre-shared keys\" is selected in
+text-based and bit-based pre-shared keys.]{.note}				      |	[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2)). The intent of this
+										      >	requirement is that all protocols will support both text-based and
+										      >	bit-based pre-shared keys.
 
 For the length of the text-based pre-shared keys, a common length (22			For the length of the text-based pre-shared keys, a common length (22
 characters) is required to help promote interoperability. If other			characters) is required to help promote interoperability. If other
@@ -2142,10 +2162,10 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	#### Audit: FIA\_8021X\_EXT.1
 										      >
 										      >	The following actions should be auditable if FAU\_GEN Security Audit
-										      >	Data Generation is included in the [PP](#abbr_PP)/[ST](#abbr_ST):
+										      >	Data Generation is included in the [ST](#abbr_ST):
 										      >
 										      >	-   Attempts to access the 802.1X controlled port prior to successful
-										      >	    completion of the authentication exchange.
+										      >	    completion of the authentication exchange
 										      >
 										      >	#### FIA\_8021X\_EXT.1 802.1X Port Access Entity (Authenticator) Authentication
 										      >
@@ -2330,10 +2350,8 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
 										      >
-										      >	Dependencies to: FCS\_TLSC\_EXT.1 [TLS](#abbr_TLS) Client Protocol
-										      >
-										      >	[FIA\_PSK\_EXT.1]{.no-link} Pre-Shared Key Composition
-										      >
+										      >	Dependencies to: FCS\_TLSC\_EXT.1 [TLS](#abbr_TLS) Client Protocol\
+										      >	[FIA\_PSK\_EXT.1]{.no-link} Pre-Shared Key Composition\
 										      >	FIA\_X509\_EXT.1 X.509 Certificate Validation
 										      >
 										      >	#### FCS\_RADSEC\_EXT.1.1 {#ext-comp-FCS_RADSEC_EXT.1.1}
@@ -2360,12 +2378,9 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	::: {style="margin-left: 1em;"}
 										      >	Hierarchical to: No other components.
 										      >
-										      >	Dependencies to: FCS\_CKM.1 Cryptographic Key Generation
-										      >
-										      >	FCS\_COP.1 Cryptographic Operation
-										      >
-										      >	[FCS\_RADSEC\_EXT.1]{.no-link} RadSec
-										      >
+										      >	Dependencies to: FCS\_CKM.1 Cryptographic Key Generation\
+										      >	FCS\_COP.1 Cryptographic Operation\
+										      >	[FCS\_RADSEC\_EXT.1]{.no-link} RadSec\
 										      >	FCS\_RBG\_EXT.1 Random Bit Generation
 										      >
 										      >	#### FCS\_RADSEC\_EXT.2.1 {#ext-comp-FCS_RADSEC_EXT.2.1}
@@ -2373,9 +2388,9 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	The [TSF](#abbr_TSF) shall implement \[**assignment**: [list of allowed
 										      >	[TLS](#abbr_TLS) versions]{.assignable-content}\] and reject all other
 										      >	[TLS](#abbr_TLS) and SSL versions. The [TLS](#abbr_TLS) implementation
-										      >	shall support the following cipher suites for use when acting as a
-										      >	RADIUS over [TLS](#abbr_TLS) client: \[**assignment**: [list of
-										      >	supported cipher suites]{.assignable-content}\].
+										      >	shall support the following ciphersuites for use when acting as a RADIUS
+										      >	over [TLS](#abbr_TLS) client: \[**assignment**: [list of supported
+										      >	ciphersuites]{.assignable-content}\].
 										      >
 										      >	#### FCS\_RADSEC\_EXT.2.2 {#ext-comp-FCS_RADSEC_EXT.2.2}
 										      >
@@ -2398,9 +2413,8 @@ Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-l
 										      >	Hierarchical to: No other components.
 										      >
 										      >	Dependencies to: [FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) RadSec using
-										      >	Pre-Shared Keys
-										      >
-										      >	[FIA\_X509\_EXT.1]{.no-link} X.509 Certificate Validation
+										      >	Pre-Shared Keys\
+										      >	[FIA\_X509\_EXT.1]{.no-link} X.509 Certificate Validation\
 										      >
 										      >	#### FCS\_RADSEC\_EXT.3.1 {#ext-comp-FCS_RADSEC_EXT.3.1}
 										      >

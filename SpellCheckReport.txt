@@ -1,0 +1,3 @@
+output/wlanaccesssystem-release-linkable.html: ASs
+output/wlanaccesssystem-release.html: ASs
+output/wlanaccesssystem.html: ASs
