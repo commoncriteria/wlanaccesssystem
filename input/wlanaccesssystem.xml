@@ -158,15 +158,14 @@
     
     The proper installation, configuration, and administration of the WLAN AS are critical to its
     correct operation.</h:p>
+
     <h:p>
-    
-    Note that this
-    PP-Module does not repeat the threats identified in the NDcPP, though they all apply given the
-    conformance and hence dependence of this PP-Module on the NDcPP. Note also that while the NDcPP
-    contains only threats to the ability of the TOE to provide its security functions, this
-    PP-Module addresses only threats to resources in the operational environment. Together the
-    threats of the NDcPP and those defined in this PP-Module define the comprehensive set of
-    security threats addressed by a WLAN AS TOE. 
+      Note that this PP-Module does not repeat the threats identified in the NDcPP,
+      though they all apply given the conformance and hence dependence of this PP-Module on the NDcPP.
+      Note also that while the NDcPP contains only threats to the ability of the TOE to provide its
+      security functions, this PP-Module addresses only threats to resources in the Operational Environment (OE).
+      Together the threats of the NDcPP and those defined in this PP-Module define the comprehensive set of
+      security threats addressed by a WLAN AS TOE. 
     </h:p>
     <sec:Threats>
       <threats>
@@ -266,7 +265,7 @@
       </threats>
     </sec:Threats>
     <sec:Assumptions>
-      All assumptions for the operational environment of the Base-PP also apply to this PP-Module.
+      All assumptions for the OE of the Base-PP also apply to this PP-Module.
       A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.      
       <assumptions>
@@ -277,8 +276,7 @@
           <consistency-rationale>The Base-PP does not define where in a particular network architecture a network device must be deployed since it is designed to be generic to various types of network devices. This PP-Module
             defines the expected architectural deployment specifically for WLAN AS network devices.</consistency-rationale>
           <objective-refer ref="OE.CONNECTIONS">
-            <rationale> The operational environment objective OE.CONNECTIONS is realized through
-              A.CONNECTIONS.</rationale>
+            <rationale> The OE objective OE.CONNECTIONS is realized through A.CONNECTIONS.</rationale>
           </objective-refer>
         </assumption>
       </assumptions>
@@ -440,7 +438,7 @@
       </sec:Security_Objectives_for_the_TOE>
       
     <sec:Security_Objectives_for_the_Operational_Environment>
-      All objectives for the operational environment of the Base-PP also apply to this PP-Module.
+      All objectives for the OE of the Base-PP also apply to this PP-Module.
       OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.
       
