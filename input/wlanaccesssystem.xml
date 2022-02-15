@@ -55,22 +55,23 @@
       defined in the NDcPP. The expectation for this PP-Module is that a WLAN AS must include a controller and one or more access points (APs).
       </h:p>
       
-</sec:Overview>
+    </sec:Overview>
     <tech-terms>
+      <suppress>Functional Package,Extended Package</suppress>
       <term abbr="AES"   full="Advanced Encryption Standard"/>
       <term abbr="AP"    full="Access Point" plural="APs"> 
         A device that provides the network interface that enables
         wireless client hosts to access a wired network. </term>
       <term abbr="AS"    full="Access System"/>
       <term abbr="CBC"   full="Cipher Block Chaining"/>
-      <term abbr="CCM"   full="Counter Mode with CBC-MAC"/>
+      <term abbr="CCM"   full="Counter Mode with CBC-Message Authentication Code"/>
       <term abbr="CCMP"  full="CCM mode Protocol"/>
       <term abbr="CTR"   full="Counter (encryption mode)"/>
       <term abbr="EAP"   full="Extensible Authentication Protocol"/>
       <term abbr="GCM"   full="Galois-Counter Mode"/>
       <term abbr="GTK"   full="Group Temporal Key"/>
       <term abbr="IPsec" full="Internet Protocol Security"/>
-      <term abbr="MAC"   full="Media Access Control or Message Authentication Code"/>
+      <term abbr="MAC"   full="Media Access Control"/>
       <term abbr="NDcPP" full="Network Device collaborative Protection Profile"/>
       <term abbr="PAE"   full="Port Access Entity"/>
       <term abbr="PMK"   full="Pairwise Master Key"/>
@@ -80,11 +81,11 @@
       <term abbr="TLS"   full="Transport Layer Security"/>
       <term abbr="WLAN"  full="Wireless Local Area Network"> 
         A wireless computer network that links
-        two or more devices using wireless communication to form a local area network (LAN) within a
+        two or more devices using wireless communication to form a local area network within a
         limited area such as a home, school, computer laboratory, campus, office building etc. </term>
       <term abbr="WPA"   full="Wi-Fi Protected Access"/>
     </tech-terms>
-    <section title="Compliant Targets of Evaluation" id="TOEdescription">
+    <sec:Compliant_Targets_of_Evaluation>
       <sec:TOE_Boundary>
 	<h:p>
         This PP-Module specifically addresses WLAN (IEEE 802.11) ASs. A compliant WLAN AS is a
@@ -99,7 +100,7 @@
 	response to the threat environment discussed subsequently herein.
 	</h:p>
       </sec:TOE_Boundary>
-    </section>
+    </sec:Compliant_Targets_of_Evaluation>
     
     <sec:Use_Cases>
       <usecases>
@@ -167,7 +168,7 @@
     threats of the NDcPP and those defined in this PP-Module define the comprehensive set of
     security threats addressed by a WLAN AS TOE. 
     </h:p>
-    <section title="Threats" id="threats">
+    <sec:Threats>
       <threats>
         <threat name="T.NETWORK_DISCLOSURE">
           <description>Devices on a protected network may be exposed to threats presented by devices located outside the
@@ -263,8 +264,8 @@
         </threat>
 
       </threats>
-    </section>
-    <section title="Assumptions" id="assumption">
+    </sec:Threats>
+    <sec:Assumptions>
       All assumptions for the operational environment of the Base-PP also apply to this PP-Module.
       A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.      
@@ -281,7 +282,7 @@
           </objective-refer>
         </assumption>
       </assumptions>
-    </section>
+    </sec:Assumptions>
     <sec:Organizational_Security_Policies>
       <!-- This PP-Module defines no additional organizational security policies beyond those specified in the NDcPP. -->
       <OSPs/>
@@ -438,7 +439,7 @@
       </SOs>
       </sec:Security_Objectives_for_the_TOE>
       
-    <section title="Security Objectives for the Operational Environment" id="SecurityObjectivesTOEorEnvironment"> 
+    <sec:Security_Objectives_for_the_Operational_Environment>
       All objectives for the operational environment of the Base-PP also apply to this PP-Module.
       OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
       defined by the Base-PP and not the PP-Module.
@@ -452,10 +453,10 @@
             defines the expected architectural deployment specifically for WLAN AS network devices.</consistency-rationale>
         </SOE>
       </SOEs>
-    </section>
-    <section title="Security Objectives Rationale" id="SOR">
+    </sec:Security_Objectives_for_the_Operational_Environment>
+    <sec:Security_Objectives_Rationale>
       <!-- NOTE: This section should remain empty and is populated from the rationale tags in the previous sections.  -->
-    </section>
+    </sec:Security_Objectives_Rationale>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
     <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="NDs">
@@ -791,7 +792,7 @@
                 <h:td colspan="2">None.</h:td>
               </h:tr>
               <h:tr>
-                <h:td rowspan="3">FCS_IPSEC_EXT.1 (selection-based)</h:td>
+                <h:td rowspan="2">FCS_IPSEC_EXT.1 (selection-based)</h:td>
                 <h:td>Protocol failures.</h:td>
                 <h:td>Reason for failure. Non-TOE endpoint of connection.</h:td>
               </h:tr>
@@ -802,12 +803,12 @@
               <h:tr>
                 <h:td rowspan="2">FIA_8021X_EXT.1</h:td>
                 <h:td>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</h:td>
-                <h:td>Provided client identity (e.g. MAC address).</h:td>
+                <h:td>Provided client identity (e.g. Media Access Control [MAC] address).</h:td>
               </h:tr>
-			  <h:tr>
-				<h:td>Failed authentication attempt</h:td>
-				<h:td>Provided client identity (e.g. MAC address).</h:td>
-			  </h:tr>
+	      <h:tr>
+		<h:td>Failed authentication attempt</h:td>
+		<h:td>Provided client identity (e.g. MAC address).</h:td>
+	      </h:tr>
               <h:tr>
                 <h:td>FIA_PSK_EXT.1 (selection-based)</h:td>
                 <h:td colspan="2">None.</h:td>
@@ -911,13 +912,15 @@
 	      <h:p>
               The cryptographic key derivation algorithm required by IEEE 802.11-2020 (Section
               11.6.1.2) and verified in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and
-              outputs 384 bits. The use of GCMP is defined in IEEE 802.11ax-2021 (Section 11.4.5) and requires a KDF
+              outputs 384 bits. The use of GCMP is defined in IEEE 802.11ax-2021 (Section 11.4.5) and requires a
+	      Key Derivation Function (KDF)
               based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys).
               This KDF outputs 704 bits.</h:p>
 	      <h:p>
 		This requirement applies only to the keys that are generated or derived for the communications
 		between the AP and the client once the client has been authenticated.
-		It refers to the derivation of the GTK (through the RBG specified in this PP-Module)
+		It refers to the derivation of the Group Temporal Key (GTK),
+		through the RBG specified in this PP-Module,
 		as well as the derivation of the PTK from the PMK, which is done using a random value
 		generated by the RBG specified in this PP-Module, the HMAC function as specified in
 		this PP-Module, as well as other information.
@@ -1192,7 +1195,7 @@
 	    <h:p>
             As indicated previously, there are at least three communication paths present during the exchange; two
             with the TOE as an endpoint and one with TOE acting as a transfer point only. The TOE establishes an
-            EAP over LAN (EAPOL) connection with the wireless client as specified in 802.1X-2007. The TOE also
+            EAP over Local Area Network (EAPOL) connection with the wireless client as specified in 802.1X-2007. The TOE also
             establishes (or has established) a RADIUS protocol connection protected either by IPsec or RadSec (TLS) with the RADIUS server. 
             The wireless client and RADIUS server establish an EAP-TLS session
             (RFC 5216); in this transaction the TOE merely takes the EAP-TLS packets from its EAPOL/RADIUS
