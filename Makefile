@@ -3,5 +3,6 @@ TRANS?=transforms
 -include User.make
 -include ~/commoncriteria/User.make
 # Include the bulk
-DIFF_TAGS=before-mods
+DIFF_TAG=v1.0-precomment
 include $(TRANS)/module/Module.make
+
