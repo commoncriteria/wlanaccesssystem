@@ -48,7 +48,7 @@
         <h:li>Network Device collaborative Protection Profile (NDcPP) Version 2.2e</h:li>
       </h:ul>
       This Base-PP is valid because a WLAN AS is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
-      This is functionality that typically will be implemented by a network device.
+      A network device typically implements this functionality.
       </h:p>
       <h:p>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a ‘Distributed TOE’ as
@@ -85,7 +85,9 @@
       <term abbr="WLAN"  full="Wireless Local Area Network"> 
         A wireless computer network that links
         two or more devices using wireless communication to form a local area network within a
-        limited area such as a home, school, computer laboratory, campus, office building etc. </term>
+        limited area such as a home, school, computer laboratory, campus, office building,
+	etc.
+      </term>
       <term abbr="WPA"   full="Wi-Fi Protected Access"/>
     </tech-terms>
     <sec:Compliant_Targets_of_Evaluation>
@@ -126,12 +128,8 @@
             Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
           SFRs, and Optional SFRs (dated May 2017).</h:p>
 	  <h:p>
-          
-          The following PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
-          <h:ul>
-            <h:li>PP-Module for Stateful Traffic Filter Firewalls, Version 1.4 + Errata 20200625</h:li>
-            <h:li>PP-Module for Virtual Private Network (VPN) Gateways, Version 1.1</h:li>
-          </h:ul>
+            No PPs or PP-Modules may be specified in a PP-Configuration with this PP-Module other than the Base-PP specified
+	    in <xref to="Overview"/>.
 	  </h:p>
         </description>
       </cclaim>
@@ -151,7 +149,8 @@
     between a wired private network and a wireless client via a WLAN AS. The WLAN Access
     System provides secure communication between a user (wireless client) and a wired (trusted) network
     by supporting security functions such as administration, authentication, encryption, and the protection
-    and handling of data in transit. To protect the data in-transit from disclosure and modification, a WLAN
+    and handling of data in transit.
+    To protect the data in transit from disclosure and modification, a WLAN
     AS is used to establish secure communications. The WLAN AS provides one end
     of the secure cryptographic tunnel and performs encryption and decryption of network packets in
     accordance with a WLAN AS security policy negotiated with its authenticated wireless client.
@@ -196,7 +195,7 @@
 
         <threat name="T.NETWORK_ACCESS">
           <description>Devices located outside the protected network may seek to exercise services located on the protected
-            network that are intended to only be accessed from inside the protected network or only accessed by
+            network that are intended to be only accessed from inside the protected network or only accessed by
             entities using an authenticated path into the protected network.</description>
           <consistency-rationale>This threat extends the security problem defined by the Base-PP to include the threat of a malicious entity in an untrusted network interacting with a protected entity in a trusted network. 
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks.</consistency-rationale>
@@ -1273,7 +1272,8 @@
 	      The evaluator shall attempt to change their password as directed by the operational guidance.
               While making this attempt, the evaluator shall verify that re-authentication is required.</h:p>
 	      <h:p>
-		If other re-authentication conditions are specified, the evaluator shall cause those conditions to occur and verify that the TSF re-authenticates the authenticated user.
+		If other re-authentication conditions are specified, the evaluator shall cause those conditions to
+		occur and verify that the TSF re-authenticates the authenticated user.
 	      </h:p>
             </Tests>
           </aactivity>
