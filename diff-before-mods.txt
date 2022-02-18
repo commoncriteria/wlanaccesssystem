@@ -16,11 +16,11 @@ Revision History {#revision-history style="page-break-before:always;"}			Revisio
   --------- ------------ -----------------					      |	  --------- ------------ ------------------------------------------------------------
   1.0       2020-10-28   Initial Release						  1.0       2020-10-28   Initial Release
 
-										      >	  0.5       2022-01-20   Conversion to [PP-Module](#abbr_PP-Module);\
-										      >	                         Updated to include [WPA](#abbr_WPA) 3 and Wi-Fi 6.\
+										      >	  0.5       2022-01-20   Conversion to Protection Profile Module ([PP-Module](#abbr_P
+										      >	                         Updated to include Wi-Fi Protected Access ([WPA](#abbr_WPA))
 										      >	                         [WPA](#abbr_WPA) 3 is required. [WPA](#abbr_WPA) 2 can addit
 										      >	                         256 bit keys are required. 128 and 192 bit keys can addition
-										      >	                         Mandated Distributed [TOE](#abbr_TOE)
+										      >	                         Mandated Distributed Target of Evaluation ([TOE](#abbr_TOE))
 										      >	  -----------------------------------------------------------------------------------
 										      >
 Contents										Contents
@@ -92,14 +92,14 @@ Assessment](#EAR)								      |	Rationale](#mod-conrat)[6.1collaborative Protec
 ------------										------------
 
 The scope of this [PP-Module](#abbr_PP-Module) is to describe the			The scope of this [PP-Module](#abbr_PP-Module) is to describe the
-security functionality of a Wireless Local Area Network					security functionality of a Wireless Local Area Network
-([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to	      |	([WLAN](#abbr_WLAN)) Access System ([AS](#abbr_AS)) in terms of
-define functional and assurance requirements for such products. This		      |	[\[CC\]](#bibCC) and to define functional and assurance requirements for
-PPModule is intended for use with the following Base-PPs:			      |	such products. This [PP-Module](#abbr_PP-Module) is intended for use
-										      >	with the following Base-PPs:
+security functionality of a Wireless Local Area Network				      |	security functionality of a Wireless Local Area Network (WLAN) Access
+([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to	      |	System (AS) in terms of [\[CC\]](#bibCC) and to define functional and
+define functional and assurance requirements for such products. This		      |	assurance requirements for such products. This
+PPModule is intended for use with the following Base-PPs:			      |	[PP-Module](#abbr_PP-Module) is intended for use with the following Base
+										      >	Protection Profiles ([Base-PPs](#abbr_Base-PP)):
 
--   Collaborative Protection Profile for Network Devices				-   Collaborative Protection Profile for Network Devices
-    ([NDcPP](#abbr_NDcPP)) Version 2.2e							    ([NDcPP](#abbr_NDcPP)) Version 2.2e
+-   Collaborative Protection Profile for Network Devices			      |	-   Network Device collaborative Protection Profile (NDcPP) Version 2.2e
+    ([NDcPP](#abbr_NDcPP)) Version 2.2e						      <
 
 This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)			This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)
 Access System is a device at the edge of a private network that			      |	[AS](#abbr_AS) is a device at the edge of a private network that
@@ -107,14 +107,15 @@ establishes an encrypted IEEE 802.11 link that protects wireless data in		establ
 transit from disclosure and modification. This is functionality that			transit from disclosure and modification. This is functionality that
 typically will be implemented by a network device.					typically will be implemented by a network device.
 
-A [TOE](#abbr_TOE) that conforms to a							A [TOE](#abbr_TOE) that conforms to a
-[PP-Configuration](#abbr_PP-Configuration) containing this				[PP-Configuration](#abbr_PP-Configuration) containing this
+A [TOE](#abbr_TOE) that conforms to a						      |	A [TOE](#abbr_TOE) that conforms to a Protection Profile Configuration
+[PP-Configuration](#abbr_PP-Configuration) containing this			      |	([PP-Configuration](#abbr_PP-Configuration)) containing this
 [PP-Module](#abbr_PP-Module) may be a 'Distributed [TOE](#abbr_TOE)' as		      |	[PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as
 defined in the [NDcPP](#abbr_NDcPP). The [TOE](#abbr_TOE) functionality		      |	defined in the [NDcPP](#abbr_NDcPP). The expectation for this
 may reside entirely within a single device or be spread across multiple		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
-distributed physical components.						      |	must include a controller and one or more access points
-										      >	([APs](#abbr_AP)).
+distributed physical components.						      |	must include a controller and one or more access points (Access Points
+										      >	([APs](#abbr_AP))).
 
+										      >	::: {.no-link}
 1.2 Terms {#glossary .indexable data-level="2"}						1.2 Terms {#glossary .indexable data-level="2"}
 ---------										---------
 
@@ -124,23 +125,22 @@ this document.										this document.
 ### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}			### 1.2.1 Common Criteria Terms {#cc-terms .indexable data-level="3"}
 
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
-| ::: {#Assurance}                  | Grounds for confidence that a     |		| ::: {#Assurance}                  | Grounds for confidence that a     |
-| Assurance                         | [TOE](#abbr_TOE) meets the SFRs   |		| Assurance                         | [TOE](#abbr_TOE) meets the SFRs   |
-| :::                               | [\[CC\]](#bibCC).                 |		| :::                               | [\[CC\]](#bibCC).                 |
+| ::: {#Assurance}                  | Grounds for confidence that a     |	      |	| ::: {#Assurance}                  | Grounds for confidence that a TOE |
+| Assurance                         | [TOE](#abbr_TOE) meets the SFRs   |	      |	| Assurance                         | meets the SFRs [\[CC\]](#bibCC).  |
+| :::                               | [\[CC\]](#bibCC).                 |	      |	| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Base_Protection_Profile}    | Protection Profile used as a      |		| ::: {#Base_Protection_Profile}    | Protection Profile used as a      |
-| Base Protection Profile           | basis to build a                  |		| Base Protection Profile           | basis to build a                  |
-| ([Base-PP](#abbr_Base-PP))        | [PP-Configuration](#abbr_PP-Confi |		| ([Base-PP](#abbr_Base-PP))        | [PP-Configuration](#abbr_PP-Confi |
-| :::                               | guration).                        |		| :::                               | guration).                        |
-+-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
+| Base Protection Profile           | basis to build a                  |	      |	| Base Protection Profile (Base-PP) | basis to build a                  |
+| ([Base-PP](#abbr_Base-PP))        | [PP-Configuration](#abbr_PP-Confi |	      |	| :::                               | PP-Configuration.                 |
+| :::                               | guration).                        |	      |	+-----------------------------------+-----------------------------------+
 										      >	| ::: {#Collaborative_Protection_Pr | A Protection Profile developed by |
 										      >	| ofile}                            | international technical           |
 										      >	| Collaborative Protection Profile  | communities and approved by       |
-										      >	| ([cPP](#abbr_cPP))                | multiple schemes                  |
+										      >	| (cPP)                             | multiple schemes                  |
 										      >	| :::                               |                                   |
-										      >	+-----------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Common_Criteria}            | Common Criteria for Information   |		| ::: {#Common_Criteria}            | Common Criteria for Information   |
-| Common Criteria ([CC](#abbr_CC))  | Technology Security Evaluation    |		| Common Criteria ([CC](#abbr_CC))  | Technology Security Evaluation    |
+| Common Criteria ([CC](#abbr_CC))  | Technology Security Evaluation    |	      |	| Common Criteria (CC)              | Technology Security Evaluation    |
 | :::                               | (International Standard ISO/IEC   |		| :::                               | (International Standard ISO/IEC   |
 |                                   | 15408).                           |		|                                   | 15408).                           |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
@@ -158,95 +158,91 @@ this document.										this document.
 | ::: {#Common_Evaluation_Methodolo | Common Evaluation Methodology for |		| ::: {#Common_Evaluation_Methodolo | Common Evaluation Methodology for |
 | gy}                               | Information Technology Security   |		| gy}                               | Information Technology Security   |
 | Common Evaluation Methodology     | Evaluation.                       |		| Common Evaluation Methodology     | Evaluation.                       |
-| ([CEM](#abbr_CEM))                |                                   |		| ([CEM](#abbr_CEM))                |                                   |
+| ([CEM](#abbr_CEM))                |                                   |	      |	| (CEM)                             |                                   |
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
-| ::: {#Distributed_TOE}            | A [TOE](#abbr_TOE) composed of    |		| ::: {#Distributed_TOE}            | A [TOE](#abbr_TOE) composed of    |
-| Distributed [TOE](#abbr_TOE)      | multiple components operating as  |		| Distributed [TOE](#abbr_TOE)      | multiple components operating as  |
-| :::                               | a logical whole.                  |		| :::                               | a logical whole.                  |
+| ::: {#Distributed_TOE}            | A [TOE](#abbr_TOE) composed of    |	      |	| ::: {#Distributed_TOE}            | A TOE composed of multiple        |
+| Distributed [TOE](#abbr_TOE)      | multiple components operating as  |	      |	| Distributed TOE                   | components operating as a logical |
+| :::                               | a logical whole.                  |	      |	| :::                               | whole.                            |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Operational_Environment}    | Hardware and software that are    |		| ::: {#Operational_Environment}    | Hardware and software that are    |
-| Operational Environment           | outside the [TOE](#abbr_TOE)      |		| Operational Environment           | outside the [TOE](#abbr_TOE)      |
-| ([OE](#abbr_OE))                  | boundary that support the         |		| ([OE](#abbr_OE))                  | boundary that support the         |
-| :::                               | [TOE](#abbr_TOE) functionality    |		| :::                               | [TOE](#abbr_TOE) functionality    |
-|                                   | and security policy.              |		|                                   | and security policy.              |
+| Operational Environment           | outside the [TOE](#abbr_TOE)      |	      |	| Operational Environment (OE)      | outside the TOE boundary that     |
+| ([OE](#abbr_OE))                  | boundary that support the         |	      |	| :::                               | support the TOE functionality and |
+| :::                               | [TOE](#abbr_TOE) functionality    |	      |	|                                   | security policy.                  |
+|                                   | and security policy.              |	      <
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Protection_Profile}         | An implementation-independent set |		| ::: {#Protection_Profile}         | An implementation-independent set |
-| Protection Profile                | of security requirements for a    |		| Protection Profile                | of security requirements for a    |
-| ([PP](#abbr_PP))                  | category of products.             |		| ([PP](#abbr_PP))                  | category of products.             |
-| :::                               |                                   |		| :::                               |                                   |
+| Protection Profile                | of security requirements for a    |	      |	| Protection Profile (PP)           | of security requirements for a    |
+| ([PP](#abbr_PP))                  | category of products.             |	      |	| :::                               | category of products.             |
+| :::                               |                                   |	      <
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Protection_Profile_Configur | A comprehensive set of security   |		| ::: {#Protection_Profile_Configur | A comprehensive set of security   |
 | ation}                            | requirements for a product type   |		| ation}                            | requirements for a product type   |
 | Protection Profile Configuration  | that consists of at least one     |		| Protection Profile Configuration  | that consists of at least one     |
-| ([PP-Configuration](#abbr_PP-Conf | [Base-PP](#abbr_Base-PP) and at   |		| ([PP-Configuration](#abbr_PP-Conf | [Base-PP](#abbr_Base-PP) and at   |
-| iguration))                       | least one                         |		| iguration))                       | least one                         |
-| :::                               | [PP-Module](#abbr_PP-Module).     |		| :::                               | [PP-Module](#abbr_PP-Module).     |
+| ([PP-Configuration](#abbr_PP-Conf | [Base-PP](#abbr_Base-PP) and at   |	      |	| (PP-Configuration)                | Base-PP and at least one          |
+| iguration))                       | least one                         |	      |	| :::                               | PP-Module.                        |
+| :::                               | [PP-Module](#abbr_PP-Module).     |	      <
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Protection_Profile_Module}  | An implementation-independent     |		| ::: {#Protection_Profile_Module}  | An implementation-independent     |
 | Protection Profile Module         | statement of security needs for a |		| Protection Profile Module         | statement of security needs for a |
-| ([PP-Module](#abbr_PP-Module))    | [TOE](#abbr_TOE) type             |		| ([PP-Module](#abbr_PP-Module))    | [TOE](#abbr_TOE) type             |
-| :::                               | complementary to one or more Base |		| :::                               | complementary to one or more Base |
-|                                   | Protection Profiles.              |		|                                   | Protection Profiles.              |
+| ([PP-Module](#abbr_PP-Module))    | [TOE](#abbr_TOE) type             |	      |	| (PP-Module)                       | TOE type complementary to one or  |
+| :::                               | complementary to one or more Base |	      |	| :::                               | more Base Protection Profiles.    |
+|                                   | Protection Profiles.              |	      <
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Security_Assurance_Requirem | A requirement to assure the       |		| ::: {#Security_Assurance_Requirem | A requirement to assure the       |
-| ent}                              | security of the [TOE](#abbr_TOE). |		| ent}                              | security of the [TOE](#abbr_TOE). |
+| ent}                              | security of the [TOE](#abbr_TOE). |	      |	| ent}                              | security of the TOE.              |
 | Security Assurance Requirement    |                                   |		| Security Assurance Requirement    |                                   |
-| ([SAR](#abbr_SAR))                |                                   |		| ([SAR](#abbr_SAR))                |                                   |
+| ([SAR](#abbr_SAR))                |                                   |	      |	| (SAR)                             |                                   |
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Security_Functional_Require | A requirement for security        |		| ::: {#Security_Functional_Require | A requirement for security        |
-| ment}                             | enforcement by the                |		| ment}                             | enforcement by the                |
-| Security Functional Requirement   | [TOE](#abbr_TOE).                 |		| Security Functional Requirement   | [TOE](#abbr_TOE).                 |
-| ([SFR](#abbr_SFR))                |                                   |		| ([SFR](#abbr_SFR))                |                                   |
+| ment}                             | enforcement by the                |	      |	| ment}                             | enforcement by the TOE.           |
+| Security Functional Requirement   | [TOE](#abbr_TOE).                 |	      |	| Security Functional Requirement   |                                   |
+| ([SFR](#abbr_SFR))                |                                   |	      |	| (SFR)                             |                                   |
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Security_Target}            | A set of implementation-dependent |		| ::: {#Security_Target}            | A set of implementation-dependent |
-| Security Target ([ST](#abbr_ST))  | security requirements for a       |		| Security Target ([ST](#abbr_ST))  | security requirements for a       |
+| Security Target ([ST](#abbr_ST))  | security requirements for a       |	      |	| Security Target (ST)              | security requirements for a       |
 | :::                               | specific product.                 |		| :::                               | specific product.                 |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
-										      >	| ::: {#Target_of_Evaluation}       | The product under evaluation.     |
-										      >	| Target of Evaluation              |                                   |
-										      >	| ([TOE](#abbr_TOE))                |                                   |
-										      >	| :::                               |                                   |
-										      >	+-----------------------------------+-----------------------------------+
-| ::: {#TOE_Security_Functionality} | The security functionality of the |		| ::: {#TOE_Security_Functionality} | The security functionality of the |
-| [TOE](#abbr_TOE) Security         | product under evaluation.         |		| [TOE](#abbr_TOE) Security         | product under evaluation.         |
-| Functionality ([TSF](#abbr_TSF))  |                                   |		| Functionality ([TSF](#abbr_TSF))  |                                   |
+| ::: {#TOE_Security_Functionality} | The security functionality of the |	      |	| ::: {#Target_of_Evaluation}       | The product under evaluation.     |
+| [TOE](#abbr_TOE) Security         | product under evaluation.         |	      |	| Target of Evaluation (TOE)        |                                   |
+| Functionality ([TSF](#abbr_TSF))  |                                   |	      <
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
-| ::: {#TOE_Summary_Specification}  | A description of how a            |		| ::: {#TOE_Summary_Specification}  | A description of how a            |
-| [TOE](#abbr_TOE) Summary          | [TOE](#abbr_TOE) satisfies the    |		| [TOE](#abbr_TOE) Summary          | [TOE](#abbr_TOE) satisfies the    |
-| Specification ([TSS](#abbr_TSS))  | SFRs in an [ST](#abbr_ST).        |		| Specification ([TSS](#abbr_TSS))  | SFRs in an [ST](#abbr_ST).        |
+| ::: {#TOE_Summary_Specification}  | A description of how a            |	      |	| ::: {#TOE_Security_Functionality} | The security functionality of the |
+| [TOE](#abbr_TOE) Summary          | [TOE](#abbr_TOE) satisfies the    |	      |	| TOE Security Functionality (TSF)  | product under evaluation.         |
+| Specification ([TSS](#abbr_TSS))  | SFRs in an [ST](#abbr_ST).        |	      <
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
-| ::: {#Target_of_Evaluation}       | The product under evaluation.     |	      <
-| Target of Evaluation              |                                   |	      <
+| ::: {#Target_of_Evaluation}       | The product under evaluation.     |	      |	| ::: {#TOE_Summary_Specification}  | A description of how a TOE        |
+| Target of Evaluation              |                                   |	      |	| TOE Summary Specification (TSS)   | satisfies the SFRs in an ST.      |
 | ([TOE](#abbr_TOE))                |                                   |	      <
-| :::                               |                                   |	      <
-+-----------------------------------+-----------------------------------+	      <
+| :::                               |                                   |		| :::                               |                                   |
++-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 
 ### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}			### 1.2.2 Technical Terms {#tech-terms .indexable data-level="3"}
 
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Access_Point}               | A device that provides the        |		| ::: {#Access_Point}               | A device that provides the        |
-| Access Point ([AP](#abbr_AP))     | network interface that enables    |		| Access Point ([AP](#abbr_AP))     | network interface that enables    |
+| Access Point ([AP](#abbr_AP))     | network interface that enables    |	      |	| Access Point (AP)                 | network interface that enables    |
 | :::                               | wireless client hosts to access a |		| :::                               | wireless client hosts to access a |
 |                                   | wired network.                    |		|                                   | wired network.                    |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Service_Set_Identifier}     | The primary name associated with  |		| ::: {#Service_Set_Identifier}     | The primary name associated with  |
-| Service Set Identifier            | an 802.11 wireless local area     |		| Service Set Identifier            | an 802.11 wireless local area     |
-| ([SSID](#abbr_SSID))              | network ([WLAN](#abbr_WLAN)).     |		| ([SSID](#abbr_SSID))              | network ([WLAN](#abbr_WLAN)).     |
-| :::                               |                                   |		| :::                               |                                   |
+| Service Set Identifier            | an 802.11 wireless local area     |	      |	| Service Set Identifier (SSID)     | an 802.11 wireless local area     |
+| ([SSID](#abbr_SSID))              | network ([WLAN](#abbr_WLAN)).     |	      |	| :::                               | network (WLAN).                   |
+| :::                               |                                   |	      <
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Wireless_Local_Area_Network | A wireless computer network that  |		| ::: {#Wireless_Local_Area_Network | A wireless computer network that  |
 | }                                 | links two or more devices using   |		| }                                 | links two or more devices using   |
 | Wireless Local Area Network       | wireless communication to form a  |		| Wireless Local Area Network       | wireless communication to form a  |
-| ([WLAN](#abbr_WLAN))              | local area network (LAN) within a |	      |	| ([WLAN](#abbr_WLAN))              | local area network within a       |
+| ([WLAN](#abbr_WLAN))              | local area network (LAN) within a |	      |	| (WLAN)                            | local area network within a       |
 | :::                               | limited area such as a home,      |		| :::                               | limited area such as a home,      |
 |                                   | school, computer laboratory,      |		|                                   | school, computer laboratory,      |
 |                                   | campus, office building etc.      |		|                                   | campus, office building etc.      |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
+										      >	:::
 
 1.3 Compliant Targets of Evaluation {#TOEdescription .indexable,h2 data-level="2"}    |	1.3 Compliant Targets of Evaluation {#Compliant_Targets_of_Evaluation .indexable data
 -----------------------------------							-----------------------------------
@@ -264,10 +260,11 @@ and thereby decreases the risk of exposure of information transiting		      |	de
 "over-the-air".									      <
 
 Since this [PP-Module](#abbr_PP-Module) extends the					Since this [PP-Module](#abbr_PP-Module) extends the
-[NDcPP](#abbr_NDcPP), conformant TOEs are obligated to implement the			[NDcPP](#abbr_NDcPP), conformant TOEs are obligated to implement the
-functionality required in the [NDcPP](#abbr_NDcPP) along with the			functionality required in the [NDcPP](#abbr_NDcPP) along with the
-additional functionality defined in this [PP-Module](#abbr_PP-Module) in		additional functionality defined in this [PP-Module](#abbr_PP-Module) in
-response to the threat environment discussed subsequently herein.			response to the threat environment discussed subsequently herein.
+[NDcPP](#abbr_NDcPP), conformant TOEs are obligated to implement the		      |	[NDcPP](#abbr_NDcPP), conformant [TOEs](#abbr_TOE) are obligated to
+functionality required in the [NDcPP](#abbr_NDcPP) along with the		      |	implement the functionality required in the [NDcPP](#abbr_NDcPP) along
+additional functionality defined in this [PP-Module](#abbr_PP-Module) in	      |	with the additional functionality defined in this
+response to the threat environment discussed subsequently herein.		      |	[PP-Module](#abbr_PP-Module) in response to the threat environment
+										      >	discussed subsequently herein.
 
 1.4 Use Cases {#Use_Cases .indexable,h2 data-level="2"}				      |	1.4 Use Cases {#Use_Cases .indexable data-level="2"}
 -------------										-------------
@@ -283,9 +280,9 @@ response to the threat environment discussed subsequently herein.			response to 
     endpoint. In addition to claiming the relevant \"Distributed			    endpoint. In addition to claiming the relevant \"Distributed
     [TOE](#abbr_TOE)\" requirement in the [NDcPP](#abbr_NDcPP), this use		    [TOE](#abbr_TOE)\" requirement in the [NDcPP](#abbr_NDcPP), this use
     case also requires the [TOE](#abbr_TOE) to claim the optional			    case also requires the [TOE](#abbr_TOE) to claim the optional
-    [SFR](#abbr_SFR) [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) to			    [SFR](#abbr_SFR) [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) to
-    describe the key distribution method between distributed				    describe the key distribution method between distributed
-    [TOE](#abbr_TOE) components.							    [TOE](#abbr_TOE) components.
+    [SFR](#abbr_SFR) [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) to		      |	    Security Functional Requirement ([SFR](#abbr_SFR))
+    describe the key distribution method between distributed			      |	    [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB) to describe the key
+    [TOE](#abbr_TOE) components.						      |	    distribution method between distributed [TOE](#abbr_TOE) components.
 
 2 Conformance Claims {#Conformance_Claims .indexable,h1 data-level="1"}		      |	2 Conformance Claims {#Conformance_Claims .indexable data-level="1"}
 ====================									====================
@@ -294,14 +291,14 @@ Conformance Statement									Conformance Statement
 
 :   This [PP-Module](#abbr_PP-Module) inherits exact conformance as			:   This [PP-Module](#abbr_PP-Module) inherits exact conformance as
     required from the specified [Base-PP](#abbr_Base-PP) and as defined			    required from the specified [Base-PP](#abbr_Base-PP) and as defined
-    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact			    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact
-    Conformance, Selection-Based SFRs, and Optional SFRs (dated May			    Conformance, Selection-Based SFRs, and Optional SFRs (dated May
-    2017).										    2017).
-
-    The following PPs and [PP](#abbr_PP)-Modules are allowed to be		      <
-    specified in a [PP-Configuration](#abbr_PP-Configuration) with this		      <
-    [PP-Module](#abbr_PP-Module).						      <
-										      <
+    in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact		      |	    in the Common Criteria ([CC](#abbr_CC)) and Common Evaluation
+    Conformance, Selection-Based SFRs, and Optional SFRs (dated May		      |	    Methodology ([CEM](#abbr_CEM)) addenda for Exact Conformance,
+    2017).									      |	    Selection-Based [SFRs](#abbr_SFR), and Optional [SFRs](#abbr_SFR)
+										      |	    (dated May 2017).
+    The following PPs and [PP](#abbr_PP)-Modules are allowed to be		      |
+    specified in a [PP-Configuration](#abbr_PP-Configuration) with this		      |	    The following Protection Profile ([PP](#abbr_PP))-Modules are
+    [PP-Module](#abbr_PP-Module).						      |	    allowed to be specified in a
+										      |	    [PP-Configuration](#abbr_PP-Configuration) with this
     -   [Network Device, version						      <
         2.2e](https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf)		      <
 										      <
@@ -323,8 +320,8 @@ Conformance Statement								      <
     in the [CC](#abbr_CC) and [CEM](#abbr_CEM) addenda for Exact		      <
     Conformance, Selection-Based SFRs, and Optional SFRs (dated May		      <
     2017).									      <
-    The following [PP](#abbr_PP)-Modules are allowed to be specified in			    The following [PP](#abbr_PP)-Modules are allowed to be specified in
-    a [PP-Configuration](#abbr_PP-Configuration) with this				    a [PP-Configuration](#abbr_PP-Configuration) with this
+    The following [PP](#abbr_PP)-Modules are allowed to be specified in		      <
+    a [PP-Configuration](#abbr_PP-Configuration) with this			      <
     [PP-Module](#abbr_PP-Module):							    [PP-Module](#abbr_PP-Module):
 										      >
     -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter			    -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter
@@ -370,10 +367,10 @@ conformance and hence dependence of this [PP-Module](#abbr_PP-Module) on		confor
 the [NDcPP](#abbr_NDcPP). Note also that while the [NDcPP](#abbr_NDcPP)			the [NDcPP](#abbr_NDcPP). Note also that while the [NDcPP](#abbr_NDcPP)
 contains only threats to the ability of the [TOE](#abbr_TOE) to provide			contains only threats to the ability of the [TOE](#abbr_TOE) to provide
 its security functions, this [PP-Module](#abbr_PP-Module) addresses only		its security functions, this [PP-Module](#abbr_PP-Module) addresses only
-threats to resources in the operational environment. Together the		      |	threats to resources in the Operational Environment ([OE](#abbr_OE)).
-threats of the [NDcPP](#abbr_NDcPP) and those defined in this			      |	Together the threats of the [NDcPP](#abbr_NDcPP) and those defined in
-[PP-Module](#abbr_PP-Module) define the comprehensive set of security		      |	this [PP-Module](#abbr_PP-Module) define the comprehensive set of
-threats addressed by a [WLAN](#abbr_WLAN) Access System				      |	security threats addressed by a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
+threats to resources in the operational environment. Together the		      |	threats to resources in the Operational Environment (OE). Together the
+threats of the [NDcPP](#abbr_NDcPP) and those defined in this				threats of the [NDcPP](#abbr_NDcPP) and those defined in this
+[PP-Module](#abbr_PP-Module) define the comprehensive set of security			[PP-Module](#abbr_PP-Module) define the comprehensive set of security
+threats addressed by a [WLAN](#abbr_WLAN) Access System				      |	threats addressed by a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
 [TOE](#abbr_TOE).									[TOE](#abbr_TOE).
 
 3.1 Threats {#threats .indexable,h2 data-level="2"}				      |	3.1 Threats {#Threats .indexable data-level="2"}
@@ -402,8 +399,8 @@ T.TSF\_FAILURE										T.TSF\_FAILURE
     a primitive set of mechanisms (e.g., memory management, privileged			    a primitive set of mechanisms (e.g., memory management, privileged
     modes of process execution) to more complex sets of mechanisms.			    modes of process execution) to more complex sets of mechanisms.
     Failure of the primitive mechanisms could lead to a compromise in			    Failure of the primitive mechanisms could lead to a compromise in
-    more complex mechanisms, resulting in a compromise of the				    more complex mechanisms, resulting in a compromise of the
-    [TSF](#abbr_TSF).									    [TSF](#abbr_TSF).
+    more complex mechanisms, resulting in a compromise of the			      |	    more complex mechanisms, resulting in a compromise of the TOE
+    [TSF](#abbr_TSF).								      |	    Security Functionality ([TSF](#abbr_TSF)).
 
 T.DATA\_INTEGRITY									T.DATA\_INTEGRITY
 :   Devices on a protected network may be exposed to threats presented			:   Devices on a protected network may be exposed to threats presented
@@ -425,15 +422,15 @@ T.REPLAY\_ATTACK									T.REPLAY\_ATTACK
 3.2 Assumptions {#assumption .indexable,h2 data-level="2"}			      |	3.2 Assumptions {#Assumptions .indexable data-level="2"}
 ---------------										---------------
 
-These assumptions are made on the Operational Environment in order to be	      |	These assumptions are made on the Operational Environment
-able to ensure that the security functionality specified in the			      |	([OE](#abbr_OE)) in order to be able to ensure that the security
-[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If	      |	functionality specified in the [PP-Module](#abbr_PP-Module) can be
-the [TOE](#abbr_TOE) is placed in an Operational Environment that does		      |	provided by the [TOE](#abbr_TOE). If the [TOE](#abbr_TOE) is placed in
-not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able		      |	an [OE](#abbr_OE) that does not meet these assumptions, the
-to provide all of its security functionality.					      |	[TOE](#abbr_TOE) may no longer be able to provide all of its security
-										      |	functionality. All assumptions for the [OE](#abbr_OE) of the
+These assumptions are made on the Operational Environment in order to be	      |	These assumptions are made on the [OE](#abbr_OE) in order to be able to
+able to ensure that the security functionality specified in the			      |	ensure that the security functionality specified in the
+[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If		[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If
+the [TOE](#abbr_TOE) is placed in an Operational Environment that does		      |	the [TOE](#abbr_TOE) is placed in an [OE](#abbr_OE) that does not meet
+not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able		      |	these assumptions, the [TOE](#abbr_TOE) may no longer be able to provide
+to provide all of its security functionality.					      |	all of its security functionality. All assumptions for the
+										      |	[OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP) also apply to this
 All assumptions for the operational environment of the				      <
-[Base-PP](#abbr_Base-PP) also apply to this						[Base-PP](#abbr_Base-PP) also apply to this
+[Base-PP](#abbr_Base-PP) also apply to this					      <
 [PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still			[PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still
 operative, but only for the interfaces in the [TOE](#abbr_TOE) that are			operative, but only for the interfaces in the [TOE](#abbr_TOE) that are
 defined by the [Base-PP](#abbr_Base-PP) and not the					defined by the [Base-PP](#abbr_Base-PP) and not the
@@ -650,16 +647,17 @@ https://www.niap-ccevs.org/MMO/[PP](#abbr_PP)/CPP\_ND\_V2.2E.pdf		      |	This c
 										      >	of the security functions implemented by the Network Device as a whole
 										      >	and evaluated against the [NDcPP](#abbr_NDcPP). The following sections
 										      >	describe any modifications that the [ST](#abbr_ST) author must make to
-										      >	the SFRs defined in the [NDcPP](#abbr_NDcPP) in addition to what is
-										      >	mandated by [Section 5.2 TOE Security Functional
+										      >	the [SFRs](#abbr_SFR) defined in the [NDcPP](#abbr_NDcPP) in addition to
+										      >	what is mandated by [Section 5.2 TOE Security Functional
 										      >	Requirements](#man-sfrs){.dynref}.
-										      >
-										      >	### 5.1.1 Modified SFRs {#modsfr-ND .indexable data-level="3"}
-										      >
-										      >	The SFRs listed in this section are defined in the [NDcPP](#abbr_NDcPP)
-										      >	and relevant to the secure operation of the [TOE](#abbr_TOE).
 
-### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
+### 5.0.0.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}      |	### 5.1.1 Modified SFRs {#modsfr-ND .indexable data-level="3"}
+										      >
+										      >	The [SFRs](#abbr_SFR) listed in this section are defined in the
+										      >	[NDcPP](#abbr_NDcPP) and relevant to the secure operation of the
+										      >	[TOE](#abbr_TOE).
+										      >
+										      >	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
 
 ::: {#FCS_COP.1/DataEncryption .comp}							::: {#FCS_COP.1/DataEncryption .comp}
 #### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio	#### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio
@@ -671,17 +669,19 @@ https://www.niap-ccevs.org/MMO/[PP](#abbr_PP)/CPP\_ND\_V2.2E.pdf		      |	This c
 
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall perform encryption/decryption in accordance			The [TSF](#abbr_TSF) shall perform encryption/decryption in accordance
-with a specified cryptographic algorithm [AES](#abbr_AES) used in			with a specified cryptographic algorithm [AES](#abbr_AES) used in
-**[CBC](#abbr_CBC), [CCMP](#abbr_CCMP)** and \[**selection**:				**[CBC](#abbr_CBC), [CCMP](#abbr_CCMP)** and \[**selection**:
-*[CTR](#abbr_CTR)*, *[GCM](#abbr_GCM)*, ***GCMP***, ***no other***\]			*[CTR](#abbr_CTR)*, *[GCM](#abbr_GCM)*, ***GCMP***, ***no other***\]
-**modes** and cryptographic key sizes **128 bits and** \[**selection**:		      |	**modes** and cryptographic key sizes **256 bits and** \[**selection**:
-*192 bits*, *256 bits*, ***no other key sizes***\] that meet the		      |	*128 bits*, *192 bits*, ***no other key sizes***\] that meet the
-following: [AES](#abbr_AES) as specified in ISO 18033-3,				following: [AES](#abbr_AES) as specified in ISO 18033-3,
-**[CBC](#abbr_CBC) as specified in ISO 10116, [CCMP](#abbr_CCMP) as			**[CBC](#abbr_CBC) as specified in ISO 10116, [CCMP](#abbr_CCMP) as
-specified in NIST SP 800-38C and IEEE 802.11-2012,** \[**selection**:		      |	specified in NIST SP 800-38C and IEEE 802.11-2020,** \[**selection**:
-*[CTR](#abbr_CTR) as specified in ISO 10116*, *[GCM](#abbr_GCM) as			*[CTR](#abbr_CTR) as specified in ISO 10116*, *[GCM](#abbr_GCM) as
-specified in ISO 19772*, ***GCMP as specified in NIST SP 800-38D and			specified in ISO 19772*, ***GCMP as specified in NIST SP 800-38D and
-IEEE 802.11ac-2013***, ***no other standards***\].				      |	IEEE 802.11ax-2021***, ***no other standards***\].
+with a specified cryptographic algorithm [AES](#abbr_AES) used in		      |	with a specified cryptographic algorithm Advanced Encryption Standard
+**[CBC](#abbr_CBC), [CCMP](#abbr_CCMP)** and \[**selection**:			      |	([AES](#abbr_AES)) used in **Cipher Block Chaining ([CBC](#abbr_CBC)),
+*[CTR](#abbr_CTR)*, *[GCM](#abbr_GCM)*, ***GCMP***, ***no other***\]		      |	CCM mode Protocol ([CCMP](#abbr_CCMP))** and \[**selection**: *Counter
+**modes** and cryptographic key sizes **128 bits and** \[**selection**:		      |	(encryption mode) ([CTR](#abbr_CTR))*, *Galois-Counter Mode
+*192 bits*, *256 bits*, ***no other key sizes***\] that meet the		      |	([GCM](#abbr_GCM))*, ***GCMP***, ***no other***\] **modes** and
+following: [AES](#abbr_AES) as specified in ISO 18033-3,			      |	cryptographic key sizes **256 bits and** \[**selection**: *128 bits*,
+**[CBC](#abbr_CBC) as specified in ISO 10116, [CCMP](#abbr_CCMP) as		      |	*192 bits*, ***no other key sizes***\] that meet the following:
+specified in NIST SP 800-38C and IEEE 802.11-2012,** \[**selection**:		      |	[AES](#abbr_AES) as specified in ISO 18033-3, **[CBC](#abbr_CBC) as
+*[CTR](#abbr_CTR) as specified in ISO 10116*, *[GCM](#abbr_GCM) as		      |	specified in ISO 10116, [CCMP](#abbr_CCMP) as specified in NIST SP
+specified in ISO 19772*, ***GCMP as specified in NIST SP 800-38D and		      |	800-38C and IEEE 802.11-2020,** \[**selection**: *[CTR](#abbr_CTR) as
+IEEE 802.11ac-2013***, ***no other standards***\].				      |	specified in ISO 10116*, *[GCM](#abbr_GCM) as specified in ISO 19772*,
+										      >	***GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021***, ***no
+										      >	other standards***\].
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ This requirement is modified from		      |	[Application Note: ]{.note-header}[ ]{.note}
@@ -697,8 +697,8 @@ both be used for all encryption/decryption functionality. Rather, the		      |	b
 mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1	      |	the mandates serve particular purposes: to comply with the
 requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE	      |	FCS\_IPSEC\_EXT.1 requirements, [CBC](#abbr_CBC) mode is mandated, and
 802.11-2012, [AES](#abbr_AES)-CCMP (which uses [AES](#abbr_AES) in		      |	to comply with IEEE 802.11-2020, [AES](#abbr_AES)-CCMP (which uses
-[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.		      |	[AES](#abbr_AES) in [CCM](#abbr_CCM) as specified in SP 800-38C) must be
-										      >	implemented.
+[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.		      |	[AES](#abbr_AES) in Counter Mode with CBC-Message Authentication Code
+										      >	([CCM](#abbr_CCM)) as specified in SP 800-38C) must be implemented.
 
 For the first selection of								For the first selection of
 [FCS\_COP.1.1/DataEncryption](#FCS_COP.1.1/DataEncryption), the				[FCS\_COP.1.1/DataEncryption](#FCS_COP.1.1/DataEncryption), the
@@ -767,17 +767,18 @@ FCS\_COP.1/SigGen is defined in the [NDcPP](#abbr_NDcPP).]{.note}			FCS\_COP.1/S
 
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall be capable of using **IEEE 802.11-2012		      |	The [TSF](#abbr_TSF) shall be capable of using **IEEE 802.1X,
-(WPA2), IEEE 802.1X, \[**selection**: *[IPsec](#abbr_IPsec)*, *RADIUS		      |	\[**selection**: *[IPsec](#abbr_IPsec)*, *[RADIUS](#abbr_RADIUS) over
-over [TLS](#abbr_TLS)*\], and** \[**selection**: *SSH*,				      |	[TLS](#abbr_TLS)*\], and** \[**selection**: *SSH*, *[TLS](#abbr_TLS)*,
-*[TLS](#abbr_TLS)*, *DTLS*, *HTTPS*, ***no other protocols***\] to		      |	*DTLS*, *HTTPS*, ***no other protocols***\] to provide a trusted
-provide a trusted communication channel between itself and authorized IT	      |	communication channel between itself and authorized IT entities
-entities supporting the following capabilities: **[WLAN](#abbr_WLAN)		      |	supporting the following capabilities: **802.1x authentication server,**
-client, 802.1x authentication server,** audit server, \[**selection**:		      |	audit server, \[**selection**: *authentication server*,
-*authentication server*, *\[**assignment**: [other				      |	*\[**assignment**: [other capabilities]{.assignable-content}\]*, *no
-capabilities]{.assignable-content}\]*, *no other capabilities*\] that is	      |	other capabilities*\] that is logically distinct from other
-logically distinct from other communication channels and provides		      |	communication channels and provides assured identification of its end
-assured identification of its end points and protection of the channel		      |	points and protection of the channel data from disclosure and detection
-data from disclosure and detection of modification of the channel data.		      |	of modification of the channel data.
+(WPA2), IEEE 802.1X, \[**selection**: *[IPsec](#abbr_IPsec)*, *RADIUS		      |	\[**selection**: *Internet Protocol Security ([IPsec](#abbr_IPsec))*,
+over [TLS](#abbr_TLS)*\], and** \[**selection**: *SSH*,				      |	*Remote Authentication Dial In User Service ([RADIUS](#abbr_RADIUS))
+*[TLS](#abbr_TLS)*, *DTLS*, *HTTPS*, ***no other protocols***\] to		      |	over Transport Layer Security ([TLS](#abbr_TLS))*\], and**
+provide a trusted communication channel between itself and authorized IT	      |	\[**selection**: *SSH*, *[TLS](#abbr_TLS)*, *DTLS*, *HTTPS*, ***no other
+entities supporting the following capabilities: **[WLAN](#abbr_WLAN)		      |	protocols***\] to provide a trusted communication channel between itself
+client, 802.1x authentication server,** audit server, \[**selection**:		      |	and authorized IT entities supporting the following capabilities:
+										      >	**802.1x authentication server,** audit server, \[**selection**:
+*authentication server*, *\[**assignment**: [other					*authentication server*, *\[**assignment**: [other
+capabilities]{.assignable-content}\]*, *no other capabilities*\] that is		capabilities]{.assignable-content}\]*, *no other capabilities*\] that is
+logically distinct from other communication channels and provides			logically distinct from other communication channels and provides
+assured identification of its end points and protection of the channel			assured identification of its end points and protection of the channel
+data from disclosure and detection of modification of the channel data.			data from disclosure and detection of modification of the channel data.
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ This requirement has been modified		      |	[Application Note: ]{.note-header}[ ]{.note}
@@ -838,14 +839,17 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 
 When this [PP-Module](#abbr_PP-Module) extends the Network Device cPP,		      |	5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a		      |	----------------------------------------
-network device. This [PP-Module](#abbr_PP-Module) just defines the		      |
-[TOE](#abbr_TOE) as a specific type of network device with functional		      |	The following section describes the SFRs that must be satisfied by any
-capabilities distinct to that type.						      |	[TOE](#abbr_TOE) that claims conformance to this
-										      >	[PP-Module](#abbr_PP-Module). These SFRs must be claimed regardless of
-										      >	which [PP-Configuration](#abbr_PP-Configuration) is used to define the
-										      >	[TOE](#abbr_TOE).
+network device. This [PP-Module](#abbr_PP-Module) just defines the		      <
+[TOE](#abbr_TOE) as a specific type of network device with functional		      <
+capabilities distinct to that type.						      <
 
-### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
+### 5.0.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}		      |	The following section describes the [SFRs](#abbr_SFR) that must be
+										      >	satisfied by any [TOE](#abbr_TOE) that claims conformance to this
+										      >	[PP-Module](#abbr_PP-Module). These [SFRs](#abbr_SFR) must be claimed
+										      >	regardless of which [PP-Configuration](#abbr_PP-Configuration) is used
+										      >	to define the [TOE](#abbr_TOE).
+										      >
+										      >	### 5.2.1 Security Audit (FAU) {#man_fau .indexable data-level="3"}
 
 ::: {#FAU_GEN.1/WLAN .comp}								::: {#FAU_GEN.1/WLAN .comp}
 #### FAU\_GEN.1/WLAN Audit Data Generation						#### FAU\_GEN.1/WLAN Audit Data Generation
@@ -917,8 +921,8 @@ Non-TOE endpoint of connection.								Non-TOE endpoint of connection.
 Attempts to access the 802.1X controlled port prior to successful			Attempts to access the 802.1X controlled port prior to successful
 completion of the authentication exchange.						completion of the authentication exchange.
 
-Provided client identity ([MAC](#abbr_MAC) address).				      |	Provided client identity (e.g. Media Access Control \[[MAC](#abbr_MAC)\]
-										      >	address).
+Provided client identity ([MAC](#abbr_MAC) address).				      |	Provided client identity (e.g. Media Access Control \[Media Access
+										      >	Control ([MAC](#abbr_MAC))\] address).
 										      >
 										      >	Failed authentication attempt
 										      >
@@ -973,18 +977,18 @@ data-myid="auditWLAN" data-counter-type="ct-Table"}					data-myid="auditWLAN" da
 [Application Note: ]{.note-header}[ The auditable events defined in		      |	[Application Note: ]{.note-header}[ ]{.note}
 [Table [2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the SFRs that		      |
 are explicitly defined in this [PP-Module](#abbr_PP-Module) and are		      |	The auditable events defined in [Table
-intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The		      |	[2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the SFRs that are
-events in the Auditable Events table should be combined with those of		      |	explicitly defined in this [PP-Module](#abbr_PP-Module) and are intended
-the [NDcPP](#abbr_NDcPP) in the context of a conforming Security		      |	to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP).
+intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP). The		      |	[2]{.counter}](#auditWLAN){.auditWLAN-ref} are for the [SFRs](#abbr_SFR)
+events in the Auditable Events table should be combined with those of		      |	that are explicitly defined in this [PP-Module](#abbr_PP-Module) and are
+the [NDcPP](#abbr_NDcPP) in the context of a conforming Security		      |	intended to extend FAU\_GEN.1 in the [Base-PP](#abbr_Base-PP).
 Target.]{.note}									      |
 										      >	The events in the Auditable Events table should be combined with those
 										      >	of the [NDcPP](#abbr_NDcPP) in the context of a conforming Security
 										      >	Target.
 
 The Auditable Events ([Table [2]{.counter}](#auditWLAN){.auditWLAN-ref})		The Auditable Events ([Table [2]{.counter}](#auditWLAN){.auditWLAN-ref})
-includes optional and objective SFRs. The auditing of optional and			includes optional and objective SFRs. The auditing of optional and
-objective SFRs is only required if that [SFR](#abbr_SFR) is included in			objective SFRs is only required if that [SFR](#abbr_SFR) is included in
-the [ST](#abbr_ST).									the [ST](#abbr_ST).
+includes optional and objective SFRs. The auditing of optional and		      |	includes optional and objective [SFRs](#abbr_SFR). The auditing of
+objective SFRs is only required if that [SFR](#abbr_SFR) is included in		      |	optional and objective [SFRs](#abbr_SFR) is only required if that
+the [ST](#abbr_ST).								      |	[SFR](#abbr_SFR) is included in the [ST](#abbr_ST).
 
 Per FAU\_STG\_EXT.1 in the [Base-PP](#abbr_Base-PP), the				Per FAU\_STG\_EXT.1 in the [Base-PP](#abbr_Base-PP), the
 [TOE](#abbr_TOE) must support transfer of the audit data to an external			[TOE](#abbr_TOE) must support transfer of the audit data to an external
@@ -1025,15 +1029,14 @@ the communications between the access point and the client once the		      |
 client has been authenticated. It refers to the derivation of the		      |	This requirement applies only to the keys that are generated or derived
 [GTK](#abbr_GTK) (through the RBG specified in this				      |	for the communications between the [AP](#abbr_AP) and the client once
 [PP-Module](#abbr_PP-Module)) as well as the derivation of the PTK from		      |	the client has been authenticated. It refers to the derivation of the
-the [PMK](#abbr_PMK), which is done using a random value generated by		      |	Group Temporal Key ([GTK](#abbr_GTK)), through the Random Bit Generator
-the RBG specified in this [PP-Module](#abbr_PP-Module), the HMAC		      |	([RBG](#abbr_RBG)) specified in this [PP-Module](#abbr_PP-Module), as
-function as specified in this [PP-Module](#abbr_PP-Module), as well as		      |	well as the derivation of the Pairwise Transient Key from the Pairwise
-other information. This is specified in IEEE 802.11-2012 primarily in		      |	Master Key ([PMK](#abbr_PMK)), which is done using a random value
-chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).		      |	generated by the [RBG](#abbr_RBG) specified in this
-										      >	[PP-Module](#abbr_PP-Module), the HMAC function as specified in this
-										      >	[PP-Module](#abbr_PP-Module), as well as other information. This is
-										      >	specified in IEEE 802.11-2020 primarily in chapter 11. FCS\_RBG\_EXT.1
-										      >	is defined in the [NDcPP](#abbr_NDcPP).
+the [PMK](#abbr_PMK), which is done using a random value generated by		      |	Group Temporal Key (GTK), through the Random Bit Generator (RBG)
+the RBG specified in this [PP-Module](#abbr_PP-Module), the HMAC		      |	specified in this [PP-Module](#abbr_PP-Module), as well as the
+function as specified in this [PP-Module](#abbr_PP-Module), as well as		      |	derivation of the Pairwise Transient Key from the Pairwise Master Key
+other information. This is specified in IEEE 802.11-2012 primarily in		      |	(PMK), which is done using a random value generated by the
+										      >	[RBG](#abbr_RBG) specified in this [PP-Module](#abbr_PP-Module), the
+										      >	HMAC function as specified in this [PP-Module](#abbr_PP-Module), as well
+										      >	as other information. This is specified in IEEE 802.11-2020 primarily in
+chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).			chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).
 :::											:::
 :::											:::
 :::											:::
@@ -1048,21 +1051,21 @@ chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).		      |	gen
 :::											:::
 
 ::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall distribute **Group Temporal Key				The [TSF](#abbr_TSF) shall distribute **Group Temporal Key
-([GTK](#abbr_GTK))** in accordance with a specified cryptographic key			([GTK](#abbr_GTK))** in accordance with a specified cryptographic key
-distribution method: \[**selection**: *[AES](#abbr_AES) Key Wrap in an			distribution method: \[**selection**: *[AES](#abbr_AES) Key Wrap in an
-EAPOL-Key frame*, *[AES](#abbr_AES) Key Wrap with Padding in an				EAPOL-Key frame*, *[AES](#abbr_AES) Key Wrap with Padding in an
-EAPOL-Key frame*\] that meets the following: \[*NIST SP 800-38F, IEEE			EAPOL-Key frame*\] that meets the following: \[*NIST SP 800-38F, IEEE
-802.11-2012 for the packet format and timing considerations*\] **and		      |	802.11-2020 for the packet format and timing considerations*\] **and
-does not expose the cryptographic keys**.						does not expose the cryptographic keys**.
+The [TSF](#abbr_TSF) shall distribute **Group Temporal Key			      |	The [TSF](#abbr_TSF) shall distribute **[GTK](#abbr_GTK)** in accordance
+([GTK](#abbr_GTK))** in accordance with a specified cryptographic key		      |	with a specified cryptographic key distribution method: \[**selection**:
+distribution method: \[**selection**: *[AES](#abbr_AES) Key Wrap in an		      |	*[AES](#abbr_AES) Key Wrap in an EAPOL-Key frame*, *[AES](#abbr_AES) Key
+EAPOL-Key frame*, *[AES](#abbr_AES) Key Wrap with Padding in an			      |	Wrap with Padding in an EAPOL-Key frame*\] that meets the following:
+EAPOL-Key frame*\] that meets the following: \[*NIST SP 800-38F, IEEE		      |	\[*NIST SP 800-38F, IEEE 802.11-2020 for the packet format and timing
+802.11-2012 for the packet format and timing considerations*\] **and		      |	considerations*\] **and does not expose the cryptographic keys**.
+does not expose the cryptographic keys**.					      <
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[This requirement applies to the Group		[Application Note: ]{.note-header}[This requirement applies to the Group
-Temporal Key ([GTK](#abbr_GTK)) that is generated by the				Temporal Key ([GTK](#abbr_GTK)) that is generated by the
-[TOE](#abbr_TOE) for use in broadcast and multicast messages to clients			[TOE](#abbr_TOE) for use in broadcast and multicast messages to clients
-to which it is connected. 802.11-2012 specifies the format for the		      |	to which it is connected. 802.11-2020 specifies the format for the
-transfer as well as the fact that it must be wrapped by the				transfer as well as the fact that it must be wrapped by the
-[AES](#abbr_AES) Key Wrap method specified in NIST SP 800-38F.]{.note}			[AES](#abbr_AES) Key Wrap method specified in NIST SP 800-38F.]{.note}
+[Application Note: ]{.note-header}[This requirement applies to the Group	      |	[Application Note: ]{.note-header}[This requirement applies to the
+Temporal Key ([GTK](#abbr_GTK)) that is generated by the			      |	[GTK](#abbr_GTK) that is generated by the [TOE](#abbr_TOE) for use in
+[TOE](#abbr_TOE) for use in broadcast and multicast messages to clients		      |	broadcast and multicast messages to clients to which it is connected.
+to which it is connected. 802.11-2012 specifies the format for the		      |	802.11-2020 specifies the format for the transfer as well as the fact
+transfer as well as the fact that it must be wrapped by the			      |	that it must be wrapped by the [AES](#abbr_AES) Key Wrap method
+[AES](#abbr_AES) Key Wrap method specified in NIST SP 800-38F.]{.note}		      |	specified in NIST SP 800-38F.]{.note}
 :::											:::
 :::											:::
 :::											:::
@@ -1077,19 +1080,19 @@ transfer as well as the fact that it must be wrapped by the				transfer as well 
 :::											:::
 
 ::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall **receive the 802.11 Pairwise Master Key			The [TSF](#abbr_TSF) shall **receive the 802.11 Pairwise Master Key
-([PMK](#abbr_PMK))** in accordance with a specified cryptographic key			([PMK](#abbr_PMK))** in accordance with a specified cryptographic key
-distribution method: \[*from 802.1X Authorization Server*\] that meets			distribution method: \[*from 802.1X Authorization Server*\] that meets
-the following: \[*IEEE 802.11-2012*\] **and does not expose the			      |	the following: \[*IEEE 802.11-2020*\] **and does not expose the
-cryptographic keys**.									cryptographic keys**.
+The [TSF](#abbr_TSF) shall **receive the 802.11 Pairwise Master Key		      |	The [TSF](#abbr_TSF) shall **receive the 802.11 [PMK](#abbr_PMK)** in
+([PMK](#abbr_PMK))** in accordance with a specified cryptographic key		      |	accordance with a specified cryptographic key distribution method:
+distribution method: \[*from 802.1X Authorization Server*\] that meets		      |	\[*from 802.1X Authorization Server*\] that meets the following: \[*IEEE
+the following: \[*IEEE 802.11-2012*\] **and does not expose the			      |	802.11-2020*\] **and does not expose the cryptographic keys**.
+cryptographic keys**.								      <
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ This requirement applies to the			[Application Note: ]{.note-header}[ This requirement applies to the
 Pairwise Master Key that is received from the RADIUS server by the		      |	Pairwise Master Key that is received from the [RADIUS](#abbr_RADIUS)
 [TOE](#abbr_TOE). The intent of this requirement is to ensure conformant	      |	server by the [TOE](#abbr_TOE). The intent of this requirement is to
-TOEs implement 802.1X authentication prior to establishing secure		      |	ensure conformant TOEs implement 802.1X authentication prior to
-communications with the client. The intent is that any				      |	establishing secure communications with the client. The intent is that
-[WLAN](#abbr_WLAN) [AS](#abbr_AS) evaluated against this			      |	any [WLAN](#abbr_WLAN) [AS](#abbr_AS) evaluated against this
+TOEs implement 802.1X authentication prior to establishing secure		      |	ensure conformant [TOEs](#abbr_TOE) implement 802.1X authentication
+communications with the client. The intent is that any				      |	prior to establishing secure communications with the client. The intent
+[WLAN](#abbr_WLAN) [AS](#abbr_AS) evaluated against this			      |	is that any [WLAN](#abbr_WLAN) [AS](#abbr_AS) evaluated against this
 [PP-Module](#abbr_PP-Module) will support WPA2-ENT and certificate-based	      |	[PP-Module](#abbr_PP-Module) will support both WPA2-Enterprise and
 authentication mechanisms and therefore disallows implementations that		      |	WPA3-Enterprise at a minimum and certificate-based authentication
 support only pre-shared keys. Because communications with the RADIUS		      |	mechanisms and therefore disallows implementations that support only
@@ -1113,7 +1116,7 @@ transfer of the [PMK](#abbr_PMK) will be protected. ]{.note}				transfer of the 
 
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port			The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port
-Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.				Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.
+Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.			      |	Access Entity (PAE) in the "Authenticator" role.
 :::											:::
 :::											:::
 
@@ -1152,23 +1155,24 @@ begin 802.11 communications.]{.note}						      |	[PMK](#abbr_PMK) from the [RAD
 As indicated previously, there are at least three communication paths			As indicated previously, there are at least three communication paths
 present during the exchange; two with the [TOE](#abbr_TOE) as an			present during the exchange; two with the [TOE](#abbr_TOE) as an
 endpoint and one with [TOE](#abbr_TOE) acting as a transfer point only.			endpoint and one with [TOE](#abbr_TOE) acting as a transfer point only.
-The [TOE](#abbr_TOE) establishes an [EAP](#abbr_EAP) over LAN (EAPOL)		      |	The [TOE](#abbr_TOE) establishes an [EAP](#abbr_EAP) over Local Area
-connection with the wireless client as specified in 802.1X-2007. The		      |	Network (EAPOL) connection with the wireless client as specified in
-[TOE](#abbr_TOE) also establishes (or has established) a RADIUS protocol	      |	802.1X-2007. The [TOE](#abbr_TOE) also establishes (or has established)
-connection protected either by [IPsec](#abbr_IPsec) or RadSec			      |	a [RADIUS](#abbr_RADIUS) protocol connection protected either by
-([TLS](#abbr_TLS)) with the RADIUS server. The wireless client and		      |	[IPsec](#abbr_IPsec) or RadSec ([TLS](#abbr_TLS)) with the
-RADIUS server establish an [EAP](#abbr_EAP)-TLS session (RFC 5216); in		      |	[RADIUS](#abbr_RADIUS) server. The wireless client and
-this transaction the [TOE](#abbr_TOE) merely takes the				      |	[RADIUS](#abbr_RADIUS) server establish an [EAP](#abbr_EAP)-TLS session
-[EAP](#abbr_EAP)-TLS packets from its EAPOL/RADIUS endpoint and			      |	(RFC 5216); in this transaction the [TOE](#abbr_TOE) merely takes the
-transfers them to the other endpoint. Because the specific			      |	[EAP](#abbr_EAP)-TLS packets from its EAPOL/[RADIUS](#abbr_RADIUS)
-										      >	endpoint and transfers them to the other endpoint. Because the specific
-authentication method ([TLS](#abbr_TLS) in this case) is opaque to the			authentication method ([TLS](#abbr_TLS) in this case) is opaque to the
-[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in			[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in
-this [PP-Module](#abbr_PP-Module). However, the base RADIUS protocol		      |	this [PP-Module](#abbr_PP-Module). However, the base
-(2865) has an update (3579) that will need to be addressed in the		      |	[RADIUS](#abbr_RADIUS) protocol (2865) has an update (3579) that will
-implementation and assurance activities. Additionally, RFC 5080 contains	      |	need to be addressed in the implementation and evaluation activities.
-implementation issues that will need to be addressed by developers, but		      |	Additionally, RFC 5080 contains implementation issues that will need to
-which levy no new requirements.							      |	be addressed by developers, but which levy no new requirements.
+The [TOE](#abbr_TOE) establishes an [EAP](#abbr_EAP) over LAN (EAPOL)		      |	The [TOE](#abbr_TOE) establishes an Extensible Authentication Protocol
+connection with the wireless client as specified in 802.1X-2007. The		      |	([EAP](#abbr_EAP)) over Local Area Network (EAPOL) connection with the
+[TOE](#abbr_TOE) also establishes (or has established) a RADIUS protocol	      |	wireless client as specified in 802.1X-2007. The [TOE](#abbr_TOE) also
+										      >	establishes (or has established) a [RADIUS](#abbr_RADIUS) protocol
+connection protected either by [IPsec](#abbr_IPsec) or RadSec				connection protected either by [IPsec](#abbr_IPsec) or RadSec
+([TLS](#abbr_TLS)) with the RADIUS server. The wireless client and		      |	([TLS](#abbr_TLS)) with the [RADIUS](#abbr_RADIUS) server. The wireless
+RADIUS server establish an [EAP](#abbr_EAP)-TLS session (RFC 5216); in		      |	client and [RADIUS](#abbr_RADIUS) server establish an
+this transaction the [TOE](#abbr_TOE) merely takes the				      |	[EAP](#abbr_EAP)-TLS session (RFC 5216); in this transaction the
+[EAP](#abbr_EAP)-TLS packets from its EAPOL/RADIUS endpoint and			      |	[TOE](#abbr_TOE) merely takes the [EAP](#abbr_EAP)-TLS packets from its
+transfers them to the other endpoint. Because the specific			      |	EAPOL/[RADIUS](#abbr_RADIUS) endpoint and transfers them to the other
+authentication method ([TLS](#abbr_TLS) in this case) is opaque to the		      |	endpoint. Because the specific authentication method ([TLS](#abbr_TLS)
+[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in		      |	in this case) is opaque to the [TOE](#abbr_TOE), there are no
+this [PP-Module](#abbr_PP-Module). However, the base RADIUS protocol		      |	requirements with respect to RFC 5126 in this
+(2865) has an update (3579) that will need to be addressed in the		      |	[PP-Module](#abbr_PP-Module). However, the base [RADIUS](#abbr_RADIUS)
+implementation and assurance activities. Additionally, RFC 5080 contains	      |	protocol (2865) has an update (3579) that will need to be addressed in
+implementation issues that will need to be addressed by developers, but		      |	the implementation and evaluation activities. Additionally, RFC 5080
+which levy no new requirements.							      |	contains implementation issues that will need to be addressed by
+										      >	developers, but which levy no new requirements.
 
 The point of performing 802.1X authentication is to provide access to			The point of performing 802.1X authentication is to provide access to
 the network (assuming the authentication was successful and that all			the network (assuming the authentication was successful and that all
@@ -1217,7 +1221,7 @@ conditions*\]*\].									conditions*\]*\].
 										      >	-   security type
 										      >	-   authentication protocol
 										      >	-   client credentials to be used for authentication
-										      >	-   [SSID](#abbr_SSID)
+										      >	-   Service Set Identifier ([SSID](#abbr_SSID))
 										      >	-   if the [SSID](#abbr_SSID) is broadcasted
 										      >	-   frequency band set to \[**selection**: *2.4 GHz*, *5 GHz*, *6 GHz*\]
 										      >	-   transmit power level
@@ -1346,8 +1350,8 @@ based.											based.
 										      >	--------------------------------------------------
 										      >
 										      >	The following rationale provides justification for each security
-										      >	objective for the [TOE](#abbr_TOE), showing that the SFRs are suitable
-										      >	to meet and achieve the security objectives:\
+										      >	objective for the [TOE](#abbr_TOE), showing that the [SFRs](#abbr_SFR)
+										      >	are suitable to meet and achieve the security objectives:\
 										      >
 										      >	[Table [3]{.counter}]{#t-obj_map .ctr data-myid="t-obj_map"
 										      >	data-counter-type="ct-Table"}: [SFR](#abbr_SFR) Rationale
@@ -1527,18 +1531,20 @@ based.											based.
 										      >	5.4 TOE Security Assurance Requirements {#mod-sars .indexable data-level="2"}
 										      >	---------------------------------------
 										      >
-										      >	This [PP-Module](#abbr_PP-Module) does not define any SARs beyond those
-										      >	defined within the Base-PPs to which it can claim conformance. It is
+										      >	This [PP-Module](#abbr_PP-Module) does not define any Security Assurance
+										      >	Requirements ([SARs](#abbr_SAR)) beyond those defined within the
+										      >	[Base-PPs](#abbr_Base-PP) to which it can claim conformance. It is
 										      >	important to note that a [TOE](#abbr_TOE) that is evaluated against this
 										      >	[PP-Module](#abbr_PP-Module) is inherently evaluated against the
 										      >	[NDcPP](#abbr_NDcPP) as well. This [PP](#abbr_PP) includes a number of
-										      >	EAs associated with both Security Functional Requirements (SFRs) and
-										      >	SARs. Additionally, this [PP-Module](#abbr_PP-Module) includes a number
-										      >	of [SFR](#abbr_SFR)-based EAs that similarly refine the SARs of the
-										      >	Base-PPs. The evaluation laboratory will evaluate the [TOE](#abbr_TOE)
-										      >	against the chosen [Base-PP](#abbr_Base-PP) and supplement that
-										      >	evaluation with the necessary SFRs that are taken from this
-										      >	[PP-Module](#abbr_PP-Module).
+										      >	EAs associated with both Security Functional Requirements
+										      >	([SFRs](#abbr_SFR)) and [SARs](#abbr_SAR). Additionally, this
+										      >	[PP-Module](#abbr_PP-Module) includes a number of [SFR](#abbr_SFR)-based
+										      >	EAs that similarly refine the [SARs](#abbr_SAR) of the
+										      >	[Base-PPs](#abbr_Base-PP). The evaluation laboratory will evaluate the
+										      >	[TOE](#abbr_TOE) against the chosen [Base-PP](#abbr_Base-PP) and
+										      >	supplement that evaluation with the necessary [SFRs](#abbr_SFR) that are
+										      >	taken from this [PP-Module](#abbr_PP-Module).
 										      >
 										      >	6 Consistency Rationale {#mod-conrat .indexable data-level="1"}
 										      >	=======================
@@ -1549,11 +1555,11 @@ based.											based.
 										      >	### 6.1.1 Consistency of TOE Type {#contoe-ND .indexable data-level="3"}
 										      >
 										      >	When this [PP-Module](#abbr_PP-Module) extends the Network Device
-										      >	[cPP](#abbr_cPP), the [TOE](#abbr_TOE) type for the overall
-										      >	[TOE](#abbr_TOE) is still a network device. This
-										      >	[PP-Module](#abbr_PP-Module) just defines the [TOE](#abbr_TOE) as a
-										      >	specific type of network device with functional capabilities distinct to
-										      >	that type.
+										      >	Collaborative Protection Profile ([cPP](#abbr_cPP)), the
+										      >	[TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a
+										      >	network device. This [PP-Module](#abbr_PP-Module) just defines the
+										      >	[TOE](#abbr_TOE) as a specific type of network device with functional
+										      >	capabilities distinct to that type.
 										      >
 										      >	### 6.1.2 Consistency of Security Problem Definition {#consecprob-ND .indexable data-
 										      >
@@ -1568,8 +1574,8 @@ based.											based.
 										      >
 										      >	### 6.1.3 Consistency of Objectives {#conobj-ND .indexable data-level="3"}
 										      >
-										      >	The objectives for the TOEs are consistent with the [NDcPP](#abbr_NDcPP)
-										      >	based on the following rationale:
+										      >	The objectives for the [TOEs](#abbr_TOE) are consistent with the
+										      >	[NDcPP](#abbr_NDcPP) based on the following rationale:
 										      >
 										      >	  [PP-Module](#abbr_PP-Module) [TOE](#abbr_TOE) Objective    Consistency Rationale
 										      >	  ---------------------------------------------------------- ------------------------
@@ -1588,22 +1594,22 @@ based.											based.
 										      >
 										      >	### 6.1.4 Consistency of Requirements {#conreq-ND .indexable data-level="3"}
 										      >
-										      >	This [PP-Module](#abbr_PP-Module) identifies several SFRs from the
-										      >	[NDcPP](#abbr_NDcPP) that are needed to support Wireless Local Area
-										      >	Network ([WLAN](#abbr_WLAN)) Access System functionality. This is
-										      >	considered to be consistent because the functionality provided by the
+										      >	This [PP-Module](#abbr_PP-Module) identifies several [SFRs](#abbr_SFR)
+										      >	from the [NDcPP](#abbr_NDcPP) that are needed to support
+										      >	[WLAN](#abbr_WLAN) Access System functionality. This is considered to be
+										      >	consistent because the functionality provided by the
 										      >	[NDcPP](#abbr_NDcPP) is being used for its intended purpose. The
-										      >	[PP-Module](#abbr_PP-Module) also identifies a number of modified SFRs
-										      >	from the [NDcPP](#abbr_NDcPP) that are used entirely to provide
-										      >	functionality for Wireless Local Area Network ([WLAN](#abbr_WLAN))
-										      >	Access System. The rationale for why this does not conflict with the
-										      >	claims defined by the [NDcPP](#abbr_NDcPP) are as follows:
+										      >	[PP-Module](#abbr_PP-Module) also identifies a number of modified
+										      >	[SFRs](#abbr_SFR) from the [NDcPP](#abbr_NDcPP) that are used entirely
+										      >	to provide functionality for [WLAN](#abbr_WLAN) Access System. The
+										      >	rationale for why this does not conflict with the claims defined by the
+										      >	[NDcPP](#abbr_NDcPP) are as follows:
 										      >
 										      >	[PP-Module](#abbr_PP-Module) Requirement
 										      >
 										      >	Consistency Rationale
 										      >
-										      >	Modified SFRs
+										      >	Modified [SFRs](#abbr_SFR)
 										      >
 										      >	[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)
 										      >
@@ -1631,12 +1637,12 @@ based.											based.
 										      >	[Base-PP](#abbr_Base-PP) may still be selected by the [ST](#abbr_ST)
 										      >	author.
 										      >
-										      >	Additional SFRs
+										      >	Additional [SFRs](#abbr_SFR)
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not add any requirements when the
 										      >	[NDcPP](#abbr_NDcPP) is the base.
 										      >
-										      >	Mandatory SFRs
+										      >	Mandatory [SFRs](#abbr_SFR)
 										      >
 										      >	[FAU\_GEN.1/WLAN](#FAU_GEN.1/WLAN)
 										      >
@@ -1706,14 +1712,14 @@ based.											based.
 										      >	trusted communication channels for the functionality that is specific to
 										      >	this [PP-Module](#abbr_PP-Module).
 										      >
-										      >	Optional SFRs
+										      >	Optional [SFRs](#abbr_SFR)
 										      >
 										      >	[FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)
 										      >
 										      >	This [SFR](#abbr_SFR) defines an additional use for the cryptographic
 										      >	and self-protection mechanisms defined in the [Base-PP](#abbr_Base-PP).
 										      >
-										      >	Selection-based SFRs
+										      >	Selection-based [SFRs](#abbr_SFR)
 										      >
 										      >	[FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)
 										      >
@@ -1752,12 +1758,12 @@ based.											based.
 										      >	what constitutes an acceptable key. This may also be used for RadSec,
 										      >	which is outside the original scope of the [Base-PP](#abbr_Base-PP).
 										      >
-										      >	Objective SFRs
+										      >	Objective [SFRs](#abbr_SFR)
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective
 										      >	requirements.
 										      >
-										      >	Implementation-based SFRs
+										      >	Implementation-based [SFRs](#abbr_SFR)
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any
 										      >	Implementation-based requirements.
@@ -1808,13 +1814,14 @@ FCS\_COP.1 and FPT\_ITT.1 are defined in the [NDcPP](#abbr_NDcPP).			FCS\_COP.1 
 ### 5.0.8 Cryptographic Support (FCS) {#sel_fcs .indexable data-level="3"}	      |	A.2 Objective Requirements {#obj-sfrs .indexable data-level="2"}
 										      >	--------------------------
 										      >
-										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective SFRs.
+										      >	This [PP-Module](#abbr_PP-Module) does not define any Objective
+										      >	[SFRs](#abbr_SFR).
 										      >
 										      >	A.3 Implementation-based Requirements {#impl-dep-sfrs .indexable data-level="2"}
 										      >	-------------------------------------
 										      >
 										      >	This [PP-Module](#abbr_PP-Module) does not define any
-										      >	Implementation-based SFRs.
+										      >	Implementation-based [SFRs](#abbr_SFR).
 										      >
 										      >	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
 										      >	=========================================
@@ -1853,13 +1860,11 @@ The [TSF](#abbr_TSF) shall perform peer authentication using				The [TSF](#abbr_
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ This [SFR](#abbr_SFR) is applicable		      |	[Application Note: ]{.note-header}[ ]{.note}
-if \"RADIUS over [TLS](#abbr_TLS)\" is selected in				      <
-[FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}						      <
-
-If \"X.509v3 certificates\" is selected in					      |	This [SFR](#abbr_SFR) is applicable if \"[RADIUS](#abbr_RADIUS) over
+if \"RADIUS over [TLS](#abbr_TLS)\" is selected in				      |
+[FTP\_ITC.1.1](#FTP_ITC.1.1).]{.note}						      |	This [SFR](#abbr_SFR) is applicable if \"[RADIUS](#abbr_RADIUS) over
 										      >	[TLS](#abbr_TLS)\" is selected in [FTP\_ITC.1.1](#FTP_ITC.1.1).
-										      >
-										      >	If [X.509v3 certificates](#s-x509-certs) is selected in
+
+If \"X.509v3 certificates\" is selected in					      |	If [X.509v3 certificates](#s-x509-certs) is selected in
 [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then FCS\_TLSC\_EXT.2 from			[FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then FCS\_TLSC\_EXT.2 from
 the [NDcPP](#abbr_NDcPP) must be claimed. If \"pre-shared keys\" is		      |	the [NDcPP](#abbr_NDcPP) must be claimed. If [pre-shared
 selected in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2), then			      |	keys](#s-radsec-psk) is selected in
@@ -2171,8 +2176,8 @@ provided by the [TOE](#abbr_TOE).						      |	[RBG](#abbr_RBG) provided by the 
 										      >
 										      >	#### FIA\_8021X\_EXT.1.1 {#ext-comp-FIA_8021X_EXT.1.1}
 										      >
-										      >	The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port
-										      >	Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.
+										      >	The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a
+										      >	[PAE](#abbr_PAE) in the "Authenticator" role.
 										      >
 										      >	#### FIA\_8021X\_EXT.1.2 {#ext-comp-FIA_8021X_EXT.1.2}
 										      >
@@ -2296,8 +2301,8 @@ provided by the [TOE](#abbr_TOE).						      |	[RBG](#abbr_RBG) provided by the 
 										      >	The [TSF](#abbr_TSF) shall ensure that the ability to remotely
 										      >	administer the [TOE](#abbr_TOE) from a wireless client shall be disabled
 										      >	by default.
-										      >	:::
-										      >	:::
+:::											:::
+:::											:::
 										      >
 										      >	### C.2.3 Cryptographic Support (FCS) {#ext-comp-FCS .indexable data-level="3"}
 										      >
@@ -2395,8 +2400,8 @@ provided by the [TOE](#abbr_TOE).						      |	[RBG](#abbr_RBG) provided by the 
 										      >	*generate using the random bit generator specified in FCS\_RBG\_EXT.1*\]
 										      >	bit-based pre-shared keys.
 :::											:::
-										      >
-										      >	#### Management: FCS\_RADSEC\_EXT.3
+
+Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level= |	#### Management: FCS\_RADSEC\_EXT.3
 										      >
 										      >	No specific management functions are identified.
 										      >
@@ -2426,19 +2431,19 @@ provided by the [TOE](#abbr_TOE).						      |	[RBG](#abbr_RBG) provided by the 
 										      >	*request authorization to establish the connection*, *\[**assignment**:
 										      >	[other action]{.assignable-content}\]*\] if the presented server
 										      >	certificate is deemed invalid.
-:::											:::
-:::											:::
-
-Appendix A - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level= |	Appendix D - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level=
+										      >	:::
+										      >	:::
+										      >
+										      >	Appendix D - Implicitly Satisfied Requirements {#satisfiedreqs .indexable data-level=
 ==============================================						==============================================
 
 This appendix lists requirements that should be considered satisfied by			This appendix lists requirements that should be considered satisfied by
 products successfully evaluated against this Protection Profile Module.		      |	products successfully evaluated against this Module. These requirements
-However, these requirements are not featured explicitly as SFRs and		      |	are not featured explicitly as SFRs and should not be included in the
-should not be included in the [ST](#abbr_ST). They are not included as		      |	[ST](#abbr_ST). They are not included as standalone SFRs because it
-standalone SFRs because it would increase the time, cost, and complexity	      |	would increase the time, cost, and complexity of evaluation. This
-of evaluation. This approach is permitted by [\[CC\]](#bibCC) Part 1,		      |	approach is permitted by [\[CC\]](#bibCC) Part 1, 8.2 Dependencies
-**8.2 Dependencies between components**.					      |	between components.
+However, these requirements are not featured explicitly as SFRs and		      |	are not featured explicitly as [SFRs](#abbr_SFR) and should not be
+should not be included in the [ST](#abbr_ST). They are not included as		      |	included in the [ST](#abbr_ST). They are not included as standalone
+standalone SFRs because it would increase the time, cost, and complexity	      |	[SFRs](#abbr_SFR) because it would increase the time, cost, and
+of evaluation. This approach is permitted by [\[CC\]](#bibCC) Part 1,		      |	complexity of evaluation. This approach is permitted by [\[CC\]](#bibCC)
+**8.2 Dependencies between components**.					      |	Part 1, 8.2 Dependencies between components.
 
 This information benefits systems engineering activities which call for			This information benefits systems engineering activities which call for
 inclusion of particular security controls. Evaluation against the			inclusion of particular security controls. Evaluation against the
@@ -2447,18 +2452,19 @@ present and have been evaluated.						      |	have been evaluated.
 
 This [PP-Module](#abbr_PP-Module) has no implicitly satisfied				This [PP-Module](#abbr_PP-Module) has no implicitly satisfied
 requirements. All [SFR](#abbr_SFR) dependencies are explicitly met			requirements. All [SFR](#abbr_SFR) dependencies are explicitly met
-either through SFRs defined by the [PP-Module](#abbr_PP-Module) or			either through SFRs defined by the [PP-Module](#abbr_PP-Module) or
-inherited from the [Base-PP](#abbr_Base-PP).						inherited from the [Base-PP](#abbr_Base-PP).
+either through SFRs defined by the [PP-Module](#abbr_PP-Module) or		      |	either through [SFRs](#abbr_SFR) defined by the
+inherited from the [Base-PP](#abbr_Base-PP).					      |	[PP-Module](#abbr_PP-Module) or inherited from the
+										      >	[Base-PP](#abbr_Base-PP).
 
 Appendix B - Allocation of Requirements in Distributed TOEs {#allocation .indexable d |	Appendix E - Allocation of Requirements in Distributed TOEs {#allocation .indexable d
 ===========================================================				===========================================================
 
 For a distributed [TOE](#abbr_TOE), the security functional requirements		For a distributed [TOE](#abbr_TOE), the security functional requirements
 in this [PP-Module](#abbr_PP-Module) need to be met by the				in this [PP-Module](#abbr_PP-Module) need to be met by the
-[TOE](#abbr_TOE) as a whole, but not all SFRs will necessarily be			[TOE](#abbr_TOE) as a whole, but not all SFRs will necessarily be
-implemented by all components. The following categories are defined in			implemented by all components. The following categories are defined in
-order to specify when each [SFR](#abbr_SFR) must be implemented by a			order to specify when each [SFR](#abbr_SFR) must be implemented by a
-component:										component:
+[TOE](#abbr_TOE) as a whole, but not all SFRs will necessarily be		      |	[TOE](#abbr_TOE) as a whole, but not all [SFRs](#abbr_SFR) will
+implemented by all components. The following categories are defined in		      |	necessarily be implemented by all components. The following categories
+order to specify when each [SFR](#abbr_SFR) must be implemented by a		      |	are defined in order to specify when each [SFR](#abbr_SFR) must be
+component:									      |	implemented by a component:
 
 -   **All Components (\"All\")** - All components that comprise the			-   **All Components (\"All\")** - All components that comprise the
     distributed [TOE](#abbr_TOE) must independently satisfy the				    distributed [TOE](#abbr_TOE) must independently satisfy the
@@ -2473,7 +2479,7 @@ component:										component:
     least one component implements these requirements if they are			    least one component implements these requirements if they are
     claimed by the [TOE](#abbr_TOE)).							    claimed by the [TOE](#abbr_TOE)).
 
-The table below specifies how each of the SFRs in this					The table below specifies how each of the SFRs in this
+The table below specifies how each of the SFRs in this				      |	The table below specifies how each of the [SFRs](#abbr_SFR) in this
 [PP-Module](#abbr_PP-Module) must be met, using the categories above.			[PP-Module](#abbr_PP-Module) must be met, using the categories above.
 
   ------------------------------------------ ---------------------------------------- |	  ---------------------------------------------------- ------------------------------
@@ -2502,123 +2508,123 @@ The [TOE](#abbr_TOE) does not require any additional supplementary			The [TOE](#
 information to describe its entropy sources beyond the requirements			information to describe its entropy sources beyond the requirements
 outlined in the [Base-PP](#abbr_Base-PP).						outlined in the [Base-PP](#abbr_Base-PP).
 
-+-----------------------------------+-----------------------------------+	      |	Appendix G - Acronyms {#acronyms .indexable data-level="A"}
-| Identifier                        | Title                             |	      |	=====================
-+===================================+===================================+	      <
-| [ \[[CC](#abbr_CC)\] ]{#bibCC}    | Common Criteria for Information   |	      <
-|                                   | Technology Security Evaluation -  |	      <
-|                                   |                                   |	      <
-|                                   | -   [Part 1: Introduction and     |	      <
-|                                   |     General                       |	      <
-|                                   |     Model](http://www.commoncrite |	      <
-|                                   | riaportal.org/files/ccfiles/CCPAR |	      <
-|                                   | T1V3.1R5.pdf),                    |	      <
-|                                   |     CCMB-2017-04-001, Version     |	      <
-|                                   |     3.1, Revision 5, April 2017.  |	      <
-|                                   | -   [Part 2: Security Functional  |	      <
-|                                   |     Components](http://www.common |	      <
-|                                   | criteriaportal.org/files/ccfiles/ |	      <
-|                                   | CCPART2V3.1R5.pdf),               |	      <
-|                                   |     CCMB-2017-04-002, Version     |	      <
-|                                   |     3.1, Revision 5, April 2017.  |	      <
-|                                   | -   [Part 3: Security Assurance   |	      <
-|                                   |     Components](http://www.common |	      <
-|                                   | criteriaportal.org/files/ccfiles/ |	      <
-|                                   | CCPART3V3.1R5.pdf),               |	      <
-|                                   |     CCMB-2017-04-003, Version     |	      <
-|                                   |     3.1, Revision 5, April 2017.  |	      <
-+-----------------------------------+-----------------------------------+	      <
-| [\[[NDcPP](#abbr_NDcPP)\]]{#bibND | [collaborative Protection Profile |	      <
-| cPP}                              | for Network                       |	      <
-|                                   | Devices](https://www.niap-ccevs.o |	      <
-|                                   | rg/MMO/PP/CPP_ND_V2.2E.pdf),      |	      <
-|                                   | Version 2.2e, March 23, 2020      |	      <
-+-----------------------------------+-----------------------------------+	      <
-| [\[[NDcPP](#abbr_NDcPP)           | [Supporting Document - Evaluation |	      <
-| SD\]]{#bibNDSD}                   | Activities for Network Device     |	      <
-|                                   | cPP](https://www.niap-ccevs.org/M |	      <
-|                                   | MO/PP/CPP_ND_V2.2-SD.pdf),        |	      <
-|                                   | Version 2.2, December 2019        |	      <
-+-----------------------------------+-----------------------------------+	      <
-
-  Acronym                                                                      Meanin	  Acronym                                                                      Meanin
-  ---------------------------------------------------------------------------- ------ |	  ---------------------------------------------------------------------------- ------
-  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan	  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan
-  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces |	  [[AP](#abbr_AP)]{#abbr_AP .term data-plural="APs"}                           [Acces
-  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces	  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces
-  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base 	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base 
-  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe	  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe
-  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo	  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo
-  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count |	  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count
-  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM]	  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM]
-  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo	  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo
-  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count	  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count
-  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten	  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten
-  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi	  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi
-  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group	  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group
-  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter	  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter
-  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media |	  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media
-  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo	  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo
-  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera	  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera
-  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port 	  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port 
-  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw	  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw
-  [[PP](#abbr_PP)]{#abbr_PP .term}                                             [Prote	  [[PP](#abbr_PP)]{#abbr_PP .term}                                             [Prote
-  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote	  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote
-  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote	  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote
-										      >	  [[PTK](#abbr_PTK)]{#abbr_PTK .term}                                          [Pairw
+										      >	Appendix G - Acronyms {#acronyms .indexable data-level="A"}
+										      >	=====================
+										      >
+										      >	  Acronym                                                                      Meanin
+										      >	  ---------------------------------------------------------------------------- ------
+										      >	  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan
+										      >	  [[AP](#abbr_AP)]{#abbr_AP .term data-plural="APs"}                           [Acces
+										      >	  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces
+										      >	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term data-plural="Base-PPs"}       [Base 
+										      >	  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe
+										      >	  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo
+										      >	  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count
+										      >	  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM]
+										      >	  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo
+										      >	  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count
+										      >	  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten
+										      >	  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi
+										      >	  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group
+										      >	  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter
+										      >	  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media
+										      >	  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo
+										      >	  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera
+										      >	  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port 
+										      >	  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw
+										      >	  [[PP](#abbr_PP)]{#abbr_PP .term data-plural="PPs"}                           [Prote
+										      >	  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote
+										      >	  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote
+										      >	  [Pairwise Transient Key ([PTK](#abbr_PTK))]{#abbr_PTK .term}                 [Pairw
 										      >	  [[RADIUS](#abbr_RADIUS)]{#abbr_RADIUS .term}                                 [Remot
 										      >	  [[RBG](#abbr_RBG)]{#abbr_RBG .term}                                          [Rando
-  [[SAR](#abbr_SAR)]{#abbr_SAR .term}                                          [Secur	  [[SAR](#abbr_SAR)]{#abbr_SAR .term}                                          [Secur
-  [[SFR](#abbr_SFR)]{#abbr_SFR .term}                                          [Secur	  [[SFR](#abbr_SFR)]{#abbr_SFR .term}                                          [Secur
-  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi	  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi
-  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur	  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur
-  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans	  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans
-  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe	  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe
-  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]	  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]
-  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF]	  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF]
-  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE]	  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE]
-  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel	  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel
-  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi	  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi
+										      >	  [[SAR](#abbr_SAR)]{#abbr_SAR .term data-plural="SARs"}                       [Secur
+										      >	  [[SFR](#abbr_SFR)]{#abbr_SFR .term data-plural="SFRs"}                       [Secur
+										      >	  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi
+										      >	  [[ST](#abbr_ST)]{#abbr_ST .term data-plural="STs"}                           [Secur
+										      >	  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans
+										      >	  [[TOE](#abbr_TOE)]{#abbr_TOE .term data-plural="TOEs"}                       [Targe
+										      >	  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]
+										      >	  [TSF Interface ([TSFI](#abbr_TSFI))]{#abbr_TSFI .term data-plural="TSFIs"}   [[TSF]
+										      >	  [TOE Summary Specification ([TSS](#abbr_TSS))]{#abbr_TSS .term}              [[TOE]
+										      >	  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel
+										      >	  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi
 										      >	  [[cPP](#abbr_cPP)]{#abbr_cPP .term data-plural="cPPs"}                       [Colla
 										      >
 										      >	Appendix H - Bibliography {#appendix-bibliography .indexable data-level="A"}
 										      >	=========================
 										      >
-										      >	+-----------------------------------+-----------------------------------+
-										      >	| Identifier                        | Title                             |
-										      >	+===================================+===================================+
-										      >	| [\[[CC](#abbr_CC)\]]{#bibCC}      | Common Criteria for Information   |
-										      >	|                                   | Technology Security Evaluation -  |
-										      >	|                                   |                                   |
-										      >	|                                   | -   [Part 1: Introduction and     |
-										      >	|                                   |     General                       |
-										      >	|                                   |     Model](http://www.commoncrite |
-										      >	|                                   | riaportal.org/files/ccfiles/CCPAR |
-										      >	|                                   | T1V3.1R5.pdf),                    |
-										      >	|                                   |     CCMB-2017-04-001, Version 3.1 |
-										      >	|                                   |     Revision 5, April 2017.       |
-										      >	|                                   | -   [Part 2: Security Functional  |
-										      >	|                                   |     Components](http://www.common |
-										      >	|                                   | criteriaportal.org/files/ccfiles/ |
-										      >	|                                   | CCPART2V3.1R5.pdf),               |
-										      >	|                                   |     CCMB-2017-04-002, Version 3.1 |
-										      >	|                                   |     Revision 5, April 2017.       |
-										      >	|                                   | -   [Part 3: Security Assurance   |
-										      >	|                                   |     Components](http://www.common |
-										      >	|                                   | criteriaportal.org/files/ccfiles/ |
-										      >	|                                   | CCPART3V3.1R5.pdf),               |
-										      >	|                                   |     CCMB-2017-04-003, Version 3.1 |
-										      >	|                                   |     Revision 5, April 2017.       |
-										      >	+-----------------------------------+-----------------------------------+
-										      >	| [\[[NDcPP](#abbr_NDcPP)\]]{#bibND | [collaborative Protection Profile |
-										      >	| cPP}                              | for Network                       |
-										      >	|                                   | Devices](https://www.niap-ccevs.o |
-										      >	|                                   | rg/MMO/PP/CPP_ND_V2.2E.pdf),      |
-										      >	|                                   | Version 2.2e, March 23, 2020      |
-										      >	+-----------------------------------+-----------------------------------+
-										      >	| [\[[NDcPP](#abbr_NDcPP)           | [Supporting Document - Evaluation |
-										      >	| SD\]]{#bibNDSD}                   | Activities for Network Device     |
-										      >	|                                   | cPP](https://www.niap-ccevs.org/M |
-										      >	|                                   | MO/PP/CPP_ND_V2.2-SD.pdf),        |
-										      >	|                                   | Version 2.2, December 2019        |
-										      >	+-----------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
+| Identifier                        | Title                             |		| Identifier                        | Title                             |
++===================================+===================================+		+===================================+===================================+
+| [ \[[CC](#abbr_CC)\] ]{#bibCC}    | Common Criteria for Information   |	      |	| [\[[CC](#abbr_CC)\]]{#bibCC}      | Common Criteria for Information   |
+|                                   | Technology Security Evaluation -  |		|                                   | Technology Security Evaluation -  |
+|                                   |                                   |		|                                   |                                   |
+|                                   | -   [Part 1: Introduction and     |		|                                   | -   [Part 1: Introduction and     |
+|                                   |     General                       |		|                                   |     General                       |
+|                                   |     Model](http://www.commoncrite |		|                                   |     Model](http://www.commoncrite |
+|                                   | riaportal.org/files/ccfiles/CCPAR |		|                                   | riaportal.org/files/ccfiles/CCPAR |
+|                                   | T1V3.1R5.pdf),                    |		|                                   | T1V3.1R5.pdf),                    |
+|                                   |     CCMB-2017-04-001, Version     |	      |	|                                   |     CCMB-2017-04-001, Version 3.1 |
+|                                   |     3.1, Revision 5, April 2017.  |	      |	|                                   |     Revision 5, April 2017.       |
+|                                   | -   [Part 2: Security Functional  |		|                                   | -   [Part 2: Security Functional  |
+|                                   |     Components](http://www.common |		|                                   |     Components](http://www.common |
+|                                   | criteriaportal.org/files/ccfiles/ |		|                                   | criteriaportal.org/files/ccfiles/ |
+|                                   | CCPART2V3.1R5.pdf),               |		|                                   | CCPART2V3.1R5.pdf),               |
+|                                   |     CCMB-2017-04-002, Version     |	      |	|                                   |     CCMB-2017-04-002, Version 3.1 |
+|                                   |     3.1, Revision 5, April 2017.  |	      |	|                                   |     Revision 5, April 2017.       |
+|                                   | -   [Part 3: Security Assurance   |		|                                   | -   [Part 3: Security Assurance   |
+|                                   |     Components](http://www.common |		|                                   |     Components](http://www.common |
+|                                   | criteriaportal.org/files/ccfiles/ |		|                                   | criteriaportal.org/files/ccfiles/ |
+|                                   | CCPART3V3.1R5.pdf),               |		|                                   | CCPART3V3.1R5.pdf),               |
+|                                   |     CCMB-2017-04-003, Version     |	      |	|                                   |     CCMB-2017-04-003, Version 3.1 |
+|                                   |     3.1, Revision 5, April 2017.  |	      |	|                                   |     Revision 5, April 2017.       |
++-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
+| [\[[NDcPP](#abbr_NDcPP)\]]{#bibND | [collaborative Protection Profile |		| [\[[NDcPP](#abbr_NDcPP)\]]{#bibND | [collaborative Protection Profile |
+| cPP}                              | for Network                       |		| cPP}                              | for Network                       |
+|                                   | Devices](https://www.niap-ccevs.o |		|                                   | Devices](https://www.niap-ccevs.o |
+|                                   | rg/MMO/PP/CPP_ND_V2.2E.pdf),      |		|                                   | rg/MMO/PP/CPP_ND_V2.2E.pdf),      |
+|                                   | Version 2.2e, March 23, 2020      |		|                                   | Version 2.2e, March 23, 2020      |
++-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
+| [\[[NDcPP](#abbr_NDcPP)           | [Supporting Document - Evaluation |		| [\[[NDcPP](#abbr_NDcPP)           | [Supporting Document - Evaluation |
+| SD\]]{#bibNDSD}                   | Activities for Network Device     |		| SD\]]{#bibNDSD}                   | Activities for Network Device     |
+|                                   | cPP](https://www.niap-ccevs.org/M |		|                                   | cPP](https://www.niap-ccevs.org/M |
+|                                   | MO/PP/CPP_ND_V2.2-SD.pdf),        |		|                                   | MO/PP/CPP_ND_V2.2-SD.pdf),        |
+|                                   | Version 2.2, December 2019        |		|                                   | Version 2.2, December 2019        |
++-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
+										      <
+  Acronym                                                                      Meanin <
+  ---------------------------------------------------------------------------- ------ <
+  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan <
+  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces <
+  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces <
+  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base  <
+  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe <
+  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo <
+  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count <
+  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM] <
+  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo <
+  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count <
+  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten <
+  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi <
+  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group <
+  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter <
+  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media <
+  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo <
+  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera <
+  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port  <
+  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw <
+  [[PP](#abbr_PP)]{#abbr_PP .term}                                             [Prote <
+  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote <
+  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote <
+  [[SAR](#abbr_SAR)]{#abbr_SAR .term}                                          [Secur <
+  [[SFR](#abbr_SFR)]{#abbr_SFR .term}                                          [Secur <
+  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi <
+  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur <
+  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans <
+  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe <
+  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE] <
+  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF] <
+  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE] <
+  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel <
+  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi <
