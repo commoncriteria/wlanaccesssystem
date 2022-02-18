@@ -45,7 +45,7 @@
       The scope of this PP-Module is to describe the security functionality of a Wireless Local Area Network (WLAN) Access System (AS) in terms of <xref g='CC'/>
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       <h:ul>
-        <h:li>Collaborative Protection Profile for Network Devices (NDcPP) Version 2.2e</h:li>
+        <h:li>Network Device collaborative Protection Profile (NDcPP) Version 2.2e</h:li>
       </h:ul>
       This Base-PP is valid because a WLAN AS is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
       This is functionality that typically will be implemented by a network device.
