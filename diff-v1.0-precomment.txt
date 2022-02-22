@@ -101,8 +101,8 @@ Base-PPs:									      |	Protection Profiles ([Base-PPs](#abbr_Base-PP)):
 This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)			This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)
 Access System is a device at the edge of a private network that			      |	[AS](#abbr_AS) is a device at the edge of a private network that
 establishes an encrypted IEEE 802.11 link that protects wireless data in		establishes an encrypted IEEE 802.11 link that protects wireless data in
-transit from disclosure and modification. This is functionality that			transit from disclosure and modification. This is functionality that
-typically will be implemented by a network device.					typically will be implemented by a network device.
+transit from disclosure and modification. This is functionality that		      |	transit from disclosure and modification. A network device typically
+typically will be implemented by a network device.				      |	implements this functionality.
 
 A [TOE](#abbr_TOE) that conforms to a						      |	A [TOE](#abbr_TOE) that conforms to a Protection Profile Configuration
 [PP-Configuration](#abbr_PP-Configuration) containing this			      |	([PP-Configuration](#abbr_PP-Configuration)) containing this
@@ -134,7 +134,7 @@ this document.										this document.
 | ::: {#Collaborative_Protection_Pr | A Protection Profile developed by |		| ::: {#Collaborative_Protection_Pr | A Protection Profile developed by |
 | ofile}                            | international technical           |		| ofile}                            | international technical           |
 | Collaborative Protection Profile  | communities and approved by       |		| Collaborative Protection Profile  | communities and approved by       |
-| ([cPP](#abbr_cPP))                | multiple schemes                  |	      |	| (cPP)                             | multiple schemes                  |
+| ([cPP](#abbr_cPP))                | multiple schemes                  |	      |	| (cPP)                             | multiple schemes.                 |
 | :::                               |                                   |		| :::                               |                                   |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Common_Criteria}            | Common Criteria for Information   |		| ::: {#Common_Criteria}            | Common Criteria for Information   |
@@ -145,7 +145,7 @@ this document.										this document.
 | ::: {#Common_Criteria_Testing_Lab | Within the context of the Common  |		| ::: {#Common_Criteria_Testing_Lab | Within the context of the Common  |
 | oratory}                          | Criteria Evaluation and           |		| oratory}                          | Criteria Evaluation and           |
 | Common Criteria Testing           | Validation Scheme (CCEVS), an IT  |		| Common Criteria Testing           | Validation Scheme (CCEVS), an IT  |
-| Laboratory                        | security evaluation facility,     |		| Laboratory                        | security evaluation facility,     |
+| Laboratory                        | security evaluation facility,     |	      |	| Laboratory                        | security evaluation facility      |
 | :::                               | accredited by the National        |		| :::                               | accredited by the National        |
 |                                   | Voluntary Laboratory              |		|                                   | Voluntary Laboratory              |
 |                                   | Accreditation Program (NVLAP) and |		|                                   | Accreditation Program (NVLAP) and |
@@ -195,7 +195,7 @@ this document.										this document.
 | ::: {#Protection_Profile_Module}  | An implementation-independent     |		| ::: {#Protection_Profile_Module}  | An implementation-independent     |
 | Protection Profile Module         | statement of security needs for a |		| Protection Profile Module         | statement of security needs for a |
 | ([PP-Module](#abbr_PP-Module))    | [TOE](#abbr_TOE) type             |	      |	| (PP-Module)                       | TOE type complementary to one or  |
-| :::                               | complementary to one or more Base |	      |	| :::                               | more Base Protection Profiles.    |
+| :::                               | complementary to one or more Base |	      |	| :::                               | more Base-PPs.                    |
 |                                   | Protection Profiles.              |	      <
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 | ::: {#Security_Assurance_Requirem | A requirement to assure the       |		| ::: {#Security_Assurance_Requirem | A requirement to assure the       |
@@ -249,7 +249,7 @@ this document.										this document.
 | ([WLAN](#abbr_WLAN))              | local area network (LAN) within a |	      |	| (WLAN)                            | local area network within a       |
 | :::                               | limited area such as a home,      |		| :::                               | limited area such as a home,      |
 |                                   | school, computer laboratory,      |		|                                   | school, computer laboratory,      |
-|                                   | campus, office building etc.      |		|                                   | campus, office building etc.      |
+|                                   | campus, office building etc.      |	      |	|                                   | campus, office building, etc.     |
 +-----------------------------------+-----------------------------------+		+-----------------------------------+-----------------------------------+
 										      >	:::
 
@@ -305,11 +305,11 @@ Conformance Statement									Conformance Statement
     2017).									      |	    Selection-Based [SFRs](#abbr_SFR), and Optional [SFRs](#abbr_SFR)
 										      |	    (dated May 2017).
     The following PPs and [PP](#abbr_PP)-Modules are allowed to be		      |
-    specified in a [PP-Configuration](#abbr_PP-Configuration) with this		      |	    The following Protection Profile ([PP](#abbr_PP))-Modules are
-    [PP-Module](#abbr_PP-Module).						      |	    allowed to be specified in a
-										      |	    [PP-Configuration](#abbr_PP-Configuration) with this
-    -   [Network Device, version						      <
-        2.2e](https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf)		      <
+    specified in a [PP-Configuration](#abbr_PP-Configuration) with this		      |	    No Protection Profiles ([PPs](#abbr_PP)) or [PP](#abbr_PP)-Modules
+    [PP-Module](#abbr_PP-Module).						      |	    may be specified in a [PP-Configuration](#abbr_PP-Configuration)
+										      |	    with this [PP-Module](#abbr_PP-Module) other than the
+    -   [Network Device, version						      |	    [Base-PP](#abbr_Base-PP) specified in [Section 1.1
+        2.2e](https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf)		      |	    Overview](#Overview){.dynref}.
 										      <
 CC Conformance Claims								      <
 :   This Module is conformant to Parts 2 (extended) and 3 (conformant)		      <
@@ -331,12 +331,11 @@ Conformance Statement								      <
     2017).									      <
     The following [PP](#abbr_PP)-Modules are allowed to be specified in		      <
     a [PP-Configuration](#abbr_PP-Configuration) with this			      <
-    [PP-Module](#abbr_PP-Module):							    [PP-Module](#abbr_PP-Module):
-										      >
-    -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter			    -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter
-        Firewalls, Version 1.4 + Errata 20200625					        Firewalls, Version 1.4 + Errata 20200625
-    -   [PP-Module](#abbr_PP-Module) for Virtual Private Network (VPN)			    -   [PP-Module](#abbr_PP-Module) for Virtual Private Network (VPN)
-        Gateways, Version 1.1								        Gateways, Version 1.1
+    [PP-Module](#abbr_PP-Module):						      <
+    -   [PP-Module](#abbr_PP-Module) for Stateful Traffic Filter		      <
+        Firewalls, Version 1.4 + Errata 20200625				      <
+    -   [PP-Module](#abbr_PP-Module) for Virtual Private Network (VPN)		      <
+        Gateways, Version 1.1							      <
 
 CC Conformance Claims									CC Conformance Claims
 :   This [PP-Module](#abbr_PP-Module) is conformant to Parts 2				:   This [PP-Module](#abbr_PP-Module) is conformant to Parts 2
@@ -357,7 +356,7 @@ and a wireless client via a [WLAN](#abbr_WLAN) Access System. The		      |	and a
 user (wireless client) and a wired (trusted) network by supporting			user (wireless client) and a wired (trusted) network by supporting
 security functions such as administration, authentication, encryption,			security functions such as administration, authentication, encryption,
 and the protection and handling of data in transit. To protect the data			and the protection and handling of data in transit. To protect the data
-in-transit from disclosure and modification, a [WLAN](#abbr_WLAN) Access	      |	in-transit from disclosure and modification, a [WLAN](#abbr_WLAN)
+in-transit from disclosure and modification, a [WLAN](#abbr_WLAN) Access	      |	in transit from disclosure and modification, a [WLAN](#abbr_WLAN)
 System is used to establish secure communications. The				      |	[AS](#abbr_AS) is used to establish secure communications. The
 [WLAN](#abbr_WLAN) Access System provides one end of the secure			      |	[WLAN](#abbr_WLAN) [AS](#abbr_AS) provides one end of the secure
 cryptographic tunnel and performs encryption and decryption of network			cryptographic tunnel and performs encryption and decryption of network
@@ -399,8 +398,8 @@ T.NETWORK\_DISCLOSURE									T.NETWORK\_DISCLOSURE
 
 T.NETWORK\_ACCESS									T.NETWORK\_ACCESS
 :   Devices located outside the protected network may seek to exercise			:   Devices located outside the protected network may seek to exercise
-    services located on the protected network that are intended to only			    services located on the protected network that are intended to only
-    be accessed from inside the protected network or only accessed by			    be accessed from inside the protected network or only accessed by
+    services located on the protected network that are intended to only		      |	    services located on the protected network that are intended to be
+    be accessed from inside the protected network or only accessed by		      |	    only accessed from inside the protected network or only accessed by
     entities using an authenticated path into the protected network.			    entities using an authenticated path into the protected network.
 
 T.TSF\_FAILURE										T.TSF\_FAILURE
@@ -677,7 +676,7 @@ and relevant to the secure operation of the [TOE](#abbr_TOE).			      |	[NDcPP](
 The [TSF](#abbr_TSF) shall perform encryption/decryption in accordance			The [TSF](#abbr_TSF) shall perform encryption/decryption in accordance
 with a specified cryptographic algorithm [AES](#abbr_AES) used in		      |	with a specified cryptographic algorithm Advanced Encryption Standard
 **[CBC](#abbr_CBC), [CCMP](#abbr_CCMP)** and \[**selection**:			      |	([AES](#abbr_AES)) used in **Cipher Block Chaining ([CBC](#abbr_CBC)),
-*[CTR](#abbr_CTR)*, *[GCM](#abbr_GCM)*, ***GCMP***, ***no other***\]		      |	CCM mode Protocol ([CCMP](#abbr_CCMP))** and \[**selection**: *Counter
+*[CTR](#abbr_CTR)*, *[GCM](#abbr_GCM)*, ***GCMP***, ***no other***\]		      |	CCM mode Protocol ([CCMP](#abbr_CCMP)),** and \[**selection**: *Counter
 **modes** and cryptographic key sizes **256 bits and** \[**selection**:		      |	(encryption mode) ([CTR](#abbr_CTR))*, *Galois-Counter Mode
 *128 bits*, *192 bits*, ***no other key sizes***\] that meet the		      |	([GCM](#abbr_GCM))*, ***GCMP***, ***no other***\] **modes** and
 following: [AES](#abbr_AES) as specified in ISO 18033-3,			      |	cryptographic key sizes **256 bits and** \[**selection**: *128 bits*,
@@ -695,15 +694,15 @@ its definition in the [NDcPP](#abbr_NDcPP) by mandating the selection of	      |
 [CBC](#abbr_CBC) mode and 256 bit key sizes while also defining			      |	This requirement is modified from its definition in the
 additional [AES](#abbr_AES) mode and key size selections not present in		      |	[NDcPP](#abbr_NDcPP) by mandating the selection of [CBC](#abbr_CBC) mode
 the original definition. ]{.note}						      |	and 256 bit key sizes while also defining additional [AES](#abbr_AES)
-										      >	mode and key size selections not present in the original definition.
-
-This requirement mandates two modes for [AES](#abbr_AES) with key size			This requirement mandates two modes for [AES](#abbr_AES) with key size
-of 256 bits be implemented. It is not expected that these modes will			of 256 bits be implemented. It is not expected that these modes will
-both be used for all encryption/decryption functionality. Rather, the		      |	both be used for all encryption and decryption functionality. Rather,
-mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1	      |	the mandates serve particular purposes: to comply with the
-requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE	      |	FCS\_IPSEC\_EXT.1 requirements, [CBC](#abbr_CBC) mode is mandated, and
-802.11-2016, [AES](#abbr_AES)-CCMP (which uses [AES](#abbr_AES) in		      |	to comply with IEEE 802.11-2020, [AES](#abbr_AES)-CCMP (which uses
-[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.		      |	[AES](#abbr_AES) in Counter Mode with CBC-Message Authentication Code
+										      |	mode and key size selections not present in the original definition.
+This requirement mandates two modes for [AES](#abbr_AES) with key size		      |
+of 256 bits be implemented. It is not expected that these modes will		      |	This requirement mandates two modes for [AES](#abbr_AES) with a key size
+both be used for all encryption/decryption functionality. Rather, the		      |	of 256 bits being implemented. It is not expected that these modes will
+mandates serve particular purposes: to comply with the FCS\_IPSEC\_EXT.1	      |	both be used for all encryption and decryption functionality. Rather,
+requirements, [CBC](#abbr_CBC) mode is mandated, and to comply with IEEE	      |	the mandates serve particular purposes: to comply with the
+802.11-2016, [AES](#abbr_AES)-CCMP (which uses [AES](#abbr_AES) in		      |	FCS\_IPSEC\_EXT.1 requirements, [CBC](#abbr_CBC) mode is mandated, and
+[CCM](#abbr_CCM) as specified in SP 800-38C) must be implemented.		      |	to comply with IEEE 802.11-2020, [AES](#abbr_AES)-CCMP (which uses
+										      >	[AES](#abbr_AES) in Counter Mode with CBC-Message Authentication Code
 										      >	([CCM](#abbr_CCM)) as specified in SP 800-38C) must be implemented.
 
 For the first selection of								For the first selection of
@@ -714,9 +713,10 @@ which [AES](#abbr_AES) operates. For the second selection, the				which [AES](#a
 this functionality. 256-bit [CCMP](#abbr_CCMP) is required in order to			this functionality. 256-bit [CCMP](#abbr_CCMP) is required in order to
 comply with [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA). Note that optionally			comply with [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA). Note that optionally
 [AES](#abbr_AES)-CCMP-192, [AES](#abbr_AES)-CCMP-128,					[AES](#abbr_AES)-CCMP-192, [AES](#abbr_AES)-CCMP-128,
-,[AES](#abbr_AES)-GCMP-192, and [AES](#abbr_AES)-GCMP-128 with				,[AES](#abbr_AES)-GCMP-192, and [AES](#abbr_AES)-GCMP-128 with
-cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax		cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax
-connections. In the future, one of these modes may be required.				connections. In the future, one of these modes may be required.
+,[AES](#abbr_AES)-GCMP-192, and [AES](#abbr_AES)-GCMP-128 with			      |	[AES](#abbr_AES)-GCMP-192, and [AES](#abbr_AES)-GCMP-128 with
+cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax	      |	cryptographic key size of 256 bits, may be implemented for IEEE
+connections. In the future, one of these modes may be required.			      |	802.11ax-2021 connections. In the future, one of these modes may be
+										      >	required.
 
 [CTR](#abbr_CTR) mode is not used for [WLAN](#abbr_WLAN) [AS](#abbr_AS)			[CTR](#abbr_CTR) mode is not used for [WLAN](#abbr_WLAN) [AS](#abbr_AS)
 capabilities but remains selectable since it may be required by another			capabilities but remains selectable since it may be required by another
@@ -753,7 +753,7 @@ additional self-tests run by the							additional self-tests run by the
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[This [SFR](#abbr_SFR) is modified			[Application Note: ]{.note-header}[This [SFR](#abbr_SFR) is modified
 from its definition in the [NDcPP](#abbr_NDcPP) by mandating that			from its definition in the [NDcPP](#abbr_NDcPP) by mandating that
-self-testing occur at power on, and that the self-testing must include,			self-testing occur at power on, and that the self-testing must include,
+self-testing occur at power on, and that the self-testing must include,		      |	self-testing occur at power on and that the self-testing must include,
 at minimum, an integrity test using a digital signature.				at minimum, an integrity test using a digital signature.
 FCS\_COP.1/SigGen is defined in the [NDcPP](#abbr_NDcPP).]{.note}			FCS\_COP.1/SigGen is defined in the [NDcPP](#abbr_NDcPP).]{.note}
 :::											:::
@@ -779,7 +779,7 @@ The [TSF](#abbr_TSF) shall be capable of using **IEEE 802.1X,				The [TSF](#abbr
 communication channel between itself and authorized IT entities			      |	\[**selection**: *SSH*, *[TLS](#abbr_TLS)*, *DTLS*, *HTTPS*, ***no other
 supporting the following capabilities: **802.1x authentication server,**	      |	protocols***\] to provide a trusted communication channel between itself
 audit server, \[**selection**: *authentication server*,				      |	and authorized IT entities supporting the following capabilities:
-*\[**assignment**: [other capabilities]{.assignable-content}\]*, *no		      |	**802.1x authentication server,** audit server, \[**selection**:
+*\[**assignment**: [other capabilities]{.assignable-content}\]*, *no		      |	**802.1X authentication server,** audit server, \[**selection**:
 other capabilities*\] that is logically distinct from other			      |	*authentication server*, *\[**assignment**: [other
 communication channels and provides assured identification of its end		      |	capabilities]{.assignable-content}\]*, *no other capabilities*\] that is
 points and protection of the channel data from disclosure and detection		      |	logically distinct from other communication channels and provides
@@ -793,8 +793,8 @@ This requirement has been modified from its definition in the				This requiremen
 [NDcPP](#abbr_NDcPP) to mandate the communications protocols and			[NDcPP](#abbr_NDcPP) to mandate the communications protocols and
 environmental components that a [WLAN](#abbr_WLAN) Access System must		      |	environmental components that a [WLAN](#abbr_WLAN) [AS](#abbr_AS) must
 use for infrastructure communications (802.11 support is also required			use for infrastructure communications (802.11 support is also required
-for wireless client communications but this is covered by the				for wireless client communications but this is covered by the
-[FTP\_ITC.1/Client](#FTP_ITC.1/Client). [IPsec](#abbr_IPsec) or RADIUS		      |	[FTP\_ITC.1/Client](#FTP_ITC.1/Client). [IPsec](#abbr_IPsec) or
+for wireless client communications but this is covered by the			      |	for wireless client communications, but this is covered by the
+[FTP\_ITC.1/Client](#FTP_ITC.1/Client). [IPsec](#abbr_IPsec) or RADIUS		      |	[FTP\_ITC.1/Client](#FTP_ITC.1/Client)). [IPsec](#abbr_IPsec) or
 over [TLS](#abbr_TLS) (commonly known as \"RadSec\") is required at		      |	[RADIUS](#abbr_RADIUS) over [TLS](#abbr_TLS) (commonly known as
 least for communications with the 802.1X authentication server. Other		      |	\"RadSec\") is required at least for communications with the 802.1X
 selections may be made if needed by other parts of the [TSF](#abbr_TSF).	      |	authentication server. Other selections may be made if needed by other
@@ -803,7 +803,7 @@ they are initially established, but also on resumption after an outage.		      |
 										      >	on resumption after an outage.
 
 The IT entity of \"802.1X authentication server\" is distinct from			The IT entity of \"802.1X authentication server\" is distinct from
-\"authentication server\", because the latter may be used for			      |	\"authentication server,\" because the latter may be used for
+\"authentication server\", because the latter may be used for			      |	\"authentication server\" because the latter may be used for
 administrator authentication rather than authorization of				administrator authentication rather than authorization of
 [WLAN](#abbr_WLAN) clients.								[WLAN](#abbr_WLAN) clients.
 
