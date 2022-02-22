@@ -54,7 +54,7 @@ Access (FTA)](#man_fta)[5.2.7Trusted Path/Channels					Access (FTA)](#man_fta)[5
 (FTP)](#man_ftp)[5.3TOE Security Functional Requirements				(FTP)](#man_ftp)[5.3TOE Security Functional Requirements
 Rationale](#obj-req-map)[5.4TOE Security Assurance					Rationale](#obj-req-map)[5.4TOE Security Assurance
 Requirements](#mod-sars)[6Consistency							Requirements](#mod-sars)[6Consistency
-Rationale](#mod-conrat)[6.1collaborative Protection Profile for				Rationale](#mod-conrat)[6.1collaborative Protection Profile for
+Rationale](#mod-conrat)[6.1collaborative Protection Profile for			      |	Rationale](#mod-conrat)[6.1Collaborative Protection Profile for
 NDs](#conrat-ND)[6.1.1 Consistency of TOE Type ](#contoe-ND)[6.1.2			NDs](#conrat-ND)[6.1.1 Consistency of TOE Type ](#contoe-ND)[6.1.2
 Consistency of Security Problem Definition ](#consecprob-ND)[6.1.3			Consistency of Security Problem Definition ](#consecprob-ND)[6.1.3
 Consistency of Objectives ](#conobj-ND)[6.1.4 Consistency of				Consistency of Objectives ](#conobj-ND)[6.1.4 Consistency of
@@ -93,7 +93,7 @@ security functionality of a Wireless Local Area Network				      |	security func
 ([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to	      |	System (AS) in terms of [\[CC\]](#bibCC) and to define functional and
 define functional and assurance requirements for such products. This		      |	assurance requirements for such products. This
 [PP-Module](#abbr_PP-Module) is intended for use with the following		      |	[PP-Module](#abbr_PP-Module) is intended for use with the following Base
-Base-PPs:									      |	Protection Profiles ([Base-PPs](#abbr_Base-PP)):
+Base-PPs:									      |	Protection Profile ([Base-PP](#abbr_Base-PP)):
 
 -   Collaborative Protection Profile for Network Devices			      |	-   Network Device collaborative Protection Profile (NDcPP) Version 2.2e
     ([NDcPP](#abbr_NDcPP)) Version 2.2e						      <
@@ -866,8 +866,8 @@ which [PP-Configuration](#abbr_PP-Configuration) is used to define the		      |	
 The [TSF](#abbr_TSF) shall be able to generate an audit record of the			The [TSF](#abbr_TSF) shall be able to generate an audit record of the
 following auditable events:								following auditable events:
 
-a.  Start-up and shutdown of the audit functions;				      |	a.  Start-up and shutdown of the audit functions
-b.  All auditable events for the \[not specified\] level of audit;		      |	b.  All auditable events for the \[not specified\] level of audit
+a.  Start-up and shutdown of the audit functions;					a.  Start-up and shutdown of the audit functions;
+b.  All auditable events for the \[not specified\] level of audit;		      |	b.  All auditable events for the \[not specified\] level of audit; and
 c.  \[*Auditable events listed in the Auditable Events table ([Table			c.  \[*Auditable events listed in the Auditable Events table ([Table
     [2]{.counter}](#auditWLAN){.auditWLAN-ref});*				      |	    [2]{.counter}](#auditWLAN){.auditWLAN-ref})*
 d.  *Failure of wireless sensor communication*\].				      |	d.  *Failure of wireless sensor communication*\]
@@ -905,6 +905,10 @@ None.											None.
 
 None.											None.
 
+										      >	[FCS\_RADSEC\_EXT.3](#FCS_RADSEC_EXT.3) (selection-based)
+										      >
+										      >	None.
+										      >
 FCS\_IPSEC\_EXT.1 (selection-based)							FCS\_IPSEC\_EXT.1 (selection-based)
 
 Protocol failures.									Protocol failures.
@@ -927,7 +931,7 @@ completion of the authentication exchange.						completion of the authentication
 Provided client identity (e.g. [MAC](#abbr_MAC) address).			      |	Provided client identity (e.g. Media Access Control \[Media Access
 										      >	Control ([MAC](#abbr_MAC))\] address).
 
-Failed authentication attempt								Failed authentication attempt
+Failed authentication attempt							      |	Failed authentication attempt.
 
 Provided client identity (e.g. [MAC](#abbr_MAC) address).				Provided client identity (e.g. [MAC](#abbr_MAC) address).
 
@@ -941,6 +945,14 @@ Attempts to re-authenticate.								Attempts to re-authenticate.
 
 Origin of the attempt (e.g., IP address).						Origin of the attempt (e.g., IP address).
 
+										      >	[FMT\_SMF.1/AccessSystem](#FMT_SMF.1/AccessSystem)
+										      >
+										      >	None.
+										      >
+										      >	[FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)
+										      >
+										      >	None.
+										      >
 [FPT\_FLS.1](#FPT_FLS.1)								[FPT\_FLS.1](#FPT_FLS.1)
 
 Failure of the [TSF](#abbr_TSF).							Failure of the [TSF](#abbr_TSF).
@@ -1001,7 +1013,7 @@ IT entity using a trusted channel.							IT entity using a trusted channel.
 ### 5.2.2 Cryptographic Support (FCS) {#man_fcs .indexable data-level="3"}		### 5.2.2 Cryptographic Support (FCS) {#man_fcs .indexable data-level="3"}
 
 ::: {#FCS_CKM.1/WPA .comp}								::: {#FCS_CKM.1/WPA .comp}
-#### FCS\_CKM.1/WPA Cryptographic Key Generation					#### FCS\_CKM.1/WPA Cryptographic Key Generation
+#### FCS\_CKM.1/WPA Cryptographic Key Generation				      |	#### FCS\_CKM.1/WPA Cryptographic Key Generation (Symmetric Keys for WPA2 Connections
 
 ::: {.element}										::: {.element}
 ::: {#FCS_CKM.1.1/WPA .reqid}								::: {#FCS_CKM.1.1/WPA .reqid}
@@ -1012,11 +1024,11 @@ IT entity using a trusted channel.							IT entity using a trusted channel.
 The [TSF](#abbr_TSF) shall generate **symmetric** cryptographic keys in			The [TSF](#abbr_TSF) shall generate **symmetric** cryptographic keys in
 accordance with a specified cryptographic key generation algorithm			accordance with a specified cryptographic key generation algorithm
 \[*PRF-384 and \[**selection**: *PRF-512*, *PRF-704*, *no other				\[*PRF-384 and \[**selection**: *PRF-512*, *PRF-704*, *no other
-algorithm*\]*\] and specified key sizes \[*256 bits and \[**selection**:		algorithm*\]*\] and specified key sizes \[*256 bits and \[**selection**:
-*128 bits*, *192 bits*, *no other key sizes*\]*\] **using a Random Bit			*128 bits*, *192 bits*, *no other key sizes*\]*\] **using a Random Bit
-Generator as specified in FCS\_RBG\_EXT.1** that meet the following:			Generator as specified in FCS\_RBG\_EXT.1** that meet the following:
-\[*IEEE 802.11-2016 and \[**selection**: *IEEE 802.11ax-2021*, *no other	      |	\[*IEEE 802.11-2020 and \[**selection**: *IEEE 802.11ax-2021*, *no other
-standards*\]*\].									standards*\]*\].
+algorithm*\]*\] and specified key sizes \[*256 bits and \[**selection**:	      |	algorithm*\]*\] and specified cryptographic key sizes \[*256 bits and
+*128 bits*, *192 bits*, *no other key sizes*\]*\] **using a Random Bit		      |	\[**selection**: *128 bits*, *192 bits*, *no other key sizes*\]*\]
+Generator as specified in FCS\_RBG\_EXT.1** that meet the following:		      |	**using a Random Bit Generator as specified in FCS\_RBG\_EXT.1** that
+\[*IEEE 802.11-2016 and \[**selection**: *IEEE 802.11ax-2021*, *no other	      |	meet the following: \[*IEEE 802.11-2020 and \[**selection**: *IEEE
+standards*\]*\].								      |	802.11ax-2021*, *no other standards*\]*\].
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ The cryptographic key derivation		      |	[Application Note: ]{.note-header}[ ]{.note}
@@ -1036,10 +1048,10 @@ the [PMK](#abbr_PMK), which is done using a random value generated by		      |	G
 the RBG specified in this [PP-Module](#abbr_PP-Module), the HMAC		      |	specified in this [PP-Module](#abbr_PP-Module), as well as the
 function as specified in this [PP-Module](#abbr_PP-Module), as well as		      |	derivation of the Pairwise Transient Key from the Pairwise Master Key
 other information. This is specified in IEEE 802.11-2016 primarily in		      |	(PMK), which is done using a random value generated by the
-										      >	[RBG](#abbr_RBG) specified in this [PP-Module](#abbr_PP-Module), the
+chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).		      |	[RBG](#abbr_RBG) specified in this [PP-Module](#abbr_PP-Module), the
 										      >	HMAC function as specified in this [PP-Module](#abbr_PP-Module), as well
-										      >	as other information. This is specified in IEEE 802.11-2020 primarily in
-chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).			chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).
+										      >	as other information. This is specified in IEEE 802.11-2020, primarily
+										      >	in chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).
 :::											:::
 :::											:::
 :::											:::
@@ -1152,30 +1164,30 @@ authentication exchange. If the exchange is completed successfully, the		      |
 [TOE](#abbr_TOE) will obtain the [PMK](#abbr_PMK) from the RADIUS server	      |	authenticator in an 802.1X authentication exchange. If the exchange is
 and perform the 4-way handshake with the wireless client (supplicant) to	      |	completed successfully, the [TOE](#abbr_TOE) will obtain the
 begin 802.11 communications.]{.note}						      |	[PMK](#abbr_PMK) from the [RADIUS](#abbr_RADIUS) server and perform the
-										      >	4-way handshake with the wireless client (supplicant) to begin 802.11
+										      >	four-way handshake with the wireless client (supplicant) to begin 802.11
 										      >	communications.
 
 As indicated previously, there are at least three communication paths			As indicated previously, there are at least three communication paths
 present during the exchange; two with the [TOE](#abbr_TOE) as an			present during the exchange; two with the [TOE](#abbr_TOE) as an
-endpoint and one with [TOE](#abbr_TOE) acting as a transfer point only.			endpoint and one with [TOE](#abbr_TOE) acting as a transfer point only.
-The [TOE](#abbr_TOE) establishes an [EAP](#abbr_EAP) over LAN (EAPOL)		      |	The [TOE](#abbr_TOE) establishes an Extensible Authentication Protocol
-connection with the wireless client as specified in 802.1X-2007. The		      |	([EAP](#abbr_EAP)) over Local Area Network (EAPOL) connection with the
-[TOE](#abbr_TOE) also establishes (or has established) a RADIUS protocol	      |	wireless client as specified in 802.1X-2007. The [TOE](#abbr_TOE) also
-										      >	establishes (or has established) a [RADIUS](#abbr_RADIUS) protocol
-connection protected either by [IPsec](#abbr_IPsec) or RadSec				connection protected either by [IPsec](#abbr_IPsec) or RadSec
-([TLS](#abbr_TLS)) with the RADIUS server. The wireless client and		      |	([TLS](#abbr_TLS)) with the [RADIUS](#abbr_RADIUS) server. The wireless
-RADIUS server establish an [EAP](#abbr_EAP)-TLS session (RFC 5216); in		      |	client and [RADIUS](#abbr_RADIUS) server establish an
-this transaction the [TOE](#abbr_TOE) merely takes the				      |	[EAP](#abbr_EAP)-TLS session (RFC 5216); in this transaction the
-[EAP](#abbr_EAP)-TLS packets from its EAPOL/RADIUS endpoint and			      |	[TOE](#abbr_TOE) merely takes the [EAP](#abbr_EAP)-TLS packets from its
-transfers them to the other endpoint. Because the specific			      |	EAPOL/[RADIUS](#abbr_RADIUS) endpoint and transfers them to the other
-authentication method ([TLS](#abbr_TLS) in this case) is opaque to the		      |	endpoint. Because the specific authentication method ([TLS](#abbr_TLS)
-[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in		      |	in this case) is opaque to the [TOE](#abbr_TOE), there are no
-this [PP-Module](#abbr_PP-Module). However, the base RADIUS protocol		      |	requirements with respect to RFC 5126 in this
-(2865) has an update (3579) that will need to be addressed in the		      |	[PP-Module](#abbr_PP-Module). However, the base [RADIUS](#abbr_RADIUS)
-implementation and evaluation activities. Additionally, RFC 5080		      |	protocol (2865) has an update (3579) that will need to be addressed in
-										      >	the implementation and evaluation activities. Additionally, RFC 5080
-contains implementation issues that will need to be addressed by			contains implementation issues that will need to be addressed by
-developers, but which levy no new requirements.						developers, but which levy no new requirements.
+endpoint and one with [TOE](#abbr_TOE) acting as a transfer point only.		      |	endpoint and one with the [TOE](#abbr_TOE) acting as a transfer point
+The [TOE](#abbr_TOE) establishes an [EAP](#abbr_EAP) over LAN (EAPOL)		      |	only. The [TOE](#abbr_TOE) establishes an Extensible Authentication
+connection with the wireless client as specified in 802.1X-2007. The		      |	Protocol ([EAP](#abbr_EAP)) over Local Area Network (EAPOL) connection
+[TOE](#abbr_TOE) also establishes (or has established) a RADIUS protocol	      |	with the wireless client as specified in 802.1X-2007. The
+connection protected either by [IPsec](#abbr_IPsec) or RadSec			      |	[TOE](#abbr_TOE) also establishes (or has established) a
+([TLS](#abbr_TLS)) with the RADIUS server. The wireless client and		      |	[RADIUS](#abbr_RADIUS) protocol connection protected either by
+RADIUS server establish an [EAP](#abbr_EAP)-TLS session (RFC 5216); in		      |	[IPsec](#abbr_IPsec) or RadSec ([TLS](#abbr_TLS)) with the
+this transaction the [TOE](#abbr_TOE) merely takes the				      |	[RADIUS](#abbr_RADIUS) server. The wireless client and
+[EAP](#abbr_EAP)-TLS packets from its EAPOL/RADIUS endpoint and			      |	[RADIUS](#abbr_RADIUS) server establish an [EAP](#abbr_EAP)-TLS session
+transfers them to the other endpoint. Because the specific			      |	(RFC 5216); in this transaction the [TOE](#abbr_TOE) merely takes the
+										      >	[EAP](#abbr_EAP)-TLS packets from its EAPOL/[RADIUS](#abbr_RADIUS)
+										      >	endpoint and transfers them to the other endpoint. Because the specific
+authentication method ([TLS](#abbr_TLS) in this case) is opaque to the			authentication method ([TLS](#abbr_TLS) in this case) is opaque to the
+[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in			[TOE](#abbr_TOE), there are no requirements with respect to RFC 5126 in
+this [PP-Module](#abbr_PP-Module). However, the base RADIUS protocol		      |	this [PP-Module](#abbr_PP-Module). However, the base
+(2865) has an update (3579) that will need to be addressed in the		      |	[RADIUS](#abbr_RADIUS) protocol (2865) has an update (3579) that will
+implementation and evaluation activities. Additionally, RFC 5080		      |	need to be addressed in the implementation and evaluation activities.
+contains implementation issues that will need to be addressed by		      |	Additionally, RFC 5080 contains implementation issues that will need to
+developers, but which levy no new requirements.					      |	be addressed by developers but which levy no new requirements.
 
 The point of performing 802.1X authentication is to provide access to			The point of performing 802.1X authentication is to provide access to
 the network (assuming the authentication was successful and that all			the network (assuming the authentication was successful and that all
@@ -1208,7 +1220,7 @@ conditions*\]*\].									conditions*\]*\].
 ### 5.2.4 Security Management (FMT) {#man_fmt .indexable data-level="3"}		### 5.2.4 Security Management (FMT) {#man_fmt .indexable data-level="3"}
 
 ::: {#FMT_SMF.1/AccessSystem .comp}							::: {#FMT_SMF.1/AccessSystem .comp}
-#### FMT\_SMF.1/AccessSystem Specification of Management Functions			#### FMT\_SMF.1/AccessSystem Specification of Management Functions
+#### FMT\_SMF.1/AccessSystem Specification of Management Functions		      |	#### FMT\_SMF.1/AccessSystem Specification of Management Functions (WLAN Access Syste
 
 ::: {.element}										::: {.element}
 ::: {#FMT_SMF.1.1/AccessSystem .reqid}							::: {#FMT_SMF.1.1/AccessSystem .reqid}
@@ -1219,15 +1231,15 @@ conditions*\]*\].									conditions*\]*\].
 The [TSF](#abbr_TSF) shall be capable of performing the following			The [TSF](#abbr_TSF) shall be capable of performing the following
 management functions:									management functions:
 
-configure the security policy for each wireless network, including:			configure the security policy for each wireless network, including:
+configure the security policy for each wireless network, including:		      |	Configure the security policy for each wireless network, including:
 
--   security type									-   security type
--   authentication protocol								-   authentication protocol
--   client credentials to be used for authentication					-   client credentials to be used for authentication
+-   security type								      |	-   Security type
+-   authentication protocol							      |	-   Authentication protocol
+-   client credentials to be used for authentication				      |	-   Client credentials to be used for authentication
 -   [SSID](#abbr_SSID)								      |	-   Service Set Identifier ([SSID](#abbr_SSID))
--   if the [SSID](#abbr_SSID) is broadcasted						-   if the [SSID](#abbr_SSID) is broadcasted
--   frequency band set to \[**selection**: *2.4 Ghz*, *5 Ghz*, *6 Ghz*\]	      |	-   frequency band set to \[**selection**: *2.4 GHz*, *5 GHz*, *6 GHz*\]
--   transmit power level								-   transmit power level
+-   if the [SSID](#abbr_SSID) is broadcasted					      |	-   If the [SSID](#abbr_SSID) is broadcasted
+-   frequency band set to \[**selection**: *2.4 Ghz*, *5 Ghz*, *6 Ghz*\]	      |	-   Frequency band set to \[**selection**: *2.4 GHz*, *5 GHz*, *6 GHz*\]
+-   transmit power level							      |	-   Transmit power level
 :::											:::
 :::											:::
 :::											:::
@@ -1241,8 +1253,8 @@ configure the security policy for each wireless network, including:			configure 
 :::											:::
 
 ::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall ensure that the ability to remotely				The [TSF](#abbr_TSF) shall ensure that the ability to remotely
-administer the [TOE](#abbr_TOE) from a wireless client shall be disabled		administer the [TOE](#abbr_TOE) from a wireless client shall be disabled
+The [TSF](#abbr_TSF) shall ensure that the ability to remotely			      |	The [TSF](#abbr_TSF) shall ensure that the ability to administer
+administer the [TOE](#abbr_TOE) from a wireless client shall be disabled	      |	remotely the [TOE](#abbr_TOE) from a wireless client shall be disabled
 by default.										by default.
 :::											:::
 :::											:::
@@ -1295,7 +1307,7 @@ be specified in terms of the device in the [TOE](#abbr_TOE) that the		      |
 [WLAN](#abbr_WLAN) client is connecting to (e.g. specific			      |	The "[TOE](#abbr_TOE) interface" can be specified in terms of the device
 [WLAN](#abbr_WLAN) access point(s)). "Time" and "day" refer to			      |	in the [TOE](#abbr_TOE) that the [WLAN](#abbr_WLAN) client is connecting
 time-of-day and day-of-week respectively.]{.note}				      |	to (e.g. specific [WLAN](#abbr_WLAN) [APs](#abbr_AP)). "Time" and "day"
-										      >	refer to time-of-day and day-of-week respectively.
+										      >	refer to time-of-day and day-of-week, respectively.
 
 The assignment is to be used by the [ST](#abbr_ST) author to specify			The assignment is to be used by the [ST](#abbr_ST) author to specify
 additional attributes on which denial of session establishment can be			additional attributes on which denial of session establishment can be
@@ -1374,25 +1386,25 @@ Rationale										Rationale
 objective by requiring the [TSF](#abbr_TSF) to implement				objective by requiring the [TSF](#abbr_TSF) to implement
 [AES](#abbr_AES) in the modes needed to support its other functions.			[AES](#abbr_AES) in the modes needed to support its other functions.
 
-FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))					FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
-
-FCS\_IPSEC\_EXT.1 supports the objective by requiring the				FCS\_IPSEC\_EXT.1 supports the objective by requiring the
-[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted			[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted
-communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).				communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).
-
-FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))					FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
-
-FCS\_TLSC\_EXT.1 supports the objective by requiring the				FCS\_TLSC\_EXT.1 supports the objective by requiring the
-[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to		      |	[TSF](#abbr_TSF) to use [RADIUS](#abbr_RADIUS) over [TLS](#abbr_TLS)
-implement a trusted communications channel if selected in			      |	(RadSec) to implement a trusted communications channel if selected in
-[FTP\_ITC.1](#FTP_ITC.1).								[FTP\_ITC.1](#FTP_ITC.1).
-
-FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))					FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))
-
-FCS\_TLSC\_EXT.2 supports the objective by requiring the				FCS\_TLSC\_EXT.2 supports the objective by requiring the
-[TSF](#abbr_TSF) to use X.509 certificates as the authentication method			[TSF](#abbr_TSF) to use X.509 certificates as the authentication method
-used for RadSec.									used for RadSec.
-
+FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FCS\_IPSEC\_EXT.1 supports the objective by requiring the			      <
+[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted		      <
+communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).			      <
+										      <
+FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FCS\_TLSC\_EXT.1 supports the objective by requiring the			      <
+[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to		      <
+implement a trusted communications channel if selected in			      <
+[FTP\_ITC.1](#FTP_ITC.1).							      <
+										      <
+FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FCS\_TLSC\_EXT.2 supports the objective by requiring the			      <
+[TSF](#abbr_TSF) to use X.509 certificates as the authentication method		      <
+used for RadSec.								      <
+										      <
 [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)							[FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)
 
 [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA) supports the objective by requiring the		[FCS\_CKM.1/WPA](#FCS_CKM.1/WPA) supports the objective by requiring the
@@ -1417,40 +1429,40 @@ to any distributed [TOE](#abbr_TOE) components using a secured method.			to any 
 
 [O.AUTHENTICATION](#O.AUTHENTICATION)\							[O.AUTHENTICATION](#O.AUTHENTICATION)\
 
-FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))					FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
-
-FCS\_IPSEC\_EXT.1 supports the objective by optionally requiring the			FCS\_IPSEC\_EXT.1 supports the objective by optionally requiring the
-[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted			[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted
-communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).				communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).
-[IPsec](#abbr_IPsec) includes authenticating using X.509 certificates or		[IPsec](#abbr_IPsec) includes authenticating using X.509 certificates or
-pre-shared keys.									pre-shared keys.
-
-FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))					FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))
-
-FCS\_TLSC\_EXT.1 supports the objective by optionally requiring the			FCS\_TLSC\_EXT.1 supports the objective by optionally requiring the
-[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to		      |	[TSF](#abbr_TSF) to use [RADIUS](#abbr_RADIUS) over [TLS](#abbr_TLS)
-implement a trusted communications channel if selected in			      |	(RadSec) to implement a trusted communications channel if selected in
-[FTP\_ITC.1](#FTP_ITC.1). [TLS](#abbr_TLS) includes authenticating using		[FTP\_ITC.1](#FTP_ITC.1). [TLS](#abbr_TLS) includes authenticating using
-X.509 certificates or pre-shared keys.							X.509 certificates or pre-shared keys.
-
-FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))					FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))
-
-FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the			FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the
-[TSF](#abbr_TSF) to use X.509 certificates as the authentication method			[TSF](#abbr_TSF) to use X.509 certificates as the authentication method
-used for RadSec.									used for RadSec.
-
-FIA\_X509\_EXT.1/Rev (from [Base-PP](#abbr_Base-PP))					FIA\_X509\_EXT.1/Rev (from [Base-PP](#abbr_Base-PP))
-
-FIA\_X509\_EXT.1/Rev supports the objective by optionally requiring the			FIA\_X509\_EXT.1/Rev supports the objective by optionally requiring the
-[TSF](#abbr_TSF) to implement X.509 certificate validation if				[TSF](#abbr_TSF) to implement X.509 certificate validation if
-certificates are used for authentication.						certificates are used for authentication.
-
-[FTP\_ITC.1](#FTP_ITC.1) (modified from [Base-PP](#abbr_Base-PP))			[FTP\_ITC.1](#FTP_ITC.1) (modified from [Base-PP](#abbr_Base-PP))
-
-[FTP\_ITC.1](#FTP_ITC.1) supports the objective by requiring the			[FTP\_ITC.1](#FTP_ITC.1) supports the objective by requiring the
-[TSF](#abbr_TSF) to identify the trusted communications channels it			[TSF](#abbr_TSF) to identify the trusted communications channels it
-implements, each of which is able to support authentication.				implements, each of which is able to support authentication.
-
+FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FCS\_IPSEC\_EXT.1 supports the objective by optionally requiring the		      <
+[TSF](#abbr_TSF) to use [IPsec](#abbr_IPsec) to implement a trusted		      <
+communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).			      <
+[IPsec](#abbr_IPsec) includes authenticating using X.509 certificates or	      <
+pre-shared keys.								      <
+										      <
+FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FCS\_TLSC\_EXT.1 supports the objective by optionally requiring the		      <
+[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to		      <
+implement a trusted communications channel if selected in			      <
+[FTP\_ITC.1](#FTP_ITC.1). [TLS](#abbr_TLS) includes authenticating using	      <
+X.509 certificates or pre-shared keys.						      <
+										      <
+FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the		      <
+[TSF](#abbr_TSF) to use X.509 certificates as the authentication method		      <
+used for RadSec.								      <
+										      <
+FIA\_X509\_EXT.1/Rev (from [Base-PP](#abbr_Base-PP))				      <
+										      <
+FIA\_X509\_EXT.1/Rev supports the objective by optionally requiring the		      <
+[TSF](#abbr_TSF) to implement X.509 certificate validation if			      <
+certificates are used for authentication.					      <
+										      <
+[FTP\_ITC.1](#FTP_ITC.1) (modified from [Base-PP](#abbr_Base-PP))		      <
+										      <
+[FTP\_ITC.1](#FTP_ITC.1) supports the objective by requiring the		      <
+[TSF](#abbr_TSF) to identify the trusted communications channels it		      <
+implements, each of which is able to support authentication.			      <
+										      <
 [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)							[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)
 
 [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1) supports the objective by				[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1) supports the objective by
@@ -1512,12 +1524,12 @@ the [TSF](#abbr_TSF) to generate audit records for security-relevant			the [TSF]
 [WLAN](#abbr_WLAN) behavior.								[WLAN](#abbr_WLAN) behavior.
 
 [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[O.TOE\_​ADMINISTRATION](#O.TOE_ADMINISTRATION)\
-
-FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))						FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))
-
-FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to			FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to
-block authentication if there is evidence of an attempt to compromise an		block authentication if there is evidence of an attempt to compromise an
-administrator account through brute force.						administrator account through brute force.
+										      <
+FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))					      <
+										      <
+FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to		      <
+block authentication if there is evidence of an attempt to compromise an	      <
+administrator account through brute force.					      <
 
 [FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)							[FMT\_SMR\_EXT.1](#FMT_SMR_EXT.1)
 
@@ -1536,7 +1548,7 @@ objective by defining management functionality that is specific to			objective b
 
 This [PP-Module](#abbr_PP-Module) does not define any SARs beyond those		      |	This [PP-Module](#abbr_PP-Module) does not define any Security Assurance
 defined within the Base-PPs to which it can claim conformance. It is		      |	Requirements ([SARs](#abbr_SAR)) beyond those defined within the
-										      >	[Base-PPs](#abbr_Base-PP) to which it can claim conformance. It is
+										      >	[Base-PP](#abbr_Base-PP) to which it can claim conformance. It is
 important to note that a [TOE](#abbr_TOE) that is evaluated against this		important to note that a [TOE](#abbr_TOE) that is evaluated against this
 [PP-Module](#abbr_PP-Module) is inherently evaluated against the			[PP-Module](#abbr_PP-Module) is inherently evaluated against the
 [NDcPP](#abbr_NDcPP) as well. This [PP](#abbr_PP) includes a number of			[NDcPP](#abbr_NDcPP) as well. This [PP](#abbr_PP) includes a number of
@@ -1544,7 +1556,7 @@ EAs associated with both Security Functional Requirements (SFRs) and		      |	EA
 SARs. Additionally, this [PP-Module](#abbr_PP-Module) includes a number		      |	([SFRs](#abbr_SFR)) and [SARs](#abbr_SAR). Additionally, this
 of [SFR](#abbr_SFR)-based EAs that similarly refine the SARs of the		      |	[PP-Module](#abbr_PP-Module) includes a number of [SFR](#abbr_SFR)-based
 Base-PPs. The evaluation laboratory will evaluate the [TOE](#abbr_TOE)		      |	EAs that similarly refine the [SARs](#abbr_SAR) of the
-against the chosen [Base-PP](#abbr_Base-PP) and supplement that			      |	[Base-PPs](#abbr_Base-PP). The evaluation laboratory will evaluate the
+against the chosen [Base-PP](#abbr_Base-PP) and supplement that			      |	[Base-PP](#abbr_Base-PP). The evaluation laboratory will evaluate the
 evaluation with the necessary SFRs that are taken from this			      |	[TOE](#abbr_TOE) against the chosen [Base-PP](#abbr_Base-PP) and
 [PP-Module](#abbr_PP-Module).							      |	supplement that evaluation with the necessary [SFRs](#abbr_SFR) that are
 										      >	taken from this [PP-Module](#abbr_PP-Module).
@@ -1552,17 +1564,17 @@ evaluation with the necessary SFRs that are taken from this			      |	[TOE](#abb
 6 Consistency Rationale {#mod-conrat .indexable data-level="1"}				6 Consistency Rationale {#mod-conrat .indexable data-level="1"}
 =======================									=======================
 
-6.1 collaborative Protection Profile for NDs {#conrat-ND .indexable data-level="2"}	6.1 collaborative Protection Profile for NDs {#conrat-ND .indexable data-level="2"}
+6.1 collaborative Protection Profile for NDs {#conrat-ND .indexable data-level="2"}   |	6.1 Collaborative Protection Profile for NDs {#conrat-ND .indexable data-level="2"}
 --------------------------------------------						--------------------------------------------
 
 ### 6.1.1 Consistency of TOE Type {#contoe-ND .indexable data-level="3"}		### 6.1.1 Consistency of TOE Type {#contoe-ND .indexable data-level="3"}
 
-When this [PP-Module](#abbr_PP-Module) extends the Network Device			When this [PP-Module](#abbr_PP-Module) extends the Network Device
-[cPP](#abbr_cPP), the [TOE](#abbr_TOE) type for the overall			      |	Collaborative Protection Profile ([cPP](#abbr_cPP)), the
-[TOE](#abbr_TOE) is still a network device. This				      |	[TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a
-[PP-Module](#abbr_PP-Module) just defines the [TOE](#abbr_TOE) as a		      |	network device. This [PP-Module](#abbr_PP-Module) just defines the
-specific type of network device with functional capabilities distinct to	      |	[TOE](#abbr_TOE) as a specific type of network device with functional
-that type.									      |	capabilities distinct to that type.
+When this [PP-Module](#abbr_PP-Module) extends the Network Device		      |	When this [PP-Module](#abbr_PP-Module) extends the [NDcPP](#abbr_NDcPP),
+[cPP](#abbr_cPP), the [TOE](#abbr_TOE) type for the overall			      |	the [TOE](#abbr_TOE) type for the overall [TOE](#abbr_TOE) is still a
+[TOE](#abbr_TOE) is still a network device. This				      |	network device. This [PP-Module](#abbr_PP-Module) just defines the
+[PP-Module](#abbr_PP-Module) just defines the [TOE](#abbr_TOE) as a		      |	[TOE](#abbr_TOE) as a specific type of network device with functional
+specific type of network device with functional capabilities distinct to	      |	capabilities distinct to that type.
+that type.									      <
 
 ### 6.1.2 Consistency of Security Problem Definition {#consecprob-ND .indexable data-	### 6.1.2 Consistency of Security Problem Definition {#consecprob-ND .indexable data-
 
@@ -1581,13 +1593,13 @@ The objectives for the TOEs are consistent with the [NDcPP](#abbr_NDcPP)	      |
 based on the following rationale:						      |	[NDcPP](#abbr_NDcPP) based on the following rationale:
 
   [PP-Module](#abbr_PP-Module) [TOE](#abbr_TOE) Objective    Consistency Rationale	  [PP-Module](#abbr_PP-Module) [TOE](#abbr_TOE) Objective    Consistency Rationale
-  ---------------------------------------------------------- ------------------------	  ---------------------------------------------------------- ------------------------
-  [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)   The [Base-PP](#abbr_Base	  [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)   The [Base-PP](#abbr_Base
-  [O.AUTHENTICATION](#O.AUTHENTICATION)                      The [Base-PP](#abbr_Base	  [O.AUTHENTICATION](#O.AUTHENTICATION)                      The [Base-PP](#abbr_Base
-  [O.FAIL\_SECURE](#O.FAIL_SECURE)                           The [Base-PP](#abbr_Base	  [O.FAIL\_SECURE](#O.FAIL_SECURE)                           The [Base-PP](#abbr_Base
-  [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)               The [Base-PP](#abbr_Base	  [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)               The [Base-PP](#abbr_Base
-  [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)             The [Base-PP](#abbr_Base	  [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)             The [Base-PP](#abbr_Base
-
+  ---------------------------------------------------------- ------------------------ |	  ---------------------------------------------------------- ------------------------
+  [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)   The [Base-PP](#abbr_Base |	  [O.CRYPTOGRAPHIC\_FUNCTIONS](#O.CRYPTOGRAPHIC_FUNCTIONS)   The [Base-PP](#abbr_Base
+  [O.AUTHENTICATION](#O.AUTHENTICATION)                      The [Base-PP](#abbr_Base |	  [O.AUTHENTICATION](#O.AUTHENTICATION)                      The [Base-PP](#abbr_Base
+  [O.FAIL\_SECURE](#O.FAIL_SECURE)                           The [Base-PP](#abbr_Base |	  [O.FAIL\_SECURE](#O.FAIL_SECURE)                           The [Base-PP](#abbr_Base
+  [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)               The [Base-PP](#abbr_Base |	  [O.SYSTEM\_MONITORING](#O.SYSTEM_MONITORING)               The [Base-PP](#abbr_Base
+  [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)             The [Base-PP](#abbr_Base |	  [O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)             The [Base-PP](#abbr_Base
+										      |
 The objectives for the [TOE](#abbr_TOE)\'s Operational Environment are		      |	The objectives for the [TOE](#abbr_TOE)\'s [OE](#abbr_OE) are consistent
 consistent with the [NDcPP](#abbr_NDcPP) based on the following			      |	with the [NDcPP](#abbr_NDcPP) based on the following rationale:
 rationale:									      |
@@ -1620,7 +1632,7 @@ Modified SFRs									      |	Modified [SFRs](#abbr_SFR)
 This [PP-Module](#abbr_PP-Module) modifies the						This [PP-Module](#abbr_PP-Module) modifies the
 [Base-PP](#abbr_Base-PP)\'s definition of the [SFR](#abbr_SFR) by adding		[Base-PP](#abbr_Base-PP)\'s definition of the [SFR](#abbr_SFR) by adding
 additional [AES](#abbr_AES) modes consistent with the standards				additional [AES](#abbr_AES) modes consistent with the standards
-referenced in the [Base-PP](#abbr_Base-PP), and by mandating specific			referenced in the [Base-PP](#abbr_Base-PP), and by mandating specific
+referenced in the [Base-PP](#abbr_Base-PP), and by mandating specific		      |	referenced in the [Base-PP](#abbr_Base-PP) and by mandating specific
 selections that are relevant to the technology type of the				selections that are relevant to the technology type of the
 [PP-Module](#abbr_PP-Module).								[PP-Module](#abbr_PP-Module).
 
@@ -1657,8 +1669,8 @@ functionality that is specific to this [PP-Module](#abbr_PP-Module).			functiona
 [FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)							[FCS\_CKM.1/WPA](#FCS_CKM.1/WPA)
 
 This [SFR](#abbr_SFR) defines additional cryptographic functionality not		This [SFR](#abbr_SFR) defines additional cryptographic functionality not
-defined in the [Base-PP](#abbr_Base-PP) but it implements this using the		defined in the [Base-PP](#abbr_Base-PP) but it implements this using the
-DRBG mechanism already defined in the [Base-PP](#abbr_Base-PP).				DRBG mechanism already defined in the [Base-PP](#abbr_Base-PP).
+defined in the [Base-PP](#abbr_Base-PP) but it implements this using the	      |	defined in the [Base-PP](#abbr_Base-PP), but it implements this using
+DRBG mechanism already defined in the [Base-PP](#abbr_Base-PP).			      |	the DRBG mechanism already defined in the [Base-PP](#abbr_Base-PP).
 
 [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)							[FCS\_CKM.2/GTK](#FCS_CKM.2/GTK)
 
@@ -1730,7 +1742,7 @@ Selection-based SFRs								      |	Selection-based [SFRs](#abbr_SFR)
 This [SFR](#abbr_SFR) defines the implementation of RadSec and the peer			This [SFR](#abbr_SFR) defines the implementation of RadSec and the peer
 authentication method that it uses. This relies on the [TLS](#abbr_TLS)			authentication method that it uses. This relies on the [TLS](#abbr_TLS)
 requirements defined by the [Base-PP](#abbr_Base-PP) and may also use			requirements defined by the [Base-PP](#abbr_Base-PP) and may also use
-the X.509 certificate validation methods specified in the				the X.509 certificate validation methods specified in the
+the X.509 certificate validation methods specified in the			      |	the X.509v3 certificate validation methods specified in the
 [Base-PP](#abbr_Base-PP), depending on the selected peer authentication			[Base-PP](#abbr_Base-PP), depending on the selected peer authentication
 method.											method.
 
@@ -1738,7 +1750,7 @@ method.											method.
 
 This [SFR](#abbr_SFR) defines the implementation of RadSec when				This [SFR](#abbr_SFR) defines the implementation of RadSec when
 pre-shared key authentication is used. This functionality is outside the		pre-shared key authentication is used. This functionality is outside the
-original scope of the [Base-PP](#abbr_Base-PP) but it relies on the			original scope of the [Base-PP](#abbr_Base-PP) but it relies on the
+original scope of the [Base-PP](#abbr_Base-PP) but it relies on the		      |	original scope of the [Base-PP](#abbr_Base-PP), but it relies on the
 [TLS](#abbr_TLS) client protocol implementation, cryptographic				[TLS](#abbr_TLS) client protocol implementation, cryptographic
 algorithms, and random bit generation functions defined by the				algorithms, and random bit generation functions defined by the
 [Base-PP](#abbr_Base-PP).								[Base-PP](#abbr_Base-PP).
@@ -1747,10 +1759,10 @@ algorithms, and random bit generation functions defined by the				algorithms, an
 
 This [SFR](#abbr_SFR) defines the implementation of RadSec when				This [SFR](#abbr_SFR) defines the implementation of RadSec when
 pre-shared key authentication with RSA is used. This functionality is			pre-shared key authentication with RSA is used. This functionality is
-outside the original scope of the [Base-PP](#abbr_Base-PP) but it relies		outside the original scope of the [Base-PP](#abbr_Base-PP) but it relies
-on the [TLS](#abbr_TLS) client protocol implementation, cryptographic			on the [TLS](#abbr_TLS) client protocol implementation, cryptographic
-algorithms, and random bit generation functions defined by the				algorithms, and random bit generation functions defined by the
-[Base-PP](#abbr_Base-PP).								[Base-PP](#abbr_Base-PP).
+outside the original scope of the [Base-PP](#abbr_Base-PP) but it relies	      |	outside the original scope of the [Base-PP](#abbr_Base-PP), but it
+on the [TLS](#abbr_TLS) client protocol implementation, cryptographic		      |	relies on the [TLS](#abbr_TLS) client protocol implementation,
+algorithms, and random bit generation functions defined by the			      |	cryptographic algorithms, and random bit generation functions defined by
+[Base-PP](#abbr_Base-PP).							      |	the [Base-PP](#abbr_Base-PP).
 
 [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)							[FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)
 
@@ -2091,13 +2103,13 @@ text-based and bit-based pre-shared keys.]{.note}				      |	[FCS\_RADSEC\_EXT.1
 
 For the length of the text-based pre-shared keys, a common length (22			For the length of the text-based pre-shared keys, a common length (22
 characters) is required to help promote interoperability. If other			characters) is required to help promote interoperability. If other
-lengths are supported they should be listed in the assignment; this			lengths are supported they should be listed in the assignment; this
+lengths are supported they should be listed in the assignment; this		      |	lengths are supported, they should be listed in the assignment; this
 assignment can also specify a range of values (e.g., \"lengths from 5 to		assignment can also specify a range of values (e.g., \"lengths from 5 to
 55 characters\") as well.								55 characters\") as well.
 
 For [FIA\_PSK\_EXT.1.3](#FIA_PSK_EXT.1.3), the [ST](#abbr_ST) author			For [FIA\_PSK\_EXT.1.3](#FIA_PSK_EXT.1.3), the [ST](#abbr_ST) author
 specifies whether the [TSF](#abbr_TSF) merely accepts bit-based				specifies whether the [TSF](#abbr_TSF) merely accepts bit-based
-pre-shared keys, or is capable of generating them. If it generates them,		pre-shared keys, or is capable of generating them. If it generates them,
+pre-shared keys, or is capable of generating them. If it generates them,	      |	pre-shared keys or is capable of generating them. If it generates them,
 the requirement specifies that they must be generated using the RBG		      |	the requirement specifies that they must be generated using the
 provided by the [TOE](#abbr_TOE).						      |	[RBG](#abbr_RBG) provided by the [TOE](#abbr_TOE).
 :::											:::
@@ -2302,8 +2314,8 @@ Dependencies to: FMT\_SMF.1 Specification of Management Functions			Dependencies
 
 #### FMT\_SMR\_EXT.1.1 {#ext-comp-FMT_SMR_EXT.1.1}					#### FMT\_SMR\_EXT.1.1 {#ext-comp-FMT_SMR_EXT.1.1}
 
-The [TSF](#abbr_TSF) shall ensure that the ability to remotely				The [TSF](#abbr_TSF) shall ensure that the ability to remotely
-administer the [TOE](#abbr_TOE) from a wireless client shall be disabled		administer the [TOE](#abbr_TOE) from a wireless client shall be disabled
+The [TSF](#abbr_TSF) shall ensure that the ability to remotely			      |	The [TSF](#abbr_TSF) shall ensure that the ability to administer
+administer the [TOE](#abbr_TOE) from a wireless client shall be disabled	      |	remotely the [TOE](#abbr_TOE) from a wireless client shall be disabled
 by default.										by default.
 :::											:::
 :::											:::
@@ -2357,9 +2369,9 @@ Hierarchical to: No other components.							Hierarchical to: No other components
 
 Dependencies to: FCS\_TLSC\_EXT.1 [TLS](#abbr_TLS) Client Protocol		      |	Dependencies to: FCS\_TLSC\_EXT.1 [TLS](#abbr_TLS) Client Protocol\
 										      |	[FIA\_PSK\_EXT.1]{.no-link} Pre-Shared Key Composition\
-[FIA\_PSK\_EXT.1]{.no-link} Pre-Shared Key Composition				      <
+[FIA\_PSK\_EXT.1]{.no-link} Pre-Shared Key Composition				      |	FIA\_X509\_EXT.1 X.509v3 Certificate Validation
 										      <
-FIA\_X509\_EXT.1 X.509 Certificate Validation						FIA\_X509\_EXT.1 X.509 Certificate Validation
+FIA\_X509\_EXT.1 X.509 Certificate Validation					      <
 
 #### FCS\_RADSEC\_EXT.1.1 {#ext-comp-FCS_RADSEC_EXT.1.1}				#### FCS\_RADSEC\_EXT.1.1 {#ext-comp-FCS_RADSEC_EXT.1.1}
 
@@ -2425,7 +2437,7 @@ Hierarchical to: No other components.							Hierarchical to: No other components
 
 Dependencies to: [FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) RadSec using			Dependencies to: [FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2) RadSec using
 Pre-Shared Keys									      |	Pre-Shared Keys\
-										      |	[FIA\_X509\_EXT.1]{.no-link} X.509 Certificate Validation\
+										      |	[FIA\_X509\_EXT.1]{.no-link} X.509v3 Certificate Validation\
 [FIA\_X509\_EXT.1]{.no-link} X.509 Certificate Validation			      <
 
 #### FCS\_RADSEC\_EXT.3.1 {#ext-comp-FCS_RADSEC_EXT.3.1}				#### FCS\_RADSEC\_EXT.3.1 {#ext-comp-FCS_RADSEC_EXT.3.1}
@@ -2476,13 +2488,13 @@ implemented by all components. The following categories are defined in		      |	
 order to specify when each [SFR](#abbr_SFR) must be implemented by a		      |	are defined in order to specify when each [SFR](#abbr_SFR) must be
 component:									      |	implemented by a component:
 
--   **All Components (\"All\")** - All components that comprise the			-   **All Components (\"All\")** - All components that comprise the
+-   **All Components (\"All\")** - All components that comprise the		      |	-   **All Components (\"All\")** ---All components that comprise the
     distributed [TOE](#abbr_TOE) must independently satisfy the				    distributed [TOE](#abbr_TOE) must independently satisfy the
     requirement.									    requirement.
--   **At least one Component (\"One\")** - This requirement must be			-   **At least one Component (\"One\")** - This requirement must be
+-   **At least one Component (\"One\")** - This requirement must be		      |	-   **At least one Component (\"One\")** ---This requirement must be
     fulfilled by at least one component within the distributed				    fulfilled by at least one component within the distributed
     [TOE](#abbr_TOE).									    [TOE](#abbr_TOE).
--   **Feature Dependent (\"Feature Dependent\")** - These requirements			-   **Feature Dependent (\"Feature Dependent\")** - These requirements
+-   **Feature Dependent (\"Feature Dependent\")** - These requirements		      |	-   **Feature Dependent (\"Feature Dependent\")** --- These requirements
     will only be fulfilled where the feature is implemented by the			    will only be fulfilled where the feature is implemented by the
     distributed [TOE](#abbr_TOE) component (note that the requirement to		    distributed [TOE](#abbr_TOE) component (note that the requirement to
     meet the [PP-Module](#abbr_PP-Module) as a whole requires that at			    meet the [PP-Module](#abbr_PP-Module) as a whole requires that at
@@ -2507,7 +2519,8 @@ The table below specifies how each of the SFRs in this				      |	The table belo
   [FTP\_ITC.1/Client](#FTP_ITC.1/Client)               Inter-TSF Trusted Channel ([WL	  [FTP\_ITC.1/Client](#FTP_ITC.1/Client)               Inter-TSF Trusted Channel ([WL
   [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)             Cryptographic Key Distribution	  [FCS\_CKM.2/DISTRIB](#FCS_CKM.2/DISTRIB)             Cryptographic Key Distribution
   [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec                        	  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec                        
-  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec using Pre-Shared Keys  	  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec using Pre-Shared Keys  
+  [FCS\_RADSEC\_EXT.1](#FCS_RADSEC_EXT.1)              RadSec using Pre-Shared Keys   |	  [FCS\_RADSEC\_EXT.2](#FCS_RADSEC_EXT.2)              RadSec using Pre-Shared Keys  
+										      >	  [FCS\_RADSEC\_EXT.3](#FCS_RADSEC_EXT.3)              RadSec using Pre-Shared Keys a
   [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)                    Pre-Shared Key Composition    	  [FIA\_PSK\_EXT.1](#FIA_PSK_EXT.1)                    Pre-Shared Key Composition    
   ---------------------------------------------------- ------------------------------	  ---------------------------------------------------- ------------------------------
 
@@ -2521,47 +2534,45 @@ outlined in the [Base-PP](#abbr_Base-PP).						outlined in the [Base-PP](#abbr_B
 Appendix G - Acronyms {#acronyms .indexable data-level="A"}				Appendix G - Acronyms {#acronyms .indexable data-level="A"}
 =====================									=====================
 
-  Acronym                                                                      Meanin	  Acronym                                                                      Meanin
-  ---------------------------------------------------------------------------- ------ |	  ---------------------------------------------------------------------------- ------
-  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan	  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan
-  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces |	  [[AP](#abbr_AP)]{#abbr_AP .term data-plural="APs"}                           [Acces
-  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces	  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces
-  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base  |	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term data-plural="Base-PPs"}       [Base 
-  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe	  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe
-  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo	  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo
-  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count |	  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count
-  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM]	  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM]
-  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo	  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo
-  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count	  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count
-  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten	  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten
-  [[EP](#abbr_EP)]{#abbr_EP .term}                                             [Exten <
-  [[FP](#abbr_FP)]{#abbr_FP .term}                                             [Funct <
-  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi	  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi
-  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group	  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group
-  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter	  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter
-  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media |	  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media
-  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo	  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo
-  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera	  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera
-  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port 	  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port 
-  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw	  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw
-  [[PP](#abbr_PP)]{#abbr_PP .term}                                             [Prote |	  [[PP](#abbr_PP)]{#abbr_PP .term data-plural="PPs"}                           [Prote
-  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote	  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote
-  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote	  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote
-  [[SAR](#abbr_SAR)]{#abbr_SAR .term}                                          [Secur |	  [Pairwise Transient Key ([PTK](#abbr_PTK))]{#abbr_PTK .term}                 [Pairw
-  [[SFR](#abbr_SFR)]{#abbr_SFR .term}                                          [Secur |	  [[RADIUS](#abbr_RADIUS)]{#abbr_RADIUS .term}                                 [Remot
-										      >	  [[RBG](#abbr_RBG)]{#abbr_RBG .term}                                          [Rando
-										      >	  [[SAR](#abbr_SAR)]{#abbr_SAR .term data-plural="SARs"}                       [Secur
-										      >	  [[SFR](#abbr_SFR)]{#abbr_SFR .term data-plural="SFRs"}                       [Secur
-  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi	  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi
-  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur |	  [[ST](#abbr_ST)]{#abbr_ST .term data-plural="STs"}                           [Secur
-  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans	  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans
-  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe |	  [[TOE](#abbr_TOE)]{#abbr_TOE .term data-plural="TOEs"}                       [Targe
-  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]	  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE]
-  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF] |	  [TSF Interface ([TSFI](#abbr_TSFI))]{#abbr_TSFI .term data-plural="TSFIs"}   [[TSF]
-  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE] |	  [TOE Summary Specification ([TSS](#abbr_TSS))]{#abbr_TSS .term}              [[TOE]
-  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel	  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel
-  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi	  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi
-  [[cPP](#abbr_cPP)]{#abbr_cPP .term data-plural="cPPs"}                       [Colla	  [[cPP](#abbr_cPP)]{#abbr_cPP .term data-plural="cPPs"}                       [Colla
+  Acronym                                                                      Meanin |	  Acronym                                                                            
+  ---------------------------------------------------------------------------- ------ |	  -----------------------------------------------------------------------------------
+  [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan |	  [[AES](#abbr_AES)]{#abbr_AES .term}                                                
+  [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces |	  [[AP](#abbr_AP)]{#abbr_AP .term data-plural="APs"}                                 
+  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces |	  [[AS](#abbr_AS)]{#abbr_AS .term}                                                   
+  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base  |	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term data-plural="Base-PPs"}             
+  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe |	  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                                
+  [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo |	  [[CC](#abbr_CC)]{#abbr_CC .term}                                                   
+  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                          [Count |	  [[CCM](#abbr_CCM)]{#abbr_CCM .term}                                                
+  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                       [[CCM] |	  [[CCMP](#abbr_CCMP)]{#abbr_CCMP .term}                                             
+  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                          [Commo |	  [[CEM](#abbr_CEM)]{#abbr_CEM .term}                                                
+  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                          [Count |	  [[CTR](#abbr_CTR)]{#abbr_CTR .term}                                                
+  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                          [Exten |	  [[EAP](#abbr_EAP)]{#abbr_EAP .term}                                                
+  [[EP](#abbr_EP)]{#abbr_EP .term}                                             [Exten |	  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                                
+  [[FP](#abbr_FP)]{#abbr_FP .term}                                             [Funct |	  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                                
+  [[GCM](#abbr_GCM)]{#abbr_GCM .term}                                          [Galoi |	  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                          
+  [[GTK](#abbr_GTK)]{#abbr_GTK .term}                                          [Group |	  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                                
+  [[IPsec](#abbr_IPsec)]{#abbr_IPsec .term}                                    [Inter |	  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                          
+  [[MAC](#abbr_MAC)]{#abbr_MAC .term}                                          [Media |	  [[OE](#abbr_OE)]{#abbr_OE .term}                                                   
+  [[NDcPP](#abbr_NDcPP)]{#abbr_NDcPP .term}                                    [Netwo |	  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                                
+  [[OE](#abbr_OE)]{#abbr_OE .term}                                             [Opera |	  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                                
+  [[PAE](#abbr_PAE)]{#abbr_PAE .term}                                          [Port  |	  [[PP](#abbr_PP)]{#abbr_PP .term data-plural="PPs"}                                 
+  [[PMK](#abbr_PMK)]{#abbr_PMK .term}                                          [Pairw |	  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}         
+  [[PP](#abbr_PP)]{#abbr_PP .term}                                             [Prote |	  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                              
+  [[PP-Configuration](#abbr_PP-Configuration)]{#abbr_PP-Configuration .term}   [Prote |	  [Pairwise Transient Key ([PTK](#abbr_PTK))]{#abbr_PTK .term}                       
+  [[PP-Module](#abbr_PP-Module)]{#abbr_PP-Module .term}                        [Prote |	  [[RADIUS](#abbr_RADIUS)]{#abbr_RADIUS .term}                                       
+  [[SAR](#abbr_SAR)]{#abbr_SAR .term}                                          [Secur |	  [[RBG](#abbr_RBG)]{#abbr_RBG .term}                                                
+  [[SFR](#abbr_SFR)]{#abbr_SFR .term}                                          [Secur |	  [[SAR](#abbr_SAR)]{#abbr_SAR .term data-plural="SARs"}                             
+  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                       [Servi |	  [[SFR](#abbr_SFR)]{#abbr_SFR .term data-plural="SFRs"}                             
+  [[ST](#abbr_ST)]{#abbr_ST .term}                                             [Secur |	  [[SSID](#abbr_SSID)]{#abbr_SSID .term}                                             
+  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                          [Trans |	  [[ST](#abbr_ST)]{#abbr_ST .term data-plural="STs"}                                 
+  [[TOE](#abbr_TOE)]{#abbr_TOE .term}                                          [Targe |	  [[TLS](#abbr_TLS)]{#abbr_TLS .term}                                                
+  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                          [[TOE] |	  [[TOE](#abbr_TOE)]{#abbr_TOE .term data-plural="TOEs"}                             
+  [[TSFI](#abbr_TSFI)]{#abbr_TSFI .term data-plural="TSFIs"}                   [[TSF] |	  [[TSF](#abbr_TSF)]{#abbr_TSF .term}                                                
+  [[TSS](#abbr_TSS)]{#abbr_TSS .term}                                          [[TOE] |	  [TSF Interface ([TSFI](#abbr_TSFI))]{#abbr_TSFI .term data-plural="TSFIs"}         
+  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                       [Wirel |	  [TOE Summary Specification ([TSS](#abbr_TSS))]{#abbr_TSS .term}                    
+  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                          [Wi-Fi |	  [[WLAN](#abbr_WLAN)]{#abbr_WLAN .term}                                             
+  [[cPP](#abbr_cPP)]{#abbr_cPP .term data-plural="cPPs"}                       [Colla |	  [[WPA](#abbr_WPA)]{#abbr_WPA .term}                                                
+										      >	  [Collaborative Protection Profile ([cPP](#abbr_cPP))]{#abbr_cPP .term data-plural="
 
 Appendix H - Bibliography {#appendix-bibliography .indexable data-level="A"}		Appendix H - Bibliography {#appendix-bibliography .indexable data-level="A"}
 =========================								=========================
