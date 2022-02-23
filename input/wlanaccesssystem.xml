@@ -51,19 +51,25 @@
       This Base-PP is valid because a WLAN AS is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
       A network device typically implements this functionality.
       </h:p>
+      <!-- 
+	   post-process.py cannot find find "access points" and thus will attempt to define
+	   AP when it finds it.
+      -->
+      <h:span style="display:none">Access Point (AP)</h:span>
       <h:p>
       A TOE that conforms to a PP-Configuration containing this PP-Module must be a ‘Distributed TOE’ as
-      defined in the NDcPP. The expectation for this PP-Module is that a WLAN AS must include a controller and one or more access points (APs).
+      defined in the NDcPP.
+      The expectation for this PP-Module is that a WLAN AS must include a controller and one or more access points (APs).
       </h:p>
       
     </sec:Overview>
     <tech-terms>
       <suppress>Functional Package,Extended Package</suppress>
       <term abbr="AES"   full="Advanced Encryption Standard"/>
-      <term abbr="AP"    full="Access Point" plural="APs"> 
+      <term abbr="AP"    full="Access Point" plural="APs" def-first="false"> 
         A device that provides the network interface that enables
         wireless client hosts to access a wired network. </term>
-      <term abbr="AS"    full="Access System"/>
+      <term abbr="AS"    full="Access System" plural="ASes"/>
       <term abbr="CBC"   full="Cipher Block Chaining"/>
       <term abbr="CCM"   full="Counter Mode with CBC-Message Authentication Code"/>
       <term abbr="CCMP"  full="CCM mode Protocol"/>
@@ -94,7 +100,7 @@
     <sec:Compliant_Targets_of_Evaluation>
       <sec:TOE_Boundary>
 	<h:p>
-        This PP-Module specifically addresses WLAN (IEEE 802.11) ASs. A compliant WLAN AS is a
+        This PP-Module specifically addresses WLAN (IEEE 802.11) ASes. A compliant WLAN AS is a
         system composed of hardware and software that is connected to a network and has an infrastructure
         role in the overall enterprise network. In particular, a WLAN AS establishes a secure wireless
         (IEEE 802.11) link that provides an authenticated and encrypted path to an enterprise network and
