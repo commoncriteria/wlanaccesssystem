@@ -66,7 +66,7 @@
     <tech-terms>
       <suppress>Functional Package,Extended Package</suppress>
       <term abbr="AES"   full="Advanced Encryption Standard"/>
-      <term abbr="AP"    full="Access Point" plural="APs" def-first="false"> 
+      <term abbr="AP"    full="Access Point" plural="APs">
         A device that provides the network interface that enables
         wireless client hosts to access a wired network. </term>
       <term abbr="AS"    full="Access System" plural="ASes"/>
