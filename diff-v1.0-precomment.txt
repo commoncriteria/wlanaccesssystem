@@ -104,13 +104,15 @@ establishes an encrypted IEEE 802.11 link that protects wireless data in		establ
 transit from disclosure and modification. This is functionality that		      |	transit from disclosure and modification. A network device typically
 typically will be implemented by a network device.				      |	implements this functionality.
 
-A [TOE](#abbr_TOE) that conforms to a						      |	A [TOE](#abbr_TOE) that conforms to a Protection Profile Configuration
-[PP-Configuration](#abbr_PP-Configuration) containing this			      |	([PP-Configuration](#abbr_PP-Configuration)) containing this
+A [TOE](#abbr_TOE) that conforms to a						      |	[Access Point (AP)]{style="display:none"}
+[PP-Configuration](#abbr_PP-Configuration) containing this			      |
+										      >	A [TOE](#abbr_TOE) that conforms to a Protection Profile Configuration
+										      >	([PP-Configuration](#abbr_PP-Configuration)) containing this
 [PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as		[PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as
 defined in the [NDcPP](#abbr_NDcPP). The expectation for this				defined in the [NDcPP](#abbr_NDcPP). The expectation for this
 [PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) access system		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
-must include a controller and one or more access points (APs).			      |	must include a controller and one or more access points (Access Points
-										      >	([APs](#abbr_AP))).
+must include a controller and one or more access points (APs).			      |	must include a controller and one or more access points
+										      >	([APs](#abbr_AP)).
 
 										      >	::: {.no-link}
 1.2 Terms {#glossary .indexable data-level="2"}						1.2 Terms {#glossary .indexable data-level="2"}
@@ -259,14 +261,14 @@ this document.										this document.
 ### 1.3.1 TOE Boundary {#TOE_Boundary .indexable data-level="3"}			### 1.3.1 TOE Boundary {#TOE_Boundary .indexable data-level="3"}
 
 This [PP-Module](#abbr_PP-Module) specifically addresses				This [PP-Module](#abbr_PP-Module) specifically addresses
-[WLAN](#abbr_WLAN) (IEEE 802.11) Access Systems. A compliant			      |	[WLAN](#abbr_WLAN) (IEEE 802.11) ASs. A compliant [WLAN](#abbr_WLAN)
-[WLAN](#abbr_WLAN) Access System is a system composed of hardware and		      |	[AS](#abbr_AS) is a system composed of hardware and software that is
-software that is connected to a network and has an infrastructure role		      |	connected to a network and has an infrastructure role in the overall
-in the overall enterprise network. In particular, a [WLAN](#abbr_WLAN)		      |	enterprise network. In particular, a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
-Access System establishes a secure wireless (IEEE 802.11) link that		      |	establishes a secure wireless (IEEE 802.11) link that provides an
-provides an authenticated and encrypted path to an enterprise network		      |	authenticated and encrypted path to an enterprise network and thereby
-and thereby decreases the risk of exposure of information transiting		      |	decreases the risk of exposure of information transiting "over-the-air".
-"over-the-air".									      <
+[WLAN](#abbr_WLAN) (IEEE 802.11) Access Systems. A compliant			      |	[WLAN](#abbr_WLAN) (IEEE 802.11) [ASes](#abbr_AS). A compliant
+[WLAN](#abbr_WLAN) Access System is a system composed of hardware and		      |	[WLAN](#abbr_WLAN) [AS](#abbr_AS) is a system composed of hardware and
+software that is connected to a network and has an infrastructure role			software that is connected to a network and has an infrastructure role
+in the overall enterprise network. In particular, a [WLAN](#abbr_WLAN)			in the overall enterprise network. In particular, a [WLAN](#abbr_WLAN)
+Access System establishes a secure wireless (IEEE 802.11) link that		      |	[AS](#abbr_AS) establishes a secure wireless (IEEE 802.11) link that
+provides an authenticated and encrypted path to an enterprise network			provides an authenticated and encrypted path to an enterprise network
+and thereby decreases the risk of exposure of information transiting			and thereby decreases the risk of exposure of information transiting
+"over-the-air".										"over-the-air".
 
 Since this [PP-Module](#abbr_PP-Module) extends the					Since this [PP-Module](#abbr_PP-Module) extends the
 [NDcPP](#abbr_NDcPP), conformant TOEs are obligated to implement the		      |	[NDcPP](#abbr_NDcPP), conformant [TOEs](#abbr_TOE) are obligated to
@@ -2538,7 +2540,7 @@ Appendix G - Acronyms {#acronyms .indexable data-level="A"}				Appendix G - Acro
   ---------------------------------------------------------------------------- ------ |	  -----------------------------------------------------------------------------------
   [[AES](#abbr_AES)]{#abbr_AES .term}                                          [Advan |	  [[AES](#abbr_AES)]{#abbr_AES .term}                                                
   [[AP](#abbr_AP)]{#abbr_AP .term}                                             [Acces |	  [[AP](#abbr_AP)]{#abbr_AP .term data-plural="APs"}                                 
-  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces |	  [[AS](#abbr_AS)]{#abbr_AS .term}                                                   
+  [[AS](#abbr_AS)]{#abbr_AS .term}                                             [Acces |	  [[AS](#abbr_AS)]{#abbr_AS .term data-plural="ASes"}                                
   [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term}                              [Base  |	  [[Base-PP](#abbr_Base-PP)]{#abbr_Base-PP .term data-plural="Base-PPs"}             
   [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                          [Ciphe |	  [[CBC](#abbr_CBC)]{#abbr_CBC .term}                                                
   [[CC](#abbr_CC)]{#abbr_CC .term}                                             [Commo |	  [[CC](#abbr_CC)]{#abbr_CC .term}                                                   
