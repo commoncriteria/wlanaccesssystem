@@ -89,25 +89,27 @@ Bibliography](#appendix-bibliography)							Bibliography](#appendix-bibliography
 ------------										------------
 
 The scope of this [PP-Module](#abbr_PP-Module) is to describe the			The scope of this [PP-Module](#abbr_PP-Module) is to describe the
-security functionality of a Wireless Local Area Network				      |	security functionality of a Wireless Local Area Network (WLAN) Access
-([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to	      |	System (AS) in terms of [\[CC\]](#bibCC) and to define functional and
-define functional and assurance requirements for such products. This		      |	assurance requirements for such products. This
-[PP-Module](#abbr_PP-Module) is intended for use with the following		      |	[PP-Module](#abbr_PP-Module) is intended for use with the following Base
-Base-PPs:									      |	Protection Profile ([Base-PP](#abbr_Base-PP)):
-
--   Collaborative Protection Profile for Network Devices			      |	-   Network Device collaborative Protection Profile (NDcPP) Version 2.2e
-    ([NDcPP](#abbr_NDcPP)) Version 2.2e						      <
+security functionality of a Wireless Local Area Network				      |	security functionality of a Wireless Local Area Network (Wireless Local
+([WLAN](#abbr_WLAN)) Access System in terms of \[[CC](#abbr_CC)\] and to	      |	Area Network ([WLAN](#abbr_WLAN))) Access System (Access System
+define functional and assurance requirements for such products. This		      |	([AS](#abbr_AS))) in terms of [\[CC\]](#bibCC) and to define functional
+[PP-Module](#abbr_PP-Module) is intended for use with the following		      |	and assurance requirements for such products. This
+Base-PPs:									      |	[PP-Module](#abbr_PP-Module) is intended for use with the following Base
+										      |	Protection Profile ([Base-PP](#abbr_Base-PP)):
+-   Collaborative Protection Profile for Network Devices			      |
+    ([NDcPP](#abbr_NDcPP)) Version 2.2e						      |	-   Network Device collaborative Protection Profile (Network Device
+										      >	    collaborative Protection Profile ([NDcPP](#abbr_NDcPP))) Version
+										      >	    2.2e
 
 This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)			This [Base-PP](#abbr_Base-PP) is valid because a [WLAN](#abbr_WLAN)
 Access System is a device at the edge of a private network that			      |	[AS](#abbr_AS) is a device at the edge of a private network that
 establishes an encrypted IEEE 802.11 link that protects wireless data in		establishes an encrypted IEEE 802.11 link that protects wireless data in
 transit from disclosure and modification. This is functionality that		      |	transit from disclosure and modification. A network device typically
 typically will be implemented by a network device.				      |	implements this functionality.
+										      >
+										      >	[Access Point (Access Point ([AP](#abbr_AP)))]{style="display:none"}
 
-A [TOE](#abbr_TOE) that conforms to a						      |	[Access Point (AP)]{style="display:none"}
-[PP-Configuration](#abbr_PP-Configuration) containing this			      |
-										      >	A [TOE](#abbr_TOE) that conforms to a Protection Profile Configuration
-										      >	([PP-Configuration](#abbr_PP-Configuration)) containing this
+A [TOE](#abbr_TOE) that conforms to a						      |	A [TOE](#abbr_TOE) that conforms to a Protection Profile Configuration
+[PP-Configuration](#abbr_PP-Configuration) containing this			      |	([PP-Configuration](#abbr_PP-Configuration)) containing this
 [PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as		[PP-Module](#abbr_PP-Module) must be a 'Distributed [TOE](#abbr_TOE)' as
 defined in the [NDcPP](#abbr_NDcPP). The expectation for this				defined in the [NDcPP](#abbr_NDcPP). The expectation for this
 [PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) access system		      |	[PP-Module](#abbr_PP-Module) is that a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
@@ -377,8 +379,9 @@ conformance and hence dependence of this [PP-Module](#abbr_PP-Module) on		confor
 the [NDcPP](#abbr_NDcPP). Note also that while the [NDcPP](#abbr_NDcPP)			the [NDcPP](#abbr_NDcPP). Note also that while the [NDcPP](#abbr_NDcPP)
 contains only threats to the ability of the [TOE](#abbr_TOE) to provide			contains only threats to the ability of the [TOE](#abbr_TOE) to provide
 its security functions, this [PP-Module](#abbr_PP-Module) addresses only		its security functions, this [PP-Module](#abbr_PP-Module) addresses only
-threats to resources in the operational environment. Together the		      |	threats to resources in the Operational Environment (OE). Together the
-threats of the [NDcPP](#abbr_NDcPP) and those defined in this				threats of the [NDcPP](#abbr_NDcPP) and those defined in this
+threats to resources in the operational environment. Together the		      |	threats to resources in the Operational Environment (Operational
+threats of the [NDcPP](#abbr_NDcPP) and those defined in this			      |	Environment ([OE](#abbr_OE))). Together the threats of the
+										      >	[NDcPP](#abbr_NDcPP) and those defined in this
 [PP-Module](#abbr_PP-Module) define the comprehensive set of security			[PP-Module](#abbr_PP-Module) define the comprehensive set of security
 threats addressed by a [WLAN](#abbr_WLAN) Access System				      |	threats addressed by a [WLAN](#abbr_WLAN) [AS](#abbr_AS)
 [TOE](#abbr_TOE).									[TOE](#abbr_TOE).
@@ -432,15 +435,15 @@ T.REPLAY\_ATTACK									T.REPLAY\_ATTACK
 3.2 Assumptions {#assumption .indexable data-level="2"}				      |	3.2 Assumptions {#Assumptions .indexable data-level="2"}
 ---------------										---------------
 
-These assumptions are made on the Operational Environment in order to be	      |	These assumptions are made on the [OE](#abbr_OE) in order to be able to
-able to ensure that the security functionality specified in the			      |	ensure that the security functionality specified in the
-[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If		[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If
-the [TOE](#abbr_TOE) is placed in an Operational Environment that does		      |	the [TOE](#abbr_TOE) is placed in an [OE](#abbr_OE) that does not meet
-not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able		      |	these assumptions, the [TOE](#abbr_TOE) may no longer be able to provide
-to provide all of its security functionality.					      |	all of its security functionality. All assumptions for the
-										      |	[OE](#abbr_OE) of the [Base-PP](#abbr_Base-PP) also apply to this
+These assumptions are made on the Operational Environment in order to be	      |	These assumptions are made on the Operational Environment
+able to ensure that the security functionality specified in the			      |	([OE](#abbr_OE)) in order to be able to ensure that the security
+[PP-Module](#abbr_PP-Module) can be provided by the [TOE](#abbr_TOE). If	      |	functionality specified in the [PP-Module](#abbr_PP-Module) can be
+the [TOE](#abbr_TOE) is placed in an Operational Environment that does		      |	provided by the [TOE](#abbr_TOE). If the [TOE](#abbr_TOE) is placed in
+not meet these assumptions, the [TOE](#abbr_TOE) may no longer be able		      |	an [OE](#abbr_OE) that does not meet these assumptions, the
+to provide all of its security functionality.					      |	[TOE](#abbr_TOE) may no longer be able to provide all of its security
+										      |	functionality. All assumptions for the [OE](#abbr_OE) of the
 All assumptions for the operational environment of the				      <
-[Base-PP](#abbr_Base-PP) also apply to this					      <
+[Base-PP](#abbr_Base-PP) also apply to this						[Base-PP](#abbr_Base-PP) also apply to this
 [PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still			[PP-Module](#abbr_PP-Module). A.NO\_THRU\_TRAFFIC\_PROTECTION is still
 operative, but only for the interfaces in the [TOE](#abbr_TOE) that are			operative, but only for the interfaces in the [TOE](#abbr_TOE) that are
 defined by the [Base-PP](#abbr_Base-PP) and not the					defined by the [Base-PP](#abbr_Base-PP) and not the
@@ -1046,15 +1049,16 @@ the communications between the access point and the client once the		      |
 client has been authenticated. It refers to the derivation of the		      |	This requirement applies only to the keys that are generated or derived
 [GTK](#abbr_GTK) (through the RBG specified in this				      |	for the communications between the [AP](#abbr_AP) and the client once
 [PP-Module](#abbr_PP-Module)) as well as the derivation of the PTK from		      |	the client has been authenticated. It refers to the derivation of the
-the [PMK](#abbr_PMK), which is done using a random value generated by		      |	Group Temporal Key (GTK), through the Random Bit Generator (RBG)
-the RBG specified in this [PP-Module](#abbr_PP-Module), the HMAC		      |	specified in this [PP-Module](#abbr_PP-Module), as well as the
-function as specified in this [PP-Module](#abbr_PP-Module), as well as		      |	derivation of the Pairwise Transient Key (PTK) from the Pairwise Master
-other information. This is specified in IEEE 802.11-2016 primarily in		      |	Key (PMK), which is done using a random value generated by the
-chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).		      |	[RBG](#abbr_RBG) specified in this [PP-Module](#abbr_PP-Module), the
-										      >	HMAC function as specified in this [PP-Module](#abbr_PP-Module), as well
-										      >	as other information. This is specified in IEEE 802.11-2020, primarily
-										      >	in chapter 12. [FCS\_RBG\_EXT.1]{.no-link} is defined in the
-										      >	[NDcPP](#abbr_NDcPP).
+the [PMK](#abbr_PMK), which is done using a random value generated by		      |	Group Temporal Key (Group Temporal Key ([GTK](#abbr_GTK))), through the
+the RBG specified in this [PP-Module](#abbr_PP-Module), the HMAC		      |	Random Bit Generator (Random Bit Generator ([RBG](#abbr_RBG))) specified
+function as specified in this [PP-Module](#abbr_PP-Module), as well as		      |	in this [PP-Module](#abbr_PP-Module), as well as the derivation of the
+other information. This is specified in IEEE 802.11-2016 primarily in		      |	Pairwise Transient Key (Pairwise Transient Key ([PTK](#abbr_PTK))) from
+chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).		      |	the Pairwise Master Key (Pairwise Master Key ([PMK](#abbr_PMK))), which
+										      >	is done using a random value generated by the [RBG](#abbr_RBG) specified
+										      >	in this [PP-Module](#abbr_PP-Module), the HMAC function as specified in
+										      >	this [PP-Module](#abbr_PP-Module), as well as other information. This is
+										      >	specified in IEEE 802.11-2020, primarily in chapter 12.
+										      >	[FCS\_RBG\_EXT.1]{.no-link} is defined in the [NDcPP](#abbr_NDcPP).
 :::											:::
 :::											:::
 :::											:::
@@ -1069,21 +1073,21 @@ chapter 11. FCS\_RBG\_EXT.1 is defined in the [NDcPP](#abbr_NDcPP).		      |	[RB
 :::											:::
 
 ::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall distribute **Group Temporal Key			      |	The [TSF](#abbr_TSF) shall distribute **[GTK](#abbr_GTK)** in accordance
-([GTK](#abbr_GTK))** in accordance with a specified cryptographic key		      |	with a specified cryptographic key distribution method: \[**selection**:
-distribution method: \[**selection**: *[AES](#abbr_AES) Key Wrap in an		      |	*[AES](#abbr_AES) Key Wrap in an EAPOL-Key frame*, *[AES](#abbr_AES) Key
-EAPOL-Key frame*, *[AES](#abbr_AES) Key Wrap with Padding in an			      |	Wrap with Padding in an EAPOL-Key frame*\] that meets the following:
-EAPOL-Key frame*\] that meets the following: \[*NIST SP 800-38F, IEEE		      |	\[*NIST SP 800-38F, IEEE 802.11-2020 for the packet format and timing
-802.11-2016 for the packet format and timing considerations*\] **and		      |	considerations*\] **and does not expose the cryptographic keys**.
-does not expose the cryptographic keys**.					      <
+The [TSF](#abbr_TSF) shall distribute **Group Temporal Key				The [TSF](#abbr_TSF) shall distribute **Group Temporal Key
+([GTK](#abbr_GTK))** in accordance with a specified cryptographic key			([GTK](#abbr_GTK))** in accordance with a specified cryptographic key
+distribution method: \[**selection**: *[AES](#abbr_AES) Key Wrap in an			distribution method: \[**selection**: *[AES](#abbr_AES) Key Wrap in an
+EAPOL-Key frame*, *[AES](#abbr_AES) Key Wrap with Padding in an				EAPOL-Key frame*, *[AES](#abbr_AES) Key Wrap with Padding in an
+EAPOL-Key frame*\] that meets the following: \[*NIST SP 800-38F, IEEE			EAPOL-Key frame*\] that meets the following: \[*NIST SP 800-38F, IEEE
+802.11-2016 for the packet format and timing considerations*\] **and		      |	802.11-2020 for the packet format and timing considerations*\] **and
+does not expose the cryptographic keys**.						does not expose the cryptographic keys**.
 
 ::: {.appnote}										::: {.appnote}
-[Application Note: ]{.note-header}[This requirement applies to the Group	      |	[Application Note: ]{.note-header}[This requirement applies to the
-Temporal Key ([GTK](#abbr_GTK)) that is generated by the			      |	[GTK](#abbr_GTK) that is generated by the [TOE](#abbr_TOE) for use in
-[TOE](#abbr_TOE) for use in broadcast and multicast messages to clients		      |	broadcast and multicast messages to clients to which it is connected.
-to which it is connected. 802.11-2016 specifies the format for the		      |	802.11-2020 specifies the format for the transfer as well as the fact
-transfer as well as the fact that it must be wrapped by the			      |	that it must be wrapped by the [AES](#abbr_AES) Key Wrap method
-[AES](#abbr_AES) Key Wrap method specified in NIST SP 800-38F.]{.note}		      |	specified in NIST SP 800-38F.]{.note}
+[Application Note: ]{.note-header}[This requirement applies to the Group		[Application Note: ]{.note-header}[This requirement applies to the Group
+Temporal Key ([GTK](#abbr_GTK)) that is generated by the				Temporal Key ([GTK](#abbr_GTK)) that is generated by the
+[TOE](#abbr_TOE) for use in broadcast and multicast messages to clients			[TOE](#abbr_TOE) for use in broadcast and multicast messages to clients
+to which it is connected. 802.11-2016 specifies the format for the		      |	to which it is connected. 802.11-2020 specifies the format for the
+transfer as well as the fact that it must be wrapped by the				transfer as well as the fact that it must be wrapped by the
+[AES](#abbr_AES) Key Wrap method specified in NIST SP 800-38F.]{.note}			[AES](#abbr_AES) Key Wrap method specified in NIST SP 800-38F.]{.note}
 :::											:::
 :::											:::
 :::											:::
@@ -1098,11 +1102,11 @@ transfer as well as the fact that it must be wrapped by the			      |	that it mu
 :::											:::
 
 ::: {.reqdesc}										::: {.reqdesc}
-The [TSF](#abbr_TSF) shall **receive the 802.11 Pairwise Master Key		      |	The [TSF](#abbr_TSF) shall **receive the 802.11 [PMK](#abbr_PMK)** in
-([PMK](#abbr_PMK))** in accordance with a specified cryptographic key		      |	accordance with a specified cryptographic key distribution method:
-distribution method: \[*from 802.1X Authorization Server*\] that meets		      |	\[*from 802.1X Authorization Server*\] that meets the following: \[*IEEE
-the following: \[*IEEE 802.11-2016*\] **and does not expose the			      |	802.11-2020*\] **and does not expose the cryptographic keys**.
-cryptographic keys**.								      <
+The [TSF](#abbr_TSF) shall **receive the 802.11 Pairwise Master Key			The [TSF](#abbr_TSF) shall **receive the 802.11 Pairwise Master Key
+([PMK](#abbr_PMK))** in accordance with a specified cryptographic key			([PMK](#abbr_PMK))** in accordance with a specified cryptographic key
+distribution method: \[*from 802.1X Authorization Server*\] that meets			distribution method: \[*from 802.1X Authorization Server*\] that meets
+the following: \[*IEEE 802.11-2016*\] **and does not expose the			      |	the following: \[*IEEE 802.11-2020*\] **and does not expose the
+cryptographic keys**.									cryptographic keys**.
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[ This requirement applies to the			[Application Note: ]{.note-header}[ This requirement applies to the
@@ -1134,7 +1138,8 @@ the [PMK](#abbr_PMK) will be protected. ]{.note}				      |	transfer of the [PMK
 
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port			The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port
-Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.			      |	Access Entity (PAE) in the "Authenticator" role.
+Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.			      |	Access Entity (Port Access Entity ([PAE](#abbr_PAE))) in the
+										      >	"Authenticator" role.
 :::											:::
 :::											:::
 
@@ -1614,15 +1619,16 @@ rationale:									      |
 ### 6.1.4 Consistency of Requirements {#conreq-ND .indexable data-level="3"}		### 6.1.4 Consistency of Requirements {#conreq-ND .indexable data-level="3"}
 
 This [PP-Module](#abbr_PP-Module) identifies several SFRs from the		      |	This [PP-Module](#abbr_PP-Module) identifies several [SFRs](#abbr_SFR)
-[NDcPP](#abbr_NDcPP) that are needed to support Wireless Local Area		      |	from the [NDcPP](#abbr_NDcPP) that are needed to support
-Network ([WLAN](#abbr_WLAN)) Access System functionality. This is		      |	[WLAN](#abbr_WLAN) Access System functionality. This is considered to be
-considered to be consistent because the functionality provided by the		      |	consistent because the functionality provided by the
+[NDcPP](#abbr_NDcPP) that are needed to support Wireless Local Area		      |	from the [NDcPP](#abbr_NDcPP) that are needed to support Wireless Local
+Network ([WLAN](#abbr_WLAN)) Access System functionality. This is		      |	Area Network ([WLAN](#abbr_WLAN)) Access System functionality. This is
+considered to be consistent because the functionality provided by the			considered to be consistent because the functionality provided by the
 [NDcPP](#abbr_NDcPP) is being used for its intended purpose. The			[NDcPP](#abbr_NDcPP) is being used for its intended purpose. The
 [PP-Module](#abbr_PP-Module) also identifies a number of modified SFRs		      |	[PP-Module](#abbr_PP-Module) also identifies a number of modified
 from the [NDcPP](#abbr_NDcPP) that are used entirely to provide			      |	[SFRs](#abbr_SFR) from the [NDcPP](#abbr_NDcPP) that are used entirely
-functionality for Wireless Local Area Network ([WLAN](#abbr_WLAN))		      |	to provide functionality for [WLAN](#abbr_WLAN) Access System. The
-Access System. The rationale for why this does not conflict with the		      |	rationale for why this does not conflict with the claims defined by the
-claims defined by the [NDcPP](#abbr_NDcPP) are as follows:			      |	[NDcPP](#abbr_NDcPP) are as follows:
+functionality for Wireless Local Area Network ([WLAN](#abbr_WLAN))		      |	to provide functionality for Wireless Local Area Network
+Access System. The rationale for why this does not conflict with the		      |	([WLAN](#abbr_WLAN)) Access System. The rationale for why this does not
+claims defined by the [NDcPP](#abbr_NDcPP) are as follows:			      |	conflict with the claims defined by the [NDcPP](#abbr_NDcPP) are as
+										      >	follows:
 
 [PP-Module](#abbr_PP-Module) Requirement						[PP-Module](#abbr_PP-Module) Requirement
 
@@ -2195,8 +2201,8 @@ Dependencies to: No dependencies							Dependencies to: No dependencies
 
 #### FIA\_8021X\_EXT.1.1 {#ext-comp-FIA_8021X_EXT.1.1}					#### FIA\_8021X\_EXT.1.1 {#ext-comp-FIA_8021X_EXT.1.1}
 
-The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port		      |	The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a
-Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.			      |	[PAE](#abbr_PAE) in the "Authenticator" role.
+The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port			The [TSF](#abbr_TSF) shall conform to IEEE Standard 802.1X for a Port
+Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.				Access Entity ([PAE](#abbr_PAE)) in the "Authenticator" role.
 
 #### FIA\_8021X\_EXT.1.2 {#ext-comp-FIA_8021X_EXT.1.2}					#### FIA\_8021X\_EXT.1.2 {#ext-comp-FIA_8021X_EXT.1.2}
 
