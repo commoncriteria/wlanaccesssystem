@@ -1,0 +1,2 @@
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:1934:16: error: element "obj-sfrs" incomplete; expected element "section" or an element from another namespace
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:1935:36: error: element "impl-dep-sfrs" incomplete; expected element "section" or an element from another namespace
