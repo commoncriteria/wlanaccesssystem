@@ -1332,12 +1332,13 @@ based.											based.
 
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall be capable of using WPA3-Enterprise,				The [TSF](#abbr_TSF) shall be capable of using WPA3-Enterprise,
-WPA2-Enterprise and \[**selection**: *WPA3-SAE*, *WPA2-PSK*, *no other			WPA2-Enterprise and \[**selection**: *WPA3-SAE*, *WPA2-PSK*, *no other
-mode*\] as defined by IEEE 802.11-2020 to provide a trusted				mode*\] as defined by IEEE 802.11-2020 to provide a trusted
-communication channel between itself and [WLAN](#abbr_WLAN) clients that		communication channel between itself and [WLAN](#abbr_WLAN) clients that
-is logically distinct from other communication channels and provides			is logically distinct from other communication channels and provides
-assured identification of its end points and protection of the channel			assured identification of its end points and protection of the channel
-data from disclosure and detection of modification of the channel data.			data from disclosure and detection of modification of the channel data.
+WPA2-Enterprise and \[**selection**: *WPA3-SAE*, *WPA2-PSK*, *no other		      |	WPA2-Enterprise and \[**selection**: *WPA3-SAE*, *WPA3-SAE-PK*,
+mode*\] as defined by IEEE 802.11-2020 to provide a trusted			      |	*WPA2-PSK*, *no other mode*\] as defined by IEEE 802.11-2020 to provide
+communication channel between itself and [WLAN](#abbr_WLAN) clients that	      |	a trusted communication channel between itself and [WLAN](#abbr_WLAN)
+is logically distinct from other communication channels and provides		      |	clients that is logically distinct from other communication channels and
+assured identification of its end points and protection of the channel		      |	provides assured identification of its end points and protection of the
+data from disclosure and detection of modification of the channel data.		      |	channel data from disclosure and detection of modification of the
+										      >	channel data.
 :::											:::
 :::											:::
 
@@ -2060,9 +2061,9 @@ selection in [FCS\_RADSEC\_EXT.1.2](#FCS_RADSEC_EXT.1.2).***				selection in [FC
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall be able to use pre-shared keys for				The [TSF](#abbr_TSF) shall be able to use pre-shared keys for
 \[**selection**: *RADIUS over [TLS](#abbr_TLS) (RadSec)*,			      |	\[**selection**: *[RADIUS](#abbr_RADIUS) over [TLS](#abbr_TLS)
-*[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *IEEE 802.11 WPA2-PSK*,			      |	(RadSec)*, *[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *IEEE 802.11 WPA2-PSK*,
-*\[**assignment**: [other protocols that use pre-shared					*\[**assignment**: [other protocols that use pre-shared
-keys]{.assignable-content}\]*\].							keys]{.assignable-content}\]*\].
+*[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *IEEE 802.11 WPA2-PSK*,			      |	(RadSec)*, *[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *WPA3-SAE-PK*, *IEEE
+*\[**assignment**: [other protocols that use pre-shared				      |	802.11 WPA2-PSK*, *\[**assignment**: [other protocols that use
+keys]{.assignable-content}\]*\].						      |	pre-shared keys]{.assignable-content}\]*\].
 :::											:::
 :::											:::
 
@@ -2252,9 +2253,9 @@ Dependencies to: FCS\_RBG\_EXT.1 Random Bit Generation					Dependencies to: FCS\
 
 The [TSF](#abbr_TSF) shall be able to use pre-shared keys for				The [TSF](#abbr_TSF) shall be able to use pre-shared keys for
 \[**selection**: *RADIUS over [TLS](#abbr_TLS) (RadSec)*,			      |	\[**selection**: *[RADIUS](#abbr_RADIUS) over [TLS](#abbr_TLS)
-*[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *IEEE 802.11 WPA2-PSK*,			      |	(RadSec)*, *[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *IEEE 802.11 WPA2-PSK*,
-*\[**assignment**: [other protocols that use pre-shared					*\[**assignment**: [other protocols that use pre-shared
-keys]{.assignable-content}\]*\].							keys]{.assignable-content}\]*\].
+*[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *IEEE 802.11 WPA2-PSK*,			      |	(RadSec)*, *[IPsec](#abbr_IPsec)*, *WPA3-SAE*, *WPA3-SAE-PK*, *IEEE
+*\[**assignment**: [other protocols that use pre-shared				      |	802.11 WPA2-PSK*, *\[**assignment**: [other protocols that use
+keys]{.assignable-content}\]*\].						      |	pre-shared keys]{.assignable-content}\]*\].
 
 #### FIA\_PSK\_EXT.1.2 {#ext-comp-FIA_PSK_EXT.1.2}					#### FIA\_PSK\_EXT.1.2 {#ext-comp-FIA_PSK_EXT.1.2}
 
