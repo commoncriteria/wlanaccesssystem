@@ -1471,6 +1471,7 @@
 			  <title>The TSF shall be capable of using WPA3-Enterprise, WPA2-Enterprise and 
 				  <selectables>
 					  <selectable>WPA3-SAE</selectable>
+					  <selectable>WPA3-SAE-PK</selectable>
 					  <selectable>WPA2-PSK</selectable>
 					  <selectable exclusive="yes">no other mode</selectable>
 				  </selectables>
@@ -1834,7 +1835,8 @@
             <title>The TSF shall be able to use pre-shared keys for <selectables>
               <selectable>RADIUS over TLS (RadSec)</selectable>
               <selectable>IPsec</selectable>
-			  <selectable>WPA3-SAE</selectable>
+	      <selectable>WPA3-SAE</selectable>
+	      <selectable>WPA3-SAE-PK</selectable>
               <selectable>IEEE 802.11 WPA2-PSK</selectable>
               <selectable><assignable>other protocols that use pre-shared keys</assignable></selectable>
             </selectables>. 
