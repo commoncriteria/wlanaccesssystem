@@ -483,18 +483,18 @@
                   <selectable>CTR</selectable>
                   <selectable>GCM</selectable>
                   <selectable><h:b>GCMP</h:b></selectable>
-                  <selectable><h:b>no other</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other</h:b></selectable>
                 </selectables> <h:b>modes</h:b> and cryptographic key sizes <h:b>256 bits and</h:b> <selectables>
                   <selectable>128 bits</selectable>
                   <selectable>192 bits</selectable>
-                  <selectable><h:b>no other key sizes</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other key sizes</h:b></selectable>
                 </selectables> that meet the following: AES as specified in ISO 18033-3, 
                 <h:b>CBC as specified in ISO 10116, 
                   CCMP as specified in NIST SP 800-38C and IEEE 802.11-2020,</h:b> <selectables>
                     <selectable>CTR as specified in ISO 10116</selectable>
                     <selectable>GCM as specified in ISO 19772</selectable>
                     <selectable><h:b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021</h:b></selectable>
-                    <selectable><h:b>no other standards</h:b></selectable>
+                    <selectable exclusive="yes"><h:b>no other standards</h:b></selectable>
                   </selectables>. 
               </title>
               <note role="application">
@@ -612,11 +612,11 @@
                   <selectable>periodically during normal operation</selectable>
                   <selectable>at the request of the authorized user</selectable>
                   <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
-                  <selectable><h:b>in no other circumstances</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>in no other circumstances</h:b></selectable>
                 </selectables> to demonstrate the correct operation of the TSF: <h:b>integrity verification of stored TSF executable code when it is loaded for execution
                 through the use of the TSF-provided cryptographic service specified in FCS_COP.1/SigGen, <selectables>
                   <selectable><assignable>list of additional self-tests run by the TSF</assignable></selectable>
-                  <selectable>no other self-tests</selectable>
+                  <selectable exclusive="yes">no other self-tests</selectable>
                 </selectables></h:b>.
               </title>
               <note role="application">This SFR is modified from its definition in the NDcPP by mandating that self-testing occur at power on and that the self-testing must include, at minimum,
@@ -669,13 +669,13 @@
                   <selectable>TLS</selectable>
                   <selectable>DTLS</selectable>
                   <selectable>HTTPS</selectable>
-                  <selectable><h:b>no other protocols</h:b></selectable>
+                  <selectable exclusive="yes"><h:b>no other protocols</h:b></selectable>
                 </selectables> to provide a trusted communication channel
                 between itself and authorized IT entities supporting the following capabilities: <h:b>802.1X authentication server,</h:b> audit
                 server, <selectables>
                   <selectable>authentication server</selectable>
                   <selectable><assignable>other capabilities</assignable></selectable>
-                  <selectable>no other capabilities</selectable>
+                  <selectable exclusive="yes">no other capabilities</selectable>
                 </selectables> that is logically distinct
                 from other communication channels and provides assured identification of its end points and protection
                 of the channel data from disclosure and detection of modification of the channel data.
@@ -916,15 +916,15 @@
               specified cryptographic key generation algorithm [<h:i>PRF-384 and <selectables>
                 <selectable>PRF-512</selectable>
                 <selectable>PRF-704</selectable>
-                <selectable>no other algorithm</selectable>
+                <selectable exclusive="yes">no other algorithm</selectable>
               </selectables></h:i>] and specified cryptographic key sizes [<h:i>256 bits and <selectables>
                 <selectable>128 bits</selectable>
                 <selectable>192 bits</selectable>
-                <selectable>no other key sizes</selectable>
+                <selectable exclusive="yes">no other key sizes</selectable>
               </selectables></h:i>] <h:b>using a Random Bit Generator as specified in FCS_RBG_EXT.1</h:b> that meet the following: 
               [<h:i>IEEE 802.11-2020 and <selectables>
                 <selectable>IEEE 802.11ax-2021</selectable>
-                <selectable>no other standards</selectable>
+                <selectable exclusive="yes">no other standards</selectable>
               </selectables></h:i>].
             </title>
             <note role="application">
@@ -1291,7 +1291,7 @@
             changes their password, <selectables>
               <selectable>following TSF-initiated session locking</selectable>
               <selectable><assignable>other conditions</assignable></selectable>
-              <selectable>no other conditions</selectable>
+              <selectable exclusive="yes">no other conditions</selectable>
             </selectables></h:i>]. 
           </title>
           <aactivity>
@@ -1423,7 +1423,7 @@
             <title>The TSF shall be able to deny session establishment <h:b>of a wireless client session</h:b> based
               on [<h:i>TOE interface, time, day, <selectables>
                 <selectable><assignable>other attributes</assignable></selectable>
-                <selectable>no other attributes</selectable>
+                <selectable exclusive="yes">no other attributes</selectable>
               </selectables></h:i>].
             </title>
             <note role="application">
@@ -1846,7 +1846,7 @@
             <title>The TSF shall be able to accept text-based pre-shared keys that: <h:ul>
               <h:li>are 22 characters and <selectables>
                 <selectable><assignable>other supported lengths</assignable></selectable>
-                <selectable>no other lengths</selectable>
+                <selectable exclusive="yes">no other lengths</selectable>
               </selectables>;</h:li>
               <h:li>are composed of any combination of upper and lower case letters, numbers, and special
                 characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”).
