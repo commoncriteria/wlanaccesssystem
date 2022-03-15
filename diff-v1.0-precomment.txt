@@ -61,7 +61,7 @@ Consistency of Objectives ](#conobj-ND)[6.1.4 Consistency of				Consistency of O
 Requirements ](#conreq-ND)[Appendix A - Optional					Requirements ](#conreq-ND)[Appendix A - Optional
 SFRs](#opt-sfrs)[A.1Strictly Optional Requirements					SFRs](#opt-sfrs)[A.1Strictly Optional Requirements
 ](#opt-sfrs)[A.1.1Cryptographic Support (FCS)](#opt_fcs)[A.2Objective			](#opt-sfrs)[A.1.1Cryptographic Support (FCS)](#opt_fcs)[A.2Objective
-Requirements ](#obj-sfrs)[A.3Implementation-Based Requirements			      |	Requirements ](#obj-sfrs)[A.3Implementation-based Requirements
+Requirements ](#obj-sfrs)[A.3Implementation-Based Requirements			      |	Requirements ](#obj-sfrs)[A.3Implementation-dependent Requirements
 ](#impl-dep-sfrs)[Appendix B - Selection-Based Requirements			      |	](#impl-dep-sfrs)[Appendix B - Selection-based Requirements
 ](#sel-sfrs)[B.1Cryptographic Support (FCS)](#sel_fcs)[B.2Identification		](#sel-sfrs)[B.1Cryptographic Support (FCS)](#sel_fcs)[B.2Identification
 and Authentication (FIA)](#sel_fia)[Appendix C - Extended Component			and Authentication (FIA)](#sel_fia)[Appendix C - Extended Component
@@ -1837,11 +1837,11 @@ A.2 Objective Requirements {#obj-sfrs .indexable data-level="2"}			A.2 Objective
 This [PP-Module](#abbr_PP-Module) does not define any Objective SFRs.		      |	This [PP-Module](#abbr_PP-Module) does not define any Objective
 										      >	[SFRs](#abbr_SFR).
 
-A.3 Implementation-Based Requirements {#impl-dep-sfrs .indexable data-level="2"}      |	A.3 Implementation-based Requirements {#impl-dep-sfrs .indexable data-level="2"}
--------------------------------------							-------------------------------------
+A.3 Implementation-Based Requirements {#impl-dep-sfrs .indexable data-level="2"}      |	A.3 Implementation-dependent Requirements {#impl-dep-sfrs .indexable data-level="2"}
+-------------------------------------						      |	-----------------------------------------
 
 This [PP-Module](#abbr_PP-Module) does not define any					This [PP-Module](#abbr_PP-Module) does not define any
-Implementation-Based SFRs.							      |	Implementation-based [SFRs](#abbr_SFR).
+Implementation-Based SFRs.							      |	Implementation-dependent [SFRs](#abbr_SFR).
 
 Appendix B - Selection-Based Requirements {#sel-sfrs .indexable data-level="1"}	      |	Appendix B - Selection-based Requirements {#sel-sfrs .indexable data-level="1"}
 =========================================						=========================================
