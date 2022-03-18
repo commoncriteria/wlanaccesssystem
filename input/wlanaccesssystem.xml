@@ -706,7 +706,7 @@
             <f-element>
               <title>The TSF shall initiate communication via the trusted channel for <assignable>list of services for which the TSF is able to initiate communications</assignable>.</title>
               <aactivity>
-                The evaluator shall perform the following activities in addition to those required by the NDcPP:
+                The evaluator shall perform the following activities in addition to those required by the NDcPP:<h:br/><h:br/>
                 <TSS>
 		  The evaluator shall examine the TSS to determine that, for all communications with authorized IT
                   entities identified in the requirement, each communications mechanism is identified in terms of the
