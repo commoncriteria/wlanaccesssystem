@@ -338,7 +338,10 @@
   <rationale>
     FCS_CKM.2/DISTRIB supports the objective by optionally requiring the TSF to distribute IEEE 802.11 keys to any distributed TOE components using a secured method. 
   </rationale>
-
+          <addressed-by>FPT_ITT.1 (from Base-PP)</addressed-by>
+          <rationale>
+            FPT_ITT.1 supports the objective by requiring the TSF to implement trusted communications between its distributed components.
+          </rationale>
 		  </SO>
             
               <SO name="O.AUTHENTICATION">
@@ -369,7 +372,11 @@
   <!-- <rationale> -->
   <!--   FTP_ITC.1 supports the objective by requiring the TSF to identify the trusted communications channels it implements, each of which is able to support authentication. -->
   <!-- </rationale> -->
-  <addressed-by>FIA_8021X_EXT.1</addressed-by>
+                <addressed-by>FCO_CPC_EXT.1 (from Base-PP)</addressed-by>
+                <rationale>
+                  FCO_CPC_EXT.1 supports the objective by requiring the TSF to implement a mechanism that authenticates its distributed components to each other.
+                </rationale>
+                <addressed-by>FIA_8021X_EXT.1</addressed-by>
   <rationale>
     FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
   </rationale>
@@ -393,7 +400,7 @@
   <rationale>
     FIA_PSK_EXT.1 supports the objective by optionally requiring the TSF to implement pre-shared key authentication if any trusted protocols require its use. 
   </rationale>
-
+                
 		  
 		  </SO>
               
@@ -421,6 +428,14 @@
                     <addressed-by>FAU_GEN.1/WLAN</addressed-by>
                     <rationale>
                       FAU_GEN.1/WLAN supports the objective by requiring the TSF to generate audit records for security-relevant WLAN behavior.
+                    </rationale>
+                    <addressed-by>FAU_GEN_EXT.1 (from Base-PP)</addressed-by>
+                    <rationale>
+                      FAU_GEN_EXT.1 supports the objective by requiring the TSF to generate appropriate security-relevant auditable events on each of its distributed components.
+                    </rationale>
+                    <addressed-by>FAU_STG_EXT.1 (modified from Base-PP)</addressed-by>
+                    <rationale>
+                      FAU_STG_EXT.1 supports the objective by defining how distributed TOE components store their generated audit records.
                     </rationale>
                   </SO>
                   
@@ -469,7 +484,85 @@
       <url>https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf</url>
   	  <cPP/>
       <modified-sfrs>
+        
+        <sec:from_nd_fau title="Security Audit (FAU)">
+          <f-component name="Security Audit Generation" cc-id="fau_gen_ext.1">
+            <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
+              inclusion of the SFR because a conformant TOE will always require this
+              functionality that is only conditional in the Base-PP.</consistency-rationale>
+            <f-element id="nd-fco-cpc-1e1">
+              <title>
+                This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE that claims
+                conformance to this PP-Module because a conformant TOE will always be distributed. Therefore, it will always be required for each TOE component to 
+                generate its own audit records.
+              </title>
+              <aactivity>
+                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.</no-tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+          
+          <f-component name="Protected Audit Event Storage" cc-id="fau_stg_ext.1">
+            <consistency-rationale>This PP-Module modifies a Base-PP SFR by restricting the selection options to a subset of those 
+              defined in the Base-PP. 
+              .</consistency-rationale>
+            <f-element id="nd-fau-stg-ext-1e1">
+              <title>
+                The TSF shall be able to transmit the generated audit data to an external
+                IT entity using a trusted channel according to FTP_ITC.1.
+              </title>
+            </f-element>
+            <f-element id="nd-fau-stg-ext-1e2">
+              <title>
+                The TSF shall be able to store generated audit data on the TOE itself. In addition
+                <selectables>
+                  <selectable>The TOE shall be a distributed TOE that stores audit data on the following TOE
+                    components: <assignable>identification of TOE components</assignable></selectable>
+                  <selectable>The TOE shall be a distributed TOE with storage of audit data provided externally for
+                    the following TOE components: <assignable>list of TOE components that do not store
+                      audit data locally and the other TOE components to which they transmit their generated
+                      audit data</assignable></selectable>
+                </selectables>.
+              </title>
+            </f-element>
+            <f-element id="nd-fau-stg-ext-1e3">
+              <title>
+                The TSF shall <selectables>
+                  <selectable>drop new audit data</selectable>
+                  <selectable>overwrite previous audit records accoridng to the following rule: <assignable>rule for overwriting previous audit records</assignable></selectable>
+                  <selectable><assignable>other action</assignable></selectable>
+                </selectables> when the local storage space for audit data is full.
+              </title>
+            <aactivity>
+                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to restricts selections in FAU_STG_EXT.1.2 to a subset of the available options to account for the TOE being distributed.</no-tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+          
+          
+        </sec:from_nd_fau>
+        
  
+        <sec:from_nd_fco title="Communications (FCO)">
+          <f-component name="Component Registration Channel Definition" cc-id="fco_cpc_ext.1">
+            <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
+              inclusion of the SFR because a conformant TOE will always require this
+              functionality that is only conditional in the Base-PP.</consistency-rationale>
+            <f-element id="nd-fco-cpc-1e1">
+              <title>
+                This is specified as an optional SFR in the Base-PP but is mandatory for any TOE that claims
+                conformance to this PP-Module because a conformant TOE will always be distributed. Therefore, a mechanism for 
+                registration of distributed TOE components to each other is always required.
+              </title>
+              <aactivity>
+                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.</no-tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+        </sec:from_nd_fco>
 
         <sec:from_nd_fcs title="Cryptographic Support (FCS)">
           <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
@@ -602,6 +695,27 @@
         </sec:from_nd_fcs>
         
         <sec:from_nd_fpt title="Protection of the TSF (FPT)">
+          
+          
+          
+            <f-component name="Basic Internal TSF Data Transfer Protection" cc-id="fpt_itt.1">
+              <consistency-rationale>This PP-Module does not modify the Base-PP SFR; it only mandates the
+                inclusion of the SFR because a conformant TOE will always require this
+                functionality that is only conditional in the Base-PP.</consistency-rationale>
+              <f-element id="nd-fco-cpc-1e1">
+                <title>
+                  This is specified as an optional SFR in the Base-PP but is mandatory for any TOE that claims
+                  conformance to this PP-Module because a conformant TOE will always be distributed. Therefore, a mechanism for 
+                  trusted communication between distributed TOE components to each other is always required.
+                </title>
+                <aactivity>
+                  <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                    The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.</no-tests>
+                </aactivity>
+              </f-element>
+            </f-component>
+          
+          
           <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
               may still be specified by the ST author.</consistency-rationale>
