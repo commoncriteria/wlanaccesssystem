@@ -516,7 +516,7 @@
             <f-element id="nd-fau-stg-ext-1e2">
               <title>
                 The TSF shall be able to store generated audit data on the TOE itself. In addition
-                <selectables>
+                <selectables linebreak="yes">
                   <selectable>The TOE shall be a distributed TOE that stores audit data on the following TOE
                     components: <assignable>identification of TOE components</assignable></selectable>
                   <selectable>The TOE shall be a distributed TOE with storage of audit data provided externally for
