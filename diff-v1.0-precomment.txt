@@ -709,16 +709,20 @@ and relevant to the secure operation of the [TOE](#abbr_TOE).			      |	[NDcPP](
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall be able to store generated audit data on the
-										      >	[TOE](#abbr_TOE) itself. In addition \[**selection**: *The
-										      >	[TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) that stores
-										      >	audit data on the following [TOE](#abbr_TOE) components:
-										      >	\[**assignment**: [identification of [TOE](#abbr_TOE)
-										      >	components]{.assignable-content}\]*, *The [TOE](#abbr_TOE) shall be a
-										      >	distributed [TOE](#abbr_TOE) with storage of audit data provided
-										      >	externally for the following [TOE](#abbr_TOE) components:
-										      >	\[**assignment**: [list of [TOE](#abbr_TOE) components that do not store
-										      >	audit data locally and the other [TOE](#abbr_TOE) components to which
-										      >	they transmit their generated audit data]{.assignable-content}\]*\].
+										      >	[TOE](#abbr_TOE) itself. In addition \[**selection**:
+										      >
+										      >	-   *The [TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) that
+										      >	    stores audit data on the following [TOE](#abbr_TOE) components:
+										      >	    \[**assignment**: [identification of [TOE](#abbr_TOE)
+										      >	    components]{.assignable-content}\]*,
+										      >	-   *The [TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) with
+										      >	    storage of audit data provided externally for the following
+										      >	    [TOE](#abbr_TOE) components: \[**assignment**: [list of
+										      >	    [TOE](#abbr_TOE) components that do not store audit data locally and
+										      >	    the other [TOE](#abbr_TOE) components to which they transmit their
+										      >	    generated audit data]{.assignable-content}\]*
+										      >
+										      >	\].
 										      >	:::
 										      >	:::
 										      >
