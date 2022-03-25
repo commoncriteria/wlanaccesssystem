@@ -41,12 +41,13 @@ Operational										Operational
 Environment](#SecurityObjectivesTOEorEnvironment)[4.3Security Objectives	      |	Environment](#Security_Objectives_for_the_Operational_Environment)[4.3Security
 Rationale](#SOR)[5Security Requirements](#)[5.1NDcPP Security Functional	      |	Objectives Rationale](#)[5Security Requirements](#)[5.1NDcPP Security
 Requirements Direction ](#secreq-ND)[5.1.1 Modified SFRs			      |	Functional Requirements Direction ](#secreq-ND)[5.1.1 Modified SFRs
-](#modsfr-ND)[5.1.1.1Cryptographic Support						](#modsfr-ND)[5.1.1.1Cryptographic Support
-(FCS)](#from_nd_fcs)[5.1.1.2Protection of the TSF					(FCS)](#from_nd_fcs)[5.1.1.2Protection of the TSF
-(FPT)](#from_nd_fpt)[5.1.1.3Trusted Path/Channels					(FPT)](#from_nd_fpt)[5.1.1.3Trusted Path/Channels
-(FTP)](#from_nd_ftp)[5.2TOE Security Functional					      |	(FTP)](#from_nd_ftp)[5.1.1.4Security Audit
-Requirements](#man-sfrs)[5.2.1Security Audit					      |	(FAU)](#from_nd_fau)[5.1.1.5Communication (FCO)](#from_nd_fco)[5.2TOE
-										      >	Security Functional Requirements](#man-sfrs)[5.2.1Security Audit
+](#modsfr-ND)[5.1.1.1Cryptographic Support					      |	](#modsfr-ND)[5.1.1.1Security Audit
+(FCS)](#from_nd_fcs)[5.1.1.2Protection of the TSF				      |	(FAU)](#from_nd_fau)[5.1.1.2Communications
+(FPT)](#from_nd_fpt)[5.1.1.3Trusted Path/Channels				      |	(FCO)](#from_nd_fco)[5.1.1.3Cryptographic Support
+										      >	(FCS)](#from_nd_fcs)[5.1.1.4Protection of the TSF
+										      >	(FPT)](#from_nd_fpt)[5.1.1.5Trusted Path/Channels
+(FTP)](#from_nd_ftp)[5.2TOE Security Functional						(FTP)](#from_nd_ftp)[5.2TOE Security Functional
+Requirements](#man-sfrs)[5.2.1Security Audit						Requirements](#man-sfrs)[5.2.1Security Audit
 (FAU)](#man_fau)[5.2.2Cryptographic Support						(FAU)](#man_fau)[5.2.2Cryptographic Support
 (FCS)](#man_fcs)[5.2.3Identification and Authentication					(FCS)](#man_fcs)[5.2.3Identification and Authentication
 (FIA)](#man_fia)[5.2.4Security Management						(FIA)](#man_fia)[5.2.4Security Management
@@ -281,12 +282,12 @@ response to the threat environment discussed subsequently herein.		      |	[PP-M
 1.4 Use Cases {#Use_Cases .indexable data-level="2"}					1.4 Use Cases {#Use_Cases .indexable data-level="2"}
 -------------										-------------
 
- \[USE CASE 1\] Standalone Device						      |	 \[USE CASE 1\] Distributed System
-:   The [TOE](#abbr_TOE) is a standalone network device that serves as a	      <
-    single network endpoint that provides connectivity to wireless		      <
-    clients.									      <
-										      <
- \[USE CASE 2\] Distributed System						      <
+ \[USE CASE 1\] Standalone Device							 \[USE CASE 1\] Standalone Device
+:   The [TOE](#abbr_TOE) is a standalone network device that serves as a		:   The [TOE](#abbr_TOE) is a standalone network device that serves as a
+    single network endpoint that provides connectivity to wireless			    single network endpoint that provides connectivity to wireless
+    clients.										    clients.
+
+ \[USE CASE 2\] Distributed System							 \[USE CASE 2\] Distributed System
 :   The [TOE](#abbr_TOE) is a distributed system consisting of multiple			:   The [TOE](#abbr_TOE) is a distributed system consisting of multiple
     network devices that collectively serve as the wireless network			    network devices that collectively serve as the wireless network
     endpoint. In addition to claiming the relevant \"Distributed			    endpoint. In addition to claiming the relevant \"Distributed
@@ -664,8 +665,101 @@ Requirements](#man-sfrs){.dynref}.							Requirements](#man-sfrs){.dynref}.
 The SFRs listed in this section are defined in the [NDcPP](#abbr_NDcPP)		      |	The [SFRs](#abbr_SFR) listed in this section are defined in the
 and relevant to the secure operation of the [TOE](#abbr_TOE).			      |	[NDcPP](#abbr_NDcPP) and relevant to the secure operation of the
 										      >	[TOE](#abbr_TOE).
+										      >
+										      >	#### 5.1.1.1 Security Audit (FAU) {#from_nd_fau .indexable data-level="4"}
+										      >
+										      >	::: {#FAU_GEN_EXT.1 .comp}
+										      >	#### FAU\_GEN\_EXT.1 Security Audit Generation
+										      >
+										      >	::: {.element}
+										      >	::: {#FAU_GEN_EXT.1.1 .reqid}
+										      >	[FAU\_GEN\_EXT.1.1](#FAU_GEN_EXT.1.1){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	This is specified as a selection-based [SFR](#abbr_SFR) in the
+										      >	[Base-PP](#abbr_Base-PP) but is mandatory for any [TOE](#abbr_TOE) that
+										      >	claims conformance to this [PP-Module](#abbr_PP-Module) because a
+										      >	conformant [TOE](#abbr_TOE) will always be distributed. Therefore, it
+										      >	will always be required for each [TOE](#abbr_TOE) component to generate
+										      >	its own audit records.
+										      >	:::
+										      >	:::
+										      >	:::
+										      >
+										      >	::: {#FAU_STG_EXT.1 .comp}
+										      >	#### FAU\_STG\_EXT.1 Protected Audit Event Storage
+										      >
+										      >	::: {.element}
+										      >	::: {#FAU_STG_EXT.1.1 .reqid}
+										      >	[FAU\_STG\_EXT.1.1](#FAU_STG_EXT.1.1){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall be able to transmit the generated audit data
+										      >	to an external IT entity using a trusted channel according to
+										      >	[FTP\_ITC.1](#FTP_ITC.1).
+										      >	:::
+										      >	:::
+										      >
+										      >	::: {.element}
+										      >	::: {#FAU_STG_EXT.1.2 .reqid}
+										      >	[FAU\_STG\_EXT.1.2](#FAU_STG_EXT.1.2){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall be able to store generated audit data on the
+										      >	[TOE](#abbr_TOE) itself. In addition \[**selection**: *The
+										      >	[TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) that stores
+										      >	audit data on the following [TOE](#abbr_TOE) components:
+										      >	\[**assignment**: [identification of [TOE](#abbr_TOE)
+										      >	components]{.assignable-content}\]*, *The [TOE](#abbr_TOE) shall be a
+										      >	distributed [TOE](#abbr_TOE) with storage of audit data provided
+										      >	externally for the following [TOE](#abbr_TOE) components:
+										      >	\[**assignment**: [list of [TOE](#abbr_TOE) components that do not store
+										      >	audit data locally and the other [TOE](#abbr_TOE) components to which
+										      >	they transmit their generated audit data]{.assignable-content}\]*\].
+										      >	:::
+										      >	:::
+										      >
+										      >	::: {.element}
+										      >	::: {#FAU_STG_EXT.1.3 .reqid}
+										      >	[FAU\_STG\_EXT.1.3](#FAU_STG_EXT.1.3){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	The [TSF](#abbr_TSF) shall \[**selection**: *drop new audit data*,
+										      >	*overwrite previous audit records accoridng to the following rule:
+										      >	\[**assignment**: [rule for overwriting previous audit
+										      >	records]{.assignable-content}\]*, *\[**assignment**: [other
+										      >	action]{.assignable-content}\]*\] when the local storage space for audit
+										      >	data is full.
+										      >	:::
+										      >	:::
+										      >	:::
+										      >
+										      >	#### 5.1.1.2 Communications (FCO) {#from_nd_fco .indexable data-level="4"}
+										      >
+										      >	::: {#FCO_CPC_EXT.1 .comp}
+										      >	#### FCO\_CPC\_EXT.1 Component Registration Channel Definition
 
-#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}	#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
+#### 5.1.1.1 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}     |	::: {.element}
+										      >	::: {#FCO_CPC_EXT.1.1 .reqid}
+										      >	[FCO\_CPC\_EXT.1.1](#FCO_CPC_EXT.1.1){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	This is specified as an optional [SFR](#abbr_SFR) in the
+										      >	[Base-PP](#abbr_Base-PP) but is mandatory for any [TOE](#abbr_TOE) that
+										      >	claims conformance to this [PP-Module](#abbr_PP-Module) because a
+										      >	conformant [TOE](#abbr_TOE) will always be distributed. Therefore, a
+										      >	mechanism for registration of distributed [TOE](#abbr_TOE) components to
+										      >	each other is always required.
+										      >	:::
+										      >	:::
+										      >	:::
+										      >
+										      >	#### 5.1.1.3 Cryptographic Support (FCS) {#from_nd_fcs .indexable data-level="4"}
 
 ::: {#FCS_COP.1/DataEncryption .comp}							::: {#FCS_COP.1/DataEncryption .comp}
 #### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio	#### FCS\_COP.1/DataEncryption Cryptographic Operation (AES Data Encryption/Decryptio
@@ -729,7 +823,26 @@ part of the [TSF](#abbr_TSF).								part of the [TSF](#abbr_TSF).
 :::											:::
 :::											:::
 
-#### 5.1.1.2 Protection of the TSF (FPT) {#from_nd_fpt .indexable data-level="4"}	#### 5.1.1.2 Protection of the TSF (FPT) {#from_nd_fpt .indexable data-level="4"}
+#### 5.1.1.2 Protection of the TSF (FPT) {#from_nd_fpt .indexable data-level="4"}     |	#### 5.1.1.4 Protection of the TSF (FPT) {#from_nd_fpt .indexable data-level="4"}
+										      >
+										      >	::: {#FPT_ITT.1 .comp}
+										      >	#### FPT\_ITT.1 Basic Internal TSF Data Transfer Protection
+										      >
+										      >	::: {.element}
+										      >	::: {#FPT_ITT.1.1 .reqid}
+										      >	[FPT\_ITT.1.1](#FPT_ITT.1.1){.abbr}
+										      >	:::
+										      >
+										      >	::: {.reqdesc}
+										      >	This is specified as an optional [SFR](#abbr_SFR) in the
+										      >	[Base-PP](#abbr_Base-PP) but is mandatory for any [TOE](#abbr_TOE) that
+										      >	claims conformance to this [PP-Module](#abbr_PP-Module) because a
+										      >	conformant [TOE](#abbr_TOE) will always be distributed. Therefore, a
+										      >	mechanism for trusted communication between distributed [TOE](#abbr_TOE)
+										      >	components to each other is always required.
+										      >	:::
+										      >	:::
+										      >	:::
 
 ::: {#FPT_TST_EXT.1 .comp}								::: {#FPT_TST_EXT.1 .comp}
 #### FPT\_TST\_EXT.1 TSF Testing							#### FPT\_TST\_EXT.1 TSF Testing
@@ -764,7 +877,7 @@ FCS\_COP.1/SigGen is defined in the [NDcPP](#abbr_NDcPP).]{.note}			FCS\_COP.1/S
 :::											:::
 :::											:::
 
-#### 5.1.1.3 Trusted Path/Channels (FTP) {#from_nd_ftp .indexable data-level="4"}	#### 5.1.1.3 Trusted Path/Channels (FTP) {#from_nd_ftp .indexable data-level="4"}
+#### 5.1.1.3 Trusted Path/Channels (FTP) {#from_nd_ftp .indexable data-level="4"}     |	#### 5.1.1.5 Trusted Path/Channels (FTP) {#from_nd_ftp .indexable data-level="4"}
 
 ::: {#FTP_ITC.1 .comp}									::: {#FTP_ITC.1 .comp}
 #### FTP\_ITC.1 Inter-TSF Trusted Channel						#### FTP\_ITC.1 Inter-TSF Trusted Channel
@@ -846,134 +959,6 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 :::											:::
 :::											:::
 
-										      >	#### 5.1.1.4 Security Audit (FAU) {#from_nd_fau .indexable data-level="4"}
-										      >
-										      >	::: {#FAU_STG_EXT.4 .comp}
-										      >	#### FAU\_STG\_EXT.4 Protected Local Audit Event Storage for Distributed TOEs
-										      >
-										      >	::: {.element}
-										      >	::: {#FAU_STG_EXT.4.1 .reqid}
-										      >	[FAU\_STG\_EXT.4.1](#FAU_STG_EXT.4.1){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) of each [TOE](#abbr_TOE) component which stores
-										      >	security audit data locally shall perform the following actions when the
-										      >	local storage space for audit data is full:
-										      >
-										      >	  -------------- --------------------------------------------------------------------
-										      >	  Controller     \[**selection**: *drop new audit data*, *overwrite previous audit re
-										      >	  Access Point   \[**selection**: *drop new audit data*, *overwrite previous audit re
-										      >	  -------------- --------------------------------------------------------------------
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ ]{.note}
-										      >	:::
-										      >	:::
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {#FAU_STG_EXT.5 .comp}
-										      >	#### FAU\_STG\_EXT.5 Protected Remote Audit Event Storage for Distributed TOEs
-										      >
-										      >	::: {.element}
-										      >	::: {#FAU_STG_EXT.5.1 .reqid}
-										      >	[FAU\_STG\_EXT.5.1](#FAU_STG_EXT.5.1){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	Each [TOE](#abbr_TOE) component which does not store security audit data
-										      >	locally shall be able to buffer security audit data locally until it has
-										      >	been transferred to another [TOE](#abbr_TOE) component that stores or
-										      >	forwards it. All transfer of audit records between [TOE](#abbr_TOE)
-										      >	components shall use a protected channel according to \[**selection**:
-										      >	*FPT\_ITT.1(in the base)*, *[FTP\_ITC.1](#FTP_ITC.1)*\]
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ ]{.note}
-										      >	:::
-										      >	:::
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {#FAU_GEN_EXT.1 .comp}
-										      >	#### FAU\_GEN\_EXT.1 Security Audit Generation
-										      >
-										      >	::: {.element}
-										      >	::: {#FAU_GEN_EXT.1.1 .reqid}
-										      >	[FAU\_GEN\_EXT.1.1](#FAU_GEN_EXT.1.1){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall be able to generate audit records for each
-										      >	[TOE](#abbr_TOE) component. The audit records generated by the
-										      >	[TSF](#abbr_TSF) of each [TOE](#abbr_TOE) component shall include the
-										      >	subset of security relevant audit events which can occur on the
-										      >	[TOE](#abbr_TOE) component.
-										      >
-										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ The [TOE](#abbr_TOE) must be able to
-										      >	generate audit records for each [TOE](#abbr_TOE) component. Some
-										      >	[TOE](#abbr_TOE) components of a distributed [TOE](#abbr_TOE) might not
-										      >	implement the complete [TSF](#abbr_TSF) of the overall [TOE](#abbr_TOE)
-										      >	but only a subset of the [TSF](#abbr_TSF). The audit records for each
-										      >	[TOE](#abbr_TOE) component need to cover all security relevant audit
-										      >	events according to the subset of the [TSF](#abbr_TSF) implemented by
-										      >	this particular [TOE](#abbr_TOE) component but not necessarily all
-										      >	security relevant audit events according to the [TSF](#abbr_TSF) of the
-										      >	overall [TOE](#abbr_TOE). If a security-relevant event can occur on
-										      >	multiple [TOE](#abbr_TOE) components, it needs to cause generation of an
-										      >	audit record uniquely identifying the component associated with the
-										      >	event. The [ST](#abbr_ST) author shall identify for eachTOE component
-										      >	which of the overall required audit events defined in FAU\_GEN.1.1 are
-										      >	logged. The [ST](#abbr_ST) author may decide to do this by providing a
-										      >	corresponding table. The information provided needs to be in agreement
-										      >	with Table 1. The overall [TOE](#abbr_TOE) needs to cover all auditable
-										      >	events listed in Table 2 (and Tables 4 and 5 as applicable to the
-										      >	overall [TOE](#abbr_TOE)). ]{.note}
-										      >	:::
-										      >	:::
-										      >	:::
-										      >	:::
-										      >
-										      >	#### 5.1.1.5 Communication (FCO) {#from_nd_fco .indexable data-level="4"}
-										      >
-										      >	::: {#FCO_CPC_EXT.1 .comp}
-										      >	#### FCO\_CPC\_EXT.1 Component Registration Channel Definition
-										      >
-										      >	::: {.element}
-										      >	::: {#FCO_CPC_EXT.1.1 .reqid}
-										      >	[FCO\_CPC\_EXT.1.1](#FCO_CPC_EXT.1.1){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall require a Security Administrator to enable
-										      >	communications between any pair of [TOE](#abbr_TOE) components before
-										      >	such communication can take place.
-										      >	:::
-										      >	:::
-										      >
-										      >	::: {.element}
-										      >	::: {#FCO_CPC_EXT.1.2 .reqid}
-										      >	[FCO\_CPC\_EXT.1.2](#FCO_CPC_EXT.1.2){.abbr}
-										      >	:::
-										      >
-										      >	::: {.reqdesc}
-										      >	The [TSF](#abbr_TSF) shall implement a registration process in which
-										      >	components establish and use a communications channel that uses
-										      >	\[**selection**:
-										      >
-										      >	-   *A channel that meets the secure channel requirements in
-										      >	    \[**selection**: *[FTP\_ITC.1](#FTP_ITC.1)*, *FPT\_ITT.1*\]* ,
-										      >	-   *A channel that meets the secure registration channel requirements
-										      >	    in FTP\_TRP.1/Join* ,
-										      >	-   *No channel*
-										      >
-										      >	\] for at least [TSF](#abbr_TSF) data.
-										      >	:::
-										      >	:::
-										      >	:::
-										      >
 5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}		5.2 TOE Security Functional Requirements {#man-sfrs .indexable data-level="2"}
 ----------------------------------------						----------------------------------------
 
@@ -1135,10 +1120,10 @@ The Auditable Events ([Table [2]{.counter}](#auditWLAN){.auditWLAN-ref})		The Au
 includes optional and objective SFRs. The auditing of optional and		      |	includes optional and objective [SFRs](#abbr_SFR). The auditing of
 objective SFRs is only required if that [SFR](#abbr_SFR) is included in		      |	optional and objective [SFRs](#abbr_SFR) is only required if that
 the [ST](#abbr_ST).								      |	[SFR](#abbr_SFR) is included in the [ST](#abbr_ST).
-
-Per FAU\_STG\_EXT.1 in the [Base-PP](#abbr_Base-PP), the				Per FAU\_STG\_EXT.1 in the [Base-PP](#abbr_Base-PP), the
-[TOE](#abbr_TOE) must support transfer of the audit data to an external			[TOE](#abbr_TOE) must support transfer of the audit data to an external
-IT entity using a trusted channel.							IT entity using a trusted channel.
+										      |
+Per FAU\_STG\_EXT.1 in the [Base-PP](#abbr_Base-PP), the			      |	Per [FAU\_STG\_EXT.1](#FAU_STG_EXT.1) in the [Base-PP](#abbr_Base-PP),
+[TOE](#abbr_TOE) must support transfer of the audit data to an external		      |	the [TOE](#abbr_TOE) must support transfer of the audit data to an
+IT entity using a trusted channel.						      |	external IT entity using a trusted channel.
 :::											:::
 
 ### 5.2.2 Cryptographic Support (FCS) {#man_fcs .indexable data-level="3"}		### 5.2.2 Cryptographic Support (FCS) {#man_fcs .indexable data-level="3"}
@@ -1560,8 +1545,8 @@ used for RadSec.								      <
 optionally requiring the [TSF](#abbr_TSF) to distribute IEEE 802.11 keys		optionally requiring the [TSF](#abbr_TSF) to distribute IEEE 802.11 keys
 to any distributed [TOE](#abbr_TOE) components using a secured method.			to any distributed [TOE](#abbr_TOE) components using a secured method.
 
-[O.AUTHENTICATION](#O.AUTHENTICATION)\							[O.AUTHENTICATION](#O.AUTHENTICATION)\
-
+[O.AUTHENTICATION](#O.AUTHENTICATION)\						      |	[FPT\_ITT.1](#FPT_ITT.1) (from [Base-PP](#abbr_Base-PP))
+										      <
 FCS\_IPSEC\_EXT.1 (from [Base-PP](#abbr_Base-PP))				      <
 										      <
 FCS\_IPSEC\_EXT.1 supports the objective by optionally requiring the		      <
@@ -1579,23 +1564,23 @@ implement a trusted communications channel if selected in			      <
 X.509 certificates or pre-shared keys.						      <
 										      <
 FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))				      <
-										      <
-FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the		      <
-[TSF](#abbr_TSF) to use X.509 certificates as the authentication method		      <
-used for RadSec.								      <
-										      <
-FIA\_X509\_EXT.1/Rev (from [Base-PP](#abbr_Base-PP))				      <
+
+FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the		      |	[FPT\_ITT.1](#FPT_ITT.1) supports the objective by requiring the
+[TSF](#abbr_TSF) to use X.509 certificates as the authentication method		      |	[TSF](#abbr_TSF) to implement trusted communications between its
+used for RadSec.								      |	distributed components.
+
+FIA\_X509\_EXT.1/Rev (from [Base-PP](#abbr_Base-PP))				      |	[O.AUTHENTICATION](#O.AUTHENTICATION)\
 										      <
 FIA\_X509\_EXT.1/Rev supports the objective by optionally requiring the		      <
 [TSF](#abbr_TSF) to implement X.509 certificate validation if			      <
 certificates are used for authentication.					      <
-										      <
-[FTP\_ITC.1](#FTP_ITC.1) (modified from [Base-PP](#abbr_Base-PP))		      <
-										      <
-[FTP\_ITC.1](#FTP_ITC.1) supports the objective by requiring the		      <
-[TSF](#abbr_TSF) to identify the trusted communications channels it		      <
-implements, each of which is able to support authentication.			      <
-										      <
+
+[FTP\_ITC.1](#FTP_ITC.1) (modified from [Base-PP](#abbr_Base-PP))		      |	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1) (from [Base-PP](#abbr_Base-PP))
+
+[FTP\_ITC.1](#FTP_ITC.1) supports the objective by requiring the		      |	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1) supports the objective by requiring
+[TSF](#abbr_TSF) to identify the trusted communications channels it		      |	the [TSF](#abbr_TSF) to implement a mechanism that authenticates its
+implements, each of which is able to support authentication.			      |	distributed components to each other.
+
 [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)							[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1)
 
 [FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1) supports the objective by				[FIA\_8021X\_EXT.1](#FIA_8021X_EXT.1) supports the objective by
@@ -1656,11 +1641,20 @@ failure.										failure.
 the [TSF](#abbr_TSF) to generate audit records for security-relevant			the [TSF](#abbr_TSF) to generate audit records for security-relevant
 [WLAN](#abbr_WLAN) behavior.								[WLAN](#abbr_WLAN) behavior.
 
-[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[O.TOE\_​ADMINISTRATION](#O.TOE_ADMINISTRATION)\
-										      <
-FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))					      <
-										      <
-FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to		      <
+[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) (from [Base-PP](#abbr_Base-PP))
+										      >
+										      >	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) supports the objective by requiring
+										      >	the [TSF](#abbr_TSF) to generate appropriate security-relevant auditable
+										      >	events on each of its distributed components.
+										      >
+										      >	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1) (modified from
+										      >	[Base-PP](#abbr_Base-PP))
+
+FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))					      |	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1) supports the objective by defining how
+										      >	distributed [TOE](#abbr_TOE) components store their generated audit
+										      >	records.
+
+FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to		      |	[O.TOE\_​ADMINISTRATION](#O.TOE_ADMINISTRATION)\
 block authentication if there is evidence of an attempt to compromise an	      <
 administrator account through brute force.					      <
 
@@ -1759,6 +1753,28 @@ claims defined by the [NDcPP](#abbr_NDcPP) are as follows:			      |	[NDcPP](#ab
 Consistency Rationale									Consistency Rationale
 
 Modified SFRs									      |	Modified [SFRs](#abbr_SFR)
+										      >
+										      >	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1)
+										      >
+										      >	This [PP-Module](#abbr_PP-Module) does not modify the
+										      >	[Base-PP](#abbr_Base-PP) [SFR](#abbr_SFR); it only mandates the
+										      >	inclusion of the [SFR](#abbr_SFR) because a conformant [TOE](#abbr_TOE)
+										      >	will always require this functionality that is only conditional in the
+										      >	[Base-PP](#abbr_Base-PP).
+										      >
+										      >	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1)
+										      >
+										      >	This [PP-Module](#abbr_PP-Module) modifies a [Base-PP](#abbr_Base-PP)
+										      >	[SFR](#abbr_SFR) by restricting the selection options to a subset of
+										      >	those defined in the [Base-PP](#abbr_Base-PP). .
+										      >
+										      >	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1)
+										      >
+										      >	This [PP-Module](#abbr_PP-Module) does not modify the
+										      >	[Base-PP](#abbr_Base-PP) [SFR](#abbr_SFR); it only mandates the
+										      >	inclusion of the [SFR](#abbr_SFR) because a conformant [TOE](#abbr_TOE)
+										      >	will always require this functionality that is only conditional in the
+										      >	[Base-PP](#abbr_Base-PP).
 
 [FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)					[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)
 
@@ -1769,6 +1785,14 @@ referenced in the [Base-PP](#abbr_Base-PP), and by mandating specific		      |	r
 selections that are relevant to the technology type of the				selections that are relevant to the technology type of the
 [PP-Module](#abbr_PP-Module).								[PP-Module](#abbr_PP-Module).
 
+										      >	[FPT\_ITT.1](#FPT_ITT.1)
+										      >
+										      >	This [PP-Module](#abbr_PP-Module) does not modify the
+										      >	[Base-PP](#abbr_Base-PP) [SFR](#abbr_SFR); it only mandates the
+										      >	inclusion of the [SFR](#abbr_SFR) because a conformant [TOE](#abbr_TOE)
+										      >	will always require this functionality that is only conditional in the
+										      >	[Base-PP](#abbr_Base-PP).
+										      >
 [FPT\_TST\_EXT.1](#FPT_TST_EXT.1)							[FPT\_TST\_EXT.1](#FPT_TST_EXT.1)
 
 This [PP-Module](#abbr_PP-Module) modifies the						This [PP-Module](#abbr_PP-Module) modifies the
@@ -1786,23 +1810,7 @@ also includes additional protocols not originally defined by the			also includes
 [Base-PP](#abbr_Base-PP) may still be selected by the [ST](#abbr_ST)			[Base-PP](#abbr_Base-PP) may still be selected by the [ST](#abbr_ST)
 author.											author.
 
-Additional SFRs									      |	[FAU\_STG\_EXT.4](#FAU_STG_EXT.4)
-										      >
-										      >	QQQQ
-										      >
-										      >	[FAU\_STG\_EXT.5](#FAU_STG_EXT.5)
-										      >
-										      >	QQQQ
-										      >
-										      >	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1)
-										      >
-										      >	QQQQQ
-										      >
-										      >	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1)
-										      >
-										      >	QQQQ
-										      >
-										      >	Additional [SFRs](#abbr_SFR)
+Additional SFRs									      |	Additional [SFRs](#abbr_SFR)
 
 This [PP-Module](#abbr_PP-Module) does not add any requirements when the		This [PP-Module](#abbr_PP-Module) does not add any requirements when the
 [NDcPP](#abbr_NDcPP) is the base.							[NDcPP](#abbr_NDcPP) is the base.
@@ -1952,15 +1960,16 @@ A.1 Strictly Optional Requirements {#opt-sfrs .indexable data-level="2"}		A.1 St
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall distribute **the IEEE 802.11** keys in			The [TSF](#abbr_TSF) shall distribute **the IEEE 802.11** keys in
 accordance with a specified key distribution method: \[*trusted channel			accordance with a specified key distribution method: \[*trusted channel
-protocol specified in FPT\_ITT.1*\] that meets the following:				protocol specified in FPT\_ITT.1*\] that meets the following:
-\[*standards specified in the various iterations of FCS\_COP.1*\] **and			\[*standards specified in the various iterations of FCS\_COP.1*\] **and
-does not expose the cryptographic keys**.						does not expose the cryptographic keys**.
+protocol specified in FPT\_ITT.1*\] that meets the following:			      |	protocol specified in [FPT\_ITT.1](#FPT_ITT.1)*\] that meets the
+\[*standards specified in the various iterations of FCS\_COP.1*\] **and		      |	following: \[*standards specified in the various iterations of
+does not expose the cryptographic keys**.					      |	FCS\_COP.1*\] **and does not expose the cryptographic keys**.
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[This requirement is only applicable		      |	[Application Note: ]{.note-header}[ ]{.note}
 when the [TOE](#abbr_TOE) is distributed (i.e., FPT\_ITT.1 from the		      |
 [NDcPP](#abbr_NDcPP) is claimed).]{.note}					      |	This requirement is only applicable when the [TOE](#abbr_TOE) is
-										      >	distributed (i.e., FPT\_ITT.1 from the [NDcPP](#abbr_NDcPP) is claimed).
+										      >	distributed (i.e., [FPT\_ITT.1](#FPT_ITT.1) from the
+										      >	[NDcPP](#abbr_NDcPP) is claimed).
 
 This requirement applies to any key necessary for successful IEEE 802.11		This requirement applies to any key necessary for successful IEEE 802.11
 connections not covered by [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK). In cases			connections not covered by [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK). In cases
@@ -1970,7 +1979,8 @@ cryptographic strength. Because communications with any component of a			cryptog
 distributed [TOE](#abbr_TOE) are required to be performed over a trusted		distributed [TOE](#abbr_TOE) are required to be performed over a trusted
 connection, the transfer of these keys will be protected.				connection, the transfer of these keys will be protected.
 
-FCS\_COP.1 and FPT\_ITT.1 are defined in the [NDcPP](#abbr_NDcPP).			FCS\_COP.1 and FPT\_ITT.1 are defined in the [NDcPP](#abbr_NDcPP).
+FCS\_COP.1 and FPT\_ITT.1 are defined in the [NDcPP](#abbr_NDcPP).		      |	FCS\_COP.1 and [FPT\_ITT.1](#FPT_ITT.1) are defined in the
+										      >	[NDcPP](#abbr_NDcPP).
 :::											:::
 :::											:::
 :::											:::

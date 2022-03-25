@@ -1,12 +1,3 @@
-output/wlanaccesssystem-release-linkable.html: QQQQ
-output/wlanaccesssystem-release-linkable.html: QQQQQ
-output/wlanaccesssystem-release-linkable.html: TRP
-output/wlanaccesssystem-release-linkable.html: eachTOE
-output/wlanaccesssystem-release.html: QQQQ
-output/wlanaccesssystem-release.html: QQQQQ
-output/wlanaccesssystem-release.html: TRP
-output/wlanaccesssystem-release.html: eachTOE
-output/wlanaccesssystem.html: QQQQ
-output/wlanaccesssystem.html: QQQQQ
-output/wlanaccesssystem.html: TRP
-output/wlanaccesssystem.html: eachTOE
+output/wlanaccesssystem-release-linkable.html: accoridng
+output/wlanaccesssystem-release.html: accoridng
+output/wlanaccesssystem.html: accoridng
