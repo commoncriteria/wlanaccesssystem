@@ -1,3 +1,7 @@
-output/wlanaccesssystem-release-linkable.html: accoridng
-output/wlanaccesssystem-release.html: accoridng
-output/wlanaccesssystem.html: accoridng
+output/wlanaccesssystem-release-linkable.html: TRP
+output/wlanaccesssystem-release-linkable.html: enablement
+output/wlanaccesssystem-release.html: TRP
+output/wlanaccesssystem-sd.html: TRP
+output/wlanaccesssystem-sd.html: enablement
+output/wlanaccesssystem.html: TRP
+output/wlanaccesssystem.html: enablement
