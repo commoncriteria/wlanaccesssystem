@@ -830,7 +830,7 @@ evaluator induces audit record transmission, then reviews the packet capture
 around the time of transmission and verifies that no audit data is transmitted
 in the clear.
 </test>
-<test>While performing these tests, the evaluator will verify that the TOE behaviour
+<test>While performing these tests, the evaluator will verify that the TOE behavior
 observed during testing is consistent with the descriptions provided in the TSS
 and the Guidance Documentation. Depending on the TOE configuration, there
 might be a large number of different possible configurations. In such cases, it
@@ -935,7 +935,7 @@ in the clear.
 </h:li>
 	    </h:ol>
 </h:p>
-<h:p>While performing these tests, the evaluator will verify that the TOE behaviour
+<h:p>While performing these tests, the evaluator will verify that the TOE behavior
 observed during testing is consistent with the descriptions provided in the TSS
 and the Guidance Documentation. Depending on the TOE configuration, there
 might be a large number of different possible configurations. In such cases, it
@@ -1118,16 +1118,16 @@ key pair, or replacing a default public key certificate).</h:li>
 
 <h:p>As background for the examination of the registration channel description, it
 is noted that the requirements above are intended to ensure that administrators
-can make an accurate judgement of any risks that arise from the default
+can make an accurate judgment of any risks that arise from the default
 registration process. Examples would be the use of self-signed certificates (i.e.
 certificates that are not chained to an external or local Certification Authority),
 manufacturer-issued certificates (where control over aspects such as
-revocation, or which devices are issued with recognised certificates, is outside
+revocation, or which devices are issued with recognized certificates, is outside
 the control of the operational environment), use of generic/non-unique keys
 (e.g. where the same key is present on more than one instance of a device), or
 well-known keys (i.e. where the confidentiality of the keys is not intended to
 be strongly protected – note that this need not mean there is a positive action
-or intention to publicise the keys).
+or intention to publicize the keys).
 </h:p><h:p>In the case of a distributed TOE for which the ST author uses the
 FTP_TRP.1/Join channel type in the main selection for FCO_CPC_EXT.1.2
 and the TOE relies on the operational environment to provide security for
@@ -1146,7 +1146,7 @@ currently a member of the distributed TOE cannot communicate with
 any component of the TOE until the non-member entity is enabled by
 a Security Administrator for each of the non-equivalent TOE
 components <endnote>An ‘equivalent TOE component’ is a type of distributed TOE component that exhibits the same security
-characteristics, behaviour and role in the TSF as some other TOE component. In principle a distributed TOE
+characteristics, behavior and role in the TSF as some other TOE component. In principle a distributed TOE
 could operate with only one instance of each equivalent TOE component, although the minimum configuration
 of the distributed TOE may include more than one instance (see discussion of the minimum configuration of a
 distributed TOE, in section A.9). In practice a deployment of the TOE may include more than one instance of

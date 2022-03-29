@@ -55,8 +55,13 @@ DISTRIB
 NDc
 NDs
 THRU
-ITT
 superset
+enablement
+interoperability
+bulleted
+
+ITT
+TRP
 AGD
 FCS
 FIA
