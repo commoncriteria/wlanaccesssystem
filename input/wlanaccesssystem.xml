@@ -335,6 +335,10 @@
   <rationale>
     FCS_CKM.2/DISTRIB supports the objective by optionally requiring the TSF to distribute IEEE 802.11 keys to any distributed TOE components using a secured method. 
   </rationale>
+          <addressed-by>FPT_ITT.1 (from Base-PP)</addressed-by>
+          <rationale>
+            FPT_ITT.1 supports the objective by requiring the TSF to implement trusted communications between its distributed components.
+          </rationale>
 
 		  </SO>
             
@@ -366,7 +370,12 @@
   <!-- <rationale> -->
   <!--   FTP_ITC.1 supports the objective by requiring the TSF to identify the trusted communications channels it implements, each of which is able to support authentication. -->
   <!-- </rationale> -->
-  <addressed-by>FIA_8021X_EXT.1</addressed-by>
+  <addressed-by>FCO_CPC_EXT.1 (from Base-PP)</addressed-by>
+  <rationale>
+    FCO_CPC_EXT.1 supports the objective by requiring the TSF to implement a mechanism that authenticates its distributed components to each other.
+  </rationale>
+  <addressed-by>
+    <addressed-by>FIA_8021X_EXT.1</addressed-by>
   <rationale>
     FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
   </rationale>
@@ -418,6 +427,14 @@
                     <addressed-by>FAU_GEN.1/WLAN</addressed-by>
                     <rationale>
                       FAU_GEN.1/WLAN supports the objective by requiring the TSF to generate audit records for security-relevant WLAN behavior.
+                    </rationale>
+                    <addressed-by>FAU_GEN_EXT.1 (from Base-PP)</addressed-by>
+                    <rationale>
+                      FAU_GEN_EXT.1 supports the objective by requiring the TSF to generate appropriate security-relevant auditable events on each of its distributed components.
+                    </rationale>
+                    <addressed-by>FAU_STG_EXT.1 (modified from Base-PP)</addressed-by>
+                    <rationale>
+                      FAU_STG_EXT.1 supports the objective by defining how distributed TOE components store their generated audit records.
                     </rationale>
                   </SO>
                   
