@@ -1,0 +1,3 @@
+output/wlanaccesssystem-release-linkable.html: accoridng
+output/wlanaccesssystem-release.html: accoridng
+output/wlanaccesssystem.html: accoridng
