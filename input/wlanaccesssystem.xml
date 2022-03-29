@@ -374,8 +374,7 @@
   <rationale>
     FCO_CPC_EXT.1 supports the objective by requiring the TSF to implement a mechanism that authenticates its distributed components to each other.
   </rationale>
-  <addressed-by>
-    <addressed-by>FIA_8021X_EXT.1</addressed-by>
+  <addressed-by>FIA_8021X_EXT.1</addressed-by>
   <rationale>
     FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
   </rationale>
