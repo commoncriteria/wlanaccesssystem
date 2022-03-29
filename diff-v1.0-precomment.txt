@@ -901,13 +901,15 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 										      >	overall [TOE](#abbr_TOE). If a security-relevant event can occur on
 										      >	multiple [TOE](#abbr_TOE) components, it needs to cause generation of an
 										      >	audit record uniquely identifying the component associated with the
-										      >	event. The [ST](#abbr_ST) author shall identify for eachTOE component
-										      >	which of the overall required audit events defined in FAU\_GEN.1.1 are
-										      >	logged. The [ST](#abbr_ST) author may decide to do this by providing a
-										      >	corresponding table. The information provided needs to be in agreement
-										      >	with Table 1. The overall [TOE](#abbr_TOE) needs to cover all auditable
-										      >	events listed in Table 2 (and Tables 4 and 5 as applicable to the
-										      >	overall [TOE](#abbr_TOE)). ]{.note}
+										      >	event. The [ST](#abbr_ST) author will identify for each [TOE](#abbr_TOE)
+										      >	component which of the overall required audit events defined in
+										      >	FAU\_GEN.1.1 are logged. The [ST](#abbr_ST) author may decide to do this
+										      >	by providing a corresponding table. The information provided needs to be
+										      >	in agreement with Table 1 in the [Base-PP](#abbr_Base-PP). The overall
+										      >	[TOE](#abbr_TOE) needs to cover all auditable events listed in Table 2
+										      >	in the [Base-PP](#abbr_Base-PP) (and Tables 4 and 5 in the
+										      >	[Base-PP](#abbr_Base-PP) as applicable to the overall [TOE](#abbr_TOE)).
+										      >	]{.note}
 										      >	:::
 										      >	:::
 										      >	:::
@@ -941,8 +943,8 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 										      >	\[**selection**:
 										      >
 										      >	-   *a channel that meets the secure channel requirements in
-										      >	    \[**selection**: *[FTP\_ITC.1](#FTP_ITC.1)*, *FPT\_ITT.1 (in the
-										      >	    base)*\]* ,
+										      >	    \[**selection**: *[FTP\_ITC.1](#FTP_ITC.1)*, *FPT\_ITT.1
+										      >	    ([Base-PP](#abbr_Base-PP))*\]* ,
 										      >	-   *a channel that meets the secure registration channel requirements
 										      >	    in FTP\_TRP.1/Join (in the base)* ,
 										      >	-   *no channel*
@@ -1929,15 +1931,14 @@ A.1 Strictly Optional Requirements {#opt-sfrs .indexable data-level="2"}		A.1 St
 ::: {.reqdesc}										::: {.reqdesc}
 The [TSF](#abbr_TSF) shall distribute **the IEEE 802.11** keys in			The [TSF](#abbr_TSF) shall distribute **the IEEE 802.11** keys in
 accordance with a specified key distribution method: \[*trusted channel			accordance with a specified key distribution method: \[*trusted channel
-protocol specified in FPT\_ITT.1*\] that meets the following:				protocol specified in FPT\_ITT.1*\] that meets the following:
-\[*standards specified in the various iterations of FCS\_COP.1*\] **and			\[*standards specified in the various iterations of FCS\_COP.1*\] **and
-does not expose the cryptographic keys**.						does not expose the cryptographic keys**.
+protocol specified in FPT\_ITT.1*\] that meets the following:			      |	protocol specified in FPT\_ITT.1([Base-PP](#abbr_Base-PP))* \] that
+\[*standards specified in the various iterations of FCS\_COP.1*\] **and		      |	meets the following: \[*standards specified in the various iterations of
+does not expose the cryptographic keys**.					      |	FCS\_COP.1*\] **and does not expose the cryptographic keys**.
 
 ::: {.appnote}										::: {.appnote}
 [Application Note: ]{.note-header}[This requirement is only applicable		      |	[Application Note: ]{.note-header}[ ]{.note}
-when the [TOE](#abbr_TOE) is distributed (i.e., FPT\_ITT.1 from the		      |
-[NDcPP](#abbr_NDcPP) is claimed).]{.note}					      |	This requirement is only applicable when the [TOE](#abbr_TOE) is
-										      >	distributed (i.e., FPT\_ITT.1 from the [NDcPP](#abbr_NDcPP) is claimed).
+when the [TOE](#abbr_TOE) is distributed (i.e., FPT\_ITT.1 from the		      <
+[NDcPP](#abbr_NDcPP) is claimed).]{.note}					      <
 
 This requirement applies to any key necessary for successful IEEE 802.11		This requirement applies to any key necessary for successful IEEE 802.11
 connections not covered by [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK). In cases			connections not covered by [FCS\_CKM.2/GTK](#FCS_CKM.2/GTK). In cases

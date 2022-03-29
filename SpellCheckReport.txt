@@ -1,12 +1,10 @@
 output/wlanaccesssystem-release-linkable.html: TRP
 output/wlanaccesssystem-release-linkable.html: behaviour
-output/wlanaccesssystem-release-linkable.html: eachTOE
 output/wlanaccesssystem-release-linkable.html: enablement
 output/wlanaccesssystem-release-linkable.html: judgement
 output/wlanaccesssystem-release-linkable.html: publicise
 output/wlanaccesssystem-release-linkable.html: recognised
 output/wlanaccesssystem-release.html: TRP
-output/wlanaccesssystem-release.html: eachTOE
 output/wlanaccesssystem-sd.html: TRP
 output/wlanaccesssystem-sd.html: behaviour
 output/wlanaccesssystem-sd.html: enablement
@@ -15,7 +13,6 @@ output/wlanaccesssystem-sd.html: publicise
 output/wlanaccesssystem-sd.html: recognised
 output/wlanaccesssystem.html: TRP
 output/wlanaccesssystem.html: behaviour
-output/wlanaccesssystem.html: eachTOE
 output/wlanaccesssystem.html: enablement
 output/wlanaccesssystem.html: judgement
 output/wlanaccesssystem.html: publicise
