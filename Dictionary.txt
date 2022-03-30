@@ -50,6 +50,12 @@ FLS
 SRVName
 SigGen
 Stateful
+intercomponent
+interoperability
+enablement
+bulleted
+virtualized
+
 DataEncryption
 DISTRIB
 NDc
@@ -71,3 +77,5 @@ SMR
 TSE
 TST
 UAU
+TRP
+LocSpace
