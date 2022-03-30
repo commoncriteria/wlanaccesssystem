@@ -1658,17 +1658,16 @@ communications channel if selected in [FTP\_ITC.1](#FTP_ITC.1).			      <
 pre-shared keys.								      <
 										      <
 FCS\_TLSC\_EXT.1 (from [Base-PP](#abbr_Base-PP))				      <
-										      <
-FCS\_TLSC\_EXT.1 supports the objective by optionally requiring the		      <
-[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to		      <
+
+FCS\_TLSC\_EXT.1 supports the objective by optionally requiring the		      |	FPT\_ITT.1 supports the objective by requiring the [TSF](#abbr_TSF) to
+[TSF](#abbr_TSF) to use RADIUS over [TLS](#abbr_TLS) (RadSec) to		      |	implement trusted communications between its distributed components.
 implement a trusted communications channel if selected in			      <
 [FTP\_ITC.1](#FTP_ITC.1). [TLS](#abbr_TLS) includes authenticating using	      <
 X.509 certificates or pre-shared keys.						      <
 
-FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))				      |	FPT\_ITT.1 supports the objective by requiring the [TSF](#abbr_TSF) to
-										      >	implement trusted communications between its distributed components.
-
-FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the		      |	[O.AUTHENTICATION](#O.AUTHENTICATION)\
+FCS\_TLSC\_EXT.2 (from [Base-PP](#abbr_Base-PP))				      |	[O.AUTHENTICATION](#O.AUTHENTICATION)\
+										      <
+FCS\_TLSC\_EXT.2 supports the objective by optionally requiring the		      <
 [TSF](#abbr_TSF) to use X.509 certificates as the authentication method		      <
 used for RadSec.								      <
 										      <
@@ -1744,8 +1743,7 @@ failure.										failure.
 the [TSF](#abbr_TSF) to generate audit records for security-relevant			the [TSF](#abbr_TSF) to generate audit records for security-relevant
 [WLAN](#abbr_WLAN) behavior.								[WLAN](#abbr_WLAN) behavior.
 
-[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) (modified from
-										      >	[Base-PP](#abbr_Base-PP))
+[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) (from [Base-PP](#abbr_Base-PP))
 										      >
 										      >	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) supports the objective by requiring
 										      >	the [TSF](#abbr_TSF) to generate appropriate security-relevant auditable
