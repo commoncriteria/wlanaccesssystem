@@ -812,7 +812,7 @@ This can be a physical or virtualized entity.
 	      FAU_GEN_EXT.1 and FAU_STG_EXT.4.
 	      For the option <xref to="s-external-audit"/> the TOE components that to not
 	      store audit data locally shall be mapped to the TOE components to which 
-	      they transmit their generatedaudit data.
+	      they transmit their generated audit data.
 	      </h:p>
 
 	      <h:p>
