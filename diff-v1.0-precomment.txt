@@ -862,34 +862,36 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 										      >	[FTP\_ITC.1](#FTP_ITC.1).
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ For selecting the option of
-										      >	transmission of generated audit data to an external IT entity the
-										      >	[TOE](#abbr_TOE) relies on a non-TOE audit server for storage and review
-										      >	of audit records. The storage of these audit records and the ability to
-										      >	allow the Administrator to review these audit records is provided by the
-										      >	operational environment in that case. Since the external audit server is
-										      >	not part of the [TOE](#abbr_TOE), there are no requirements on it except
-										      >	the capabilities for [FTP\_ITC.1](#FTP_ITC.1) transport for audit data.
-										      >	No requirements are placed upon the format or underlying protocol of the
-										      >	audit data being transferred. The [TOE](#abbr_TOE) must be capable of
-										      >	being configured to transfer audit data to an external IT entity without
-										      >	Administrator intervention. Manual transfer would not meet the
-										      >	requirements. Transmission could be done in real-time or periodically.
-										      >	If the transmission is not done in real-time then the TOE Summary
-										      >	Specification ([TSS](#abbr_TSS)) describes what event stimulates the
-										      >	transmission to be made and what range of frequencies the
-										      >	[TOE](#abbr_TOE) supports for making transfers of audit data to the
-										      >	audit server, the [TSS](#abbr_TSS) also suggests typical acceptable
-										      >	frequencies for the transfer. For distributed [TOEs](#abbr_TOE), each
-										      >	component must be able to export audit data across a protected channel
-										      >	external ([FTP\_ITC.1](#FTP_ITC.1)) or intercomponent (FPT\_ITT.1 or
-										      >	[FTP\_ITC.1](#FTP_ITC.1)) as appropriate. At least one component of the
-										      >	[TOE](#abbr_TOE) must be able to export audit records via
-										      >	[FTP\_ITC.1](#FTP_ITC.1) such that all [TOE](#abbr_TOE) audit records
-										      >	can be exported to an external IT entity. An 'external IT entity'
-										      >	(physical or virtualized) is another device or computer on the network
-										      >	in which the [TOE](#abbr_TOE) no longer has access to the audit records.
-										      >	This can be a physical or virtualized entity. ]{.note}
+										      >	[Application Note: ]{.note-header}[ ]{.note}
+										      >
+										      >	For selecting the option of transmission of generated audit data to an
+										      >	external IT entity the [TOE](#abbr_TOE) relies on a non-TOE audit server
+										      >	for storage and review of audit records. The storage of these audit
+										      >	records and the ability to allow the Administrator to review these audit
+										      >	records is provided by the operational environment in that case. Since
+										      >	the external audit server is not part of the [TOE](#abbr_TOE), there are
+										      >	no requirements on it except the capabilities for
+										      >	[FTP\_ITC.1](#FTP_ITC.1) transport for audit data. No requirements are
+										      >	placed upon the format or underlying protocol of the audit data being
+										      >	transferred. The [TOE](#abbr_TOE) must be capable of being configured to
+										      >	transfer audit data to an external IT entity without Administrator
+										      >	intervention. Manual transfer would not meet the requirements.
+										      >	Transmission could be done in real-time or periodically. If the
+										      >	transmission is not done in real-time then the TOE Summary Specification
+										      >	([TSS](#abbr_TSS)) describes what event stimulates the transmission to
+										      >	be made and what range of frequencies the [TOE](#abbr_TOE) supports for
+										      >	making transfers of audit data to the audit server, the [TSS](#abbr_TSS)
+										      >	also suggests typical acceptable frequencies for the transfer.
+										      >
+										      >	Each component must be able to export audit data across a protected
+										      >	channel external ([FTP\_ITC.1](#FTP_ITC.1)) or intercomponent
+										      >	(FPT\_ITT.1 or [FTP\_ITC.1](#FTP_ITC.1)) as appropriate. At least one
+										      >	component of the [TOE](#abbr_TOE) must be able to export audit records
+										      >	via [FTP\_ITC.1](#FTP_ITC.1) such that all [TOE](#abbr_TOE) audit
+										      >	records can be exported to an external IT entity. An \"external IT
+										      >	entity\" (physical or virtualized) is another device or computer on the
+										      >	network in which the [TOE](#abbr_TOE) no longer has access to the audit
+										      >	records. This can be a physical or virtualized entity.
 										      >	:::
 										      >	:::
 										      >	:::
@@ -901,11 +903,11 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 										      >
 										      >	::: {.reqdesc}
 										      >	The [TSF](#abbr_TSF) shall be able to store generated audit data on the
-										      >	[TOE](#abbr_TOE) itself. In addition \[**selection**: *The
+										      >	[TOE](#abbr_TOE) itself. In addition \[**selection**: *the
 										      >	[TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) that stores
 										      >	audit data on the following [TOE](#abbr_TOE) components:
 										      >	\[**assignment**: [identification of [TOE](#abbr_TOE)
-										      >	components]{.assignable-content}\]* , *The [TOE](#abbr_TOE) shall be a
+										      >	components]{.assignable-content}\]* , *the [TOE](#abbr_TOE) shall be a
 										      >	distributed [TOE](#abbr_TOE) with storage of audit data provided
 										      >	externally for the following [TOE](#abbr_TOE) components:
 										      >	\[**assignment**: [list of [TOE](#abbr_TOE) components that do not store
@@ -913,47 +915,51 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 										      >	they transmit their generated audit data]{.assignable-content}\]* \].
 										      >
 										      >	::: {.appnote}
-										      >	[Application Note: ]{.note-header}[ If the [TOE](#abbr_TOE) is a
-										      >	distributed [TOE](#abbr_TOE) and some [TOE](#abbr_TOE) components are
-										      >	not storing audit data locally, the option \'The [TOE](#abbr_TOE) shall
-										      >	be a distributed [TOE](#abbr_TOE) with storage of audit data provided
-										      >	externally for the following [TOE](#abbr_TOE) components: \[assignment:
-										      >	list of [TOE](#abbr_TOE) components that do not store audit data locally
-										      >	and the other [TOE](#abbr_TOE) components to which they transmit their
-										      >	generated audit data\]\' must be selected in addition to the option
-										      >	\'The [TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) that
-										      >	stores audit data on the following [TOE](#abbr_TOE) components:
-										      >	\[assignment: identification of [TOE](#abbr_TOE) components\]\'. In that
-										      >	case FAU\_STG\_EXT.5 must be claimed in the [ST](#abbr_ST) in addition
-										      >	to [FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) and
-										      >	[FAU\_STG\_EXT.4](#FAU_STG_EXT.4). For the option \'The [TOE](#abbr_TOE)
-										      >	shall be a distributed [TOE](#abbr_TOE) with storage of audit data
-										      >	provided externally for the followingTOE components: \[assignment: list
-										      >	of [TOE](#abbr_TOE) components that do not store audit data locally and
-										      >	the other [TOE](#abbr_TOE) co mponents to which they transmit their
+										      >	[Application Note: ]{.note-header}[ ]{.note}
+										      >
+										      >	If some [TOE](#abbr_TOE) components are not storing audit data locally,
+										      >	the option \'The [TOE](#abbr_TOE) shall be a distributed
+										      >	[TOE](#abbr_TOE) with storage of audit data provided externally for the
+										      >	following [TOE](#abbr_TOE) components: \[assignment: list of
+										      >	[TOE](#abbr_TOE) components that do not store audit data locally and the
+										      >	other [TOE](#abbr_TOE) components to which they transmit their generated
+										      >	audit data\]\' must be selected in addition to the option \'The
+										      >	[TOE](#abbr_TOE) shall be a distributed [TOE](#abbr_TOE) that stores
+										      >	audit data on the following [TOE](#abbr_TOE) components: \[assignment:
+										      >	identification of [TOE](#abbr_TOE) components\]\'. In that case
+										      >	FAU\_STG\_EXT.5 must be claimed in the [ST](#abbr_ST) in addition to
+										      >	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) and [FAU\_STG\_EXT.4](#FAU_STG_EXT.4).
+										      >	For the option \'The [TOE](#abbr_TOE) shall be a distributed
+										      >	[TOE](#abbr_TOE) with storage of audit data provided externally for the
+										      >	following [TOE](#abbr_TOE) components: \[assignment: list of
+										      >	[TOE](#abbr_TOE) components that do not store audit data locally and the
+										      >	other [TOE](#abbr_TOE) co mponents to which they transmit their
 										      >	generated audit data\]\' the [TOE](#abbr_TOE) components that to not
 										      >	store audit data locally shall be mapped to the [TOE](#abbr_TOE)
-										      >	components to which they transmit their generated audit data. For
-										      >	distributed [TOEs](#abbr_TOE) this [SFR](#abbr_SFR) can be fulfilled
-										      >	either by every [TOE](#abbr_TOE) component storing its own security
-										      >	audit data locally or by one or more [TOE](#abbr_TOE) components storing
-										      >	audit data locally and other [TOE](#abbr_TOE) components which are not
-										      >	storing audit information locally sending security audit data to other
-										      >	[TOE](#abbr_TOE) components for local storage. For the transfer of
-										      >	security audit data between [TOE](#abbr_TOE) components a protected
-										      >	channel according to [FTP\_ITC.1](#FTP_ITC.1) or FPT\_ITT.1 must be
-										      >	used. The [TSS](#abbr_TSS) describe which [TOE](#abbr_TOE) components
+										      >	components to which they transmit their generated audit data.
+										      >
+										      >	This [SFR](#abbr_SFR) can be fulfilled either by every [TOE](#abbr_TOE)
+										      >	component storing its own security audit data locally or by one or more
+										      >	[TOE](#abbr_TOE) components storing audit data locally and other
+										      >	[TOE](#abbr_TOE) components which are not storing audit information
+										      >	locally sending security audit data to other [TOE](#abbr_TOE) components
+										      >	for local storage. For the transfer of security audit data between
+										      >	[TOE](#abbr_TOE) components a protected channel according to
+										      >	[FTP\_ITC.1](#FTP_ITC.1) or FPT\_ITT.1 ([Base-PP](#abbr_Base-PP)) must
+										      >	be used. The [TSS](#abbr_TSS) describe which [TOE](#abbr_TOE) components
 										      >	store security audit data locally and which [TOE](#abbr_TOE) components
 										      >	do not store security audit data locally. For the latter, the
 										      >	[TSS](#abbr_TSS) describe at which other [TOE](#abbr_TOE) component the
 										      >	audit data is stored locally. collaborative Protection Profile for
-										      >	Network Devices For pNDs, 'on the [TOE](#abbr_TOE) itself' or 'locally'
-										      >	means on storage inside or directly attached to the ND chassis and
-										      >	accessible by the networking functionality. For vNDs, local storage is
-										      >	any storage accessible by [TOE](#abbr_TOE) software. In a virtualized
-										      >	environment, 'local' storage is under the control of the VS and may be
-										      >	physically located on the local host, but it could also be located on a
-										      >	network drive or storage array. ]{.note}
+										      >	Network Devices
+										      >
+										      >	For pNDs, 'on the [TOE](#abbr_TOE) itself' or 'locally' means on storage
+										      >	inside or directly attached to the ND chassis and accessible by the
+										      >	networking functionality. For vNDs, local storage is any storage
+										      >	accessible by [TOE](#abbr_TOE) software. In a virtualized environment,
+										      >	'local' storage is under the control of the VS and may be physically
+										      >	located on the local host, but it could also be located on a network
+										      >	drive or storage array.
 										      >	:::
 										      >	:::
 										      >	:::
@@ -1762,18 +1768,19 @@ failure.										failure.
 the [TSF](#abbr_TSF) to generate audit records for security-relevant			the [TSF](#abbr_TSF) to generate audit records for security-relevant
 [WLAN](#abbr_WLAN) behavior.								[WLAN](#abbr_WLAN) behavior.
 
-[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) (from [Base-PP](#abbr_Base-PP))
-
-FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))					      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) supports the objective by requiring
+[O.TOE\_ADMINISTRATION](#O.TOE_ADMINISTRATION)\					      |	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) (modified from
+										      >	[Base-PP](#abbr_Base-PP))
+										      >
+										      >	[FAU\_GEN\_EXT.1](#FAU_GEN_EXT.1) supports the objective by requiring
 										      >	the [TSF](#abbr_TSF) to generate appropriate security-relevant auditable
 										      >	events on each of its distributed components.
 
-FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to		      |	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1) (modified from
-block authentication if there is evidence of an attempt to compromise an	      |	[Base-PP](#abbr_Base-PP))
-administrator account through brute force.					      |
-										      >	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1) supports the objective by defining how
-										      >	distributed [TOE](#abbr_TOE) components store their generated audit
-										      >	records.
+FIA\_AFL.1 (from [Base-PP](#abbr_Base-PP))					      |	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1) (modified from
+										      >	[Base-PP](#abbr_Base-PP))
+
+FIA\_AFL.1 supports the objective by requiring the [TSF](#abbr_TSF) to		      |	[FAU\_STG\_EXT.1](#FAU_STG_EXT.1) supports the objective by defining how
+block authentication if there is evidence of an attempt to compromise an	      |	distributed [TOE](#abbr_TOE) components store their generated audit
+administrator account through brute force.					      |	records.
 										      >
 										      >	[O.TOE\_​ADMINISTRATION](#O.TOE_ADMINISTRATION)\
 
