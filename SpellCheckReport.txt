@@ -1,6 +1,3 @@
 output/wlanaccesssystem-release-linkable.html: LocSpace
-output/wlanaccesssystem-release-linkable.html: generatedaudit
-output/wlanaccesssystem-release.html: generatedaudit
 output/wlanaccesssystem-sd.html: LocSpace
 output/wlanaccesssystem.html: LocSpace
-output/wlanaccesssystem.html: generatedaudit

@@ -924,7 +924,7 @@ communications]{.assignable-content}\].							communications]{.assignable-conten
 										      >	For the option [with storage of audit data provided
 										      >	externally](#s-external-audit) the [TOE](#abbr_TOE) components that to
 										      >	not store audit data locally shall be mapped to the [TOE](#abbr_TOE)
-										      >	components to which they transmit their generatedaudit data.
+										      >	components to which they transmit their generated audit data.
 										      >
 										      >	This [SFR](#abbr_SFR) can be fulfilled either by every [TOE](#abbr_TOE)
 										      >	component storing its own security audit data locally or by one or more
