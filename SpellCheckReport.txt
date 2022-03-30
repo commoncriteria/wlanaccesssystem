@@ -1,3 +1,0 @@
-output/wlanaccesssystem-release-linkable.html: LocSpace
-output/wlanaccesssystem-sd.html: LocSpace
-output/wlanaccesssystem.html: LocSpace
