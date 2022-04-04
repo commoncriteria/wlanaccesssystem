@@ -690,9 +690,13 @@ and relevant to the secure operation of the [TOE](#abbr_TOE).			      |	[NDcPP](
 										      >	::: {#FAU_STG_EXT.1 .comp}
 										      >	#### FAU\_STG\_EXT.1 Protected Audit Event Storage
 										      >
-										      >	This [SFR](#abbr_SFR) is modified to restrict selections in
-										      >	[FAU\_STG\_EXT.1.2](#FAU_STG_EXT.1.2) to a subset of the available
-										      >	options to account for the [TOE](#abbr_TOE) being distributed.
+										      >	::: {.appnote}
+										      >	[ Note: ]{.note-header}[This [SFR](#abbr_SFR) is modified to restrict
+										      >	selections in [FAU\_STG\_EXT.1.2](#FAU_STG_EXT.1.2) to a subset of the
+										      >	available options to account for the [TOE](#abbr_TOE) being
+										      >	distributed.\
+										      >	]{.note}
+										      >	:::
 										      >
 										      >	::: {.element}
 										      >	::: {#FAU_STG_EXT.1.1 .reqid}
@@ -776,7 +780,7 @@ and relevant to the secure operation of the [TOE](#abbr_TOE).			      |	[NDcPP](
 										      >	[Base-PP](#abbr_Base-PP) but is mandatory for any [TOE](#abbr_TOE) that
 										      >	claims conformance to this [PP-Module](#abbr_PP-Module) because a
 										      >	conformant [TOE](#abbr_TOE) will always be distributed. Therefore, it
-										      >	will always be required a Security Administrator to enable
+										      >	will always be required for a Security Administrator to enable
 										      >	communications between any pair of [TOE](#abbr_TOE) components before
 										      >	such communication can take place.
 										      >	:::
@@ -1798,13 +1802,11 @@ Modified SFRs									      |	Modified [SFRs](#abbr_SFR)
 										      >
 										      >	[FCO\_CPC\_EXT.1](#FCO_CPC_EXT.1)
 										      >
-										      >	This is specified as a selection-based [SFR](#abbr_SFR) in the
-										      >	[Base-PP](#abbr_Base-PP) but is mandatory for any [TOE](#abbr_TOE) that
-										      >	claims conformance to this [PP-Module](#abbr_PP-Module) because a
-										      >	conformant [TOE](#abbr_TOE) will always be distributed; Therefore, it
-										      >	will always be required for a Security Administrator to enable
-										      >	communications between any pair of [TOE](#abbr_TOE) components before
-										      >	such communication can take place.
+										      >	This [PP-Module](#abbr_PP-Module) does not modify the
+										      >	[Base-PP](#abbr_Base-PP) [SFR](#abbr_SFR); it only mandates the
+										      >	inclusion of the [SFR](#abbr_SFR) because a conformant [TOE](#abbr_TOE)
+										      >	will always require this functionality that is only conditional in the
+										      >	[Base-PP](#abbr_Base-PP).
 
 [FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)					[FCS\_COP.1/DataEncryption](#FCS_COP.1/DataEncryption)
 
