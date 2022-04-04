@@ -1,0 +1,4 @@
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:506:51: error: text not allowed here; expected element "consistency-rationale" or "depends"
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:506:79: error: element "xref" not allowed here; expected element "consistency-rationale" or "depends"
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:506:91: error: text not allowed here; expected element "consistency-rationale" or "depends"
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:507:70: error: text not allowed here; expected element "consistency-rationale" or "depends"
