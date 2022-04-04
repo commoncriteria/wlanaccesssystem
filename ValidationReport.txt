@@ -1,1 +1,0 @@
-/home/runner/work/wlanaccesssystem/wlanaccesssystem/input/wlanaccesssystem.xml:506:10: error: element "note" not allowed here; expected element "consistency-rationale" or "depends"

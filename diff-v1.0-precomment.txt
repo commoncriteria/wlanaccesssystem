@@ -691,9 +691,9 @@ and relevant to the secure operation of the [TOE](#abbr_TOE).			      |	[NDcPP](
 										      >	#### FAU\_STG\_EXT.1 Protected Audit Event Storage
 										      >
 										      >	::: {.appnote}
-										      >	[ Note: ]{.note-header}[This [SFR](#abbr_SFR) is modified to restrict
-										      >	selections in [FAU\_STG\_EXT.1.2](#FAU_STG_EXT.1.2) to a subset of the
-										      >	available options to account for the [TOE](#abbr_TOE) being
+										      >	[Application Note: ]{.note-header}[This [SFR](#abbr_SFR) is modified to
+										      >	restrict selections in [FAU\_STG\_EXT.1.2](#FAU_STG_EXT.1.2) to a subset
+										      >	of the available options to account for the [TOE](#abbr_TOE) being
 										      >	distributed.\
 										      >	]{.note}
 										      >	:::
