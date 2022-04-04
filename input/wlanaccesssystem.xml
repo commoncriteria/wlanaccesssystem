@@ -503,12 +503,13 @@
 	</f-component>
 	<f-component cc-id="fau_stg_ext.1"
 		     name="Protected Audit Event Storage">
-	  <note>This SFR is modified to restrict selections in <xref to="fel-store-audit"/> to a subset of the available options to account for the TOE being distributed.<h:br/></note>
 
+	      <note role="application">This SFR is modified to restrict selections in <xref to="fel-store-audit"/> to a subset of the available options to account for the TOE being distributed.<h:br/></note>
            <consistency-rationale>
 	     This PP-Module modifies a Base-PP SFR by restricting the selection options to a subset of those 
               defined in the Base-PP. 
               .</consistency-rationale>
+
             <f-element>
               <title>
                 The TSF shall be able to transmit the generated audit data to an external
