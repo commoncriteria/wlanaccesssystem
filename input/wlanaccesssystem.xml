@@ -503,9 +503,10 @@
 	</f-component>
 	<f-component cc-id="fau_stg_ext.1"
 		     name="Protected Audit Event Storage">
-	  This SFR is modified to restrict selections in <xref to="fel-store-audit"/> to a subset
-	  of the available options to account for the TOE being distributed.
-           <consistency-rationale>This PP-Module modifies a Base-PP SFR by restricting the selection options to a subset of those 
+	  <note>This SFR is modified to restrict selections in <xref to="fel-store-audit"/> to a subset of the available options to account for the TOE being distributed.<h:br/></note>
+
+           <consistency-rationale>
+	     This PP-Module modifies a Base-PP SFR by restricting the selection options to a subset of those 
               defined in the Base-PP. 
               .</consistency-rationale>
             <f-element>
@@ -566,19 +567,16 @@
       <sec:from_nd_fco title="Communication (FCO)">
 	<f-component cc-id="fco_cpc_ext.1" name="Component Registration Channel Definition">
 	  <consistency-rationale>
-	    This is specified as a selection-based SFR in the Base-PP but is mandatory for any TOE
-	    that claims conformance to this PP-Module because a conformant TOE will always be
-	    distributed; 
-	    Therefore, it will always be required for a Security Administrator 
-	    to enable communications between any pair of TOE components before such communication
-	    can take place.
+	    This PP-Module does not modify the Base-PP SFR; it only mandates the
+            inclusion of the SFR because a conformant TOE will always require this
+            functionality that is only conditional in the Base-PP.
 	  </consistency-rationale>
 	  <f-element>
 	    <title>
                 This is specified as a selection-based SFR in the Base-PP but is 
 		mandatory for any TOE that claims
                 conformance to this PP-Module because a conformant TOE will always be distributed.
-		Therefore, it will always be required  a Security Administrator to enable
+		Therefore, it will always be required for a Security Administrator to enable
 	      communications between any pair of TOE components before such communication can take place.
 	    </title>
 	  </f-element>
