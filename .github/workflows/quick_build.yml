@@ -66,7 +66,7 @@ jobs:
       run: mkdir tmp
       
     - name: Diff against specified versions
-      run: DAISY_DIR=ExecuteDaisy-master make diff
+      run: TMP=tmp DAISY_DIR=ExecuteDaisy-master make diff
         
 
     # - name: diff
