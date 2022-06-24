@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cc="https://niap-ccevs.org/cc/v1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <style type="text/css">
+    #toc a{
+        display: block;
+    }
+
+    svg{
+      width: 100%;
+    }
+
+    a[id^="ajq_"]{
+        color:black;
+    }
+
+    
+    body{
+       max-width: 900px;
+       margin: auto;
+    }
+    #toc span{
+       margin-left: 20px;
+    }
+    .assignable-content{
+      font-style: italic;
+    }
+    .selectable-content{
+      font-style: italic;
+    }
+    .not-selectable-content{
+      font-style: italic;
+      text-decoration: line-through;
+    }
+    .refinement{
+      font-weight: bold;
+    }
+    div.eacategory{
+      font-style: italic;
+      font-weight: bold;
+    }
+    .activity_pane .toggler::after, .activity_pane .toggler{
+       display: inline-block;
+       height: auto;
+       content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8A\
+       AAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAQOFAAEDhQGl\
+       VDz+AAAAB3RJTUUH4gIXFDM7fhmr1wAAAfRJREFUKM+dkk9I02EYxz/P+25uurWR\
+       tTkzI4NGl4jQgkq71K1DhnTQIDolRAQFQYSHTtGhU4e6eujQofBSFLOg0C4RUSjh\
+       FnmqTTdKpj/mfv/eX4cUpmRYn9vz8v3w8D7PA/AWGADCbI4QcAb4AnAF8IBJEdX+\
+       N0tEda40C4AHADviW1LFvpOX6+FwtAacVzqkGiWtwxo4F21OuPu7+yvxRNoDEhpY\
+       cpzavkQyc7D76FCk+vN7j7VU6RdR4xAsikjGGP9FKrN3sPfEpajv2i2zhckR4JUG\
+       UCr0erFavLkn2ytd2WPxcFOsZb74+SIQA0YPHBqIdB8Z6tChJv1m/N4P33OGAUsD\
+       BIFxPNcOkq07jyeSbbo1tTu2q6vHEqU7D/ddSKcz2ZQJjBSmx925b9NjwEMAafha\
+       eyQa/3Dq7O0243sCIEoRGAOA59nm5dM7OHVruzH+AkDjYEp23RrLT+U8Ub+fV0UR\
+       oVyaMfVa9fqquF5GKX3ja2FCuc6yWbMipYNP755UgEdr8o2FMf5ivVYdKRfzRkRW\
+       RfJTOc+2rWdAcUN5hdGP7x8viGgAXLvGbGFCKxW6tj74J3nOqVvP89M5V6kQ86UZ\
+       f7lWvWWMt7Sp41VKb21uSfqnB++6kWi8BLTzL4ioq7H4tgC4z3/QAZSBxEaBXygN\
+       v+jeFnAPAAAAAElFTkSuQmCC');
+       max-width: 15px;
+    }
+
+
+    a {
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+    a.abbr:link{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:visited{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:hover{
+      color:blue;
+      text-decoration:none;
+    }
+    a.abbr:hover:visited{
+      color:purple;
+      text-decoration:none;
+    }
+    a.abbr:active{
+      color:red;
+      text-decoration:none;
+    }
+    .note-header{
+      font-weight: bold;
+    }
+    .note p:first-child{
+      display: inline;
+    }
+
+    .indent{ margin-left:2em; }
+
+    /* Tooltip container */
+    .tooltipped {
+       position: relative;
+       display: inline-block;
+       border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltiptext {
+       visibility: hidden;
+       width: 120px;
+       background-color: black;
+       color: #fff;
+       text-align: center;
+       padding: 5px 0;
+       border-radius: 6px;
+
+       /* Position the tooltip text - see examples below! */
+       position: absolute;
+       z-index: 1;
+   }
+
+   /* Show the tooltip text when you mouse over the tooltip container */
+   .tooltipped:hover .tooltiptext {
+       visibility: visible;
+   }
+   tr.major-row{
+       border-top-style: double;
+   }
+   tr.major-row td:first-child{
+       border-right-style: ridge;
+       background-color: white;
+   } 
+   table.mfs td{
+       text-align: center;
+   }
+   table.mfs td:first-child{
+       text-align: left;
+       white-space: nowrap;
+   }
+  .table-caption, caption{
+       text-align: center;
+       font-weight: bold;
+   }
+   table{
+       margin:auto;
+       margin-top:1em;
+       border-collapse:collapse; /*border: 1px solid black;*/
+   }
+   td{
+       text-align:left;
+       padding:8px 8px;
+   }
+   th{
+       padding:8px 8px;
+   }
+   thead tr td{
+       text-align: center;
+       font-style: oblique;
+       font-weight: bold;
+   }
+   tr.header{
+       border-bottom:3px solid gray;
+       padding:8px 8px;
+       text-align:left;
+       font-weight:bold; /*font-size: 90%; font-family: verdana, arial, helvetica, sans-serif; */
+   }
+   table tr:nth-child(2n+2){
+       background-color:#F4F4F4;
+   }
+
+   .dependent{
+       border: 1px solid gray;
+       border-radius: 1px
+   }
+   .dependent-content{
+       margin-left: 25px;
+       font-style: italic;
+   }
+
+   .uc_table_or td, .uc_table_or tr {
+       vertical-align: middle;
+       border: 1px solid black;
+       background-color: white;
+   }
+
+   .uc_not, .uc_mf, .uc_sel, .uc_guide{
+       text-indent: 10px;
+   }
+   .uc_sel &gt; a{ 
+       font-style: italic;
+   }
+
+   .uc_not_sel, .uc_sel.uc_mf, uc_assign.uc_mf{
+       text-indent: 20px;
+   }
+
+
+   .uc_table_or tr td.or_cell{
+      white-space: nowrap;
+      border-radius: 0.6em 0 0 0.6em;
+      background-color: black;
+      color: white;
+   }
+
+   .uc_table_and, .uc_table_or {
+       width: 100%;
+       background-color: white;
+   }
+   .uc_guidance{
+       display: table;
+       background-color: gray;
+   }  
+   div.uc_inc_fcomp{
+       display: list-item;
+       list-style-type: disc;
+       list-style-position: inside;
+       }
+
+   div.validationguidelines_label{
+        padding-top: 10px;
+   }
+	
+   .evidence, .test-obj { font-style: normal; font-size: 90%;}
+   
+   
+	table.classic {
+    	width: 100%;
+    	background-color: white;
+    	border-collapse: collapse;
+    	border-width: 2px;
+  		border-color: gray;
+  		border-style: solid;
+  		color: black;
+		font-size: small;
+	}
+    table.classic th {
+  		background-color: lightgray;   
+	}
+    table.classic th:empty{
+	    background-color: white;
+		border-top: none;
+		border-left: none;
+	}
+	table.classic td, table.classic th {
+  		border-width: 2px;
+  		border-color: gray;
+  		border-style: solid;
+  		padding: 5px;
+	}
+
+   
+   
+   
+				h1
+				{
+				    text-align:left;
+				    font-size:200%;
+				    margin-top:2em;
+				    margin-bottom:2em;
+				    font-family:verdana, arial, helvetica, sans-serif;
+				    margin-bottom:1.0em;
+				}
+				h1.title
+				{
+				    text-align:center;
+				}
+				h2
+				{
+				    font-size:125%;
+				    border-bottom:solid 1px gray;
+				    margin-bottom:1.0em;
+				    margin-top:2em;
+				    margin-bottom:0.75em;
+				    font-family:verdana, arial, helvetica, sans-serif;
+				}
+				table.revisionhistory
+				{
+				    margin:auto;
+				    margin-top:1em;
+				    border-collapse:collapse;
+				}
+				tr.header
+				{
+				    border-bottom:3px solid gray;
+				    padding:8px 8px;
+				    text-align:left;
+				    font-weight:bold;
+				}
+				table
+				{
+				    border-collapse:collapse;
+				}
+				table,
+				th,
+				td
+				{
+				    border-collapse:collapse;
+				    border:2px solid #dcdcdc;
+				    border-left:none;
+				    border-right:none;
+				    vertical-align:top;
+				    text-align:left;
+				    padding:2px;
+				    font-family:verdana, arial, sans-serif;
+				    font-size:11px;
+				    padding-right:20px;
+				}
+				pre{
+				    white-space:pre-wrap;
+				    white-space:-moz-pre-wrap !important;
+				    word-wrap:break-word;
+				}
+				table tr:nth-child(2n+2){
+				    background-color:#f4f4f4;
+				}
+				thead
+				{
+				    display:table-header-group;
+				    font-weight:bold;
+				    background-color:#dedede;
+				}
+				div.title
+				{
+				    text-align:center;
+				    font-size:xx-large;
+				    font-weight:bold;
+				    font-family:verdana, arial, sans-serif;
+				    margin-left:8%;
+				    margin-right:8%;
+				}
+				div.center
+				{
+				    display:block;
+				    margin-left:auto;
+				    margin-right:auto;
+				    text-align:center;
+				}
+				div.intro
+				{
+				    text-align:left;
+				    font-size:normal;
+				    font-family:verdana, arial, sans-serif;
+				    margin-left:12%;
+				    margin-right:12%;
+				    padding-top:1em;
+				}
+				div.appnote
+				{
+				    margin-left:0%;
+				    margin-top:1em;
+				}
+				div.tabletitle
+				{
+				    text-align:left;
+				    font-size:x-large;
+				    font-weight:bold;
+				    font-family:verdana, arial, sans-serif;
+				    margin-top:2em;
+				    border-top:solid 2px gray;
+				    border-bottom:solid 2px gray;
+				    padding-bottom:0.25em;
+				    padding-top:0.25em;
+				}
+			</style>
+  <head>
+    <title>Tabular Presentation of the </title>
+  </head>
+  <body>
+    <h1 class="title"> Tabular Presentation of the <br/><i/></h1>
+    <div class="center"><img src="images/niaplogo.png"/><p/>Version: 1.0<p/>2022-03-31<p/><b>National Information Assurance Partnership</b></div>
+    <h2>Revision History</h2>
+    <div class="center">
+      <table class="revisionhistory">
+        <tr class="header">
+          <th>Version</th>
+          <th>Date</th>
+          <th>Comment</th>
+        </tr>
+      </table>
+    </div>
+    <br/>
+    <h2>Introduction</h2>
+    <div class="intro"> This document presents the Security Functional Requirements and
+					Security Assurance Requirements from the <i/>. This
+					tabular representation is provided for those audiences whose interest primarily
+					lies in those portions of that document. The Protection Profile itself remains
+					the only complete and authoritative representation, and includes discussion of
+					assumptions, threats, and objectives. </div>
+    <br/>
+    <div class="tabletitle"> Security Functional Requirements </div>
+    <table>
+      <thead>
+        <td>ID</td>
+        <td>Requirement</td>
+        <td>Assurance Activity</td>
+      </thead>
+      <tr xmlns="">
+        <td id="FAU_GEN.1.1/WLAN">
+          <a class="abbr" href="#FAU_GEN.1.1/WLAN">FAU_GEN.1.1/WLAN</a>
+        </td>
+        <td> The TSF shall be able to generate an audit record of the following auditable
+              events: <ol type="a">
+                <li>Start-up and shutdown of the audit functions;</li>
+                <li>All auditable events for the [not specified] level of audit; and</li>
+                <li>[<i>Auditable events listed in the Auditable Events table (<a xmlns:sec="https://niap-ccevs.org/cc/v1/section" xmlns:htm="http://www.w3.org/1999/xhtml" onclick="showTarget('auditWLAN')" href="#auditWLAN" class="auditWLAN-ref">: Auditable Events <span class="counter">auditWLAN</span></a>)</i></li>
+                <li><i>Failure of wireless sensor communication</i>]</li>
+              </ol>
+            <table>
+              <tr>
+                <th>Requirement</th>
+                <th>Auditable Events</th>
+                <th>Additional Audit Record Contents</th>
+              </tr>
+              <tr>
+                <td>FCS_CKM.1/WPA</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FCS_CKM.2/DISTRIB (optional)</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FCS_CKM.2/GTK</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FCS_CKM.2/PMK</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FCS_RADSEC_EXT.1 (selection-based)</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FCS_RADSEC_EXT.2 (selection-based)</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FCS_RADSEC_EXT.3 (selection-based)</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td rowspan="2">FCS_IPSEC_EXT.1 (selection-based)</td>
+                <td>Protocol failures.</td>
+                <td>Reason for failure. Non-TOE endpoint of connection.</td>
+              </tr>
+              <tr>
+                <td>Establishment or Termination of an IPsec SA.</td>
+                <td>Non-TOE endpoint of connection.</td>
+              </tr>
+              <tr>
+                <td rowspan="2">FIA_8021X_EXT.1</td>
+                <td>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</td>
+                <td>Provided client identity (e.g. Media Access Control [MAC] address).</td>
+              </tr>
+	      <tr>
+		<td>Failed authentication attempt.</td>
+		<td>Provided client identity (e.g. MAC address).</td>
+	      </tr>
+              <tr>
+                <td>FIA_PSK_EXT.1 (selection-based)</td>
+                <td colspan="2">None.</td>
+              </tr>
+              <tr>
+                <td>FIA_UAU.6</td>
+                <td>Attempts to re-authenticate.</td>
+                <td>Origin of the attempt (e.g., IP address).</td>
+              </tr>
+              <tr>
+		<td>FMT_SMF.1/AccessSystem</td>
+                <td colspan="2">None.</td>
+	      </tr>
+              <tr>
+		<td>FMT_SMR_EXT.1</td>
+                <td colspan="2">None.</td>
+	      </tr>
+              <tr>
+                <td>FPT_FLS.1</td>
+                <td>Failure of the TSF.</td>
+                <td>Indication that the TSF has failed with the type of failure that occurred.</td>
+              </tr>
+              <tr>
+                <td rowspan="2">FPT_TST_EXT.1</td>
+                <td>Execution of TSF self-test.</td>
+                <td>None.</td>
+              </tr>
+              <tr>
+                <td>Detected integrity violations.</td>
+                <td>The TSF code file that caused the integrity violation.</td>
+              </tr>
+              <tr>
+                <td>FTA_TSE.1</td>
+                <td>Failure of the TSF.</td>
+                <td>Indication that the TSF has failed with the type of failure that occurred.</td>
+              </tr>
+              <tr>
+                <td rowspan="2">FTP_ITC.1</td>
+                <td>Failed attempts to establish a trusted channel (including IEEE 802.11).</td>
+                <td rowspan="2">Identification of the initiator and target of channel.</td>
+              </tr>
+              <tr>
+                <td>Detection of modification of channel data.</td>
+              </tr>
+            </table>
+              : Auditable Events
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+		The auditable events defined in <a onclick="showTarget('auditWLAN')" href="#auditWLAN" class="auditWLAN-ref">: Auditable Events <span class="counter">auditWLAN</span></a> are for the SFRs that
+		are explicitly defined in this PP-Module and are intended to extend FAU_GEN.1 in the Base-PP.
+	      </p>
+	      <p>
+		The events in the Auditable Events table should be combined with those of the NDcPP in the
+		context of a conforming Security Target.
+	      </p>
+	      <p>
+		The Auditable Events (<a onclick="showTarget('auditWLAN')" href="#auditWLAN" class="auditWLAN-ref">: Auditable Events <span class="counter">auditWLAN</span></a>) includes optional and objective SFRs.
+		The auditing of optional and objective SFRs is only required if that SFR is included in the ST.
+	      </p>
+	      <p>
+		Per FAU_STG_EXT.1 in the Base-PP, the TOE must support transfer of the audit data to an
+		external IT entity using a trusted channel.
+	      </p>
+	    </span></div></td>
+        <td>
+     There are no TSS evaluation activities for this SFR.<br/><br/>
+    
+     There are no operational guidance activities for this SFR.<br/><br/>
+    
+    The evaluator will test the TOE’s ability to correctly generate audit records
+      by having the TOE generate audit records in accordance with the evaluation activities
+      associated with the functional requirements in this PP-Module. When verifying the
+      test results, the evaluator will ensure the audit records generated during testing
+      match the format specified in the administrative guide and that the fields in each
+      audit record have the proper entries. <br/><br/>
+      Note that the testing here can
+      be accomplished in conjunction with the testing of the security mechanisms directly.
+      
+  </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_CKM.1.1/WPA">
+          <a class="abbr" href="#FCS_CKM.1.1/WPA">FCS_CKM.1.1/WPA</a>
+        </td>
+        <td>
+              The TSF shall generate <b>symmetric</b> cryptographic keys in accordance with a
+              specified cryptographic key generation algorithm [<i>PRF-384 and [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_33">PRF-512</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_34">PRF-704</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_35">no other algorithm</span> ]</i>] and specified cryptographic key sizes [<i>256 bits and [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_36">128 bits</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_37">192 bits</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_38">no other key sizes</span> ]</i>] <b>using a Random Bit Generator as specified in FCS_RBG_EXT.1</b> that meet the following: 
+              [<i>IEEE 802.11-2020 and [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_39">IEEE 802.11ax-2021</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_40">no other standards</span> ]</i>].
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+		The cryptographic key derivation algorithm required by IEEE 802.11-2020 (Section
+		12.7.1.2) and verified in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and
+		outputs 384 bits.
+		The use of GCMP is defined in IEEE 802.11ax-2021 (Section 12.5.5) and
+		requires a
+		Key Derivation Function (KDF) based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys).
+		This KDF outputs 704 bits.
+	      </p>
+	      <p>
+		This requirement applies only to the keys that are generated or derived for the communications
+		between the AP and the client once the client has been authenticated.
+		It refers to the derivation of the Group Temporal Key (GTK),
+		through the Random Bit Generator (RBG) specified in this PP-Module,
+		as well as the derivation of the Pairwise Transient Key (PTK) from the Pairwise Master Key (PMK),
+		which is done using a random value generated by the RBG specified in this PP-Module,
+		the HMAC function as specified in this PP-Module, as well as other information.
+		This is specified in IEEE 802.11-2020, primarily in chapter 12.
+		<span class="no-link">FCS_RBG_EXT.1</span> is defined in the NDcPP.
+	      </p>
+            </span></div></td>
+        <td>
+              
+		  The cryptographic primitives will be verified through evaluation activities specified elsewhere in this PP-Module.
+                The evaluator will verify that the TSS describes how the primitives defined and implemented by this PP-Module
+                are used by the TOE in establishing and maintaining secure connectivity to the wireless clients. This
+                description will include how the GTK and PTK are generated or derived. The TSS will also provide a
+                description of the developer’s methods of assuring that their implementation conforms to the
+                cryptographic standards; this includes not only testing done by the developing organization, but also
+                proof of third-party testing that is performed (e.g. WPA2 certification). The evaluator will ensure that
+                the description of the testing methodology is of sufficient detail to determine the extent to which the
+                details of the protocol specifics are tested.<br/><br/>
+              
+              There are no guidance evaluation activities for this component.<br/><br/>
+              
+		  The evaluator will perform the following test using a packet sniffing tool to collect
+		  frames between the TOE and a wireless client:
+		<p>
+                  Step 1: The evaluator will configure the AP to an unused channel and configure the WLAN
+                  sniffer to sniff only on that channel (i.e., lock the sniffer on the selected channel).
+		  The sniffer should also be configured to filter on the MAC address of the TOE and client.
+		</p>
+		<p>
+                  Step 2: The evaluator will configure the TOE to communicate with a WLAN client using IEEE 
+                  802.11-2020 and a 256-bit (64 hex values 0-f) pre-shared key,
+		  setting up the connections as described in the operational guidance.
+		  The pre-shared key is only used for testing.
+		</p>
+		<p>
+                  Step 3: The evaluator will start the sniffing tool, initiate a connection between the
+		  TOE and WLAN client, and allow the TOE to authenticate, associate, and successfully
+		  complete the four-way handshake with the client.
+		</p>
+		<p>
+                  Step 4: The evaluator will set a timer for one minute, at the end of which the evaluator
+		  will disconnect the client from the TOE and stop the sniffer.
+		</p>
+		<p>
+                  Step 5: The evaluator will identify the four-way handshake frames (denoted EAPOL-key in Wireshark
+                  captures) and derive the PTK from the four-way handshake frames and pre-shared key as specified
+		  in IEEE 802.11-2020.
+		</p>
+		<p>
+                  Step 6: The evaluator will select the first data frame from the captured packets that was
+		  sent between the client and TOE after the four-way handshake successfully completed
+		  and without the frame control value 0x4208 (the first two bytes are 08 42).
+		  The evaluator will use the PTK to decrypt the data portion of the packet as specified in
+		  IEEE 802.11-2020 and verify that the decrypted data contains ASCII-readable text.
+		</p>
+		<p>
+                  Step 7: The evaluator will repeat Step 6 for the next two data frames between the TOE and client,
+		  and without frame control value 0x4208.
+		</p>
+		<p>
+                  Additionally, the evaluator will test the PRF function using the test vectors from:
+		  <ul>
+                  <li>Section 2.4 “The PRF Function – PRF (key, prefix, data, length)” of the IEEE 802.11-02/362r6 document "Proposed Test vectors for IEEE 802.11 TGi" dated September 10, 2002</li>
+                  <li>Annex J.3 “PRF reference implementation and test vectors” of IEEE 802.11-2020</li>
+                  </ul>
+		</p>
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_CKM.2.1/GTK">
+          <a class="abbr" href="#FCS_CKM.2.1/GTK">FCS_CKM.2.1/GTK</a>
+        </td>
+        <td>
+              The TSF shall distribute <b>Group Temporal Key (GTK)</b> in accordance with a specified cryptographic key distribution method: [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_41">AES Key Wrap in an EAPOL-Key frame</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_42">AES Key Wrap with Padding in an EAPOL-Key frame</span> ] that meets the following: [<i>NIST SP 800-38F, IEEE 802.11-2020 for the packet format and timing considerations</i>] <b>
+                and does not expose the cryptographic keys</b>. 
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">This requirement applies to the Group Temporal Key (GTK) that is generated by the
+              TOE for use in broadcast and multicast messages to clients to which it is connected. 802.11-2020
+              specifies the format for the transfer as well as the fact that it must be wrapped by the AES Key Wrap
+              method specified in NIST SP 800-38F.</span></div></td>
+        <td>
+              The evaluator will check the TSS to ensure that it describes how the GTK is wrapped prior to being
+                distributed using the AES implementation specified in this PP-Module, and also how the GTKs are distributed
+                when multiple clients connect to the TOE.<br/><br/>
+              There are no guidance evaluation activities for this component.<br/><br/>
+              
+		  The evaluator will perform the following test using a packet sniffing tool to collect frames
+		  between a wireless client and the TOE (which may be performed in conjunction with the
+		  evaluation activity for FCS_CKM.1/PMK.
+		<p>
+                  To fully test the broadcast and multicast functionality, these steps will be performed as
+		  the evaluator connects multiple clients to the TOE.
+		  The evaluator will ensure that GTKs established are sent to the
+		  appropriate participating clients.
+		</p>
+		<p>
+                  Step 1: The evaluator will configure the AP to an unused channel and configure the WLAN
+                  sniffer to sniff only on that channel (i.e., lock the sniffer on the selected channel).
+		  The sniffer should also be configured to filter on the MAC address of the TOE and client.
+		</p>
+		<p>
+                  Step 2: The evaluator will configure the TOE to communicate with the client using
+		  IEEE 802.11-2020 and a 256-bit (64 hex values 0-f) pre-shared key, setting up the
+		  connections as described in the operational guidance.
+		  The pre-shared key is only used for testing.
+		</p>
+		<p>
+                  Step 3: The evaluator will start the sniffing tool, initiate a connection between the
+		  TOE and client, and allow the client to authenticate, associate and successfully complete
+		  the four-way handshake with the TOE.
+		</p>
+		<p>
+                  Step 4: The evaluator will set a timer for one minute, at the end of which the evaluator
+		  will disconnect the TOE from the client and stop the sniffer.
+		</p>
+		<p>
+                  Step 5: The evaluator will identify the four-way handshake frames
+		  (denoted EAPOL-key in Wireshark captures) and derive the PTK and GTK from the
+		  four-way handshake frames and pre-shared key as specified in IEEE 802.11-2020.
+		</p>
+		<p>
+                  Step 6: The evaluator will select the first data frame from the captured packets that was sent between
+                  the TOE and client after the four-way handshake successfully completed,
+		  and with the frame control value  0x4208 (the first two bytes are 08 42).
+		  The evaluator will use the GTK to decrypt the data portion of the
+                  selected packet as specified in IEEE 802.11-2020 and verify that the decrypted
+		  data contains ASCII-readable text.
+		</p>
+		<p>
+                  Step 7: The evaluator will repeat Step 6 for the next two data frames with frame control value 0x4208.
+		</p>
+		<p>
+                  The evaluator will also perform the following testing based on the supported GTK distribution
+		  methods:
+		</p>
+		<p><b>AES Key Wrap (AES-KW Tests)</b></p>
+		<p>
+                  <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                    <li><b>Test 1: </b>The evaluator will test the authenticated encryption functionality of AES-KW for each combination of the following input parameter lengths:
+		    <ul>
+		      <li>128 and 256 bit key encryption keys (KEKs)</li>
+		    <li>
+                      Three plaintext lengths:
+		      <ol>
+			<li>One of the plaintext lengths will be two semi-blocks (128 bits).</li>
+			<li>One of the plaintext lengths will be three semi-blocks (192 bits).</li>
+			<li>The third data unit length will be the longest supported plaintext
+		      length less than or equal to 64 semi-blocks (4096 bits).</li>
+		      </ol>
+		    </li>
+		    </ul>		    
+                    For each combination, generate a set of 100 key and plaintext pairs
+		    and obtain the ciphertext that results from AES-KW authenticated encryption. 
+                    To determine correctness, the evaluator will use the same key and plaintext values
+		    and encrypt them using a known good implementation of AES-KW authenticated-encryption,
+		    and ensure that the resulting respective ciphertext values are identical.
+		    </li>
+                    <li><b>Test 2: </b>
+		      The evaluator will test the authenticated-decryption functionality of AES-KW using
+		      the same test as for authenticated-encryption, 
+                      replacing plaintext values with ciphertext values and AES-KW authenticated-encryption with
+		      AES-KW authenticated-decryption. 
+                      Additionally, the evaluator will modify one byte of the ciphertext,
+		      attempt to decrypt the modified ciphertext, and ensure that a failure is returned
+		      rather than plaintext.
+		    </li>
+                  </ul>
+		</p>
+		<p> <b>AES Key Wrap with Padding (AES-KWP Tests)</b></p>
+		<p>
+                <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                  <li><b>Test 1: </b>
+		  <p>The evaluator will test the authenticated-encryption functionality of AES-KWP for each combination of the following input parameter lengths:</p>
+		  <p>128 and 256 bit key encryption keys (KEKs)</p>
+		    <p>
+                      Three plaintext lengths. One plaintext length will be one octet. 
+                      One plaintext length will be 20 octets (160 bits). 
+                      One plaintext length will be the longest supported plaintext length less than or equal to 512 octets (4096 bits).
+		    </p>
+		    <p>
+                      using a set of 100 key and plaintext pairs and obtain the ciphertext that results from AES-KWP authenticated encryption. 
+                      To determine correctness, the evaluator will use the AES-KWP authenticated-encryption function of a known good implementation.
+		    </p>
+		  </li>
+                  <li><b>Test 2: </b>
+		    The evaluator will test the authenticated-decryption functionality of AES-KWP
+		    using the same test as for AES-KWP authenticated-encryption, 
+                    replacing plaintext values with ciphertext values and AES-KWP authenticated-encryption
+		    with AES-KWP authenticated-decryption. 
+                    Additionally, the evaluator will modify one byte of the ciphertext, attempt to decrypt the modified ciphertext, and ensure that a failure is returned rather than plaintext.
+		  </li>
+                </ul>
+		</p>
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_CKM.2.1/PMK">
+          <a class="abbr" href="#FCS_CKM.2.1/PMK">FCS_CKM.2.1/PMK</a>
+        </td>
+        <td>
+              The TSF shall <b>receive the 802.11 Pairwise Master Key (PMK)</b> in
+              accordance with a specified cryptographic key distribution method: [<i>from 802.1X Authorization Server</i>]
+              that meets the following: [<i>IEEE 802.11-2020</i>] <b>and does not expose the cryptographic keys</b>.
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+              This requirement applies to the Pairwise Master Key that is received from the RADIUS
+              server by the TOE. The intent of this requirement is to ensure conformant TOEs implement 802.1X
+              authentication prior to establishing secure communications with the client.
+              The intent is that any WLAN AS evaluated against this PP-Module will support both
+              WPA2-Enterprise and WPA3-Enterprise at a minimum and certificate-based authentication mechanisms
+              and therefore disallows implementations that support only pre-shared keys. Because communications
+              with the RADIUS server are required to be performed over a protected connection, the transfer
+              of the PMK will be protected.
+            </span></div></td>
+        <td>
+              The evaluator will examine the TSS to determine that it describes how the PMK is transferred (that is,
+                through what EAP attribute) to the TOE.<br/><br/>
+              There are no guidance evaluation activities for this component.<br/><br/>
+              The evaluator will establish a session between the TOE and a RADIUS server according to the
+              configuration guidance provided.
+	      The evaluator will then examine the traffic that passes between the
+              RADIUS server and the TOE during a successful attempt to connect a wireless client to the TOE to
+              determine that the PMK is not exposed.
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_8021X_EXT.1.1">
+          <a class="abbr" href="#FIA_8021X_EXT.1.1">FIA_8021X_EXT.1.1</a>
+        </td>
+        <td>The TSF shall conform to IEEE Standard 802.1X for a Port Access Entity (PAE) in the
+            “Authenticator” role.<br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_8021X_EXT.1.2">
+          <a class="abbr" href="#FIA_8021X_EXT.1.2">FIA_8021X_EXT.1.2</a>
+        </td>
+        <td>The TSF shall support communications to a RADIUS authentication server
+            conforming to RFCs 2865 and 3579.<br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_8021X_EXT.1.3">
+          <a class="abbr" href="#FIA_8021X_EXT.1.3">FIA_8021X_EXT.1.3</a>
+        </td>
+        <td>The TSF shall ensure that no access to its 802.1X controlled port is given to the
+            wireless client prior to successful completion of this authentication exchange.<br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+            This requirement covers the TOE's role as the authenticator in an 802.1X
+            authentication exchange. If the exchange is completed successfully, the TOE will obtain the PMK from
+            the RADIUS server and perform the four-way handshake with the wireless client (supplicant) to begin
+            802.11 communications.</p>
+	    <p>
+            As indicated previously, there are at least three communication paths present during the exchange; two
+            with the TOE as an endpoint and one with the TOE acting as a transfer point only.
+	    The TOE establishes an EAP over Local Area Network (EAPOL) connection with the wireless
+	    client as specified in 802.1X-2007.
+	    The TOE also establishes (or has established) a RADIUS protocol connection protected either
+	    by IPsec or RadSec (TLS) with the RADIUS server. 
+            The wireless client and RADIUS server establish an EAP-TLS session
+            (RFC 5216); in this transaction the TOE merely takes the EAP-TLS packets from its EAPOL/RADIUS
+            endpoint and transfers them to the other endpoint. Because the specific authentication method (TLS in
+            this case) is opaque to the TOE, there are no requirements with respect to RFC 5126 in this PP-Module.
+            However, the base RADIUS protocol (2865) has an update (3579) that will need to be addressed in the
+            implementation and evaluation activities. Additionally, RFC 5080 contains implementation issues that
+            will need to be addressed by developers but which levy no new requirements.</p>
+	    <p>
+            
+            The point of performing 802.1X authentication is to provide access to the network (assuming the
+            authentication was successful and that all 802.11 negotiations are performed successfully); in the
+            terminology of 802.1X, this means the wireless client has access to the "controlled port" maintained by
+            the TOE.
+	    </p>
+          </span></div></td>
+        <td>
+              
+                In order to show that the TSF implements the 802.1X-2010 standard correctly, the evaluator will ensure
+                that the TSS contains the following information: <ul>
+                <li>The sections (clauses) of the standard that the TOE implements</li>
+                <li>For each identified section, any options selected in the implementation allowed by the
+                standards are specified</li>
+                <li>For each identified section, any non-conformance is identified and described, including a
+                justification for the non-conformance</li>
+                </ul>
+                Because the connection to the RADIUS server will be contained in an IPsec or RadSec (TLS) tunnel,
+                the security mechanisms detailed in the RFCs identified in the requirement are not relied on to provide
+                protection for these communications. Consequently, no extensive analysis of the RFCs is required.
+                However, the evaluator will ensure that the TSS describes the measures (documentation, testing) that
+                are taken by the product developer to ensure that the TOE conforms to the RFCs listed in this
+                requirement.<br/><br/>
+              
+              There are no guidance evaluation activities for this component.<br/><br/>
+              
+                The evaluator will perform the following tests:
+                <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                  <li><b>Test 1: </b>The evaluator will demonstrate that a wireless client has no access to the test network. After
+                    successfully authenticating with a RADIUS server through the TOE, the evaluator will demonstrate that
+                    the wireless client does have access to the test network.</li>
+                  <li><b>Test 2: </b>The evaluator will demonstrate that a wireless client has no access to the test network. The
+                    evaluator will attempt to authenticate using an invalid client certificate, such that the EAP-TLS
+                    negotiation fails. This should result in the wireless client still being unable to access the test network.
+                  </li>
+                  <li><b>Test 3: </b>The evaluator will demonstrate that a wireless client has no access to the test network. The
+                    evaluator will attempt to authenticate using an invalid RADIUS certificate, such that the EAP-TLS
+                    negotiation fails. This should result in the wireless client still being unable to access the test network.</li>
+                </ul>
+                <b>Note: </b>Tests 2 and 3 above are not tests that "EAP-TLS works," although that is a by-product of the test.
+                The test is actually that a failed authentication (under two failure modes) results in denial of access to
+                the network, which demonstrates the enforcement of FIA_8021X_EXT.1.3.
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_UAU.6.1">
+          <a class="abbr" href="#FIA_UAU.6.1">FIA_UAU.6.1</a>
+        </td>
+        <td>The TSF shall re-authenticate the <b>administrative</b> user under the conditions [<i>when the user
+            changes their password, [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_43">following TSF-initiated session locking</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_44">[<b>assignment</b>: 
+     <span class="assignable-content">other conditions</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_45">no other conditions</span> ]</i>]. 
+          <br/></td>
+        <td>
+            There are no TSS evaluation activities for this component.<br/><br/>
+            There are no guidance evaluation activities for this component.<br/><br/>
+            
+	      The evaluator will attempt to change their password as directed by the operational guidance.
+              While making this attempt, the evaluator will verify that re-authentication is required.
+	      <p>
+		If other re-authentication conditions are specified, the evaluator will cause those conditions to
+		occur and verify that the TSF re-authenticates the authenticated user.
+	      </p>
+            
+          </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FMT_SMF.1.1/AccessSystem">
+          <a class="abbr" href="#FMT_SMF.1.1/AccessSystem">FMT_SMF.1.1/AccessSystem</a>
+        </td>
+        <td>The TSF shall be capable of performing the following management functions: 
+			  <ul>
+			    <li>Configure the security policy for each wireless network, including:</li>
+			    <ul> 
+			      <li>Security type</li>
+			      <li>Authentication protocol</li>
+			      <li>Client credentials to be used for authentication</li>
+			      <li>SSID</li>
+			      <li>If the SSID is broadcasted</li>
+			      <li>Frequency band set to [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_46">2.4 GHz</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_47">5 GHz</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_48">6 GHz</span> ]</li>
+			      <li>Transmit power level</li>
+			    </ul></ul><br/></td>
+        <td>
+			  
+			    The evaluator will confirm that the TSS includes which security types (e.g., WPA3),
+			    authentication protocol (e.g., SAE), and frequency bands the WLAN AS supports.
+			    The evaluator will confirm that the TSS includes how connection attempts
+			    from clients that are not operating on an approved security type are handled.<br/><br/>
+			  
+			   
+			    The evaluator will confirm that the operational guidance includes instructions for configuring the WLAN AS 
+				  for each feature listed.<br/><br/>
+			  
+			  
+			  <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+			    <li><b>Test 1: </b>For each security type specified in the TSS, configure the network to the approved security type and verify that the client can establish a connection.  Maintaining the same SSID, change the security type of the client to a non-approved security type and attempt to establish a connection.  Verify that the connection was unsuccessful. </li>
+			    <li><b>Test 2: </b>For each authentication protocol specified in the TSS, configure the network accordingly per the AGD. Verify that the client connection attempt is successful when using the correct client credentials and that the connection is unsuccessful when incorrect authentication credentials are used. </li>		  
+			    <li><b>Test 3: </b>
+			      Configure the SSID to be broadcasted.
+			      Using a network sniffing tool, capture a beacon frame and confirm that the SSID is included.
+			      Configure the SSID to be hidden.
+			      Using a network sniffing tool, capture a beacon frame and confirm that the SSID is not listed.
+			    </li>		  
+			    <li><b>Test 4: </b>The evaluator will configure the AS to operate in each of the selected frequency bands and verify using a network sniffing tool. </li>	
+			    <li><b>Test 5: </b>The evaluator will demonstrate that the client can establish a connection to the AS on the default power level.  After disconnecting,  the power level should be adjusted and then the client should be able to successfully connect to the AS again.</li>
+			  </ul>
+			  
+			</td>
+      </tr>
+      <tr xmlns="">
+        <td id="FMT_SMR_EXT.1.1">
+          <a class="abbr" href="#FMT_SMR_EXT.1.1">FMT_SMR_EXT.1.1</a>
+        </td>
+        <td>
+              The TSF shall ensure that the ability to administer remotely the TOE from a wireless client
+              shall be disabled by default.
+            <br/></td>
+        <td>
+              There are no TSS evaluation activities for this component.<br/><br/>
+              
+              The evaluator will review the operational guidance to ensure that it contains instructions for
+                administering the TOE both locally and remotely, including any configuration that needs to be
+                performed on the client for remote administration. The evaluator will confirm that the TOE
+                does not permit remote administration from a wireless client by default.<br/><br/>
+              
+              The evaluator will demonstrate that after configuring the TOE for first use from the operational
+                guidance, it is possible to establish an administrative session with the TOE on the “wired” portion of the
+                device. They will then demonstrate that an identically configured wireless client that can successfully
+                connect to the TOE cannot be used to perform administration.
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FPT_FLS.1.1">
+          <a class="abbr" href="#FPT_FLS.1.1">FPT_FLS.1.1</a>
+        </td>
+        <td>The TSF shall preserve a secure state when the following types of failures occur: [<i>failure of
+              the self-tests</i>].<br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+              The intent of this requirement is to express the fail secure capabilities that the TOE
+              possesses.
+	      This means that the TOE must be able to attain a secure, safe state (shutdown) when any of
+              the identified failures occur.
+            </span></div></td>
+        <td>
+              The evaluator will examine the TSS to determine that the TOE’s implementation of the fail secure
+                functionality is documented. The evaluator will examine the TSS to ensure that it describes all failure
+                conditions and how a secure state is preserved if any of these failures occur. The evaluator will ensure that 
+                the definition of a secure state is suitable to ensure the continued protection of any key material and user data.<br/><br/>
+              
+              The evaluator will examine the operational guidance to verify that it describes applicable recovery instructions 
+		      for each TSF failure state.<br/><br/>
+              For each failure mode specified in the ST, the evaluator will ensure that the TOE attains a secure state
+                (e.g., shutdown) after initiating each failure mode type.
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FTA_TSE.1.1">
+          <a class="abbr" href="#FTA_TSE.1.1">FTA_TSE.1.1</a>
+        </td>
+        <td>The TSF shall be able to deny session establishment <b>of a wireless client session</b> based
+              on [<i>TOE interface, time, day, [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_49">[<b>assignment</b>: 
+     <span class="assignable-content">other attributes</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_50">no other attributes</span> ]</i>].
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+              The “TOE interface” can be specified in terms of the device in the TOE that the WLAN
+              client is connecting to (e.g. specific WLAN APs). “Time” and “day” refer to time-of-day and
+              day-of-week, respectively.
+	      </p>
+	      <p>
+              The assignment is to be used by the ST author to specify additional attributes on which denial of session
+              establishment can be based.
+	      </p>
+            </span></div></td>
+        <td>
+              
+		The evaluator will examine the TSS to determine that all of the attributes on
+		which a client session can be denied are specifically defined.<br/><br/>
+              The evaluator will examine the operational guidance to determine that it contains guidance for
+                configuring each of the attributes identified in the TSS.<br/><br/>
+              
+                For each supported attribute, the evaluator will perform the following test:
+                <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                  <li><b>Test 1: </b>
+		    The evaluator successfully establishes a client session with a wireless client.
+		    The evaluator then follows the operational guidance to configure the system so
+		    that the client’s access is denied based on a specific value of the attribute.
+		    The evaluator will then attempt to establish a session in contravention
+                    to the attribute setting (for instance, the client is denied WLAN access based upon the TOE interface
+                    (e.g. WLAN AP) it is connecting to, or that the client is denied access based upon the time-of-day or
+                    day-of-week it is attempting connection on).
+		    The evaluator will observe that the access attempt fails.
+                  </li>
+                </ul>
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FTP_ITC.1.1/Client">
+          <a class="abbr" href="#FTP_ITC.1.1/Client">FTP_ITC.1.1/Client</a>
+        </td>
+        <td>The TSF shall be capable of using WPA3-Enterprise, WPA2-Enterprise and 
+				  [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_51">WPA3-SAE</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_52">WPA3-SAE-PK</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_53">WPA2-PSK</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_54">no other mode</span> ]
+				  as defined by IEEE 802.11-2020 to provide a trusted communication channel
+				  between itself and WLAN clients that is logically distinct from 
+				  other communication channels and provides assured identification of its end
+				  points and protection of the channel data from disclosure and detection of
+				  modification of the channel data.
+				  <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FTP_ITC.1.2/Client">
+          <a class="abbr" href="#FTP_ITC.1.2/Client">FTP_ITC.1.2/Client</a>
+        </td>
+        <td>
+			The TSF shall permit the authorized IT entities to initiate communication via the trusted channel.
+		<br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FTP_ITC.1.3/Client">
+          <a class="abbr" href="#FTP_ITC.1.3/Client">FTP_ITC.1.3/Client</a>
+        </td>
+        <td>The TSF shall initiate communication via the trusted channel for [<i>no services</i>].<br/></td>
+        <td>
+				    This component is adequately evaluated when performing the evaluation activities for <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="no-link">FTP_ITC.1</span> in the <a xmlns:sec="https://niap-ccevs.org/cc/v1/section" xmlns:htm="http://www.w3.org/1999/xhtml" href="https://www.niap-ccevs.org/profile/Info.cfm?PPID=447&amp;id=447">Network Device, version 2.2e</a> base-PP.
+				    
+				  </td>
+      </tr>
+    </table>
+    <div class="tabletitle"> Security Assurance Requirements </div>
+    <table>
+      <thead>
+        <td>ID</td>
+        <td>Requirement</td>
+        <td>Assurance Activity</td>
+      </thead>
+    </table>
+    <div class="tabletitle">Glossary</div>
+  </body>
+</html>
