@@ -1066,6 +1066,679 @@
 				    
 				  </td>
       </tr>
+      <tr>
+        <td colspan="3">Modified SFRs</td>
+      </tr>
+      <tr xmlns="">
+        <td id="FAU_GEN_EXT.1.1">
+          <a class="abbr" href="#FAU_GEN_EXT.1.1">FAU_GEN_EXT.1.1</a>
+        </td>
+        <td>
+                This is specified as a selection-based SFR in the Base-PP but is 
+		mandatory for any TOE that claims
+                conformance to this PP-Module because a conformant TOE will always be distributed.
+		Therefore, it will always be required for each TOE component to 
+                generate its own audit records.
+              <br/></td>
+        <td>
+                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.
+              </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FAU_STG_EXT.1.1">
+          <a class="abbr" href="#FAU_STG_EXT.1.1">FAU_STG_EXT.1.1</a>
+        </td>
+        <td>
+                The TSF shall be able to transmit the generated audit data to an external
+                IT entity using a trusted channel according to FTP_ITC.1.
+              <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FAU_STG_EXT.1.2">
+          <a class="abbr" href="#FAU_STG_EXT.1.2">FAU_STG_EXT.1.2</a>
+        </td>
+        <td>
+                The TSF shall be able to store generated audit data on the TOE itself. In addition
+                [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_1">The TOE shall be a distributed TOE that stores audit data on the following TOE
+                    components: [<b>assignment</b>: 
+     <span class="assignable-content">identification of TOE components</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_2">The TOE shall be a distributed TOE with storage of audit data provided externally for
+                    the following TOE components: [<b>assignment</b>: 
+     <span class="assignable-content">list of TOE components that do not store
+                      audit data locally and the other TOE components to which they transmit their generated
+                      audit data</span>]</span> ].
+              <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FAU_STG_EXT.1.3">
+          <a class="abbr" href="#FAU_STG_EXT.1.3">FAU_STG_EXT.1.3</a>
+        </td>
+        <td>
+                The TSF shall [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_3">drop new audit data</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_4">overwrite previous audit records according to the following rule: [<b>assignment</b>: 
+     <span class="assignable-content">rule for overwriting previous audit records</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_5">[<b>assignment</b>: 
+     <span class="assignable-content">other action</span>]</span> ] when the local storage space for audit data is full.
+              <br/></td>
+        <td>
+                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to restricts selections in FAU_STG_EXT.1.2 to a subset of the available options to account for the TOE being distributed.
+              </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FAU_STG_EXT.4.1">
+          <a class="abbr" href="#FAU_STG_EXT.4.1">FAU_STG_EXT.4.1</a>
+        </td>
+        <td>
+                This is specified as a selection-based SFR in the Base-PP but is 
+		mandatory for any TOE that claims
+                conformance to this PP-Module because a conformant TOE will always be distributed.
+		Therefore, it will always be required for each TOE component to 
+                appropriately protect its own audit records.
+	  <br/></td>
+        <td>
+                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.
+	  </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCO_CPC_EXT.1.1">
+          <a class="abbr" href="#FCO_CPC_EXT.1.1">FCO_CPC_EXT.1.1</a>
+        </td>
+        <td>
+                This is specified as a selection-based SFR in the Base-PP but is 
+		mandatory for any TOE that claims
+                conformance to this PP-Module because a conformant TOE will always be distributed.
+		Therefore, it will always be required for a Security Administrator to enable
+	      communications between any pair of TOE components before such communication can take place.
+	    <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FCO_CPC_EXT.1.2">
+          <a class="abbr" href="#FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</a>
+        </td>
+        <td>
+                This is specified as a selection-based SFR in the Base-PP but is 
+		mandatory for any TOE that claims
+                conformance to this PP-Module because a conformant TOE will always be distributed.
+		Therefore, it will always be required  that each component 
+		establish and use a communications channel that uses a secure channel requirement or 
+		no channel.
+	    <br/></td>
+        <td>
+                There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
+                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.
+	    </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_COP.1.1/DataEncryption">
+          <a class="abbr" href="#FCS_COP.1.1/DataEncryption">FCS_COP.1.1/DataEncryption</a>
+        </td>
+        <td>
+                
+                The TSF shall perform encryption/decryption in accordance
+                with a specified cryptographic algorithm AES used in <b>CBC, CCMP, </b> and [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_6">CTR</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_7">GCM</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_8"><b>GCMP</b></span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_9"><b>no other</b></span> ] <b>modes</b> and cryptographic key sizes <b>256 bits and</b> [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_10">128 bits</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_11">192 bits</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_12"><b>no other key sizes</b></span> ] that meet the following: AES as specified in ISO 18033-3, 
+                <b>CBC as specified in ISO 10116, 
+                  CCMP as specified in NIST SP 800-38C and IEEE 802.11-2020,</b> [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_13">CTR as specified in ISO 10116</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_14">GCM as specified in ISO 19772</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_15"><b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021</b></span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_16"><b>no other standards</b></span> ]. 
+              <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+                <p>
+                  This requirement is modified from its definition in the NDcPP by mandating the selection of
+		  CBC mode and 256 bit key sizes while also defining additional AES mode and key size selections
+		  not present in the original definition.
+		</p>
+		<p>
+                  This requirement mandates two modes for AES with a key size of 256 bits being implemented.
+		  It is not expected that these modes will both be used for all encryption and decryption functionality.
+		  Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements,
+		  CBC mode is mandated, and to comply with IEEE 802.11-2020, AES-CCMP
+		  (which uses AES in CCM as specified in SP 800-38C) must be implemented.
+		</p>
+		<p>
+                  For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates.
+		  For the second selection, the ST author should choose the key sizes that are supported by this functionality.
+		  256-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
+		  Note that optionally AES-CCMP-192, AES-CCMP-128, AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax-2021 connections.
+		  In the future, one of these modes may be required.
+		</p>
+		<p>
+                  CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
+		</p>
+              </span></div></td>
+        <td>
+                There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<br/><br/>
+                There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<br/><br/>
+                
+		  In addition to the tests required by the NDcPP, the evaluator will perform the following testing:
+		<p>
+                  <b>AES-CCM Tests</b></p>
+		  <p>
+                  The evaluator will test the generation-encryption and decryption-verification functionality of AES-CCM for the following input parameter and tag lengths:</p>
+		  <p>
+                  <b>128 bit and 256 bit keys</b></p>
+		  <p>
+                  <b>Two payload lengths</b>. One payload length will be the shortest supported payload length,
+                  greater than or equal to zero bytes. The other payload length will be the longest supported
+                  payload length, less than or equal to 32 bytes (256 bits).</p>
+		  <p>
+                    <b>Two or three associated data lengths</b>.
+		    One associated data length will be 0, if supported.
+		    One associated data length will be the shortest supported payload length,
+		    greater than or equal to
+                    zero bytes.
+		    One associated data length will be the longest supported payload length, less than
+                    or equal to 32 bytes (256 bits).
+		    If the implementation supports an associated data length of 216
+                    bytes, an associated data length of 216 bytes will be tested.
+		  </p>
+		  <p>
+                    <b>Nonce lengths</b>.
+		    All supported nonce lengths between 7 and 13 bytes, inclusive, will be tested.
+		  </p>
+		  <p>
+                    <b>Tag lengths</b>.
+		    All supported tag lengths of 4, 6, 8, 10, 12, 14, and 16 bytes will be tested.
+		  </p>
+		  <p>
+                    Due to the restrictions that IEEE 802.11 specifies for this mode
+		    (nonce length of 13 and tag length of 8),
+                    it is acceptable to test a subset of the supported lengths as long as the selections
+		    fall into the ranges specified above.
+		    In this case, the evaluator will ensure that these are the only supported lengths.
+                    To test the generation-encryption functionality of AES-CCM, the evaluator will
+		    perform the following four tests:
+		  </p>
+		  <p>
+                  <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                    <li><b>Test 1: </b>For each supported key and associated data length and any supported payload, nonce
+                      and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
+                      associated data and payload values, and obtain the resulting ciphertext.</li>
+                    <li><b>Test 2: </b>For each supported key and payload length and any supported associated data, nonce
+                      and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
+                      associated data and payload values, and obtain the resulting ciphertext.</li>
+                    <li><b>Test 3: </b>For each supported key and nonce length and any supported associated data, payload,
+                      and tag length, the evaluator will supply one key value and 10 associated data, payload and
+                      nonce value 3-tuples, and obtain the resulting ciphertext.</li>
+                    <li><b>Test 4: </b>For each supported key and tag length and any supported associated data, payload, and
+                      nonce length, the evaluator will supply one key value, one nonce value and 10 pairs of
+                      associated data and payload values and, obtain the resulting ciphertext</li>
+                  </ul>
+                  To determine correctness in each of the above tests, the evaluator will compare the ciphertext with the
+                  result of generation-encryption of the same inputs with a known good implementation.</p>
+		  <p>
+                  To test the decryption-verification functionality of AES-CCM, for each combination of supported
+                  associated data length, payload length, nonce length, and tag length, the evaluator will supply a key
+                  value and 15 nonce, associated data and ciphertext 3-tuples, and obtain either a fail result or a pass
+                  result with the decrypted payload.
+		  The evaluator will supply 10 tuples that should fail and 5 that should pass per set of 15.
+		  </p>
+		  <p>
+                  Additionally, the evaluator will use tests from the IEEE 802.11-02/362r6 document “Proposed Test
+                  vectors for IEEE 802.11 TGi”, dated September 10, 2002, Section 2.1 AES-CCMP Encapsulation Example
+                  and Section 2.2 Additional AES-CCMP Test Vectors to verify further the IEEE 802.11-2020
+                  implementation of AES-CCMP.
+		  </p>
+                
+              </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FPT_TST_EXT.1.1">
+          <a class="abbr" href="#FPT_TST_EXT.1.1">FPT_TST_EXT.1.1</a>
+        </td>
+        <td>
+                The TSF shall run a suite of the following self-tests <b>during initial start-up (on power on) and </b> [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_17">periodically during normal operation</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_18">at the request of the authorized user</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_19">at the conditions [<b>assignment</b>: 
+     <span class="assignable-content">conditions under which self-tests should occur</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_20"><b>in no other circumstances</b></span> ] to demonstrate the correct operation of the TSF: <b>integrity verification of stored TSF executable code when it is loaded for execution
+                through the use of the TSF-provided cryptographic service specified in FCS_COP.1/SigGen, [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_21">[<b>assignment</b>: 
+     <span class="assignable-content">list of additional self-tests run by the TSF</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_22">no other self-tests</span> ]</b>.
+              <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">This SFR is modified from its definition in the NDcPP by mandating that self-testing occur at power on and that the self-testing must include, at minimum,
+              an integrity test using a digital signature. FCS_COP.1/SigGen is defined in the NDcPP.</span></div></td>
+        <td>
+                The evaluator will perform the following activities in addition to those required by the NDcPP:<br/><br/>
+                
+		    The evaluator will examine the TSS to ensure that it describes how to verify the integrity of stored TSF
+                  executable code when it is loaded for execution, which includes the generation and protection of the
+                  “check value” used to ensure integrity as well as the verification step.
+		  This description will also cover the digital signature service used in performing these functions.
+		  The evaluator also checks the operational guidance to ensure that any actions
+		  required by the administrator to initialize or operate
+                  this functionality are present.<br/><br/>
+                    The evaluator will also ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful execution of the integrity test.
+		  <br/><br/>
+		  
+                The evaluator will ensure that the TSS or operational guidance describes the actions that take place for 
+			successful and unsuccessful execution of the integrity test.<br/><br/>
+		
+                The evaluator will perform the following tests:
+                <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                  <li><b>Test 1: </b>Following the operational guidance, the evaluator will initialize the integrity protection system.
+                    The evaluator will perform actions to cause TSF software to load and observe that the integrity
+                    mechanism does not flag any executables as containing integrity errors.
+                  </li>
+                  <li><b>Test 2: </b>
+		    The evaluator will modify the TSF executable and cause that executable to be loaded by the TSF.
+		    The evaluator will observe that an integrity violation is triggered (care must be taken so that the
+                    integrity violation is determined to be the cause of the failure to load the module and not the fact that
+                    the module was modified so that it was rendered unable to run because its format was corrupt).
+                  </li>
+                </ul>
+              </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FTP_ITC.1.1">
+          <a class="abbr" href="#FTP_ITC.1.1">FTP_ITC.1.1</a>
+        </td>
+        <td>The TSF shall be capable of using <b>IEEE 802.1X, [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-ipsec">IPsec</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-radius">RADIUS over TLS</span> ], and</b> [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_25">SSH</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_26">TLS</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_27">DTLS</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_28">HTTPS</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_29"><b>no other protocols</b></span> ] to provide a trusted communication channel
+                between itself and authorized IT entities supporting the following capabilities: <b>802.1X authentication server,</b> audit
+                server, [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_30">authentication server</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_31">[<b>assignment</b>: 
+     <span class="assignable-content">other capabilities</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_32">no other capabilities</span> ] that is logically distinct
+                from other communication channels and provides assured identification of its end points and protection
+                of the channel data from disclosure and detection of modification of the channel data.
+              <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+                <p>
+                  This requirement has been modified from its definition in the NDcPP to 
+                  mandate the communications protocols and environmental components that 
+                  a WLAN AS must use for infrastructure communications
+                  (802.11 support is also required for wireless client communications, but this is covered
+                  by the FTP_ITC.1/Client).
+                  IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
+                  Other selections may be made if needed by other parts of the TSF.
+                  The requirement implies that not only are communications protected when they are initially established,
+                  but also on resumption after an outage.</p>
+                <p>
+                   The IT entity of "802.1X authentication server" is distinct from "authentication server"
+                   because the latter may be used for administrator authentication rather 
+                   than authorization of WLAN clients.
+                </p><p>
+                   If <a href="#s-ipsec">IPsec</a> is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
+                   If <a href="#s-radius">RADIUS over TLS</a> is selected in FTP_ITC.1.1,
+                   then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the NDcPP.
+                </p>
+              </span></div></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FTP_ITC.1.2">
+          <a class="abbr" href="#FTP_ITC.1.2">FTP_ITC.1.2</a>
+        </td>
+        <td>The TSF shall permit the TSF or the authorized IT entities to initiate communication via the trusted channel.<br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FTP_ITC.1.3">
+          <a class="abbr" href="#FTP_ITC.1.3">FTP_ITC.1.3</a>
+        </td>
+        <td>The TSF shall initiate communication via the trusted channel for [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">assignment</b>: 
+     <span class="assignable-content">list of services for which the TSF is able to initiate communications</span>].<br/></td>
+        <td>
+                The evaluator will perform the following activities in addition to those required by the NDcPP:<br/><br/>
+                
+		  The evaluator will examine the TSS to determine that, for all communications with authorized IT
+                  entities identified in the requirement, each communications mechanism is identified in terms of the
+                  allowed protocols for that IT entity.
+		  The evaluator will also confirm that all protocols listed in the TSS
+                  are specified and included in the requirements in the ST.<br/><br/>
+		
+                The evaluator will confirm that the guidance documentation contains instructions for establishing the
+                  allowed protocols with each authorized IT entity and that it contains recovery instructions should a
+                  connection be unintentionally broken.<br/><br/>
+                
+                The evaluator will perform the following tests:
+                  <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                    <li><b>Test 1: </b>The evaluator will ensure that communications using each protocol with each authorized IT
+                      entity is tested during the course of the evaluation, setting up the connections as described in the
+                      guidance documentation and ensuring that communication is successful. </li>
+                    <li><b>Test 2: </b>For each protocol that the TOE can initiate as defined in the requirement, the evaluator will
+                      follow the guidance documentation to ensure that the communication channel can be initiated
+                      from the TOE. </li>
+                    <li><b>Test 3: </b>The evaluator will ensure, for each communication channel with an authorized IT entity, the
+                      channel data is not sent in plaintext.</li>
+                    <li><b>Test 4: </b>The evaluator will, for each protocol associated with each authorized IT entity tested during
+                      test 1, physically interrupt an established connection. The evaluator will ensure that when physical
+                      connectivity is restored, communications are appropriately protected.</li>
+                  </ul>
+                
+              </td>
+      </tr>
+      <tr>
+        <td colspan="3">Optional SFRs</td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_CKM.2.1/DISTRIB">
+          <a class="abbr" href="#FCS_CKM.2.1/DISTRIB">FCS_CKM.2.1/DISTRIB</a>
+        </td>
+        <td>The TSF shall distribute <b>the IEEE 802.11</b> keys in accordance with a
+              specified key distribution method: [<i>trusted channel protocol specified in FPT_ITT.1(Base-PP) </i>] that meets the following: [<i>standards specified in the various iterations of FCS_COP.1</i>] <b>and
+                does not expose the cryptographic keys</b>.
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+              This requirement applies to any key necessary for successful IEEE 802.11 connections
+              not covered by FCS_CKM.2/GTK.
+	      In cases where a key must be distributed to other APs, this
+              communication must be performed via a mechanism of commensurate cryptographic strength.
+	      Because communications with any component of a distributed TOE are required to be
+	      performed over a trusted connection, the transfer of these keys will be protected.
+	      </p>
+	      <p>
+		FCS_COP.1 and FPT_ITT.1 are defined in the NDcPP.
+	      </p>
+	      </span></div></td>
+        <td>
+              The evaluator will examine the TSS to determine that it describes which keys are distributed outside
+                the TOE, where they are sent, and the purpose for this transfer.<br/><br/>
+              If this function is dependent on TOE configuration, the evaluator will confirm that the operational
+              guidance contains instructions for how to configure that the keys are adequately protected.<br/><br/>
+	      
+              This requirement will be tested in conjunction with the tests for the cryptographic primitives, the secure
+                protocols, and FPT_ITT.1 (Base-PP).
+            </td>
+      </tr>
+      <tr>
+        <td colspan="3">Selection-based SFRs</td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_RADSEC_EXT.1.1">
+          <a class="abbr" href="#FCS_RADSEC_EXT.1.1">FCS_RADSEC_EXT.1.1</a>
+        </td>
+        <td>
+              The TSF shall implement RADIUS over TLS as specified in RFC 6614 to communicate securely with a RADIUS server.
+            <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_RADSEC_EXT.1.2">
+          <a class="abbr" href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>
+        </td>
+        <td>
+            The TSF shall perform peer authentication using [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-x509-certs">X.509v3 certificates</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-radsec-psk">pre-shared keys</span> ].
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>This SFR is applicable if "RADIUS over TLS" is selected in FTP_ITC.1.1.</p>
+	      <p>
+		If <a href="#s-x509-certs">X.509v3 certificates</a> is selected in FCS_RADSEC_EXT.1.2,
+		then FCS_TLSC_EXT.2 from the NDcPP must be claimed. 
+		If <a href="#s-radsec-psk">pre-shared keys</a> is selected in FCS_RADSEC_EXT.1.2, then FCS_RADSEC_EXT.2 and FIA_PSK_EXT.1 in this PP-Module must be claimed.
+	      </p>
+            </span></div></td>
+        <td>
+              
+		  The evaluator will verify that the TSS description includes the use of
+		  RADIUS over TLS, as described in RFC 6614.
+		<p>
+                  If X.509v3 certificates is selected, the evaluator will ensure that the TSS description includes the use of client-side certificates for TLS mutual authentication.
+		</p>
+	      
+              
+		The evaluator will verify that any configuration necessary to meet the requirement must be contained in the guidance.<br/><br/>
+	      
+              
+		The evaluator will demonstrate the ability to successfully establish a RADIUS over TLS connection with a RADIUS server. 
+                This test will be performed with X.509v3 certificates if selected and performed with pre-shared keys if selected.
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_RADSEC_EXT.2.1">
+          <a class="abbr" href="#FCS_RADSEC_EXT.2.1">FCS_RADSEC_EXT.2.1</a>
+        </td>
+        <td>The TSF shall implement [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_57">TLS 1.2 (RFC 5246)</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_58">TLS 1.1 (RFC 4346)</span> ] and no earlier TLS versions when acting as a RADIUS over TLS client that supports the following ciphersuites: 
+              [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <ul><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_59">TLS_PSK_WITH_AES_128_CBC_SHA</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_60">TLS_PSK_WITH_AES_256_CBC_SHA</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_61">TLS_DHE_PSK_WITH_AES_128_CBC_SHA</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_62">TLS_DHE_PSK_WITH_AES_256_CBC_SHA</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-rsa_psk_aes_128_cbc">TLS_RSA_PSK_WITH_AES_128_CBC_SHA</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-rsa_psk_aes_256_cbc">TLS_RSA_PSK_WITH_AES_256_CBC_SHA</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_65">TLS_PSK_WITH_AES_128_GCM_SHA256</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_66">TLS_PSK_WITH_AES_256_GCM_SHA384</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_67">TLS_DHE_PSK_WITH_AES_128_GCM_SHA256</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_68">TLS_DHE_PSK_WITH_AES_256_GCM_SHA384</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-rsa_psk_aes_128_gcm">TLS_RSA_PSK_WITH_AES_128_GCM_SHA256</span></li><li style=""><span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="s-rsa_psk_aes_256_gcm">TLS_RSA_PSK_WITH_AES_256_GCM_SHA384</span></li></ul>].
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+		If any of the TLS_RSA_PSK ciphersuites are selected by the ST author,
+	        it is necessary to claim the selection-based requirement FCS_RADSEC_EXT.3.
+	      </p>
+	      <p>
+		The above ciphersuites are only for use when the TSF is acting as a RADIUS over TLS client,
+		not for other uses of the TLS protocol. 
+		The ciphersuites to be tested in the evaluated configuration are limited by this requirement. 
+		The ST author should select the ciphersuites that are supported.
+		If "X.509v3 certificates" is selected in FCS_RADSEC_EXT.1.2, 
+		the ciphersuites selected in (and tested by) FCS_TLSC_EXT.2.1 are also supported for
+		RADIUS over TLS client use.
+	      </p>
+            </span></div></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_RADSEC_EXT.2.2">
+          <a class="abbr" href="#FCS_RADSEC_EXT.2.2">FCS_RADSEC_EXT.2.2</a>
+        </td>
+        <td>The TSF shall be able to [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_71">accept</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_72">generate using the random bit generator specified in FCS_RBG_EXT.1</span> ] bit-based pre-shared keys.<br/></td>
+        <td>
+              
+		The evaluator will check the description of the implementation of this protocol in the TSS to ensure that the ciphersuites supported are specified. 
+                The evaluator will check the TSS to ensure that the ciphersuites specified are identical to those listed for this component. 
+                The evaluator will also verify that the TSS contains a description of the denial of old SSL and TLS versions.
+		<p>
+                  The evaluator will examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are generated (if the TOE supports this functionality) 
+                  and confirm that this process uses the RBG specified in FCS_RBG_EXT.1.
+		</p>
+	      
+              
+		The evaluator will verify that any configuration necessary to meet the requirement must be contained in the guidance.
+		<p>
+                  The evaluator will also check the guidance documentation to ensure that it contains instructions on configuring the TOE so that RADIUS over TLS conforms to the description in the TSS 
+                  (for instance, the set of ciphersuites advertised by the TOE may have to be restricted to
+		  meet the requirements).
+		</p>
+		<p>
+                  The evaluator will confirm the operational guidance contains instructions for either entering bit-based pre-shared keys or generating a bit-based pre-shared key (or both).
+		</p>
+	      
+              The evaluator will perform the following tests:
+              <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                <li><b>Test 1: </b>The evaluator will establish a RADIUS over TLS connection using each of the ciphersuites selected in FCS_RADSEC_EXT.2.1. 
+                  It is sufficient to observe the successful negotiation of a cipher suite to satisfy the intent of the test; it is not necessary 
+                  to examine the characteristics of the encrypted traffic in an attempt to discern the cipher suite being used (for example, 
+                  that the cryptographic algorithm is 128-bit AES and not 256-bit AES).</li>
+                <li><b>Test 2: </b>The evaluator will set the pre-shared key to a value that does not match the server's pre-shared key and demonstrate that the TOE cannot successfully complete a protocol negotiation using this key.</li>
+                <li><b>Test 3: </b>The evaluator will configure the server to select the TLS_NULL_WITH_NULL_NULL cipher suite and verify that the client denies the connection.</li>
+                <li><b>Test 4: </b>The evaluator will perform the following modifications to the traffic:<ul>
+                  <li>Change the TLS version selected by the server in the Server Hello to a non-supported TLS version (for example, 1.3, represented by the two bytes 03 04) and verify that the client rejects the connection.</li>
+                  <li>Modify at least one byte in the server’s nonce in the Server Hello handshake message, and verify that the client rejects the Server Key Exchange handshake message 
+                    (if using a DHE cipher suite) or that the server denies the client’s Finished handshake message.</li>
+                  <li>Modify the server’s selected cipher suite in the Server Hello handshake message to be a cipher suite not presented in the Client Hello handshake message. 
+                    The evaluator will verify that the client rejects the connection after receiving the Server Hello.</li>
+                  <li>Modify a byte in the Server Finished handshake message, and verify that the client rejects the connection and does not send any application data.</li>
+                  <li>Send a garbled message from the server after the server has issued the ChangeCipherSpec message and verify that the client denies the connection.</li>
+                </ul></li>
+                <li><b>Test 5: </b>[conditional] If the TOE does not generate bit-based pre-shared keys, the evaluator will obtain a bit-based pre-shared key of the appropriate length and enter it according to the instructions in the operational guidance. 
+                  The evaluator will then demonstrate that a successful protocol negotiation can be performed with the key.</li>
+                <li><b>Test 6: </b>[conditional] If the TOE does generate bit-based pre-shared keys, the evaluator will generate a bit-based pre-shared key of the appropriate length and use it according to the instructions in the operational guidance. 
+                  The evaluator will then demonstrate that a successful protocol negotiation can be performed with the key.</li>
+              </ul>
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_RADSEC_EXT.3.1">
+          <a class="abbr" href="#FCS_RADSEC_EXT.3.1">FCS_RADSEC_EXT.3.1</a>
+        </td>
+        <td>
+              When the TSF negotiates a TLS_RSA_PSK cipher suite, the TSF shall verify that the presented identifier matches the reference identifier per RFC 6125 section 6.
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+	      This requirement must be claimed if any ciphersuites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.</p>
+	      <p>
+              The rules for verification of identity are described in Section 6 of RFC 6125. 
+              The reference identifier is typically established by configuration (e.g. configuring the name of the authentication server). 
+              Based on a singular reference identifier’s source domain and application service type (e.g. HTTP, SIP, LDAP), 
+              the client establishes all reference identifiers which are acceptable, such as a Common Name for the Subject Name field of the certificate and a (case-insensitive) DNS name for the Subject Alternative Name field. 
+              The client then compares this list of all acceptable reference identifiers to the presented identifiers in the TLS server’s certificate.
+	      </p>
+	      <p>
+              The preferred method for verification is the Subject Alternative Name using DNS names, URI names, or Service Names. 
+              Verification using the Common Name is required for the purposes of backwards compatibility. 
+              Additionally, support for use of IP addresses in the Subject Name or Subject Alternative name is discouraged as against best practices but may be implemented. 
+              Finally, support for wildcards is discouraged but may be implemented. 
+              If the client supports wildcards, the client must follow the best practices regarding matching; these best practices are captured in the evaluation activity.
+	      </p>
+            </span></div></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FCS_RADSEC_EXT.3.2">
+          <a class="abbr" href="#FCS_RADSEC_EXT.3.2">FCS_RADSEC_EXT.3.2</a>
+        </td>
+        <td>When the TSF negotiates a TLS_RSA_PSK cipher suite, the TSF shall  [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_73">not establish the connection</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_74">request authorization to establish the connection</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_75">[<b>assignment</b>: 
+     <span class="assignable-content">other action</span>]</span> ] if the presented server certificate is deemed invalid.<br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+		<p>This requirement must be claimed if any ciphersuites beginning with 'TLS_RSA_PSK' are selected in FCS_RADSEC_EXT.2.1.</p>
+		<p>
+              Validity is determined by the identifier verification, certificate path, the expiration date, and the revocation status in accordance with RFC 5280. 
+              Certificate validity is tested in accordance with testing performed for FIA_X509_EXT.1/Rev in the NDcPP.
+		</p>
+	      </span></div></td>
+        <td>
+              
+                The evaluator will ensure that the TSS describes the client’s method of establishing all reference identifiers from the administrator and application-configured reference identifier, 
+                including which types of reference identifiers are supported (e.g., Common Name, DNS Name, URI Name, Service Name, or other application-specific Subject Alternative Names) and whether IP addresses and wildcards are supported. 
+                The evaluator will ensure that this description identifies whether and the manner in which certificate pinning is supported or used by the TOE.<br/><br/>
+              
+                The evaluator will verify that the operational guidance includes instructions for setting the reference identifier to be used for the purposes of certificate validation in TLS.<br/><br/>
+	      
+              The evaluator will perform the following tests:
+                <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                    <li><b>Test 1: </b>The evaluator will attempt to establish the connection using a server with a server certificate that contains the Server Authentication purpose in the extendedKeyUsage field and 
+                      verify that a connection is established. The evaluator will then verify that the client rejects an otherwise valid server certificate that lacks the Server Authentication purpose in the extendedKeyUsage 
+                      field and a connection is not established. Ideally, the two certificates should be identical except for the extendedKeyUsage field.</li>
+                    <li><b>Test 2: </b>The evaluator will present a server certificate that does not contain an identifier in either the Subject Alternative Name (SAN) or Common Name (CN) that matches the reference identifier. 
+                      The evaluator will verify that the connection fails.</li>
+                    <li><b>Test 3: </b>The evaluator will present a server certificate that contains a CN that matches the reference identifier, 
+                      contains the SAN extension, but does not contain an identifier in the SAN that matches the reference identifier. 
+                      The evaluator will verify that the connection fails. The evaluator will repeat this test for each supported SAN type.</li>
+                    <li><b>Test 4: </b>The evaluator will present a server certificate that contains a CN that does not match the reference identifier but does contain an identifier in the SAN that matches. 
+                      The evaluator will verify that the connection succeeds.</li>
+                      <li><b>Test 5: </b>
+			[conditional] If the TOE does not mandate the presence of the SAN extension, the evaluator will present a server certificate that contains a CN that matches the reference identifier and does not contain the SAN extension. 
+			The evaluator will verify that the connection succeeds.
+			If the TOE does mandate the presence of the SAN extension, this test will be omitted.
+		  </li>
+                  <li><b>Test 6: </b>[conditional] If wildcards are supported by the TOE, the evaluator will perform the following tests: <ul>
+                      <li>The evaluator will present a server certificate containing a wildcard that is not in the left-most label of the presented identifier (e.g. foo.*.example.com) and verify that the connection fails.</li>
+                      <li>The evaluator will present a server certificate containing a wildcard in the left-most label but not preceding the public suffix (e.g. *.example.com). 
+                        The evaluator will configure the reference identifier with a single left-most label (e.g. foo.example.com). 
+                        The evaluator will verify that the connection succeeds. The evaluator will configure the reference identifier without a left-most label as in the certificate (e.g. example.com) and verify that the connection fails. 
+                        The evaluator will configure the reference identifier with two left-most labels (e.g. bar.foo.example.com) and verify that the connection fails.</li>
+                      <li>The evaluator will present a server certificate containing a wildcard in the left-most label immediately preceding the public suffix (e.g. *.com). 
+                        The evaluator will configure the reference identifier with a single left-most label (e.g. foo.com) and verify that the connection fails. 
+                        The evaluator will configure the reference identifier with two left-most labels (e.g. bar.foo.com) and verify that the connection fails.</li>
+                    </ul>
+                    </li>
+                    <li><b>Test 7: </b>[conditional] If wildcards are not supported by the TOE, the evaluator will present a server certificate containing a wildcard and verify that the connection fails.</li>
+                    <li><b>Test 8: </b>[conditional] If URI or Service name reference identifiers are supported, the evaluator will configure the DNS name and the service identifier. 
+                      The evaluator will present a server certificate containing the correct DNS name and service identifier in the URIName or SRVName fields of the SAN and verify that the connection succeeds. 
+                      The evaluator will repeat this test with the wrong service identifier (but correct DNS name) and verify that the connection fails.</li>
+                </ul>
+              
+            </td>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_PSK_EXT.1.1">
+          <a class="abbr" href="#FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</a>
+        </td>
+        <td>The TSF shall be able to use pre-shared keys for [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_76">RADIUS over TLS (RadSec)</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_77">IPsec</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_78">WPA3-SAE</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_79">WPA3-SAE-PK</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_80">IEEE 802.11 WPA2-PSK</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_81">[<b>assignment</b>: 
+     <span class="assignable-content">other protocols that use pre-shared keys</span>]</span> ]. 
+            <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_PSK_EXT.1.2">
+          <a class="abbr" href="#FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</a>
+        </td>
+        <td>The TSF shall be able to accept text-based pre-shared keys that: <ul>
+              <li>are 22 characters and [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_82">[<b>assignment</b>: 
+     <span class="assignable-content">other supported lengths</span>]</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_83">no other lengths</span> ];</li>
+              <li>are composed of any combination of upper and lower case letters, numbers, and special
+                characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”).
+              </li>
+            </ul>
+            <br/></td>
+        <td/>
+      </tr>
+      <tr xmlns="">
+        <td id="FIA_PSK_EXT.1.3">
+          <a class="abbr" href="#FIA_PSK_EXT.1.3">FIA_PSK_EXT.1.3</a>
+        </td>
+        <td>The TSF shall be able to [<b xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">selection</b>: <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_84">accept</span>,  <span xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="selectable-content" id="_s_85">generate using the random bit generator specified in FCS_RBG_EXT.1</span> ] bit-based pre-shared keys.
+            <br/><div xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section" class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">
+	      <p>
+		This requirement must be included if IPsec or another protocol that uses pre-shared keys is claimed, and pre-shared key authentication is selected 
+          (e.g., "Pre-shared Keys" is selected in FCS_IPSEC_EXT.1.13 or "pre-shared keys" is selected in FCS_RADSEC_EXT.1.2). 
+          The intent of this requirement is that all protocols will support both text-based and bit-based pre-shared keys.
+	      </p>
+	      <p>
+		For the length of the text-based pre-shared keys, a common length (22 characters) is required to help
+		promote interoperability.
+		If other lengths are supported, they should be listed in the assignment;
+		this assignment can also specify a range of values (e.g., "lengths from 5 to 55 characters") as well.
+	      </p>
+	      <p>
+		For FIA_PSK_EXT.1.3, the ST author specifies whether the TSF merely accepts bit-based pre-shared keys
+		or is capable of generating them.
+		If it generates them, the requirement specifies that they must be
+		generated using the RBG provided by the TOE.
+	      </p>
+          </span></div></td>
+        <td>
+	    
+	      The evaluator will verify that the TSS describes 
+	      <ol>
+		<li>the protocols that can use pre-shared keys and that these are consistent with the selections made in FIA_PSK_EXT.1.1.</li>
+		<li>the allowable values for pre-shared keys and that they are consistent with the selections made in FIA_PSK_EXT.1.2.</li>
+		<li>the way bit-based pre-shared keys are procured and that it is consistent with the selections made in FIA_PSK_EXT.1.3.</li>
+	      </ol>
+	    
+              
+		  The evaluator will examine the operational guidance to determine that it provides guidance to
+                administrators on the composition of strong text-based pre-shared keys, and (if the selection indicates
+                keys of various lengths can be entered) that it provides information on the range of lengths supported.
+                The guidance must specify the allowable characters for pre-shared keys, and that list must be a superset of the list contained in FIA_PSK_EXT.1.2.<br/><br/>
+                The evaluator will confirm the operational guidance contains instructions for either entering bit-based
+                pre-shared keys for each protocol identified in the requirement or for generating a bit-based pre-shared
+                key (or both).<br/><br/>
+	      
+              The evaluator will also perform the following tests for each protocol (or instantiation of a protocol, if
+                performed by a different implementation on the TOE). Note that one or more of these tests can be
+                performed with a single test case.
+                <ul xmlns:htm="http://www.w3.org/1999/xhtml" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
+                  <li><b>Test 1: </b>The evaluator will compose a pre-shared key of 22 characters that contains a combination of
+                    the allowed characters in accordance with the operational guidance and demonstrates that a successful
+                    protocol negotiation can be performed with the key.
+                  </li>
+                  <li><b>Test 2: </b>[conditional]: If the TOE supports pre-shared keys of multiple lengths, the evaluator will repeat
+                    Test 1 using the minimum length; the maximum length; a length inside the allowable range; and invalid
+                    lengths beyond the supported range (both higher and lower). The minimum, maximum, and included
+                    length tests should be successful, and the invalid lengths must be rejected by the TOE.
+                  </li>
+                  <li><b>Test 3: </b>[conditional]: If the TOE does not generate bit-based pre-shared keys, the evaluator will obtain a
+                    bit-based pre-shared key of the appropriate length and enter it according to the instructions in the
+                    operational guidance. The evaluator will then demonstrate that a successful protocol negotiation can
+                    be performed with the key.</li>
+                  <li><b>Test 4: </b>[conditional]: If the TOE does generate bit-based pre-shared keys, the evaluator will generate a
+                    bit-based pre-shared key of the appropriate length and use it according to the instructions in the
+                    operational guidance. The evaluator will then demonstrate that a successful protocol negotiation can
+                    be performed with the key.
+                  </li>
+                </ul>
+              
+            </td>
+      </tr>
     </table>
     <div class="tabletitle"> Security Assurance Requirements </div>
     <table>
