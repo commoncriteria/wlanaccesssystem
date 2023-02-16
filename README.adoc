@@ -1,0 +1,111 @@
+== Protection Profile or Extended Package for Wireless Local Area Network (WLAN) Access System
+
+
+[cols="1,1,1,1,1,1,1,1"]
+|===
+8+|wlanaccesssystem 
+| https://github.com/commoncriteria/wlanaccesssystem/tree/master[master] 
+a| https://commoncriteria.github.io/wlanaccesssystem/master/wlanaccesssystem-release.html[📄]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/master/ValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/master/validation.svg[Validation]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/master/SanityChecksOutput.md]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/master/warnings.svg[SanityChecks]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/master/SpellCheckReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/master/spell-badge.svg[SpellCheck]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/master/TDValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/master/tds.svg[TDs]
+a|image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/master/transforms.svg[transforms,150]
+a| 
+https://commoncriteria.github.io/wlanaccesssystem/master/diff-v1.0-precomment.html[diff-v1.0-precomment.html] +
+https://commoncriteria.github.io/wlanaccesssystem/master/wlanaccesssystem-release-linkable.html[wlanaccesssystem-release-linkable.html] +
+https://commoncriteria.github.io/wlanaccesssystem/master/wlanaccesssystem-release.html[wlanaccesssystem-release.html] +
+https://commoncriteria.github.io/wlanaccesssystem/master/wlanaccesssystem-sd.html[wlanaccesssystem-sd.html] +
+https://commoncriteria.github.io/wlanaccesssystem/master/wlanaccesssystem.html[wlanaccesssystem.html] +
+|===
+
+
+This repository hosts the draft version of the Protection Profile for
+Wireless Local Area Network (WLAN) Access System. This repository is
+used to facilitate collaboration and development on the draft document.
+See the link:#Release-Version[release] section if you are looking for
+the officially released version for evaluations. A list of products that
+have passed evaluation against this Protection Profile can be found
+https://www.niap-ccevs.org/Product/PCL.cfm?ID624=32[here].
+
+=== Draft Version
+
+* https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-release.html[Protection
+Profile for Wireless Local Area Network (WLAN) Access System] (html)
+* https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-release.pdf[Protection
+Profile for Wireless Local Area Network (WLAN) Access System] (pdf)
+* https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-sd.html[SD
+for Wireless Local Area Network (WLAN) Access System] (html)
+* https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem-sd.pdf[SD
+Profile for Wireless Local Area Network (WLAN) Access System] (pdf)
+* https://commoncriteria.github.io/wlanaccesssystem[QuickBuild
+Directory]
+
+=== Combined Module/SD Version
+
+* https://commoncriteria.github.io/pp/wlanaccesssystem/wlanaccesssystem.html[Protection
+Profile for Wireless Local Area Network (WLAN) Access System] (html)
+
+=== Release Version
+
+No previous releases
+
+=== Contributing
+
+If you are interested in contributing directly to future versions the
+this Protection Profile, please consider joining the NIAP technical
+community. *
+https://www.niap-ccevs.org/NIAP_Evolution/tech_communities.cfm[How to
+join the NIAP Technical Community (Mailing list and updates)]
+
+=== Feedback
+
+Questions, comments, and fixes can be submitted to the
+https://github.com/commoncriteria/wlanaccesssystem/issues[repository
+issue tracker]
+
+=== Quickstart
+
+To clone this project along with its _transforms_ submodule run:
+
+....
+  git clone --recursive git@github.com:commoncriteria/wlanaccesssystem.git
+....
+
+To pull updates from the upstream _transforms_ submodule and commit them
+run:
+
+....
+ git submodule update --remote transforms
+ git add transforms
+ git commit
+....
+
+==== Development Info
+
+https://github.com/commoncriteria/transforms/wiki/Working-with-Transforms-as-a-Submodule[Help
+working with Transforms Submodule]
+
+=== Repository Content
+
+* input - Contains the `meat' of the project. It’s the input content (in
+XML form) that gets transformed to readable html.
+* output - The output directory where the html is placed after
+transformation.
+* output/images - The directory where images are stored
+* transforms - Points to the transform subproject which is really a
+repository for resources shared amongst many Common Criteria projects.
+
+=== Links
+
+* https://www.niap-ccevs.org/[National Information Assurance Partnership
+(NIAP)]
+* https://www.commoncriteriaportal.org/[Common Criteria Portal]
+
+=== License
+
+See link:./LICENSE[License]
