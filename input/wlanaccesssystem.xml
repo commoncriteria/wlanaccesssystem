@@ -5,7 +5,8 @@
 
 
 
-<Module boilerplate="yes" target-products="Wireless Local Area Network (WLAN) Access System" 
+<Module boilerplate="yes"
+  target-product="Wireless Local Area Network (WLAN) Access System" 
   name="Wireless Local Area Network (WLAN) Access System"
   xmlns="https://niap-ccevs.org/cc/v1"
   xmlns:sec="https://niap-ccevs.org/cc/v1/section"
