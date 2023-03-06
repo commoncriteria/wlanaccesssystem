@@ -1,0 +1,22 @@
+[cols="1,1,1,1,1,1,1,1"]
+|===
+8+|wlanaccesssystem 
+| https://github.com/commoncriteria/wlanaccesssystem/tree/release-1.0[release-1.0] 
+a| https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-release.html[📄]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/release-1.0/ValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/release-1.0/validation.svg[Validation]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/release-1.0/SanityChecksOutput.md]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/release-1.0/warnings.svg[SanityChecks]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/release-1.0/SpellCheckReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/release-1.0/spell-badge.svg[SpellCheck]
+a|[link=https://github.com/commoncriteria/wlanaccesssystem/blob/gh-pages/release-1.0/TDValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/release-1.0/tds.svg[TDs]
+a|image::https://raw.githubusercontent.com/commoncriteria/wlanaccesssystem/gh-pages/release-1.0/transforms.svg[transforms,150]
+a| 
+https://commoncriteria.github.io/wlanaccesssystem/release-1.0/diff-v1.0-precomment.html[diff-v1.0-precomment.html] +
+https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-release-linkable.html[wlanaccesssystem-release-linkable.html] +
+https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-release.html[wlanaccesssystem-release.html] +
+https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-sd.html[wlanaccesssystem-sd.html] +
+https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem.html[wlanaccesssystem.html] +
+https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-paged.pdf[wlanaccesssystem-paged.pdf] +
+|===

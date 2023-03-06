@@ -1,0 +1,1 @@
+/home/runner/work/wlanaccesssystem/wlanaccesssystem/output/effective.xml:1:275: error: element "Module" missing required attribute "target-product"
