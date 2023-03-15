@@ -1,1 +1,4 @@
-* https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-paged.pdf[wlanaccesssystem-paged.pdf]
+* https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-sd.html.pdf[wlanaccesssystem-sd.html.pdf]
+* https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-release.html.pdf[wlanaccesssystem-release.html.pdf]
+* https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem-release-linkable.html.pdf[wlanaccesssystem-release-linkable.html.pdf]
+* https://commoncriteria.github.io/wlanaccesssystem/release-1.0/wlanaccesssystem.html.pdf[wlanaccesssystem.html.pdf]
