@@ -113,7 +113,15 @@
     </sec:Use_Cases> 
   </sec:Introduction>
   <sec:Conformance_Claims boilerplate="no">
-    <cclaims>
+    <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
+      <cc-st-conf>exact</cc-st-conf>
+      <cc-pt2-conf>extended</cc-pt2-conf>
+      <cc-pt3-conf>conformant</cc-pt3-conf>
+      <cc-pp-conf/>
+      <cc-pp-config-with/>
+      <cc-pkg-claim/>
+    </CClaimsInfo>
+    <!-- <cclaims>
       <cclaim name="Conformance Statement">
         <description>
 	  <h:p>
@@ -134,9 +142,9 @@
         <description>This PP-Module does not
           claim conformance to any packages.</description>
       </cclaim>
-    </cclaims>
+    </cclaims> -->
   </sec:Conformance_Claims>
-  <sec:Security_Problem_Description>
+  <sec:Security_Problem_Definition>
     <h:p>
     This PP-Module is written to address the situation when network packets cross the boundary
     between a wired private network and a wireless client via a WLAN AS. The WLAN Access
@@ -280,7 +288,7 @@
       <!-- This PP-Module defines no additional organizational security policies beyond those specified in the NDcPP. -->
       <OSPs/>
     </sec:Organizational_Security_Policies>
-  </sec:Security_Problem_Description>
+  </sec:Security_Problem_Definition>
   <sec:Security_Objectives>
     <sec:Security_Objectives_for_the_TOE>
 
