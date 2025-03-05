@@ -2,13 +2,18 @@
  
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.0</PPVersion>
+      <PPVersion>1.1</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-03-31</PPPubDate>
+      <PPPubDate>2025-03-31</PPPubDate>
       <Keywords>WLAN, Wireless LAN</Keywords>
     </ReferenceTable>
   </PPReference>
   <RevisionHistory>
+    <entry>
+      <version>1.1</version>
+      <date>2025-03-31</date>
+      <subject>Incorporate NIAP Technical Decisions, Update to CC:2022</subject>
+    </entry>
     <entry>
       <version>1.0</version>
       <date>2022-03-31</date>
@@ -46,9 +51,8 @@
       -->
       <h:span style="display:none">Access Point (AP)</h:span>
       <h:p>
-      A TOE that conforms to a PP-Configuration containing this PP-Module must be a ‘Distributed TOE’ as
-      defined in the NDcPP.
-      The expectation for this PP-Module is that a WLAN AS must include a controller and one or more access points (APs).
+      A TOE that conforms to a Protection Profile Configuration (PP-Configuration) containing this PP-Module can either be a standalone or distributed TOE as defined in the NDcPP. 
+      For distributed TOEs, the expectation for this PP-Module is that a WLAN AS is composed of a single controller and one or more access points (APs).
       </h:p>
       
     </sec:Overview>
@@ -105,10 +109,16 @@
     
     <sec:Use_Cases>
       <usecases>
+        <usecase id="usecase-standalone" title="Standalone Device">
+        <description>
+        The TOE is a standalone network device that serves as a single network endpoint that provides connectivity to wireless clients.
+        </description>
+        </usecase>
         <usecase id="usecase-distributed" title="Distributed System">
           <description>The TOE is a distributed system consisting of multiple network devices that collectively serve as the wireless network endpoint. In addition to claiming the relevant "Distributed TOE" requirement in the NDcPP,
           this use case also requires the TOE to claim the optional SFR FCS_CKM.2/DISTRIB to describe the key distribution method between distributed TOE components.</description>
         </usecase>
+        
       </usecases> 
     </sec:Use_Cases> 
   </sec:Introduction>
@@ -118,7 +128,9 @@
       <cc-pt2-conf>extended</cc-pt2-conf>
       <cc-pt3-conf>conformant</cc-pt3-conf>
       <cc-pp-conf/>
-      <cc-pp-config-with/>
+      <cc-pp-config-with>
+        <Mod-cc-ref>PP-Module for WLAN Client, Version 1.0</Mod-cc-ref>
+      </cc-pp-config-with>
       <cc-pkg-claim/>
     </CClaimsInfo>
     <!-- <cclaims>
@@ -332,6 +344,7 @@
   <rationale>
     FCS_CKM.2/DISTRIB supports the objective by optionally requiring the TSF to distribute IEEE 802.11 keys to any distributed TOE components using a secured method. 
   </rationale>
+  
 
 		  </SO>
             
@@ -363,10 +376,7 @@
   <!-- <rationale> -->
   <!--   FTP_ITC.1 supports the objective by requiring the TSF to identify the trusted communications channels it implements, each of which is able to support authentication. -->
   <!-- </rationale> -->
-  <addressed-by>FCO_CPC_EXT.1 (from Base-PP)</addressed-by>
-  <rationale>
-    FCO_CPC_EXT.1 supports the objective by requiring the TSF to implement a mechanism that authenticates its distributed components to each other.
-  </rationale>
+
   <addressed-by>FIA_8021X_EXT.1</addressed-by>
   <rationale>
     FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
@@ -420,14 +430,6 @@
                     <rationale>
                       FAU_GEN.1/WLAN supports the objective by requiring the TSF to generate audit records for security-relevant WLAN behavior.
                     </rationale>
-                    <addressed-by>FAU_GEN_EXT.1 (modified from Base-PP)</addressed-by>
-                    <rationale>
-                      FAU_GEN_EXT.1 supports the objective by requiring the TSF to generate appropriate security-relevant auditable events on each of its distributed components.
-                    </rationale>
-                    <addressed-by>FAU_STG_EXT.1 (modified from Base-PP)</addressed-by>
-                    <rationale>
-                      FAU_STG_EXT.1 supports the objective by defining how distributed TOE components store their generated audit records.
-                    </rationale>
                   </SO>
                   
                     <SO name="O.TOE_ADMINISTRATION">
@@ -474,125 +476,7 @@
     <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="NDs">
       <url>https://www.niap-ccevs.org/profile/Info.cfm?PPID=447&amp;id=447</url>
   	  <cPP/>
-      <modified-sfrs>
- 
-      <sec:from_nd_fau title="Security Audit (FAU)">
-
-	<f-component cc-id="fau_gen_ext.1" name="Security Audit Generation">
-	  <consistency-rationale>
-	    This PP-Module does not modify the Base-PP SFR; it only mandates the
-            inclusion of the SFR because a conformant TOE will always require this
-            functionality that is only conditional in the Base-PP.
-	  </consistency-rationale>
-	  <f-element>
-             <title>
-                This is specified as a selection-based SFR in the Base-PP but is 
-		mandatory for any TOE that claims
-                conformance to this PP-Module because a conformant TOE will always be distributed.
-		Therefore, it will always be required for each TOE component to 
-                generate its own audit records.
-              </title>
-              <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.</no-tests>
-              </aactivity>
-            </f-element>
-	</f-component>
-	<f-component cc-id="fau_stg_ext.1" name="Protected Audit Event Storage">
-
-	      <note role="application">This SFR is modified to restrict selections in <xref to="fel-store-audit"/> to a subset of the available options to account for the TOE being distributed.<h:br/></note>
-           <consistency-rationale>
-	     This PP-Module modifies a Base-PP SFR by restricting the selection options to a subset of those 
-              defined in the Base-PP. 
-              .</consistency-rationale>
-
-            <f-element>
-              <title>
-                The TSF shall be able to transmit the generated audit data to an external
-                IT entity using a trusted channel according to FTP_ITC.1.
-              </title>
-            </f-element>
-            <f-element id="fel-store-audit">
-              <title>
-                The TSF shall be able to store generated audit data on the TOE itself. In addition
-                <selectables>
-                  <selectable>The TOE shall be a distributed TOE that stores audit data on the following TOE
-                    components: <assignable>identification of TOE components</assignable></selectable>
-                  <selectable>The TOE shall be a distributed TOE with storage of audit data provided externally for
-                    the following TOE components: <assignable>list of TOE components that do not store
-                      audit data locally and the other TOE components to which they transmit their generated
-                      audit data</assignable></selectable>
-                </selectables>.
-              </title>
-            </f-element>
-            <f-element>
-              <title>
-                The TSF shall <selectables>
-                  <selectable>drop new audit data</selectable>
-                  <selectable>overwrite previous audit records according to the following rule: <assignable>rule for overwriting previous audit records</assignable></selectable>
-                  <selectable><assignable>other action</assignable></selectable>
-                </selectables> when the local storage space for audit data is full.
-              </title>
-            <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to restricts selections in FAU_STG_EXT.1.2 to a subset of the available options to account for the TOE being distributed.</no-tests>
-              </aactivity>
-            </f-element>
-	</f-component>
-	<f-component cc-id="fau_stg_ext.4" name="Protected Local Audit Event Storage for Distributed TOEs">
-	  <consistency-rationale>
-	    This PP-Module does not modify the Base-PP SFR; it only mandates the
-            inclusion of the SFR because a conformant TOE will always require this
-            functionality that is only conditional in the Base-PP.
-	  </consistency-rationale>
-	  <f-element>
-	    <title>
-                This is specified as a selection-based SFR in the Base-PP but is 
-		mandatory for any TOE that claims
-                conformance to this PP-Module because a conformant TOE will always be distributed.
-		Therefore, it will always be required for each TOE component to 
-                appropriately protect its own audit records.
-	  </title>
-	  <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.</no-tests>
-	  </aactivity>
-	  </f-element>
-	</f-component>
-      </sec:from_nd_fau>
-      <sec:from_nd_fco title="Communication (FCO)">
-	<f-component cc-id="fco_cpc_ext.1" name="Component Registration Channel Definition">
-	  <consistency-rationale>
-	    This PP-Module does not modify the Base-PP SFR; it only mandates the
-            inclusion of the SFR because a conformant TOE will always require this
-            functionality that is only conditional in the Base-PP.
-	  </consistency-rationale>
-	  <f-element>
-	    <title>
-                This is specified as a selection-based SFR in the Base-PP but is 
-		mandatory for any TOE that claims
-                conformance to this PP-Module because a conformant TOE will always be distributed.
-		Therefore, it will always be required for a Security Administrator to enable
-	      communications between any pair of TOE components before such communication can take place.
-	    </title>
-	  </f-element>
-	  <f-element>
-	    <title>
-                This is specified as a selection-based SFR in the Base-PP but is 
-		mandatory for any TOE that claims
-                conformance to this PP-Module because a conformant TOE will always be distributed.
-		Therefore, it will always be required  that each component 
-		establish and use a communications channel that uses a secure channel requirement or 
-		no channel.
-	    </title>
-	    <aactivity>
-                <no-tests>There is no change to the Evaluation Activities specified for this SFR in the NDcPP Supporting Document.
-                  The PP-Module modifies this SFR to make it mandatory because of the TOE’s required deployment as a distributed TOE.</no-tests>
-	    </aactivity>
-	  </f-element>
-	</f-component>
-      </sec:from_nd_fco>
- 
+      <modified-sfrs> 
         <sec:from_nd_fcs title="Cryptographic Support (FCS)">
           <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP and by mandating specific selections that are
@@ -885,7 +769,7 @@
             <title> The TSF shall be able to generate an audit record of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
-                <h:li>All auditable events for the [not specified] level of audit; and</h:li>
+                <h:li>All auditable events for the <h:i>not specified</h:i> level of audit; and</h:li>
                 <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWLAN"/>)</h:i></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>]</h:li>
               </h:ol>
@@ -1429,17 +1313,17 @@
 			<consistency-rationale>This SFR defines additional management functionality that is specific to the Module’s product type and would therefore not be expected to be present in the Base-PP.</consistency-rationale>
 			<f-element>
 			<title>The TSF shall be capable of performing the following management functions: 
-			  <h:ul>
-			    <h:li>Configure the security policy for each wireless network, including:</h:li>
+			  [<h:ul>
+			    <h:li><h:i>Configure the security policy for each wireless network, including:</h:i></h:li>
 			    <h:ul> 
-			      <h:li>Security type</h:li>
-			      <h:li>Authentication protocol</h:li>
-			      <h:li>Client credentials to be used for authentication</h:li>
-			      <h:li>SSID</h:li>
-			      <h:li>If the SSID is broadcasted</h:li>
-			      <h:li>Frequency band set to <selectables><selectable>2.4 GHz</selectable><selectable>5 GHz</selectable><selectable>6 GHz</selectable></selectables></h:li>
-			      <h:li>Transmit power level</h:li>
-			    </h:ul></h:ul></title>
+			      <h:li><h:i>Security type</h:i></h:li>
+			      <h:li><h:i>Authentication protocol</h:i></h:li>
+			      <h:li><h:i>Client credentials to be used for authentication</h:i></h:li>
+			      <h:li><h:i>SSID</h:i></h:li>
+			      <h:li><h:i>If the SSID is broadcasted</h:i></h:li>
+			      <h:li><h:i>Frequency band set to <selectables><selectable>2.4 GHz</selectable><selectable>5 GHz</selectable><selectable>6 GHz</selectable></selectables></h:i></h:li>
+			      <h:li><h:i>Transmit power level</h:i></h:li>
+			    </h:ul></h:ul>]</title>
 			<aactivity>
 			  <TSS>
 			    The evaluator will confirm that the TSS includes which security types (e.g., WPA3),
@@ -1550,7 +1434,8 @@
 	      </h:p>
 	      <h:p>
               The assignment is to be used by the ST author to specify additional attributes on which denial of session
-              establishment can be based.
+              establishment can be based. In the case of standalone TOEs with a single interface, the "based on TOE interface"
+              restriction is inherently met.
 	      </h:p>
             </note>
             <aactivity>
@@ -1584,23 +1469,23 @@
 			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
 			  </consistency-rationale>
 			  <f-element>
-			  <title>The TSF shall be capable of using WPA3-Enterprise, WPA2-Enterprise and 
+			  <title>The TSF shall <h:b>be capable of using WPA3-Enterprise, WPA2-Enterprise and 
 				  <selectables>
 					  <selectable>WPA3-SAE</selectable>
 					  <selectable>WPA3-SAE-PK</selectable>
 					  <selectable>WPA2-PSK</selectable>
 					  <selectable exclusive="yes">no other mode</selectable>
 				  </selectables>
-				  as defined by IEEE 802.11-2020 to provide a trusted communication channel
-				  between itself and WLAN clients that is logically distinct from 
+				  as defined by IEEE 802.11-2020 to</h:b> provide a <h:b>trusted </h:b>communication channel
+				  between itself and <h:b>WLAN clients</h:b> that is logically distinct from 
 				  other communication channels and provides assured identification of its end
-				  points and protection of the channel data from disclosure and detection of
-				  modification of the channel data.
+				  points and protection of the channel data from <h:b>disclosure and detection of
+				  modification of the channel data.</h:b>
 				  </title>
 				</f-element>
 			    <f-element>
 		<title>
-			The TSF shall permit the authorized IT entities to initiate communication via the trusted channel.
+			The TSF shall permit <h:i><h:b>the authorized IT entities</h:b></h:i> to initiate communication via the trusted channel.
 		</title>
 	</f-element>
 			  <f-element>
@@ -1736,7 +1621,7 @@
             <title>The TSF shall implement <selectables>
               <selectable>TLS 1.2 (RFC 5246)</selectable>
               <selectable>TLS 1.1 (RFC 4346)</selectable>
-            </selectables> and no earlier TLS versions when acting as a RADIUS over TLS client that supports the following ciphersuites: 
+            </selectables> and <h:b>no earlier</h:b> TLS versions when acting as a RADIUS over TLS client <h:b>that supports the following ciphersuites</h:b>: 
               <selectables linebreak="yes">
                 <selectable>TLS_PSK_WITH_AES_128_CBC_SHA</selectable>
                 <selectable>TLS_PSK_WITH_AES_256_CBC_SHA</selectable>
