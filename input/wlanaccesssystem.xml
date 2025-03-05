@@ -41,6 +41,13 @@
     </entry>
   </RevisionHistory>
   
+  <include-pkg id="pkgTLS">
+    <git>
+      <url>https://github.com/commoncriteria/tls/</url>
+      <branch>release-2.0</branch>
+    </git>
+    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
+  </include-pkg>
   
   <!-- TODO: no open items -->
   
@@ -144,28 +151,7 @@
       </cc-pp-config-with>
       <cc-pkg-claim/>
     </CClaimsInfo>
-    <!-- <cclaims>
-      <cclaim name="Conformance Statement">
-        <description>
-	  <h:p>
-	    This PP-Module inherits exact conformance as required from the specified
-            Base-PP and as defined in the CC and CEM addenda for Exact Conformance, Selection-Based
-          SFRs, and Optional SFRs (dated May 2017).</h:p>
-	  <h:p>
-            No PPs or PP-Modules may be specified in a PP-Configuration with this PP-Module other than the Base-PP specified
-	    in <xref to="Overview"/>.
-	  </h:p>
-        </description>
-      </cclaim>
-      <cclaim name="CC Conformance Claims">
-        <description>This PP-Module is conformant to Parts 2 (extended) and 3 (conformant) of Common
-          Criteria Version 3.1, Release 5 [CC]. </description>
-      </cclaim>
-      <cclaim name="Package Claims">
-        <description>This PP-Module does not
-          claim conformance to any packages.</description>
-      </cclaim>
-    </cclaims> -->
+
   </sec:Conformance_Claims>
   <sec:Security_Problem_Definition>
     <h:p>
@@ -484,11 +470,224 @@
     </sec:Security_Objectives_Rationale>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp id="ND" version="2.2e" name="Network Device" product="Network Device" short="ND" plural="NDs">
-      <url><![CDATA[https://www.niap-ccevs.org/profile/Info.cfm?PPID=447&id=447]]></url>
+    <base-pp id="ND" version="3.0e" name="Network Device" product="Network Device" short="ND" plural="NDs">
+      <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
   	  <cPP/>
-      <modified-sfrs> 
-        <sec:from_nd_fcs title="Cryptographic Support (FCS)">
+
+      <sec-func-req-dir>
+      In a PP-Configuration that includes the NDcPP, the TOE is expected to rely on some of the security functions implemented 
+      by the Network Device as a whole and evaluated against the NDcPP. The following sections describe any modifications that 
+      the ST author must make to the SFRs defined in the NDcPP in addition to what is mandated by Section 5.2.
+      </sec-func-req-dir>
+      <modified-sfrs>
+        <!-- 5.1.1.1  -->
+        <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
+          
+          <base-sfr-spec cc-id="fcs_cop.1" iteration="DataEncryption" id="nd-fcs-cop-1-dataencryption" title="Cryptographic Operation (AES Data Encryption/Decryption)">
+            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP and by mandating specific selections that are
+            relevant to the technology type of the PP-Module.</consistency-rationale>
+            <description>
+              <h:p>This SFR has been modified from its definition in the NDcPP to mandate the 
+              inclusion of certain selections, and add additional AES modes utilized in WLAN technology.</h:p>
+              <h:p>The text of the requirement is replaced with:</h:p>
+              <h:p>
+              The TSF shall perform encryption/decryption in accordance with a
+              specified cryptographic algorithm AES used in [<h:i>Cipher Block Chaining (CBC), CCM mode Protocol (CCMP), and</h:i>
+              [<h:b>selection:</h:b> <h:i>Counter (encryption) mode (CTR), Galois-Counter Mode (GCM), GCMP, <h:b>no other</h:b></h:i>]
+              modes and cryptographic key sizes [<h:i>256 bits and [<h:b>selection: </h:b> 128 bits, 192 bits, <h:b>no other key sizes</h:b></h:i>] that meet the following:
+              [<h:i>AES as specified in ISO 18033-3, CBC as specified in ISO 10116, CCMP as specified in NIST SP 800-38C and IEEE 802.11-2020,</h:i>[<h:b>selection: </h:b>
+              <h:i>CTR as specified in ISO 10116, GCM as specified in ISO 19772, GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021, <h:b>no other standards</h:b></h:i>].
+              </h:p>
+              <h:p><h:b>Application Note:</h:b>
+                This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 256 bit key sizes while also defining additional 
+                AES mode and key size selections not present in the original definition.
+              </h:p><h:p>
+                This requirement mandates two modes for AES with a key size of 256 bits being implemented. It is not expected that these modes will both be used for all 
+                encryption and decryption functionality. Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements, CBC mode is mandated, 
+                and to comply with IEEE 802.11-2020, AES-CCMP (which uses AES in Counter Mode with CBC-Message Authentication Code (CCM) as specified in SP 800-38C) must be implemented.
+              </h:p><h:p>
+                For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates. For the second selection, 
+                the ST author should choose the key sizes that are supported by this functionality. 256-bit CCMP is required in order to comply with FCS_CKM.1/WPA. Note that optionally 
+                AES-CCMP-192, AES-CCMP-128, AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax-2021 connections. In the future, 
+                one of these modes may be required.
+              </h:p><h:p>
+                CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
+              </h:p>
+              <h:br/><h:br/>
+              <h:p><h:b>Evaluation Activities:</h:b><h:br/>
+              <h:b><h:i>TSS</h:i></h:b><h:br/>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/>
+              <h:b><h:i>Guidance</h:i></h:b><h:br/>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/>
+              <h:b><h:i>Tests</h:i></h:b><h:br/>
+                In addition to the tests required by the NDcPP, the evaluator will perform the following testing:
+              <h:p><h:b>AES-CCM Tests</h:b></h:p>
+              <h:p>The evaluator will test the generation-encryption and decryption-verification functionality of AES-CCM for the following input parameter and tag lengths:</h:p>
+              <h:p><h:b>128 bit and 256 bit keys</h:b></h:p>
+              <h:p><h:b>Two payload lengths</h:b>. One payload length will be the shortest supported payload length,
+                greater than or equal to zero bytes. The other payload length will be the longest supported
+                payload length, less than or equal to 32 bytes (256 bits).</h:p>
+              <h:p><h:b>Two or three associated data lengths</h:b>.
+                  One associated data length will be 0, if supported.
+                  One associated data length will be the shortest supported payload length,
+                  greater than or equal to zero bytes.
+                  One associated data length will be the longest supported payload length, less than
+                  or equal to 32 bytes (256 bits).
+                  If the implementation supports an associated data length of 216
+                  bytes, an associated data length of 216 bytes will be tested.
+              </h:p>
+              <h:p><h:b>Nonce lengths</h:b>.
+                  All supported nonce lengths between 7 and 13 bytes, inclusive, will be tested.
+              </h:p>
+              <h:p><h:b>Tag lengths</h:b>.
+                  All supported tag lengths of 4, 6, 8, 10, 12, 14, and 16 bytes will be tested.
+              </h:p>
+              <h:p>
+                  Due to the restrictions that IEEE 802.11 specifies for this mode
+                  (nonce length of 13 and tag length of 8),
+                  it is acceptable to test a subset of the supported lengths as long as the selections
+                  fall into the ranges specified above.
+                  In this case, the evaluator will ensure that these are the only supported lengths.
+                  To test the generation-encryption functionality of AES-CCM, the evaluator will
+                  perform the following four tests:
+              </h:p>
+              <h:p>
+                <h:ul>
+                  <h:li>Test FCS_COP.1/DataEncryption:1: For each supported key and associated data length and any supported payload, nonce
+                    and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
+                    associated data and payload values, and obtain the resulting ciphertext.</h:li>
+                  <h:li>Test FCS_COP.1/DataEncryption:2:For each supported key and payload length and any supported associated data, nonce
+                    and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
+                    associated data and payload values, and obtain the resulting ciphertext.</h:li>
+                  <h:li>Test FCS_COP.1/DataEncryption:3: For each supported key and nonce length and any supported associated data, payload,
+                    and tag length, the evaluator will supply one key value and 10 associated data, payload and
+                    nonce value 3-tuples, and obtain the resulting ciphertext.</h:li>
+                  <h:li>For each supported key and tag length and any supported associated data, payload, and
+                    nonce length, the evaluator will supply one key value, one nonce value and 10 pairs of
+                    associated data and payload values and, obtain the resulting ciphertext</h:li>
+                </h:ul>
+                To determine correctness in each of the above tests, the evaluator will compare the ciphertext with the
+                result of generation-encryption of the same inputs with a known good implementation.</h:p>
+              <h:p>
+                To test the decryption-verification functionality of AES-CCM, for each combination of supported
+                associated data length, payload length, nonce length, and tag length, the evaluator will supply a key
+                value and 15 nonce, associated data and ciphertext 3-tuples, and obtain either a fail result or a pass
+                result with the decrypted payload.
+                The evaluator will supply 10 tuples that should fail and 5 that should pass per set of 15.
+              </h:p>
+              <h:p>
+                Additionally, the evaluator will use tests from the IEEE 802.11-02/362r6 document “Proposed Test
+                vectors for IEEE 802.11 TGi”, dated September 10, 2002, Section 2.1 AES-CCMP Encapsulation Example
+                and Section 2.2 Additional AES-CCMP Test Vectors to verify further the IEEE 802.11-2020
+                implementation of AES-CCMP.
+              </h:p>
+              </h:p>
+            </description>
+
+            <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
+            <no-change/>
+          </base-sfr-spec>
+          
+        </section>
+        <section title="Protection of the TSF (FPT)" id="nd-m-fpt">
+          <base-sfr-spec cc-id="fpt_tst_ext.1" title="TSF Testing" id="nd-m-fpt-st-ext-1">
+            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
+              may still be specified by the ST author.
+            </consistency-rationale>
+           <description>
+           <h:b>NOTE: for CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well.</h:b>
+            
+            This SFR is functionally identical to what is defined in the NDcPP except that
+            the specific self-test of verifying the integrity of TSF executable code has been mandated as a minimum baseline for the requirement. Other self-tests may still be claimed at the ST author's discretion.<h:p/>
+            
+            Any element that is not specified in this section is unchanged from its definition in the Base-PP. The text of the requirement is replaced with:<h:br/><h:br/>
+            
+            <h:b>FPT_TST_EXT.1.1: </h:b> The TSF shall run a suite of the following self-tests:
+            <h:ul>
+              <h:li><h:i>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:i></h:li>
+              <h:li><h:i>Prior to providing any cryptographic service and [<h:b>selection: </h:b> at no other time, on-demand, continuously, [<h:b>assignment: </h:b>
+              conditions under which self-tests should occur]] to verify correct operation of cryptographic implementation necessary to fulfil the TSF;</h:i></h:li>
+              <h:li><h:i>[<h:b>selection: </h:b>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment: </h:b>conditions under which 
+              self-tests should occur]] self-tests [[<h:b>assignment: </h:b>list an identifier for each self-test that is additional to those identified in the 
+              first two bullet points]</h:i></h:li>
+            </h:ul>
+              to verify the correct operation of the TSF: [<h:i>integrity verification of stored TSF executable code through the 
+              use of the TSF-provided cryptographic service specified in FCS_COP.1/SigGen</h:i>] and if failure detected [<h:i>take action as specified in FPT_TST_EXT.1.2.</h:i>].
+            
+            <h:b>Application Note: </h:b>This SFR is modified from its definition in the NDcPP by mandating that self-testing occur at power on and that the self-testing must include, 
+            at minimum, an integrity test using a digital signature. FCS_COP.1/SigGen is defined in the NDcPP.
+            <h:br/><h:br/>
+            <h:p><h:b>Evaluation Activities</h:b><h:br/>
+            <h:b><h:i>TSS</h:i></h:b><h:br/><h:br/>
+		          The evaluator will examine the TSS to ensure that it describes how to verify the integrity of stored TSF
+              executable code when it is loaded for execution, which includes the generation and protection of the
+              “check value” used to ensure integrity as well as the verification step.
+              This description will also cover the digital signature service used in performing these functions.
+              The evaluator also checks the operational guidance to ensure that any actions
+              required by the administrator to initialize or operate
+              this functionality are present.<h:br/><h:br/>
+              The evaluator will also ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful execution of the integrity test.
+		  <h:br/><h:br/>
+		  <h:b><h:i>Guidance</h:i></h:b><h:br/><h:br/>
+              The evaluator will ensure that the TSS or operational guidance describes the actions that take place for 
+			        successful and unsuccessful execution of the integrity test.<h:br/><h:br/>
+                <h:b><h:i>Tests</h:i></h:b><h:br/><h:br/>
+                The evaluator will perform the following tests:
+                <h:ul>
+                  <h:li>Test FPT_TST_EXT.1:1: Following the operational guidance, the evaluator will initialize the integrity protection system.
+                    The evaluator will perform actions to cause TSF software to load and observe that the integrity
+                    mechanism does not flag any executables as containing integrity errors.</h:li>
+                  <h:li>Test FPT_TST_EXT.1:2: The evaluator will modify the TSF executable and cause that executable to be loaded by the TSF.
+		                The evaluator will observe that an integrity violation is triggered (care must be taken so that the
+                    integrity violation is determined to be the cause of the failure to load the module and not the fact that
+                    the module was modified so that it was rendered unable to run because its format was corrupt).</h:li>
+                </h:ul>
+                </h:p>
+            
+          </description>
+          
+          <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
+         <no-change/> 
+         
+        </base-sfr-spec>
+
+        </section>
+        <section id="nd-m-ftp" title="Trusted Path/Channels (FTP)">
+          <base-sfr-spec cc-id="ftp_itc.1" id="nd-m-ftp-itc-1" title="Inter-TSF Trusted Channel">
+            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
+              defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
+            <description>
+            <h:p>This SFR has been modified from its definition in the Base-PP to mandate communications protocols that are necessary for a WLAN AS. Any element that
+            is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
+            <h:p>The text of the requirement is replaced with: </h:p>
+            <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>IEEE 802.1X</h:b>, [<h:b>selection: </h:b><h:i>IPsec, <h:b>RADIUS over TLS, </h:b></h:i>] <h:b>and</h:b>
+            [<h:b>selection: </h:b><h:i>SSH, TLS, DTLS, HTTPS, <h:b>no other protocols</h:b></h:i>] to provide a trusted communication channel between itself and authorized
+            IT entities supporting the following capabilities: <h:b>802.1X authentication server</h:b>, audit server, [<h:b>selection: </h:b><h:i>authentication server, 
+            [<h:b>assignment: </h:b>other capabilities], no other capabilities</h:i>] that is logically distinct from other communication channels and provides assured
+            identification of its end points and protection of the channel data from disclosure and detection of modification of the channel data.</h:p>
+            <h:p><h:b>Application Note: </h:b>
+            This requirement has been modified from its definition in the NDcPP to 
+                  mandate the communications protocols and environmental components that 
+                  a WLAN AS must use for infrastructure communications
+                  (802.11 support is also required for wireless client communications, but this is covered
+                  by the FTP_ITC.1/Client).
+                  IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
+                  Other selections may be made if needed by other parts of the TSF.
+                  The requirement implies that not only are communications protected when they are initially established,
+                  but also on resumption after an outage.</h:p>
+                <h:p>
+                   The IT entity of "802.1X authentication server" is distinct from "authentication server"
+                   because the latter may be used for administrator authentication rather 
+                   than authorization of WLAN clients.
+                </h:p><h:p>
+                   If "IPsec" is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
+                   If "RADIUS" is selected in FTP_ITC.1.1,
+                   then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the [<h:a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for TLS, version 2.0</h:a>].
+            </h:p>
+            </description>
+            <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
+            <no-change/> 
+          </base-sfr-spec>
+        </section>
+        <!--  <sec:from_nd_fcs title="Cryptographic Support (FCS)">
           <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP and by mandating specific selections that are
             relevant to the technology type of the PP-Module.</consistency-rationale>
@@ -756,7 +955,7 @@
         </sec:from_nd_ftp>
 
 
-
+ -->
       </modified-sfrs>
       <additional-sfrs/>
       <con-toe> 
@@ -869,8 +1068,8 @@
               </h:tr>
               <h:tr>
                 <h:td>FTA_TSE.1</h:td>
-                <h:td>Failure of the TSF.</h:td>
-                <h:td>Indication that the TSF has failed with the type of failure that occurred.</h:td>
+                <h:td>Denial of a session establishment due to the session establishment mechanism.</h:td>
+                <h:td>Reason for denial, origin of establishment attempt.</h:td>
               </h:tr>
               <h:tr>
                 <h:td rowspan="2">FTP_ITC.1</h:td>
@@ -1480,7 +1679,19 @@
 			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
 			  </consistency-rationale>
 			  <f-element>
-			  <title>The TSF shall <h:b>be capable of using WPA3-Enterprise, WPA2-Enterprise and 
+			  <title>The TSF shall provide a communication channel <h:b>using WPA3-Enterprise, WPA2-Enterprise and <selectables>
+		          <selectable>WPA3-SAE</selectable>
+		          <selectable>WPA3-SAE-PSK</selectable>
+              <selectable>WPA2-PSK</selectable>
+              <selectable exclusive="yes">no other modes</selectable></selectables></h:b>
+		          
+		          between itself and <h:b>WLAN clients</h:b> that is logically distinct from other communication channels and provides assured
+		          identification of its end points and protection of the channel data from modification or
+		          disclosure.
+		          
+		        </title>
+        
+        <!-- <title>The TSF shall <h:b>be capable of using WPA3-Enterprise, WPA2-Enterprise and 
 				  <selectables>
 					  <selectable>WPA3-SAE</selectable>
 					  <selectable>WPA3-SAE-PK</selectable>
@@ -1492,7 +1703,7 @@
 				  other communication channels and provides assured identification of its end
 				  points and protection of the channel data from <h:b>disclosure and detection of
 				  modification of the channel data.</h:b>
-				  </title>
+				  </title> -->
 				</f-element>
 			    <f-element>
 		<title>
