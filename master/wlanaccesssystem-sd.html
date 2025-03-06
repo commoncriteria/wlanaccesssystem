@@ -691,7 +691,7 @@ The following sections list Common Criteria and technology terms used in this do
                 does not permit remote administration from a wireless client by default.<br/><br/></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator will demonstrate that after configuring the TOE for first use from the operational
                 guidance, it is possible to establish an administrative session with the TOE on the “wired” portion of the
                 device. They will then demonstrate that an identically configured wireless client that can successfully
-                connect to the TOE cannot be used to perform administration.</div></div></span></div><h2 class="indexable" data-level="2" id="man_fpt">2.2.5 Protection of the TSF (FPT)</h2><div class="comp" id=""><h4>FPT_FLS.1 Failure with Preservation of Secure State</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_FLS.1</div>
+                connect to the TOE cannot be used to perform administration.</div></div></span></div><h2 class="indexable" data-level="2" id="man_fpt">2.2.5 Protection of the TSF (FPT)</h2><div class="comp" id=""><h4>FPT_FLS.1/AS Failure with Preservation of Secure State</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_FLS.1/AS</div>
               
               
               
@@ -725,10 +725,8 @@ The following sections list Common Criteria and technology terms used in this do
                   </li>
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="2" id="man_ftp">2.2.7 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_ITC.1/Client Inter-TSF Trusted Channel (WLAN Client Communications)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1/Client</div>
-				    This component is adequately evaluated when performing the evaluation activities for <span class="no-link">FTP_ITC.1</span> in the <a href="https://www.niap-ccevs.org/protectionprofiles/482">Network Device, version 3.0e</a> base-PP.
-				    
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
+
+				    This component is adequately evaluated when performing the evaluation activities for <span class="no-link">FTP_ITC.1</span> in the <a href="https://www.niap-ccevs.org/protectionprofiles/482">Network Device, version 3.0e</a> base-PP.<br/><br/>
 				  </span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.3 Evaluation Activities for Optional SFRs</h2><h2 class="indexable" data-level="2" id="opt_fcs">2.3.1 Cryptographic Support (FCS)</h2><div class="comp" id=""><h4>FCS_CKM.2/DISTRIB Cryptographic Key Distribution (802.11 Keys)</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2/DISTRIB</div>
               
               
@@ -761,7 +759,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator will also verify that the TSS contains a description of the denial of old SSL and TLS versions.
 		<p>
                   The evaluator will examine the TSS to ensure it describes the process by which the bit-based pre-shared keys are generated (if the TOE supports this functionality) 
-                  and confirm that this process uses the RBG specified in FCS_RBG_EXT.1.
+                  and confirm that this process uses the RBG specified in FCS_RBG.1.
 		</p>
 	      </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
 		The evaluator will verify that any configuration necessary to meet the requirement must be contained in the guidance.
@@ -921,12 +919,12 @@ guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appen
     
     
     <tr><td><span id="bibNDcPP"></span>[NDcPP]</td><td>
-        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2E.pdf">collaborative Protection Profile for Network Devices</a>, Version 2.2e, March 23, 2020
+        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</a>, Version 3.0e, 6 December 2023
       </td></tr>
 
     
     <tr><td><span id="bibNDSD"></span>[NDcPP SD]</td><td>
-        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V2.2-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 2.2, December 2019
+        <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 3.0e, 6 December 2023
       </td></tr>
 
 
