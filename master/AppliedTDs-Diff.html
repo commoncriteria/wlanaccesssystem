@@ -568,18 +568,31 @@
                     <a href="#FAU_GEN.1.1/WLAN" class="abbr">FAU_GEN.1.1/WLAN</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate an audit record of the following auditable events: 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable events: 
                     <ol type="a">
                         <li>Start-up and shutdown of the audit functions;</li>
                         <li>
                             All auditable events for the <i>not specified</i> level of audit; and
                         </li>
                         <li>
-                            [<i>Auditable events listed in the Auditable Events table (<a href="#auditWLAN" class="auditWLAN-ref">Table <span class="counter">2</span></a>)</i>
+                            [<i>Auditable events listed in the Auditable Events for Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#t-audit-mandatory" class="t-audit-mandatory-ref">Table <span class="counter">t-audit-mandatory</span></a>)</i>
                         </li>
                         <li>
-                            <i>Failure of wireless sensor communication</i>]
+                            <i>Failure of wireless sensor communication</i> 
                         </li>
+                        <li>
+                            <i>[<b>selection</b>: 
+                                <ul>
+                                    <li style="">
+                                        <span class="selectable-content" id="_s_1">Auditable events listed in the Auditable Events for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table <span class="counter">t-audit-sel-based</span></a>)</span>
+                                    </li>
+                                    <li style="">
+                                        <span class="selectable-content" id="_s_2">no other events</span>
+                                    </li>
+                                </ul>
+                                ]</i>
+                        </li>
+                        ] 
                     </ol>
                     <table>
                         <tr>
@@ -631,7 +644,7 @@
                             <td><a href="#FMT_SMR_EXT.1">FMT_SMR_EXT.1</a></td><td colspan="2">None.</td>
                         </tr>
                         <tr>
-                            <td>FPT_FLS.1</td><td>Failure of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td><td>Indication that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> has failed with the type of failure that occurred.</td>
+                            <td><a href="#FPT_FLS.1/AS">FPT_FLS.1/AS</a></td><td>Failure of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td><td>Indication that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> has failed with the type of failure that occurred.</td>
                         </tr>
                         <tr>
                             <td rowspan="2">FPT_TST_EXT.1</td><td>Execution of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> self-test.</td><td>None.</td>
@@ -653,19 +666,31 @@
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
-                                 The auditable events defined in <a href="#auditWLAN" class="auditWLAN-ref">Table <span class="counter">2</span></a> are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and are intended to extend FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. 
+                                 The auditable events defined in <a href="#t-audit-mandatory" class="t-audit-mandatory-ref">Table <span class="counter">t-audit-mandatory</span></a> and <a href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table <span class="counter">t-audit-sel-based</span></a> are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and are intended to extend FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The events in the Auditable Events table should be combined with those of the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> in the context of a conforming Security Target. 
                             </p>
                             <p>
-                                 The events in the Auditable Events table should be combined with those of the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> in the context of a conforming Security Target. 
+                                 If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> includes any selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, the selection for "Auditable events listed in the Auditable Events for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table" must be selected. If no selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are included, "no other events" should be selected. The Auditable Events for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> (<a href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table <span class="counter">t-audit-sel-based</span></a>) include audit records for selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>. The auditing of selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> is only required if that <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
                             </p>
-                            <p>
-                                 The Auditable Events (<a href="#auditWLAN" class="auditWLAN-ref">Table <span class="counter">2</span></a>) includes optional and objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>. The auditing of optional and objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> is only required if that <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. 
-                            </p>
+                            <p></p>
                             <p>
                                  Per FAU_STG.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must support transfer of the audit data to an external IT entity using a trusted channel. 
                             </p>
                         </span>
                     </div>
+                </div>
+            </div>
+            <div class="element">
+                <div class="reqid" id="FAU_GEN.1.2/WLAN">
+                    <a href="#FAU_GEN.1.2/WLAN" class="abbr">FAU_GEN.1.2/WLAN</a>
+                </div>
+                <div class="reqdesc">
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within the audit data at least the following information: 
+                    <ol type="a">
+                        <li>Date and time of the auditable event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event; </li>
+                        <li>
+                             For each auditable event type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<i> information specified in column three of the Auditable Events table in which the auditable event was defined</i>]. 
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -677,7 +702,7 @@
                     <a href="#FCS_CKM.1.1/WPA" class="abbr">FCS_CKM.1.1/WPA</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>symmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm [<i>PRF-384 and [<b>selection</b>: <span class="selectable-content" id="_s_1">PRF-512</span>, <span class="selectable-content" id="_s_2">PRF-704</span>, <span class="selectable-content" id="_s_3">no other algorithm</span>]</i>] and specified cryptographic key sizes [<i>256 bits and [<b>selection</b>: <span class="selectable-content" id="_s_4">128 bits</span>, <span class="selectable-content" id="_s_5">192 bits</span>, <span class="selectable-content" id="_s_6">no other key sizes</span>]</i>] <b>using a Random Bit Generator as specified in FCS_RBG.1</b> that meet the following: [<i>IEEE 802.11-2020 and [<b>selection</b>: <span class="selectable-content" id="_s_7">IEEE 802.11ax-2021</span>, <span class="selectable-content" id="_s_8">no other standards</span>]</i>]. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>symmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm [<i>PRF-384 and [<b>selection</b>: <span class="selectable-content" id="_s_3">PRF-512</span>, <span class="selectable-content" id="_s_4">PRF-704</span>, <span class="selectable-content" id="_s_5">no other algorithm</span>]</i>] and specified cryptographic key sizes [<i>256 bits and [<b>selection</b>: <span class="selectable-content" id="_s_6">128 bits</span>, <span class="selectable-content" id="_s_7">192 bits</span>, <span class="selectable-content" id="_s_8">no other key sizes</span>]</i>] <b>using a Random Bit Generator as specified in FCS_RBG.1</b> that meet the following: [<i>IEEE 802.11-2020 and [<b>selection</b>: <span class="selectable-content" id="_s_9">IEEE 802.11ax-2021</span>, <span class="selectable-content" id="_s_10">no other standards</span>]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p> The cryptographic key derivation algorithm required by IEEE 802.11-2020 (Section 12.7.1.2) and verified in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and outputs 384 bits. The use of GCMP is defined in IEEE 802.11ax-2021 (Section 12.5.5) and requires a Key Derivation Function (KDF) based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys). This KDF outputs 704 bits. </p>
@@ -696,7 +721,7 @@
                     <a href="#FCS_CKM.2.1/GTK" class="abbr">FCS_CKM.2.1/GTK</a>
                 </div>
                 <div class="reqdesc">
-                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distribute <b><abbr class="dyn-abbr"><a href="#abbr_GTK">GTK</a></abbr> </b> in accordance with a specified cryptographic key distribution method: [<b>selection</b>: <span class="selectable-content" id="_s_9"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap in an EAPOL-Key frame</span>, <span class="selectable-content" id="_s_10"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap with Padding in an EAPOL-Key frame</span>] that meets the following: [<i>NIST SP 800-38F, IEEE 802.11-2020 for the packet format and timing considerations</i>] <b> and does not expose the cryptographic keys</b>. 
+                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distribute <b><abbr class="dyn-abbr"><a href="#abbr_GTK">GTK</a></abbr> </b> in accordance with a specified cryptographic key distribution method: [<b>selection</b>: <span class="selectable-content" id="_s_11"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap in an EAPOL-Key frame</span>, <span class="selectable-content" id="_s_12"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap with Padding in an EAPOL-Key frame</span>] that meets the following: [<i>NIST SP 800-38F, IEEE 802.11-2020 for the packet format and timing considerations</i>] <b> and does not expose the cryptographic keys</b>. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">This requirement applies to the <abbr class="dyn-abbr"><a href="#abbr_GTK">GTK</a></abbr> that is generated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> for use in broadcast and multicast messages to clients to which it is connected. 802.11-2020 specifies the format for the transfer as well as the fact that it must be wrapped by the <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> Key Wrap method specified in NIST SP 800-38F.</span>
                     </div>
@@ -765,7 +790,7 @@
                     <a href="#FIA_UAU.6.1" class="abbr">FIA_UAU.6.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall re-authenticate the <b>administrative</b> user under the conditions [<i>when the user changes their password, [<b>selection</b>: <span class="selectable-content" id="_s_11">following <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-initiated session locking</span>, <span class="selectable-content" id="_s_12">[<b>assignment</b>: <span class="assignable-content">other conditions</span>]</span>, <span class="selectable-content" id="_s_13">no other conditions</span>]</i>]. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall re-authenticate the <b>administrative</b> user under the conditions [<i>when the user changes their password, [<b>selection</b>: <span class="selectable-content" id="_s_13">following <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-initiated session locking</span>, <span class="selectable-content" id="_s_14">[<b>assignment</b>: <span class="assignable-content">other conditions</span>]</span>, <span class="selectable-content" id="_s_15">no other conditions</span>]</i>]. 
                 </div>
             </div>
         </div>
@@ -799,7 +824,7 @@
                                 <i>If the <abbr class="dyn-abbr"><a href="#abbr_SSID">SSID</a></abbr> is broadcasted</i>
                             </li>
                             <li>
-                                <i>Frequency band set to [<b>selection</b>: <span class="selectable-content" id="_s_14">2.4 GHz</span>, <span class="selectable-content" id="_s_15">5 GHz</span>, <span class="selectable-content" id="_s_16">6 GHz</span>]</i>
+                                <i>Frequency band set to [<b>selection</b>: <span class="selectable-content" id="_s_16">2.4 GHz</span>, <span class="selectable-content" id="_s_17">5 GHz</span>, <span class="selectable-content" id="_s_18">6 GHz</span>]</i>
                             </li>
                             <li>
                                 <i>Transmit power level</i>
@@ -844,7 +869,7 @@
                     <a href="#FTA_TSE.1.1" class="abbr">FTA_TSE.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to deny session establishment <b>of a wireless client session</b> based on [<i><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> interface, time, day, [<b>selection</b>: <span class="selectable-content" id="_s_17">[<b>assignment</b>: <span class="assignable-content">other attributes</span>]</span>, <span class="selectable-content" id="_s_18">no other attributes</span>]</i>]. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to deny session establishment <b>of a wireless client session</b> based on [<i><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> interface, time, day, [<b>selection</b>: <span class="selectable-content" id="_s_19">[<b>assignment</b>: <span class="assignable-content">other attributes</span>]</span>, <span class="selectable-content" id="_s_20">no other attributes</span>]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -866,7 +891,7 @@
                     <a href="#FTP_ITC.1.1/Client" class="abbr">FTP_ITC.1.1/Client</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_19">WPA3-SAE</span>, <span class="selectable-content" id="_s_20">WPA3-SAE-PSK</span>, <span class="selectable-content" id="_s_21">WPA2-PSK</span>, <span class="selectable-content" id="_s_22">no other modes</span>] as defined by IEEE 802.11-2020</b> between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_21">WPA3-SAE</span>, <span class="selectable-content" id="_s_22">WPA3-SAE-PSK</span>, <span class="selectable-content" id="_s_23">WPA2-PSK</span>, <span class="selectable-content" id="_s_24">no other modes</span>] as defined by IEEE 802.11-2020</b> between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                 </div>
             </div>
             <div class="element">
@@ -1051,7 +1076,7 @@
                     <a href="#FCS_CKM.2.1/DISTRIB" class="abbr">FCS_CKM.2.1/DISTRIB</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distribute <b>the IEEE 802.11</b> keys in accordance with a specified key distribution method: [<i>trusted channel protocol specified in FPT_ITT.1(<abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>) </i>] that meets the following: [<i>standards specified in the various iterations of FCS_COP.1</i>] <b>and does not expose the cryptographic keys</b>. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distribute <b>the IEEE 802.11</b> keys in accordance with a specified cryptographic key distribution method [<i>trusted channel protocol specified in FPT_ITT.1 (<abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>) </i>] that meets the following: [<i>standards specified in the various iterations of FCS_COP.1</i>] <b>and does not expose the cryptographic keys</b>. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -1115,19 +1140,19 @@
                     <a href="#FCS_RADSEC_EXT.2.1" class="abbr">FCS_RADSEC_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_25"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_26"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> implementation shall support the following ciphersuites for use when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client: [<b>selection</b>: 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_27"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_28"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> implementation shall support the following ciphersuites for use when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client: [<b>selection</b>: 
                     <ul>
                         <li style="">
-                            <span class="selectable-content" id="_s_27">TLS_PSK_WITH_AES_128_CBC_SHA</span>
+                            <span class="selectable-content" id="_s_29">TLS_PSK_WITH_AES_128_CBC_SHA</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_28">TLS_PSK_WITH_AES_256_CBC_SHA</span>
+                            <span class="selectable-content" id="_s_30">TLS_PSK_WITH_AES_256_CBC_SHA</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_29">TLS_DHE_PSK_WITH_AES_128_CBC_SHA</span>
+                            <span class="selectable-content" id="_s_31">TLS_DHE_PSK_WITH_AES_128_CBC_SHA</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_30">TLS_DHE_PSK_WITH_AES_256_CBC_SHA</span>
+                            <span class="selectable-content" id="_s_32">TLS_DHE_PSK_WITH_AES_256_CBC_SHA</span>
                         </li>
                         <li style="">
                             <span class="selectable-content" id="s-rsa_psk_aes_128_cbc">TLS_RSA_PSK_WITH_AES_128_CBC_SHA</span>
@@ -1136,16 +1161,16 @@
                             <span class="selectable-content" id="s-rsa_psk_aes_256_cbc">TLS_RSA_PSK_WITH_AES_256_CBC_SHA</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_33">TLS_PSK_WITH_AES_128_GCM_SHA256</span>
+                            <span class="selectable-content" id="_s_35">TLS_PSK_WITH_AES_128_GCM_SHA256</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_34">TLS_PSK_WITH_AES_256_GCM_SHA384</span>
+                            <span class="selectable-content" id="_s_36">TLS_PSK_WITH_AES_256_GCM_SHA384</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_35">TLS_DHE_PSK_WITH_AES_128_GCM_SHA256</span>
+                            <span class="selectable-content" id="_s_37">TLS_DHE_PSK_WITH_AES_128_GCM_SHA256</span>
                         </li>
                         <li style="">
-                            <span class="selectable-content" id="_s_36">TLS_DHE_PSK_WITH_AES_256_GCM_SHA384</span>
+                            <span class="selectable-content" id="_s_38">TLS_DHE_PSK_WITH_AES_256_GCM_SHA384</span>
                         </li>
                         <li style="">
                             <span class="selectable-content" id="s-rsa_psk_aes_128_gcm">TLS_RSA_PSK_WITH_AES_128_GCM_SHA256</span>
@@ -1172,7 +1197,7 @@
                     <a href="#FCS_RADSEC_EXT.2.2" class="abbr">FCS_RADSEC_EXT.2.2</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_39">accept</span>, <span class="selectable-content" id="_s_40">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_41">accept</span>, <span class="selectable-content" id="_s_42">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
                 </div>
             </div>
         </div>
@@ -1205,7 +1230,7 @@
                     <a href="#FCS_RADSEC_EXT.3.2" class="abbr">FCS_RADSEC_EXT.3.2</a>
                 </div>
                 <div class="reqdesc">
-                    When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_41">not establish the connection</span>, <span class="selectable-content" id="_s_42">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_43">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] if the presented server certificate is deemed invalid.
+                    When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_43">not establish the connection</span>, <span class="selectable-content" id="_s_44">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_45">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] if the presented server certificate is deemed invalid.
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -1230,7 +1255,7 @@
                     <a href="#FIA_PSK_EXT.1.1" class="abbr">FIA_PSK_EXT.1.1</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_44"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_45"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_46">WPA3-SAE</span>, <span class="selectable-content" id="_s_47">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_48">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>]. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_46"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_47"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_48">WPA3-SAE</span>, <span class="selectable-content" id="_s_49">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_50">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_51">[<b>assignment</b>: <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>]. 
                 </div>
             </div>
             <div class="element">
@@ -1241,7 +1266,7 @@
                     The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept text-based pre-shared keys that: 
                     <ul>
                         <li>
-                            are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_50">[<b>assignment</b>: <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_51">no other lengths</span>];
+                            are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_52">[<b>assignment</b>: <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_53">no other lengths</span>];
                         </li>
                         <li>are composed of any combination of upper and lower case letters, numbers, and special characters (that include: &ldquo;!&rdquo;, &ldquo;@&rdquo;, &ldquo;#&rdquo;, &ldquo;$&rdquo;, &ldquo;%&rdquo;, &ldquo;^&rdquo;, &ldquo;&amp;&rdquo;, &ldquo;*&rdquo;, &ldquo;(&ldquo;, and &ldquo;)&rdquo;). </li>
                     </ul>
@@ -1252,7 +1277,7 @@
                     <a href="#FIA_PSK_EXT.1.3" class="abbr">FIA_PSK_EXT.1.3</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_52">accept</span>, <span class="selectable-content" id="_s_53">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys. 
+                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_54">accept</span>, <span class="selectable-content" id="_s_55">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p>
@@ -1375,7 +1400,7 @@
                         <h4 id="ext-comp-FCS_RADSEC_EXT.2.1">FCS_RADSEC_EXT.2.1</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>assignment</b>: <span class="assignable-content">list of allowed <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> versions</span>] and reject all other <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> implementation shall support the following ciphersuites for use when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client: [<b>assignment</b>: <span class="assignable-content">list of supported ciphersuites</span>].
                         <h4 id="ext-comp-FCS_RADSEC_EXT.2.2">FCS_RADSEC_EXT.2.2</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_39">accept</span>, <span class="selectable-content" id="_s_40">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_41">accept</span>, <span class="selectable-content" id="_s_42">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
                     </div>
                     <h4>Management: FCS_RADSEC_EXT.3</h4>
                     <p>No specific management functions are identified.</p>
@@ -1398,7 +1423,7 @@
                         <h4 id="ext-comp-FCS_RADSEC_EXT.3.1">FCS_RADSEC_EXT.3.1</h4>
                          When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall verify that the presented identifier matches the reference identifier per RFC 6125 section 6. 
                         <h4 id="ext-comp-FCS_RADSEC_EXT.3.2">FCS_RADSEC_EXT.3.2</h4>
-                        When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_41">not establish the connection</span>, <span class="selectable-content" id="_s_42">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_43">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] if the presented server certificate is deemed invalid.
+                        When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_43">not establish the connection</span>, <span class="selectable-content" id="_s_44">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_45">[<b>assignment</b>: <span class="assignable-content">other action</span>]</span>] if the presented server certificate is deemed invalid.
                     </div>
                 </div>
             </span><span data-sortkey="Identification and Authentication (FIA)">
@@ -1476,17 +1501,17 @@
                             </tr>
                         </table>
                         <h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_44"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_45"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_46">WPA3-SAE</span>, <span class="selectable-content" id="_s_47">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_48">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_49">[<b>assignment</b>: <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>]. 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_46"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_47"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_48">WPA3-SAE</span>, <span class="selectable-content" id="_s_49">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_50">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_51">[<b>assignment</b>: <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>]. 
                         <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>
                         The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept text-based pre-shared keys that: 
                         <ul>
                             <li>
-                                are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_50">[<b>assignment</b>: <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_51">no other lengths</span>];
+                                are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_52">[<b>assignment</b>: <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_53">no other lengths</span>];
                             </li>
                             <li>are composed of any combination of upper and lower case letters, numbers, and special characters (that include: &ldquo;!&rdquo;, &ldquo;@&rdquo;, &ldquo;#&rdquo;, &ldquo;$&rdquo;, &ldquo;%&rdquo;, &ldquo;^&rdquo;, &ldquo;&amp;&rdquo;, &ldquo;*&rdquo;, &ldquo;(&ldquo;, and &ldquo;)&rdquo;). </li>
                         </ul>
                         <h4 id="ext-comp-FIA_PSK_EXT.1.3">FIA_PSK_EXT.1.3</h4>
-                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_52">accept</span>, <span class="selectable-content" id="_s_53">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys. 
+                        The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_54">accept</span>, <span class="selectable-content" id="_s_55">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys. 
                     </div>
                 </div>
             </span><span data-sortkey="Security Management (FMT)">
@@ -1579,7 +1604,7 @@
                 <td><a href="#FMT_SMR_EXT.1">FMT_SMR_EXT.1</a></td><td>No Administration from Client</td><td>All</td>
             </tr>
             <tr>
-                <td>FPT_FLS.1</td><td>Failure with Preservation of Secure State</td><td>All</td>
+                <td><a href="#FPT_FLS.1/AS">FPT_FLS.1/AS</a></td><td>Failure with Preservation of Secure State</td><td>All</td>
             </tr>
             <tr>
                 <td><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Session Establishment</td><td>All</td>

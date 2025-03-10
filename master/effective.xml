@@ -967,12 +967,16 @@
         <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="WLAN">
           <consistency-rationale>This SFR iterates the FAU_GEN.1 SFR defined in the Base-PP to define auditable events for the functionality that is specific to this PP-Module.</consistency-rationale>
 <f-element>
-            <title> The TSF shall be able to generate an audit record of the following auditable
+            <title> The TSF shall be able to generate audit data of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the <h:i>not specified</h:i> level of audit; and</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events table (<xref to="auditWLAN"/>)</h:i></h:li>
-                <h:li><h:i>Failure of wireless sensor communication</h:i>]</h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref g="t-audit-mandatory"/>)</h:i></h:li>
+                <h:li><h:i>Failure of wireless sensor communication</h:i>
+                <h:li><h:i><selectables linebreak="yes">
+                  <selectable>Auditable events listed in the Auditable Events for Selection-Based SFRs table (<xref g="t-audit-sel-based"/>)</selectable>
+                  <selectable exclusive="yes">no other events</selectable>
+                </selectables></h:i></h:li>]</h:li>
               </h:ol>
             <h:table>
               <h:tr>
@@ -1044,7 +1048,7 @@
                 <h:td colspan="2">None.</h:td>
 	      </h:tr>
               <h:tr>
-                <h:td>FPT_FLS.1</h:td>
+                <h:td>FPT_FLS.1/AS</h:td>
                 <h:td>Failure of the TSF.</h:td>
                 <h:td>Indication that the TSF has failed with the type of failure that occurred.</h:td>
               </h:tr>
@@ -1075,23 +1079,41 @@
             </title>
 	    <note role="application">
 	      <h:p>
-		The auditable events defined in <xref to="auditWLAN"/> are for the SFRs that
-		are explicitly defined in this PP-Module and are intended to extend FAU_GEN.1 in the Base-PP.
+          The auditable events defined in <xref g="t-audit-mandatory"/> and <xref g="t-audit-sel-based"/> are for the SFRs that
+          are explicitly defined in this PP-Module and are intended to extend FAU_GEN.1 in the Base-PP. The events in the Auditable Events table 
+          should be combined with those of the NDcPP in the context of a conforming Security Target.
 	      </h:p>
 	      <h:p>
-		The events in the Auditable Events table should be combined with those of the NDcPP in the
-		context of a conforming Security Target.
+          If the ST includes any selection-based SFRs, the selection for "Auditable events listed in the Auditable Events for Selection-Based SFRs table" must be
+          selected. If no selection-based SFRs are included, "no other events" should be selected. The Auditable Events for Selection-Based SFRs (<xref g="t-audit-sel-based"/>)
+          include audit records for selection-based SFRs. The auditing of selection-based SFRs is only required if that SFR is included in the ST.
 	      </h:p>
 	      <h:p>
-		The Auditable Events (<xref to="auditWLAN"/>) includes optional and objective SFRs.
-		The auditing of optional and objective SFRs is only required if that SFR is included in the ST.
+		
 	      </h:p>
 	      <h:p>
 		Per FAU_STG.1 in the Base-PP, the TOE must support transfer of the audit data to an
 		external IT entity using a trusted channel.
 	      </h:p>
 	    </note>
-  <aactivity>
+  
+</f-element> 
+<f-element>
+<title>
+  The TSF shall record within the audit data at least the following information:
+  <h:ol type="a">
+    <h:li>Date and time of the auditable event, type of event, subject identity (if applicable), and the
+      outcome (success or failure) of the event;
+    </h:li>
+    <h:li>
+      For each auditable event type, based on the auditable event definitions of the functional
+      components included in the PP, PP-Module, functional package or ST, [<h:i> information
+      specified in column three of the Auditable Events table in which the auditable event
+      was defined</h:i>].
+    </h:li>
+  </h:ol>
+</title>
+<aactivity>
     <TSS> There are no TSS evaluation activities for this SFR.<h:br/><h:br/>
     </TSS>
     <Guidance> There are no operational guidance activities for this SFR.<h:br/><h:br/>
@@ -1106,7 +1128,8 @@
       be accomplished in conjunction with the testing of the security mechanisms directly.
       </Tests>
   </aactivity>
-</f-element> 
+</f-element>
+      <audit-event/>
         </f-component>
       </sec:man_fau>
       
@@ -1216,6 +1239,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         <!-- previously FCS_CKM.2(3) -->
@@ -1349,6 +1373,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         
@@ -1382,6 +1407,7 @@
               determine that the PMK is not exposed.</Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
       </sec:man_fcs>
@@ -1480,6 +1506,14 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</audit-event-descr>
+            <audit-event-info>Provided client identity (e.g. Media Access Control [Media Access Control (MAC)] address).</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Failed authentication attempt.</audit-event-descr>
+            <audit-event-info>Provided client identity (e.g. MAC address).</audit-event-info>
+          </audit-event>
         </f-component>
       
     
@@ -1506,6 +1540,10 @@
             </Tests>
           </aactivity>
         </f-element>
+        <audit-event>
+          <audit-event-descr>Attempts to re-authenticate.</audit-event-descr>
+          <audit-event-info>Origin of the attempt (e.g., IP address).</audit-event-info>
+        </audit-event>
       </f-component>
       </sec:man_fia>
       
@@ -1552,11 +1590,12 @@
 			  </Tests>
 			</aactivity>
 		</f-element>
+    <audit-event/>
 		</f-component>
         <ext-comp-def title="Security Management Restrictions" fam-id="FMT_SMR_EXT">
           <fam-behavior>Components in this family describe architectural restrictions on security administration that are not defined in CC Part 2.</fam-behavior> 
         </ext-comp-def>
-        <f-component name="No Administration from Client" cc-id="fmt_smr_ext.1">
+    <f-component name="No Administration from Client" cc-id="fmt_smr_ext.1">
           <consistency-rationale>This SFR applies restrictions on when the execution of management functions is authorized. It does not prevent proper administration of the TSF.</consistency-rationale>
           
           <comp-lev>requires the TSF to reject remote administration from a wireless client by default.</comp-lev>
@@ -1583,6 +1622,7 @@
                 connect to the TOE cannot be used to perform administration.</Tests>
             </aactivity>
           </f-element>
+        <audit-event/>
         </f-component>
       </sec:man_fmt>
       
@@ -1720,17 +1760,17 @@
           <consistency-rationale>This SFR defines an additional use for the cryptographic and self-protection mechanisms defined in the Base-PP.</consistency-rationale>
           <f-element>
             <title>The TSF shall distribute <h:b>the IEEE 802.11</h:b> keys in accordance with a
-              specified key distribution method: [<h:i>trusted channel protocol specified in FPT_ITT.1(Base-PP) </h:i>] that meets the following: [<h:i>standards specified in the various iterations of FCS_COP.1</h:i>] <h:b>and
+              specified cryptographic key distribution method [<h:i>trusted channel protocol specified in FPT_ITT.1 (Base-PP) </h:i>] that meets the following: [<h:i>standards specified in the various iterations of FCS_COP.1</h:i>] <h:b>and
                 does not expose the cryptographic keys</h:b>.
             </title>
             <note role="application">
 	      <h:p>
-              This requirement applies to any key necessary for successful IEEE 802.11 connections
-              not covered by FCS_CKM.2/GTK.
-	      In cases where a key must be distributed to other APs, this
-              communication must be performed via a mechanism of commensurate cryptographic strength.
-	      Because communications with any component of a distributed TOE are required to be
-	      performed over a trusted connection, the transfer of these keys will be protected.
+          This requirement applies to any key necessary for successful IEEE 802.11 connections
+          not covered by FCS_CKM.2/GTK.
+          In cases where a key must be distributed to other APs, this
+          communication must be performed via a mechanism of commensurate cryptographic strength.
+          Because communications with any component of a distributed TOE are required to be
+          performed over a trusted connection, the transfer of these keys will be protected.
 	      </h:p>
 	      <h:p>
 		FCS_COP.1 and FPT_ITT.1 are defined in the NDcPP.
@@ -2225,7 +2265,7 @@
         <h:td>All</h:td>
       </h:tr>
       <h:tr>
-        <h:td>FPT_FLS.1</h:td>
+        <h:td>FPT_FLS.1/AS</h:td>
         <h:td>Failure with Preservation of Secure State</h:td>
         <h:td>All</h:td>
       </h:tr>
