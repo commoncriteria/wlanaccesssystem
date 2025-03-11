@@ -595,7 +595,8 @@
               may still be specified by the ST author.
             </consistency-rationale>
            <description>
-           <h:b>NOTE: for CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well.</h:b>
+           <h:b>NOTE: for CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, 
+           the modified audit event associated with this modified SFR has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the Base-PP.</h:b>
             
             This SFR is functionally identical to what is defined in the NDcPP except that
             the specific self-test of verifying the integrity of TSF executable code has been mandated as a minimum baseline for the requirement. Other self-tests may still be claimed at the ST author's discretion.<h:p/>
@@ -654,6 +655,7 @@
               may still be specified by the ST author.</consistency-rationale>
             <f-element>
               <title>
+              
                 The TSF shall run a suite of the following self-tests <h:b>during initial start-up (on power on) and </h:b> <selectables>
                   <selectable>periodically during normal operation</selectable>
                   <selectable>at the request of the authorized user</selectable>
@@ -714,6 +716,8 @@
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
               defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
             <description>
+            <h:p><h:b>NOTE: For CC:2022 updates, the modified audit events associated with this SFR have been removed. The modified audit events are not fundamentally different from those already defined in the Base-PP for the SFR 
+            (both events would already fall into the category of 'Failure of the trusted channel functions', as detection of modification would cause an integrity error and failure of a trusted channel) and new PP syntax is incompatible with modified audit events. </h:b></h:p>
             <h:p>This SFR has been modified from its definition in the Base-PP to mandate communications protocols that are necessary for a WLAN AS. Any element that
             is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
             <h:p>The text of the requirement is replaced with: </h:p>
@@ -743,7 +747,56 @@
             </h:p>
             </description>
             <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
-            <no-change/> 
+            <insert-after>
+              <xpath-specified xpath="*//cc:f-element[@id='ftp-itc-1']">
+                <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel">
+                <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
+                  defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
+                <f-element>
+                  <title>The TSF shall be capable of using <h:b>IEEE 802.1X, <selectables>
+                    <selectable id="s-ipsec">IPsec</selectable>
+                    <selectable id="s-radius">RADIUS over TLS</selectable>
+                  </selectables>, and</h:b> <selectables>
+                      <selectable>SSH</selectable>
+                      <selectable>TLS</selectable>
+                      <selectable>DTLS</selectable>
+                      <selectable>HTTPS</selectable>
+                      <selectable exclusive="yes"><h:b>no other protocols</h:b></selectable>
+                    </selectables> to provide a trusted communication channel
+                    between itself and authorized IT entities supporting the following capabilities: <h:b>802.1X authentication server,</h:b> audit
+                    server, <selectables>
+                      <selectable>authentication server</selectable>
+                      <selectable><assignable>other capabilities</assignable></selectable>
+                      <selectable exclusive="yes">no other capabilities</selectable>
+                    </selectables> that is logically distinct
+                    from other communication channels and provides assured identification of its end points and protection
+                    of the channel data from disclosure and detection of modification of the channel data.
+                  </title>
+                  <note role="application">
+                    <h:p>
+                      This requirement has been modified from its definition in the NDcPP to 
+                      mandate the communications protocols and environmental components that 
+                      a WLAN AS must use for infrastructure communications
+                      (802.11 support is also required for wireless client communications, but this is covered
+                      by the FTP_ITC.1/Client).
+                      IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
+                      Other selections may be made if needed by other parts of the TSF.
+                      The requirement implies that not only are communications protected when they are initially established,
+                      but also on resumption after an outage.</h:p>
+                    <h:p>
+                      The IT entity of "802.1X authentication server" is distinct from "authentication server"
+                      because the latter may be used for administrator authentication rather 
+                      than authorization of WLAN clients.
+                    </h:p><h:p>
+                      If <xref to="s-ipsec"/> is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
+                      If <xref to="s-radius"/> is selected in FTP_ITC.1.1,
+                      then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the NDcPP.
+                    </h:p>
+                  </note>
+                </f-element>
+                </f-component>
+              </xpath-specified>
+            </insert-after>
           </base-sfr-spec>
         </section>
         <!--  <sec:from_nd_fcs title="Cryptographic Support (FCS)">
@@ -1043,7 +1096,11 @@
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the <h:i>not specified</h:i> level of audit; and</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref g="t-audit-mandatory"/>)</h:i></h:li>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref g="t-audit-mandatory"/>)</h:i>
+                <h:br/><comment>The modified audit events for FCS_IPSEC_EXT.1, FTP_ITC.1 and FPT_TST_EXT.1 have been omitted from the respective audit tables due 
+                to a change in the syntax making it impossible to add an audit entry for an SFR that is not defined within the PP-Module itself. 
+                The modifications made to these SFRs' audit events can likely be covered through application of the original audit events or modification to the NDcPP itself. 
+                If this is insufficient, these SFRs may need to be converted to iterations instead of modified SFRs.</comment></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i>
                 <h:li><h:i><selectables linebreak="yes">
                   <selectable>Auditable events listed in the Auditable Events for Selection-Based SFRs table (<xref g="t-audit-sel-based"/>)</selectable>
