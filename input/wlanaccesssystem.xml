@@ -646,8 +646,65 @@
             
           </description>
           
-          <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
-         <no-change/> 
+          <!-- NDcPP is not yet in XML format so there is no change that can be modeled accurately -->
+         <insert-after>
+          <xpath-specified xpath="*//cc:f-element[@id='fpt-tst-ext-1']">
+            <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
+            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
+              may still be specified by the ST author.</consistency-rationale>
+            <f-element>
+              <title>
+                The TSF shall run a suite of the following self-tests <h:b>during initial start-up (on power on) and </h:b> <selectables>
+                  <selectable>periodically during normal operation</selectable>
+                  <selectable>at the request of the authorized user</selectable>
+                  <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
+                  <selectable exclusive="yes"><h:b>in no other circumstances</h:b></selectable>
+                </selectables> to demonstrate the correct operation of the TSF: <h:b>integrity verification of stored TSF executable code when it is loaded for execution
+                through the use of the TSF-provided cryptographic service specified in FCS_COP.1/SigGen, <selectables>
+                  <selectable><assignable>list of additional self-tests run by the TSF</assignable></selectable>
+                  <selectable exclusive="yes">no other self-tests</selectable>
+                </selectables></h:b>.
+              </title>
+              <note role="application">This SFR is modified from its definition in the NDcPP by mandating that self-testing occur at power on and that the self-testing must include, at minimum,
+              an integrity test using a digital signature. FCS_COP.1/SigGen is defined in the NDcPP.</note>
+              <aactivity>
+                The evaluator will perform the following activities in addition to those required by the NDcPP:<h:br/><h:br/>
+                <TSS>
+		              The evaluator will examine the TSS to ensure that it describes how to verify the integrity of stored TSF
+                  executable code when it is loaded for execution, which includes the generation and protection of the
+                  “check value” used to ensure integrity as well as the verification step.
+                  This description will also cover the digital signature service used in performing these functions.
+                  The evaluator also checks the operational guidance to ensure that any actions
+                  required by the administrator to initialize or operate
+                  this functionality are present.<h:br/><h:br/>
+                    The evaluator will also ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful execution of the integrity test.
+		              <h:br/><h:br/>
+		            </TSS>
+                <Guidance>The evaluator will ensure that the TSS or operational guidance describes the actions that take place for 
+			            successful and unsuccessful execution of the integrity test.<h:br/><h:br/>
+		            </Guidance>
+                <Tests>The evaluator will perform the following tests:
+                <testlist>
+                  <test>Following the operational guidance, the evaluator will initialize the integrity protection system.
+                    The evaluator will perform actions to cause TSF software to load and observe that the integrity
+                    mechanism does not flag any executables as containing integrity errors.
+                  </test>
+                  <test>
+                    The evaluator will modify the TSF executable and cause that executable to be loaded by the TSF.
+                    The evaluator will observe that an integrity violation is triggered (care must be taken so that the
+                    integrity violation is determined to be the cause of the failure to load the module and not the fact that
+                    the module was modified so that it was rendered unable to run because its format was corrupt).
+                  </test>
+                </testlist></Tests>
+              </aactivity>
+            </f-element>
+            <audit-event>
+              <audit-event-descr>Execution of TSF self-test.</audit-event-descr>
+              <audit-event-info>None.</audit-event-info>
+            </audit-event>
+          </f-component>
+          </xpath-specified>
+         </insert-after> 
          
         </base-sfr-spec>
 
@@ -973,6 +1030,10 @@
 
     </base-pp>
     <man-sfrs>
+      <section title="Auditable Events for Mandatory SFRs" id="sec-audit-mandatory">
+        <audit-table id="at-mandatory" table="mandatory"/>
+      
+      </section>
       
       <sec:man_fau title="Security Audit (FAU)">
         <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="WLAN">
@@ -989,7 +1050,7 @@
                   <selectable exclusive="yes">no other events</selectable>
                 </selectables></h:i></h:li>]</h:li>
               </h:ol>
-            <h:table>
+            <!-- <h:table>
               <h:tr>
                 <h:th>Requirement</h:th>
                 <h:th>Auditable Events</h:th>
@@ -1086,7 +1147,7 @@
                 <h:td>Detection of modification of channel data.</h:td>
               </h:tr>
             </h:table>
-              <ctr ctr-type="Table" id="auditWLAN">: Auditable Events</ctr>
+              <ctr ctr-type="Table" id="auditWLAN">: Auditable Events</ctr> -->
             </title>
 	    <note role="application">
 	      <h:p>
@@ -1664,6 +1725,10 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Failure of the TSF.</audit-event-descr>
+            <audit-event-info>Indication that the TSF has failed with the type of failure that occurred.</audit-event-info>
+          </audit-event>
         </f-component>
       </sec:man_fpt>
       
@@ -1713,6 +1778,10 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Denial of a session establishment due to the session establishment mechanism.</audit-event-descr>
+            <audit-event-info>Reason for denial, origin of establishment attempt.</audit-event-info>
+          </audit-event>
         </f-component>
       </sec:man_fta>
 	  <sec:man_ftp title="Trusted Path/Channels (FTP)">
@@ -1759,11 +1828,15 @@
 				    <no-tests>This component is adequately evaluated when performing the evaluation activities for <no-link>FTP_ITC.1</no-link> in the <xref to="ND"/> base-PP.</no-tests>
 				  </aactivity>	  
 			  </f-element>
+        <audit-event/>
 		  </f-component>
       </sec:man_ftp>
         
     </man-sfrs>
     <opt-sfrs>
+      <section title="Auditable Events for Optional SFRs" id="sec-audit-optional">
+        <audit-table id="at-optional" table="optional"/>
+      </section>
       <sec:opt_fcs title="Cryptographic Support (FCS)">
         
        
@@ -1797,6 +1870,7 @@
                 protocols, and FPT_ITT.1 (Base-PP).</Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
       </sec:opt_fcs>   
 
@@ -1804,6 +1878,10 @@
 
     </opt-sfrs>
     <sel-sfrs>
+
+      <section title="Auditable Events for Selection-Based SFRs" id="sec-audit-sel-based">
+        <audit-table id="at-sel-based" table="sel-based"/>
+      </section>
       
       <sec:sel_fcs title="Cryptographic Support (FCS)">
         
@@ -1864,6 +1942,7 @@
                 This test will be performed with X.509v3 certificates if selected and performed with pre-shared keys if selected.</Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         <!-- added by TD0271 -->
@@ -1973,6 +2052,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
         
@@ -2068,6 +2148,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
         
       </sec:sel_fcs> 
@@ -2183,6 +2264,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
       </sec:sel_fia> 
 
