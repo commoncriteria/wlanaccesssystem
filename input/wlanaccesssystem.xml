@@ -194,15 +194,20 @@
           <consistency-rationale>This threat extends the security problem defined by the Base-PP to include the threat of a malicious entity in an untrusted network interacting with a protected entity in a trusted network. 
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks. This threat is also consistent with the T.UNTRUSTED_COMMUNICATION_CHANNELS
             threat defined by the Base-PP because compromise of data in transit is one potential way this threat may be exploited.</consistency-rationale>
-          <objective-refer ref="O.AUTHENTICATION">
-            <rationale>The threat T.NETWORK_DISCLOSURE is countered by O.AUTHENTICATION as proper authentication of external entities 
-              ensures that network data is not disclosed to an unauthorized subject.
-	    </rationale>
-          </objective-refer>
-          <objective-refer ref="O.CRYPTOGRAPHIC_FUNCTIONS">
-            <rationale>The threat T.NETWORK_DISCLOSURE is countered by O.CRYPTOGRAPHIC_FUNCTIONS as implementation of cryptographic functions ensures 
-              that network data is not subject to unauthorized disclosure in transit.</rationale>
-          </objective-refer>
+          
+          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
+          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
+          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
+          <addressed-by>FIA_PSK_EXT.1</addressed-by><rationale>Mitigates the threat by generating and/or accepting secure pre-shared keys.</rationale>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</rationale>
+          <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality.</rationale>
+          <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients.</rationale>
+          <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server.</rationale>
+          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients.</rationale>
+          <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic.</rationale>
         </threat>
 
         <threat name="T.NETWORK_ACCESS">
@@ -211,17 +216,14 @@
             entities using an authenticated path into the protected network.</description>
           <consistency-rationale>This threat extends the security problem defined by the Base-PP to include the threat of a malicious entity in an untrusted network interacting with a protected entity in a trusted network. 
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks.</consistency-rationale>
-          <objective-refer ref="O.AUTHENTICATION">
-            <rationale>
-	      The threat T.NETWORK_ACCESS is countered by O.AUTHENTICATION as proper
-	      authentication methods ensure that subjects outside the protected network 
-              cannot access data inside the protected network until the TSF has authenticated them.
-	    </rationale>
-          </objective-refer>
-          <objective-refer ref="O.TOE_ADMINISTRATION">
-            <rationale>The threat T.NETWORK_DISCLOSURE is countered by O.TOE_ADMINISTRATION as the TOE's administration function 
-              does not permit execution of management functions that originate from wireless clients outside the protected network.</rationale>
-          </objective-refer>
+          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
+          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
+          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
+          <addressed-by>FMT_SMR_EXT.1</addressed-by><rationale>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</rationale>
+          <addressed-by>FMT_SMF.1/AccessSystem</addressed-by><rationale>Mitigates the threat by defining management functions that must be protected.</rationale>
         </threat>
 
         <threat name="T.TSF_FAILURE">
@@ -231,17 +233,9 @@
             compromise of the TSF. 
           </description>
           <consistency-rationale>This threat is an extension of the T.SECURITY_FUNCTIONALITY_FAILURE threat defined by the Base-PP.</consistency-rationale>
-          <objective-refer ref="O.FAIL_SECURE">
-            <rationale>
-	      The threat T.TSF_FAILURE is countered by O.FAIL_SECURE as the TOE responds to self-test
-	      failures that are significant enough to show a potential compromise of the TSF by making
-	      the TSF unavailable until the failure state has been cleared.
-	    </rationale>
-          </objective-refer>
-          <objective-refer ref="O.SYSTEM_MONITORING">
-            <rationale>The threat T.TSF_FAILURE is countered by O.SYSTEM_MONITORING as the TOE generates audit records of unauthorized usage, communications outages, incorrect configuration, and other behaviors that may indicate a degraded ability to enforce its intended security
-            functionality so that issues can be diagnosed and resolved appropriately.</rationale>
-          </objective-refer>
+          <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for correct operation and entering a failure state if the tests fail.</rationale>
+          <addressed-by>FPT_FLS.1/AS</addressed-by><rationale>Mitigates the threat by attaining a secure state upon any self-test failures.</rationale>
+          <addressed-by>FAU_GEN.1/WLAN</addressed-by><rationale>Mitigates the threat by notifying administrators of irregular operation that could indicate a failure.</rationale>
         </threat>
         
         <threat name="T.DATA_INTEGRITY">
@@ -472,7 +466,7 @@
     </sec:Security_Objectives_Rationale>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp id="ND" version="3.0e" name="Network Device" product="Network Device" short="ND" plural="NDs">
+    <base-pp id="ND" version="3.0e" name="Network Device" product="Network Device" short="ND">
       <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
   	  <cPP/>
 
@@ -484,7 +478,7 @@
       <modified-sfrs>
         <!-- 5.1.1.1  -->
         <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
-          
+
           <base-sfr-spec cc-id="fcs_cop.1" iteration="DataEncryption" id="nd-fcs-cop-1-dataencryption" title="Cryptographic Operation (AES Data Encryption/Decryption)">
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP and by mandating specific selections that are
             relevant to the technology type of the PP-Module.</consistency-rationale>
@@ -590,13 +584,13 @@
           
         </section>
         <section title="Protection of the TSF (FPT)" id="nd-m-fpt">
+          
           <base-sfr-spec cc-id="fpt_tst_ext.1" title="TSF Testing" id="nd-m-fpt-st-ext-1">
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
               may still be specified by the ST author.
             </consistency-rationale>
            <description>
-           <h:b>NOTE: for CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, 
-           the modified audit event associated with this modified SFR has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the Base-PP.</h:b>
+           
             
             This SFR is functionally identical to what is defined in the NDcPP except that
             the specific self-test of verifying the integrity of TSF executable code has been mandated as a minimum baseline for the requirement. Other self-tests may still be claimed at the ST author's discretion.<h:p/>
@@ -651,6 +645,8 @@
          <insert-after>
           <xpath-specified xpath="*//cc:f-element[@id='fpt-tst-ext-1']">
             <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
+            <comment>For CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, 
+           the modified audit event associated with this modified SFR has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the Base-PP.</comment>
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
               may still be specified by the ST author.</consistency-rationale>
             <f-element>
@@ -1101,12 +1097,8 @@
                 to a change in the syntax making it impossible to add an audit entry for an SFR that is not defined within the PP-Module itself. 
                 The modifications made to these SFRs' audit events can likely be covered through application of the original audit events or modification to the NDcPP itself. 
                 If this is insufficient, these SFRs may need to be converted to iterations instead of modified SFRs.</comment></h:li>
-                <h:li><h:i>Failure of wireless sensor communication</h:i>
-                <h:li><h:i><selectables linebreak="yes">
-                  <selectable>Auditable events listed in the Auditable Events for Selection-Based SFRs table (<xref g="t-audit-sel-based"/>)</selectable>
-                  <selectable exclusive="yes">no other events</selectable>
-                </selectables></h:i></h:li>]</h:li>
-              </h:ol>
+                <h:li><h:i>Failure of wireless sensor communication</h:i></h:li>]
+              </h:ol>.
             <!-- <h:table>
               <h:tr>
                 <h:th>Requirement</h:th>
