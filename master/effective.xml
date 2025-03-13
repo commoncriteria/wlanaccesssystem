@@ -188,8 +188,8 @@
           <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
           <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
           <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.2</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.3</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
           <addressed-by>FIA_PSK_EXT.1</addressed-by><rationale>Mitigates the threat by generating and/or accepting secure pre-shared keys.</rationale>
           <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</rationale>
           <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality.</rationale>
@@ -209,8 +209,8 @@
           <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
           <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
           <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.2</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.3</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
           <addressed-by>FMT_SMR_EXT.1</addressed-by><rationale>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</rationale>
           <addressed-by>FMT_SMF.1/AccessSystem</addressed-by><rationale>Mitigates the threat by defining management functions that must be protected.</rationale>
         </threat>
@@ -235,9 +235,12 @@
             within the communications may be susceptible to a loss of integrity.</description>
           <consistency-rationale>This threat is a specific type of failure that may result from successful exploitation of the T.WEAK_CRYPTOGRAPHY threat defined by the Base-PP. 
             It is an extension of the Base-PP threat for communications that are specific to this PP-Module.</consistency-rationale>
-          <objective-refer ref="O.CRYPTOGRAPHIC_FUNCTIONS">
-            <rationale>The threat T.DATA_INTEGRITY is countered by O.CRYPTOGRAPHIC_FUNCTIONS as the TOE uses cryptographic functionality to enforce the integrity of protected data in transit.</rationale>
-          </objective-refer>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</rationale>
+          <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by generating a secure key used to encrypt and protect wireless traffic using WPA.</rationale>
+          <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
+          <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
+          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
+          <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that protects the confidentiality and integrity of the data.</rationale>
         </threat>
         
         <threat name="T.REPLAY_ATTACK">
@@ -247,16 +250,18 @@
             the intended receiver.</description>
           <consistency-rationale>This threat is a specific type of failure that may result from successful exploitation of the T.UNAUTHORIZED_ADMINISTRATOR_ACCESS and T.UNTRUSTED_COMMUNICATIONS_CHANNELS threats defined by the Base-PP. 
             It is an extension of the Base-PP threat for communications that are specific to this PP-Module.</consistency-rationale>
-          <objective-refer ref="O.AUTHENTICATION">
-            <rationale>
-	      The threat T.REPLAY_ATTACK is countered by O.AUTHENTICATION as the TOE's use of
-	      authentication mechanisms prevent replay attacks because the source of the attack
-	      will not have the proper authentication data for the TSF to process the replayed traffic.
-	    </rationale>
-          </objective-refer>
-          <objective-refer ref="O.CRYPTOGRAPHIC_FUNCTIONS">
-            <rationale>The threat T.REPLAY_ATTACK is countered by O.CRYPTOGRAPHIC_FUNCTIONS as the TOE's use of cryptographic functionality prevents impersonation attempts that use replayed traffic.</rationale>
-          </objective-refer>
+          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network and preventing replay of previous authentication sessions.</rationale>
+          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met, which can include if a specified time has passed or other indicators of stale authentication data.</rationale>
+          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics, which can include a detection of replay or other indicators of stale authentication data.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients, which protects authentication data from replay attacks.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS, which provides protection against replay and data modification.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS, preventing impersonation attacks that could lead to replay.</rationale>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</rationale>
+          <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality that is not subject to replay or guessing.</rationale>
+          <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
+          <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining confidentiality and preventing replay.</rationale>
+          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
+          <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that prevents the use of replayed data.</rationale>
         </threat>
 
       </threats>
@@ -283,158 +288,7 @@
       <OSPs/>
     </sec:Organizational_Security_Policies>
   </sec:Security_Problem_Definition>
-  <sec:Security_Objectives>
-    <sec:Security_Objectives_for_the_TOE>
-
-      <SOs>
-        <SO name="O.CRYPTOGRAPHIC_FUNCTIONS">
-          <description>The TOE will provide means to encrypt and decrypt data to maintain confidentiality and allow for detection of modification of TSF data that is transmitted outside the TOE.
-          </description>
-          <consistency-rationale>
-            The Base-PP does not define TOE objectives, but it does define requirements for cryptographic functions.
-			This objective is consistent with the functional behavior required by the Base-PP.
-	  </consistency-rationale>
-	  <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by>
-	  <rationale>
-	    FCS_COP.1/DataEncryption supports the objective by requiring the TSF to implement AES in the modes needed to support its other functions.
-	  </rationale>
-  <!-- 	  <addressed-by> FCS_IPSEC_EXT.1 (from Base-PP)</addressed-by> -->
-  <!-- 	  <rationale> -->
-  <!--   FCS_IPSEC_EXT.1 supports the objective by requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1.  -->
-  <!-- </rationale> -->
-  <!-- 			<addressed-by> FCS_TLSC_EXT.1 (from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FCS_TLSC_EXT.1 supports the objective by requiring the TSF to use RADIUS over TLS (RadSec) to implement a trusted communications channel if selected in FTP_ITC.1. -->
-  <!-- </rationale> -->
-  <!-- <addressed-by> FCS_TLSC_EXT.2 (from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FCS_TLSC_EXT.2 supports the objective by requiring the TSF to use X.509v3 certificates as the authentication method used for RadSec. -->
-  <!-- </rationale> -->
-  <addressed-by> FCS_CKM.1/WPA</addressed-by>
-  <rationale>
-    FCS_CKM.1/WPA supports the objective by requiring the TSF to generate symmetric keys used for WPA2. 
-  </rationale>
-  <addressed-by> FCS_CKM.2/GTK</addressed-by>
-  <rationale>
-    FCS_CKM.2/GTK supports the objective by requiring the TSF to distribute group temporal keys used for IEEE 802.11.
-  </rationale>
-  <addressed-by> FCS_CKM.2/PMK</addressed-by>
-  <rationale>
-    FCS_CKM.2/PMK supports the objective by requiring the TSF to distribute pairwise master keys used for IEEE 802.11.
-  </rationale>
-  <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by>
-  <rationale>
-    FCS_CKM.2/DISTRIB supports the objective by optionally requiring the TSF to distribute IEEE 802.11 keys to any distributed TOE components using a secured method. 
-  </rationale>
-  
-
-		  </SO>
-            
-              <SO name="O.AUTHENTICATION">
-                <description>The TOE will provide a means to authenticate the user to ensure they are communicating with an authorized external IT entity.
-                </description>
-                <consistency-rationale>The Base-PP does not define TOE objectives, but it does define requirements for authentication of both users and remote entities. 
-                  This objective is consistent with the functional behavior required by the Base-PP.
-				</consistency-rationale>
-  <!-- <addressed-by>FCS_IPSEC_EXT.1 (from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FCS_IPSEC_EXT.1 supports the objective by optionally requiring the TSF to use IPsec to implement a trusted communications channel if selected in FTP_ITC.1.  -->
-  <!--   IPsec includes authenticating using X.509v3 certificates or pre-shared keys. -->
-  <!-- </rationale> -->
-  <!-- <addressed-by>FCS_TLSC_EXT.1 (from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FCS_TLSC_EXT.1 supports the objective by optionally requiring the TSF to use RADIUS over TLS (RadSec) to implement a trusted communications channel if selected in FTP_ITC.1.  -->
-  <!--   TLS includes authenticating using X.509v3 certificates or pre-shared keys. -->
-  <!-- </rationale> -->
-  <!-- <addressed-by>FCS_TLSC_EXT.2 (from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FCS_TLSC_EXT.2 supports the objective by optionally requiring the TSF to use X.509v3 certificates as the authentication method used for RadSec.  -->
-  <!-- </rationale> -->
-  <!-- <addressed-by>FIA_X509_EXT.1/Rev (from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FIA_X509_EXT.1/Rev supports the objective by optionally requiring the TSF to implement X.509v3 certificate validation if certificates are used for authentication.  -->
-  <!-- </rationale> -->
-  <!-- <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by> -->
-  <!-- <rationale> -->
-  <!--   FTP_ITC.1 supports the objective by requiring the TSF to identify the trusted communications channels it implements, each of which is able to support authentication. -->
-  <!-- </rationale> -->
-
-  <addressed-by>FIA_8021X_EXT.1</addressed-by>
-  <rationale>
-    FIA_8021X_EXT.1 supports the objective by requiring the TSF to act as the authenticator for 802.1X authentication.
-  </rationale>
-  <addressed-by>FIA_UAU.6</addressed-by>
-  <rationale>
-    FIA_UAU.6 supports the objective by requiring the TSF to re-authenticate a security administrator under certain circumstances.
-  </rationale>
-  <addressed-by>FTA_TSE.1</addressed-by>
-  <rationale>
-    FTA_TSE.1 supports the objective by requiring the TSF to deny the establishment of a wireless client session for reasons unrelated to the correctness of an authentication credential.
-  </rationale>
-  <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by>
-  <rationale>
-    FCS_RADSEC_EXT.1 supports the objective by optionally requiring the TSF to implement RadSec in accordance with a defined specification.
-  </rationale>
-  <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by>
-  <rationale>
-    FCS_RADSEC_EXT.2 supports the objective by optionally requiring the TSF to implement RadSec using pre-shared keys if that is the method chosen for peer authentication.
-  </rationale>
-  <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by>
-  <rationale>
-    FIA_PSK_EXT.1 supports the objective by optionally requiring the TSF to implement pre-shared key authentication if any trusted protocols require its use. 
-  </rationale>
-
-		  
-		  </SO>
-              
-                <SO name="O.FAIL_SECURE">
-                  <description>Upon a self-test failure, the TOE will shut down to ensure that data cannot be passed without adhering to the TOE's security policies.
-                  </description>
-                  <consistency-rationale>The Base-PP does not define TOE objectives, but it does define requirements for self-testing. 
-                    This PP-Module is consistent with that by defining an objective to enter a secure state if a self-test does fail.</consistency-rationale>
-                  <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by>
-                  <rationale>
-                    FPT_TST_EXT.1 supports the objective by requiring the TSF to perform self-tests that may aid in the detection of a TSF failure.
-                  </rationale>
-				  <addressed-by>FPT_FLS.1</addressed-by>
-				  <rationale>
-                    FPT_FLS.1 supports the objective by requiring the TSF to preserve a secure state in the event of a self-test failure.
-                  </rationale>
-                </SO>
-  
-                  <SO name="O.SYSTEM_MONITORING">
-                    <description>The TOE will provide a means to audit events specific to WLAN functionality and security.
-                    </description>
-                    <consistency-rationale>The Base-PP does not define TOE objectives, but it does define requirements for auditing. 
-                      This PP-Module is consistent with that by ensuring that auditable events are appropriately defined for 
-                      the WLAN AS capability.</consistency-rationale>
-                    <addressed-by>FAU_GEN.1/WLAN</addressed-by>
-                    <rationale>
-                      FAU_GEN.1/WLAN supports the objective by requiring the TSF to generate audit records for security-relevant WLAN behavior.
-                    </rationale>
-                  </SO>
-                  
-                    <SO name="O.TOE_ADMINISTRATION">
-                      <description>The TOE will provide the functions necessary to address failed authentication attempts by a remote administrator.
-                      </description>
-                      <consistency-rationale>The Base-PP does not define TOE objectives, but it does define requirements for management. This PP-Module is consistent with that by applying security restrictions on how the TOE's
-                        management interface can be invoked.</consistency-rationale>
-                      <!-- <addressed-by>FIA_AFL.1 (from Base-PP)</addressed-by> -->
-                      <!-- <rationale> -->
-                      <!--   FIA_AFL.1 supports the objective by requiring the TSF to block authentication if there is evidence of an attempt to compromise an administrator account through brute force. -->
-		      <!-- 				</rationale> -->
-						<addressed-by>
-							FMT_SMR_EXT.1
-						</addressed-by>
-						<rationale>
-							FMT_SMR_EXT.1 supports the objective by requiring the TSF to prevent any administrative actions that originate from the 'external' network.</rationale>
- 						<addressed-by>FMT_SMF.1/AccessSystem</addressed-by>
-						<rationale>FMT_SMF.1/AccessSystem supports the objective by defining management functionality that is specific to WLAN AS devices.</rationale>
-                    </SO>
-  
-      </SOs>
-      </sec:Security_Objectives_for_the_TOE>
-      
+  <sec:Security_Objectives>      
     <sec:Security_Objectives_for_the_Operational_Environment>
       All objectives for the OE of the Base-PP also apply to this PP-Module.
       OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are
@@ -575,7 +429,10 @@
         <section title="Protection of the TSF (FPT)" id="nd-m-fpt">
           
           <base-sfr-spec cc-id="fpt_tst_ext.1" title="TSF Testing" id="nd-m-fpt-st-ext-1">
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
+            <consistency-rationale>
+            <comment>For CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, 
+           the modified audit event associated with this modified SFR has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the Base-PP.</comment>
+            This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
               may still be specified by the ST author.
             </consistency-rationale>
            <description>
@@ -634,8 +491,6 @@
          <insert-after>
           <xpath-specified xpath="*//cc:f-element[@id='fpt-tst-ext-1']">
             <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
-            <comment>For CC:2022 Part 2 conformance this SFR may be replaced in the next NDcPP release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, 
-           the modified audit event associated with this modified SFR has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the Base-PP.</comment>
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
               may still be specified by the ST author.</consistency-rationale>
             <f-element>
@@ -698,11 +553,13 @@
         </section>
         <section id="nd-m-ftp" title="Trusted Path/Channels (FTP)">
           <base-sfr-spec cc-id="ftp_itc.1" id="nd-m-ftp-itc-1" title="Inter-TSF Trusted Channel">
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
+            <consistency-rationale>
+            <comment>For CC:2022 updates, the modified audit events associated with this SFR have been removed. The modified audit events are not fundamentally different from those already defined in the Base-PP for the SFR 
+            (both events would already fall into the category of 'Failure of the trusted channel functions', as detection of modification would cause an integrity error and failure of a trusted channel) and new PP syntax is incompatible with modified audit events. </comment>
+            This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
               defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
             <description>
-            <h:p><h:b>NOTE: For CC:2022 updates, the modified audit events associated with this SFR have been removed. The modified audit events are not fundamentally different from those already defined in the Base-PP for the SFR 
-            (both events would already fall into the category of 'Failure of the trusted channel functions', as detection of modification would cause an integrity error and failure of a trusted channel) and new PP syntax is incompatible with modified audit events. </h:b></h:p>
+            
             <h:p>This SFR has been modified from its definition in the Base-PP to mandate communications protocols that are necessary for a WLAN AS. Any element that
             is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
             <h:p>The text of the requirement is replaced with: </h:p>
@@ -727,8 +584,9 @@
                    than authorization of WLAN clients.
                 </h:p><h:p>
                    If "IPsec" is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
-                   If "RADIUS" is selected in FTP_ITC.1.1,
+                   If "RADIUS over TLS" is selected in FTP_ITC.1.1,
                    then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the [<h:a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for TLS, version 2.0</h:a>].
+                   SSH is defined in the [<h:a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for SSH, version 2.0</h:a>].
             </h:p>
             </description>
             <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
@@ -1250,6 +1108,7 @@
             <consistency-rationale>This SFR defines additional cryptographic functionality not defined in the Base-PP, but it implements this using the DRBG mechanism already defined in the Base-PP.</consistency-rationale>
           <f-element>
             <title>
+            <comment>It's not clear how CNSA 1.0 requirements are applied (if at all) to 802.11 crypto. This comment also applies to FCS_CKM.2/GTK and FCS_CKM.2/PMK. No substantive changes have been made to these SFRs yet.</comment>
               The TSF shall generate <h:b>symmetric</h:b> cryptographic keys in accordance with a
               specified cryptographic key generation algorithm [<h:i>PRF-384 and <selectables>
                 <selectable>PRF-512</selectable>
@@ -1577,6 +1436,7 @@
             terminology of 802.1X, this means the wireless client has access to the "controlled port" maintained by
             the TOE.
 	    </h:p>
+      <h:p>TLS is defined in the <xref to="pkgTLS"/>.</h:p>
           </note>
             <aactivity>
               <TSS>
@@ -1960,7 +1820,7 @@
 	      <h:p>This SFR is applicable if "RADIUS over TLS" is selected in FTP_ITC.1.1.</h:p>
 	      <h:p>
 		If <xref to="s-x509-certs"/> is selected in FCS_RADSEC_EXT.1.2,
-		then FCS_TLSC_EXT.2 from the NDcPP must be claimed. 
+		then FCS_TLSC_EXT.2 from the <xref to="pkgTLS"/> must be claimed. 
 		If <xref to="s-radsec-psk"/> is selected in FCS_RADSEC_EXT.1.2, then FCS_RADSEC_EXT.2 and FIA_PSK_EXT.1 in this PP-Module must be claimed.
 	      </h:p>
             </note>
@@ -1999,7 +1859,10 @@
             FCS_RBG.1 Random Bit Generation
 	  </dependencies>
           <f-element>
-            <title>The TSF shall implement <selectables>
+          
+            <title> <comment>This SFR is a recreation of FCS_TLSC_EXT.1 as present in the NDcPP v2.2e with refinements and an additional element. It's unclear how this requirement should be handled moving forward as we move 
+            these types of requirements into the TLS FP. The TLS FP v2.0 contains some of the PSK ciphersuites listed here but not all of them.</comment>
+            The TSF shall implement <selectables>
               <selectable>TLS 1.2 (RFC 5246)</selectable>
               <selectable>TLS 1.1 (RFC 4346)</selectable>
             </selectables> and <h:b>no earlier</h:b> TLS and SSL versions. The TLS implementation shall support
