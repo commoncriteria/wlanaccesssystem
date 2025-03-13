@@ -2,14 +2,12 @@ output/wlanaccesssystem-release-linkable.html: 0e
 output/wlanaccesssystem-release-linkable.html: CNSA
 output/wlanaccesssystem-release-linkable.html: crypto
 output/wlanaccesssystem-release-linkable.html: fulfil
-output/wlanaccesssystem-release-linkable.html: sel
 output/wlanaccesssystem-release-linkable.html: v2
 output/wlanaccesssystem-release.html: 0e
 output/wlanaccesssystem-release.html: CNSA
 output/wlanaccesssystem-release.html: crypto
 output/wlanaccesssystem-release.html: fulfil
 output/wlanaccesssystem-release.html: identifier’s
-output/wlanaccesssystem-release.html: sel
 output/wlanaccesssystem-release.html: v2
 output/wlanaccesssystem-sd.html: 0e
 output/wlanaccesssystem-sd.html: evaluator’s
@@ -20,5 +18,4 @@ output/wlanaccesssystem.html: CNSA
 output/wlanaccesssystem.html: crypto
 output/wlanaccesssystem.html: fulfil
 output/wlanaccesssystem.html: identifier’s
-output/wlanaccesssystem.html: sel
 output/wlanaccesssystem.html: v2
