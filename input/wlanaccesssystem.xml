@@ -195,19 +195,20 @@
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks. This threat is also consistent with the T.UNTRUSTED_COMMUNICATION_CHANNELS
             threat defined by the Base-PP because compromise of data in transit is one potential way this threat may be exploited.</consistency-rationale>
           
-          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
-          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
-          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
-          <addressed-by>FIA_PSK_EXT.1</addressed-by><rationale>Mitigates the threat by generating and/or accepting secure pre-shared keys.</rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</rationale>
           <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality.</rationale>
           <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients.</rationale>
           <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server.</rationale>
-          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients.</rationale>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</rationale>         
+          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
+          <addressed-by>FIA_PSK_EXT.1</addressed-by><rationale>Mitigates the threat by generating and/or accepting secure pre-shared keys.</rationale>
+          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
+          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
+          <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server).</rationale>
           <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic.</rationale>
+          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
         </threat>
 
         <threat name="T.NETWORK_ACCESS">
@@ -218,12 +219,12 @@
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks.</consistency-rationale>
           <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
           <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
+          <addressed-by>FMT_SMR_EXT.1</addressed-by><rationale>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</rationale>
+          <addressed-by>FMT_SMF.1/AccessSystem</addressed-by><rationale>Mitigates the threat by defining management functions that must be protected.</rationale>
           <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
           <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
           <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
           <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
-          <addressed-by>FMT_SMR_EXT.1</addressed-by><rationale>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</rationale>
-          <addressed-by>FMT_SMF.1/AccessSystem</addressed-by><rationale>Mitigates the threat by defining management functions that must be protected.</rationale>
         </threat>
 
         <threat name="T.TSF_FAILURE">
@@ -233,9 +234,9 @@
             compromise of the TSF. 
           </description>
           <consistency-rationale>This threat is an extension of the T.SECURITY_FUNCTIONALITY_FAILURE threat defined by the Base-PP.</consistency-rationale>
-          <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for correct operation and entering a failure state if the tests fail.</rationale>
-          <addressed-by>FPT_FLS.1/AS</addressed-by><rationale>Mitigates the threat by attaining a secure state upon any self-test failures.</rationale>
           <addressed-by>FAU_GEN.1/WLAN</addressed-by><rationale>Mitigates the threat by notifying administrators of irregular operation that could indicate a failure.</rationale>
+          <addressed-by>FPT_FLS.1/AS</addressed-by><rationale>Mitigates the threat by attaining a secure state upon any self-test failures.</rationale>
+          <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for correct operation and entering a failure state if the tests fail.</rationale>
         </threat>
         
         <threat name="T.DATA_INTEGRITY">
@@ -246,12 +247,13 @@
             within the communications may be susceptible to a loss of integrity.</description>
           <consistency-rationale>This threat is a specific type of failure that may result from successful exploitation of the T.WEAK_CRYPTOGRAPHY threat defined by the Base-PP. 
             It is an extension of the Base-PP threat for communications that are specific to this PP-Module.</consistency-rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</rationale>
           <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by generating a secure key used to encrypt and protect wireless traffic using WPA.</rationale>
           <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
           <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
-          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</rationale>
+          <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server) that maintains data confidentiality and integrity.</rationale>
           <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that protects the confidentiality and integrity of the data.</rationale>
+          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
         </threat>
         
         <threat name="T.REPLAY_ATTACK">
@@ -261,18 +263,18 @@
             the intended receiver.</description>
           <consistency-rationale>This threat is a specific type of failure that may result from successful exploitation of the T.UNAUTHORIZED_ADMINISTRATOR_ACCESS and T.UNTRUSTED_COMMUNICATIONS_CHANNELS threats defined by the Base-PP. 
             It is an extension of the Base-PP threat for communications that are specific to this PP-Module.</consistency-rationale>
-          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network and preventing replay of previous authentication sessions.</rationale>
-          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met, which can include if a specified time has passed or other indicators of stale authentication data.</rationale>
-          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics, which can include a detection of replay or other indicators of stale authentication data.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients, which protects authentication data from replay attacks.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS, which provides protection against replay and data modification.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS, preventing impersonation attacks that could lead to replay.</rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</rationale>
           <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality that is not subject to replay or guessing.</rationale>
           <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
           <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining confidentiality and preventing replay.</rationale>
-          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</rationale>
+          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network and preventing replay of previous authentication sessions.</rationale>
+          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met, which can include if a specified time has passed or other indicators of stale authentication data.</rationale>
+          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics, which can include a detection of replay or other indicators of stale authentication data.</rationale>
           <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that prevents the use of replayed data.</rationale>
+          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients, which protects authentication data from replay attacks.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS, which provides protection against replay and data modification.</rationale>
+          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS, preventing impersonation attacks that could lead to replay.</rationale>
         </threat>
 
       </threats>
@@ -596,8 +598,8 @@
                 </h:p><h:p>
                    If "IPsec" is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
                    If "RADIUS over TLS" is selected in FTP_ITC.1.1,
-                   then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the [<h:a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for TLS, version 2.0</h:a>].
-                   SSH is defined in the [<h:a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for SSH, version 2.0</h:a>].
+                   then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the <h:a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for TLS, version 2.0</h:a>.
+                   SSH is defined in the <h:a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for SSH, version 2.0</h:a>.
             </h:p>
             </description>
             <!-- NDcPP is not yet in XML format so there is no change that can be modeled -->
@@ -950,7 +952,7 @@
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
                 <h:li>All auditable events for the <h:i>not specified</h:i> level of audit; and</h:li>
-                <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref g="t-audit-mandatory"/>)</h:i>
+                <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref to="at-mandatory"/>)</h:i>
                 <h:br/><comment>The modified audit events for FCS_IPSEC_EXT.1, FTP_ITC.1 and FPT_TST_EXT.1 have been omitted from the respective audit tables due 
                 to a change in the syntax making it impossible to add an audit entry for an SFR that is not defined within the PP-Module itself. 
                 The modifications made to these SFRs' audit events can likely be covered through application of the original audit events or modification to the NDcPP itself. 
@@ -1058,13 +1060,13 @@
             </title>
 	    <note role="application">
 	      <h:p>
-          The auditable events defined in <xref g="t-audit-mandatory"/> and <xref g="t-audit-sel-based"/> are for the SFRs that
+          The auditable events defined in <xref to="at-mandatory"/> and <xref to="at-sel-based"/> are for the SFRs that
           are explicitly defined in this PP-Module and are intended to extend FAU_GEN.1 in the Base-PP. The events in the Auditable Events table 
           should be combined with those of the NDcPP in the context of a conforming Security Target.
 	      </h:p>
 	      <h:p>
           If the ST includes any selection-based SFRs, the selection for "Auditable events listed in the Auditable Events for Selection-Based SFRs table" must be
-          selected. If no selection-based SFRs are included, "no other events" should be selected. The Auditable Events for Selection-Based SFRs (<xref g="t-audit-sel-based"/>)
+          selected. If no selection-based SFRs are included, "no other events" should be selected. The Auditable Events for Selection-Based SFRs (<xref to="at-sel-based"/>)
           include audit records for selection-based SFRs. The auditing of selection-based SFRs is only required if that SFR is included in the ST.
 	      </h:p>
 	      <h:p>
