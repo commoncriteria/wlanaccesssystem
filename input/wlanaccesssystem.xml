@@ -194,21 +194,20 @@
           <consistency-rationale>This threat extends the security problem defined by the Base-PP to include the threat of a malicious entity in an untrusted network interacting with a protected entity in a trusted network. 
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks. This threat is also consistent with the T.UNTRUSTED_COMMUNICATION_CHANNELS
             threat defined by the Base-PP because compromise of data in transit is one potential way this threat may be exploited.</consistency-rationale>
-          
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</rationale>         
+          <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server).</rationale>
           <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality.</rationale>
           <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients.</rationale>
           <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server.</rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</rationale>         
           <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
-          <addressed-by>FIA_PSK_EXT.1</addressed-by><rationale>Mitigates the threat by generating and/or accepting secure pre-shared keys.</rationale>
           <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
           <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
-          <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server).</rationale>
           <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic.</rationale>
           <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients.</rationale>
           <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
           <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
           <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS.</rationale>
+          <addressed-by>FIA_PSK_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by generating and/or accepting secure pre-shared keys.</rationale>
         </threat>
 
         <threat name="T.NETWORK_ACCESS">
@@ -219,8 +218,8 @@
             This is not addressed in the Base-PP because not all network devices are responsible for facilitating communications between separate networks.</consistency-rationale>
           <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network.</rationale>
           <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met.</rationale>
-          <addressed-by>FMT_SMR_EXT.1</addressed-by><rationale>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</rationale>
           <addressed-by>FMT_SMF.1/AccessSystem</addressed-by><rationale>Mitigates the threat by defining management functions that must be protected.</rationale>
+          <addressed-by>FMT_SMR_EXT.1</addressed-by><rationale>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</rationale>
           <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics.</rationale>
           <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients.</rationale>
           <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS.</rationale>
@@ -234,9 +233,9 @@
             compromise of the TSF. 
           </description>
           <consistency-rationale>This threat is an extension of the T.SECURITY_FUNCTIONALITY_FAILURE threat defined by the Base-PP.</consistency-rationale>
+          <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for correct operation and entering a failure state if the tests fail.</rationale>
           <addressed-by>FAU_GEN.1/WLAN</addressed-by><rationale>Mitigates the threat by notifying administrators of irregular operation that could indicate a failure.</rationale>
           <addressed-by>FPT_FLS.1/AS</addressed-by><rationale>Mitigates the threat by attaining a secure state upon any self-test failures.</rationale>
-          <addressed-by>FPT_TST_EXT.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by testing the TSF for correct operation and entering a failure state if the tests fail.</rationale>
         </threat>
         
         <threat name="T.DATA_INTEGRITY">
@@ -247,11 +246,11 @@
             within the communications may be susceptible to a loss of integrity.</description>
           <consistency-rationale>This threat is a specific type of failure that may result from successful exploitation of the T.WEAK_CRYPTOGRAPHY threat defined by the Base-PP. 
             It is an extension of the Base-PP threat for communications that are specific to this PP-Module.</consistency-rationale>
+          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</rationale>
+          <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server) that maintains data confidentiality and integrity.</rationale>
           <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by generating a secure key used to encrypt and protect wireless traffic using WPA.</rationale>
           <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
           <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</rationale>
-          <addressed-by>FTP_ITC.1 (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server) that maintains data confidentiality and integrity.</rationale>
           <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that protects the confidentiality and integrity of the data.</rationale>
           <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</rationale>
         </threat>
@@ -263,18 +262,18 @@
             the intended receiver.</description>
           <consistency-rationale>This threat is a specific type of failure that may result from successful exploitation of the T.UNAUTHORIZED_ADMINISTRATOR_ACCESS and T.UNTRUSTED_COMMUNICATIONS_CHANNELS threats defined by the Base-PP. 
             It is an extension of the Base-PP threat for communications that are specific to this PP-Module.</consistency-rationale>
-          <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality that is not subject to replay or guessing.</rationale>
-          <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
-          <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining confidentiality and preventing replay.</rationale>
-          <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</rationale>
-          <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network and preventing replay of previous authentication sessions.</rationale>
-          <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met, which can include if a specified time has passed or other indicators of stale authentication data.</rationale>
-          <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics, which can include a detection of replay or other indicators of stale authentication data.</rationale>
-          <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that prevents the use of replayed data.</rationale>
-          <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients, which protects authentication data from replay attacks.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS, which provides protection against replay and data modification.</rationale>
-          <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS, preventing impersonation attacks that could lead to replay.</rationale>
+            <addressed-by>FCS_COP.1/DataEncryption (modified from Base-PP)</addressed-by><rationale>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</rationale>
+            <addressed-by>FCS_CKM.1/WPA</addressed-by><rationale>Mitigates the threat by utilizing a secure key generation function for WPA functionality that is not subject to replay or guessing.</rationale>
+            <addressed-by>FCS_CKM.2/GTK</addressed-by><rationale>Mitigates the threat by securely distributing GTK keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
+            <addressed-by>FCS_CKM.2/PMK</addressed-by><rationale>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining confidentiality and preventing replay.</rationale>
+            <addressed-by>FIA_8021X_EXT.1</addressed-by><rationale>Mitigates the threat by authenticating clients before allowing access to the controlled network and preventing replay of previous authentication sessions.</rationale>
+            <addressed-by>FIA_UAU.6</addressed-by><rationale>Mitigates the threat by re-authenticating users when specified criteria are met, which can include if a specified time has passed or other indicators of stale authentication data.</rationale>
+            <addressed-by>FTA_TSE.1</addressed-by><rationale>Mitigates the threat by denying sessions based on undesirable characteristics, which can include a detection of replay or other indicators of stale authentication data.</rationale>
+            <addressed-by>FTP_ITC.1/Client</addressed-by><rationale>Mitigates the threat by providing a secure channel for WLAN client traffic that prevents the use of replayed data.</rationale>
+            <addressed-by>FCS_CKM.2/DISTRIB (optional)</addressed-by><rationale>Mitigates the threat by securely distributing 802.11 keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</rationale>
+            <addressed-by>FCS_RADSEC_EXT.1 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure RADIUS implementation to authenticate clients, which protects authentication data from replay attacks.</rationale>
+            <addressed-by>FCS_RADSEC_EXT.2 (selection-based)</addressed-by><rationale>Mitigates the threat by utilizing a secure TLS configuration for RADIUS over TLS, which provides protection against replay and data modification.</rationale>
+            <addressed-by>FCS_RADSEC_EXT.3 (selection-based)</addressed-by><rationale>Mitigates the threat by verifying server identifiers when utilizing RADIUS over TLS, preventing impersonation attacks that could lead to replay.</rationale>
         </threat>
 
       </threats>
@@ -655,275 +654,6 @@
             </insert-after>
           </base-sfr-spec>
         </section>
-        <!--  <sec:from_nd_fcs title="Cryptographic Support (FCS)">
-          <f-component cc-id="fcs_cop.1" name="Cryptographic Operation (AES Data Encryption/Decryption)" iteration="DataEncryption"> 
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by adding additional AES modes consistent with the standards referenced in the Base-PP and by mandating specific selections that are
-            relevant to the technology type of the PP-Module.</consistency-rationale>
-            <f-element>
-              <title>
-                
-                The TSF shall perform encryption/decryption in accordance
-                with a specified cryptographic algorithm AES used in <h:b>CBC, CCMP, </h:b> and <selectables>
-                  <selectable>CTR</selectable>
-                  <selectable>GCM</selectable>
-                  <selectable><h:b>GCMP</h:b></selectable>
-                  <selectable exclusive="yes"><h:b>no other</h:b></selectable>
-                </selectables> <h:b>modes</h:b> and cryptographic key sizes <h:b>256 bits and</h:b> <selectables>
-                  <selectable>128 bits</selectable>
-                  <selectable>192 bits</selectable>
-                  <selectable exclusive="yes"><h:b>no other key sizes</h:b></selectable>
-                </selectables> that meet the following: AES as specified in ISO 18033-3, 
-                <h:b>CBC as specified in ISO 10116, 
-                  CCMP as specified in NIST SP 800-38C and IEEE 802.11-2020,</h:b> <selectables>
-                    <selectable>CTR as specified in ISO 10116</selectable>
-                    <selectable>GCM as specified in ISO 19772</selectable>
-                    <selectable><h:b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021</h:b></selectable>
-                    <selectable exclusive="yes"><h:b>no other standards</h:b></selectable>
-                  </selectables>. 
-              </title>
-              <note role="application">
-                <h:p>
-                  This requirement is modified from its definition in the NDcPP by mandating the selection of
-		  CBC mode and 256 bit key sizes while also defining additional AES mode and key size selections
-		  not present in the original definition.
-		</h:p>
-		<h:p>
-                  This requirement mandates two modes for AES with a key size of 256 bits being implemented.
-		  It is not expected that these modes will both be used for all encryption and decryption functionality.
-		  Rather, the mandates serve particular purposes: to comply with the FCS_IPSEC_EXT.1 requirements,
-		  CBC mode is mandated, and to comply with IEEE 802.11-2020, AES-CCMP
-		  (which uses AES in CCM as specified in SP 800-38C) must be implemented.
-		</h:p>
-		<h:p>
-                  For the first selection of FCS_COP.1.1/DataEncryption, the ST author should choose the additional mode or modes in which AES operates.
-		  For the second selection, the ST author should choose the key sizes that are supported by this functionality.
-		  256-bit CCMP is required in order to comply with FCS_CKM.1/WPA.
-		  Note that optionally AES-CCMP-192, AES-CCMP-128, AES-GCMP-192, and AES-GCMP-128 with cryptographic key size of 256 bits, may be implemented for IEEE 802.11ax-2021 connections.
-		  In the future, one of these modes may be required.
-		</h:p>
-		<h:p>
-                  CTR mode is not used for WLAN AS capabilities but remains selectable since it may be required by another part of the TSF.
-		</h:p>
-              </note>
-              <aactivity>
-                <TSS>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></TSS>
-                <Guidance>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/></Guidance>
-                <Tests>
-		  In addition to the tests required by the NDcPP, the evaluator will perform the following testing:
-		<h:p>
-                  <h:b>AES-CCM Tests</h:b></h:p>
-		  <h:p>
-                  The evaluator will test the generation-encryption and decryption-verification functionality of AES-CCM for the following input parameter and tag lengths:</h:p>
-		  <h:p>
-                  <h:b>128 bit and 256 bit keys</h:b></h:p>
-		  <h:p>
-                  <h:b>Two payload lengths</h:b>. One payload length will be the shortest supported payload length,
-                  greater than or equal to zero bytes. The other payload length will be the longest supported
-                  payload length, less than or equal to 32 bytes (256 bits).</h:p>
-		  <h:p>
-                    <h:b>Two or three associated data lengths</h:b>.
-		    One associated data length will be 0, if supported.
-		    One associated data length will be the shortest supported payload length,
-		    greater than or equal to
-                    zero bytes.
-		    One associated data length will be the longest supported payload length, less than
-                    or equal to 32 bytes (256 bits).
-		    If the implementation supports an associated data length of 216
-                    bytes, an associated data length of 216 bytes will be tested.
-		  </h:p>
-		  <h:p>
-                    <h:b>Nonce lengths</h:b>.
-		    All supported nonce lengths between 7 and 13 bytes, inclusive, will be tested.
-		  </h:p>
-		  <h:p>
-                    <h:b>Tag lengths</h:b>.
-		    All supported tag lengths of 4, 6, 8, 10, 12, 14, and 16 bytes will be tested.
-		  </h:p>
-		  <h:p>
-                    Due to the restrictions that IEEE 802.11 specifies for this mode
-		    (nonce length of 13 and tag length of 8),
-                    it is acceptable to test a subset of the supported lengths as long as the selections
-		    fall into the ranges specified above.
-		    In this case, the evaluator will ensure that these are the only supported lengths.
-                    To test the generation-encryption functionality of AES-CCM, the evaluator will
-		    perform the following four tests:
-		  </h:p>
-		  <h:p>
-                  <testlist>
-                    <test>For each supported key and associated data length and any supported payload, nonce
-                      and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                      associated data and payload values, and obtain the resulting ciphertext.</test>
-                    <test>For each supported key and payload length and any supported associated data, nonce
-                      and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                      associated data and payload values, and obtain the resulting ciphertext.</test>
-                    <test>For each supported key and nonce length and any supported associated data, payload,
-                      and tag length, the evaluator will supply one key value and 10 associated data, payload and
-                      nonce value 3-tuples, and obtain the resulting ciphertext.</test>
-                    <test>For each supported key and tag length and any supported associated data, payload, and
-                      nonce length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                      associated data and payload values and, obtain the resulting ciphertext</test>
-                  </testlist>
-                  To determine correctness in each of the above tests, the evaluator will compare the ciphertext with the
-                  result of generation-encryption of the same inputs with a known good implementation.</h:p>
-		  <h:p>
-                  To test the decryption-verification functionality of AES-CCM, for each combination of supported
-                  associated data length, payload length, nonce length, and tag length, the evaluator will supply a key
-                  value and 15 nonce, associated data and ciphertext 3-tuples, and obtain either a fail result or a pass
-                  result with the decrypted payload.
-		  The evaluator will supply 10 tuples that should fail and 5 that should pass per set of 15.
-		  </h:p>
-		  <h:p>
-                  Additionally, the evaluator will use tests from the IEEE 802.11-02/362r6 document “Proposed Test
-                  vectors for IEEE 802.11 TGi”, dated September 10, 2002, Section 2.1 AES-CCMP Encapsulation Example
-                  and Section 2.2 Additional AES-CCMP Test Vectors to verify further the IEEE 802.11-2020
-                  implementation of AES-CCMP.
-		  </h:p>
-                </Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-          
-        </sec:from_nd_fcs>
-        
-        <sec:from_nd_fpt title="Protection of the TSF (FPT)">
-          <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by defining a minimum baseline for what self-tests must be run. Additional self-tests
-              may still be specified by the ST author.</consistency-rationale>
-            <f-element>
-              <title>
-                The TSF shall run a suite of the following self-tests <h:b>during initial start-up (on power on) and </h:b> <selectables>
-                  <selectable>periodically during normal operation</selectable>
-                  <selectable>at the request of the authorized user</selectable>
-                  <selectable>at the conditions <assignable>conditions under which self-tests should occur</assignable></selectable>
-                  <selectable exclusive="yes"><h:b>in no other circumstances</h:b></selectable>
-                </selectables> to demonstrate the correct operation of the TSF: <h:b>integrity verification of stored TSF executable code when it is loaded for execution
-                through the use of the TSF-provided cryptographic service specified in FCS_COP.1/SigGen, <selectables>
-                  <selectable><assignable>list of additional self-tests run by the TSF</assignable></selectable>
-                  <selectable exclusive="yes">no other self-tests</selectable>
-                </selectables></h:b>.
-              </title>
-              <note role="application">This SFR is modified from its definition in the NDcPP by mandating that self-testing occur at power on and that the self-testing must include, at minimum,
-              an integrity test using a digital signature. FCS_COP.1/SigGen is defined in the NDcPP.</note>
-              <aactivity>
-                The evaluator will perform the following activities in addition to those required by the NDcPP:<h:br/><h:br/>
-                <TSS>
-		    The evaluator will examine the TSS to ensure that it describes how to verify the integrity of stored TSF
-                  executable code when it is loaded for execution, which includes the generation and protection of the
-                  “check value” used to ensure integrity as well as the verification step.
-		  This description will also cover the digital signature service used in performing these functions.
-		  The evaluator also checks the operational guidance to ensure that any actions
-		  required by the administrator to initialize or operate
-                  this functionality are present.<h:br/><h:br/>
-                    The evaluator will also ensure that the TSS or operational guidance describes the actions that take place for successful and unsuccessful execution of the integrity test.
-		  <h:br/><h:br/>
-		  </TSS>
-                <Guidance>The evaluator will ensure that the TSS or operational guidance describes the actions that take place for 
-			successful and unsuccessful execution of the integrity test.<h:br/><h:br/>
-		</Guidance>
-                <Tests>The evaluator will perform the following tests:
-                <testlist>
-                  <test>Following the operational guidance, the evaluator will initialize the integrity protection system.
-                    The evaluator will perform actions to cause TSF software to load and observe that the integrity
-                    mechanism does not flag any executables as containing integrity errors.
-                  </test>
-                  <test>
-		    The evaluator will modify the TSF executable and cause that executable to be loaded by the TSF.
-		    The evaluator will observe that an integrity violation is triggered (care must be taken so that the
-                    integrity violation is determined to be the cause of the failure to load the module and not the fact that
-                    the module was modified so that it was rendered unable to run because its format was corrupt).
-                  </test>
-                </testlist></Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-        </sec:from_nd_fpt>
-        
-        <sec:from_nd_ftp title="Trusted Path/Channels (FTP)">
-          <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel">
-            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally
-              defined by the Base-PP. The original protocols specified in the Base-PP may still be selected by the ST author.</consistency-rationale>
-            <f-element>
-              <title>The TSF shall be capable of using <h:b>IEEE 802.1X, <selectables>
-                <selectable id="s-ipsec">IPsec</selectable>
-                <selectable id="s-radius">RADIUS over TLS</selectable>
-              </selectables>, and</h:b> <selectables>
-                  <selectable>SSH</selectable>
-                  <selectable>TLS</selectable>
-                  <selectable>DTLS</selectable>
-                  <selectable>HTTPS</selectable>
-                  <selectable exclusive="yes"><h:b>no other protocols</h:b></selectable>
-                </selectables> to provide a trusted communication channel
-                between itself and authorized IT entities supporting the following capabilities: <h:b>802.1X authentication server,</h:b> audit
-                server, <selectables>
-                  <selectable>authentication server</selectable>
-                  <selectable><assignable>other capabilities</assignable></selectable>
-                  <selectable exclusive="yes">no other capabilities</selectable>
-                </selectables> that is logically distinct
-                from other communication channels and provides assured identification of its end points and protection
-                of the channel data from disclosure and detection of modification of the channel data.
-              </title>
-              <note role="application">
-                <h:p>
-                  This requirement has been modified from its definition in the NDcPP to 
-                  mandate the communications protocols and environmental components that 
-                  a WLAN AS must use for infrastructure communications
-                  (802.11 support is also required for wireless client communications, but this is covered
-                  by the FTP_ITC.1/Client).
-                  IPsec or RADIUS over TLS (commonly known as "RadSec") is required at least for communications with the 802.1X authentication server.
-                  Other selections may be made if needed by other parts of the TSF.
-                  The requirement implies that not only are communications protected when they are initially established,
-                  but also on resumption after an outage.</h:p>
-                <h:p>
-                   The IT entity of "802.1X authentication server" is distinct from "authentication server"
-                   because the latter may be used for administrator authentication rather 
-                   than authorization of WLAN clients.
-                </h:p><h:p>
-                   If <xref to="s-ipsec"/> is selected in FTP_ITC.1.1, then FCS_IPSEC_EXT.1 from the NDcPP must be claimed.
-                   If <xref to="s-radius"/> is selected in FTP_ITC.1.1,
-                   then FCS_RADSEC_EXT.1 in this PP-Module must be claimed, as well as FCS_TLSC_EXT.1 from the NDcPP.
-                </h:p>
-              </note>
-            </f-element>
-            <f-element>
-              <title>The TSF shall permit the TSF or the authorized IT entities to initiate communication via the trusted channel.</title>
-            </f-element>
-            <f-element>
-              <title>The TSF shall initiate communication via the trusted channel for <assignable>list of services for which the TSF is able to initiate communications</assignable>.</title>
-            <aactivity>
-                The evaluator will perform the following activities in addition to those required by the NDcPP:<h:br/><h:br/>
-                <TSS>
-		  The evaluator will examine the TSS to determine that, for all communications with authorized IT
-                  entities identified in the requirement, each communications mechanism is identified in terms of the
-                  allowed protocols for that IT entity.
-		  The evaluator will also confirm that all protocols listed in the TSS
-                  are specified and included in the requirements in the ST.<h:br/><h:br/>
-		</TSS>
-                <Guidance>The evaluator will confirm that the guidance documentation contains instructions for establishing the
-                  allowed protocols with each authorized IT entity and that it contains recovery instructions should a
-                  connection be unintentionally broken.<h:br/><h:br/>
-                </Guidance>
-                <Tests>The evaluator will perform the following tests:
-                  <testlist>
-                    <test>The evaluator will ensure that communications using each protocol with each authorized IT
-                      entity is tested during the course of the evaluation, setting up the connections as described in the
-                      guidance documentation and ensuring that communication is successful. </test>
-                    <test>For each protocol that the TOE can initiate as defined in the requirement, the evaluator will
-                      follow the guidance documentation to ensure that the communication channel can be initiated
-                      from the TOE. </test>
-                    <test>The evaluator will ensure, for each communication channel with an authorized IT entity, the
-                      channel data is not sent in plaintext.</test>
-                    <test>The evaluator will, for each protocol associated with each authorized IT entity tested during
-                      test 1, physically interrupt an established connection. The evaluator will ensure that when physical
-                      connectivity is restored, communications are appropriately protected.</test>
-                  </testlist>
-                </Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-        </sec:from_nd_ftp>
-
-
- -->
       </modified-sfrs>
       <additional-sfrs/>
       <con-toe> 
@@ -959,104 +689,6 @@
                 If this is insufficient, these SFRs may need to be converted to iterations instead of modified SFRs.</comment></h:li>
                 <h:li><h:i>Failure of wireless sensor communication</h:i></h:li>]
               </h:ol>.
-            <!-- <h:table>
-              <h:tr>
-                <h:th>Requirement</h:th>
-                <h:th>Auditable Events</h:th>
-                <h:th>Additional Audit Record Contents</h:th>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_CKM.1/WPA</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_CKM.2/DISTRIB (optional)</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_CKM.2/GTK</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_CKM.2/PMK</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_RADSEC_EXT.1 (selection-based)</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_RADSEC_EXT.2 (selection-based)</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FCS_RADSEC_EXT.3 (selection-based)</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td rowspan="2">FCS_IPSEC_EXT.1 (selection-based)</h:td>
-                <h:td>Protocol failures.</h:td>
-                <h:td>Reason for failure. Non-TOE endpoint of connection.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>Establishment or Termination of an IPsec SA.</h:td>
-                <h:td>Non-TOE endpoint of connection.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td rowspan="2">FIA_8021X_EXT.1</h:td>
-                <h:td>Attempts to access the 802.1X controlled port prior to successful completion of the authentication exchange.</h:td>
-                <h:td>Provided client identity (e.g. Media Access Control [MAC] address).</h:td>
-              </h:tr>
-	      <h:tr>
-		<h:td>Failed authentication attempt.</h:td>
-		<h:td>Provided client identity (e.g. MAC address).</h:td>
-	      </h:tr>
-              <h:tr>
-                <h:td>FIA_PSK_EXT.1 (selection-based)</h:td>
-                <h:td colspan="2">None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FIA_UAU.6</h:td>
-                <h:td>Attempts to re-authenticate.</h:td>
-                <h:td>Origin of the attempt (e.g., IP address).</h:td>
-              </h:tr>
-              <h:tr>
-		<h:td><xref to="fel-managementfun-as"/></h:td>
-                <h:td colspan="2">None.</h:td>
-	      </h:tr>
-              <h:tr>
-		<h:td>FMT_SMR_EXT.1</h:td>
-                <h:td colspan="2">None.</h:td>
-	      </h:tr>
-              <h:tr>
-                <h:td>FPT_FLS.1/AS</h:td>
-                <h:td>Failure of the TSF.</h:td>
-                <h:td>Indication that the TSF has failed with the type of failure that occurred.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td rowspan="2">FPT_TST_EXT.1</h:td>
-                <h:td>Execution of TSF self-test.</h:td>
-                <h:td>None.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>Detected integrity violations.</h:td>
-                <h:td>The TSF code file that caused the integrity violation.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>FTA_TSE.1</h:td>
-                <h:td>Denial of a session establishment due to the session establishment mechanism.</h:td>
-                <h:td>Reason for denial, origin of establishment attempt.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td rowspan="2">FTP_ITC.1</h:td>
-                <h:td>Failed attempts to establish a trusted channel (including IEEE 802.11).</h:td>
-                <h:td rowspan="2">Identification of the initiator and target of channel.</h:td>
-              </h:tr>
-              <h:tr>
-                <h:td>Detection of modification of channel data.</h:td>
-              </h:tr>
-            </h:table>
-              <ctr ctr-type="Table" id="auditWLAN">: Auditable Events</ctr> -->
             </title>
 	    <note role="application">
 	      <h:p>
@@ -1701,7 +1333,9 @@
 			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
 			  </consistency-rationale>
 			  <f-element>
-			  <title>The TSF shall provide a communication channel <h:b>using WPA3-Enterprise, WPA2-Enterprise and <selectables>
+			  <title><comment>This SFR will need to be revisted when the CC:2022 version of the NDcPP's definition of FTP_ITC.1 is available. For now, slight language updates 
+          have been made to bring it closer to the CC:2022 definition of this SFR while still maintaining the overall spirit of this requirement.</comment>
+          The TSF shall provide a communication channel <h:b>using WPA3-Enterprise, WPA2-Enterprise and <selectables>
 		          <selectable>WPA3-SAE</selectable>
 		          <selectable>WPA3-SAE-PSK</selectable>
               <selectable>WPA2-PSK</selectable>
@@ -1712,20 +1346,6 @@
 		          disclosure.
 		          
 		        </title>
-        
-        <!-- <title>The TSF shall <h:b>be capable of using WPA3-Enterprise, WPA2-Enterprise and 
-				  <selectables>
-					  <selectable>WPA3-SAE</selectable>
-					  <selectable>WPA3-SAE-PK</selectable>
-					  <selectable>WPA2-PSK</selectable>
-					  <selectable exclusive="yes">no other mode</selectable>
-				  </selectables>
-				  as defined by IEEE 802.11-2020 to</h:b> provide a <h:b>trusted </h:b>communication channel
-				  between itself and <h:b>WLAN clients</h:b> that is logically distinct from 
-				  other communication channels and provides assured identification of its end
-				  points and protection of the channel data from <h:b>disclosure and detection of
-				  modification of the channel data.</h:b>
-				  </title> -->
 				</f-element>
 			    <f-element>
 		<title>
@@ -1878,8 +1498,7 @@
             The TSF shall implement <selectables>
               <selectable>TLS 1.2 (RFC 5246)</selectable>
               <selectable>TLS 1.1 (RFC 4346)</selectable>
-            </selectables> and <h:b>no earlier</h:b> TLS and SSL versions. The TLS implementation shall support
-            the following ciphersuites for use when acting as a RADIUS over TLS client: 
+            </selectables> and <h:b>no earlier</h:b> TLS and SSL versions when acting as a RADIUS over TLS client <h:b>that supports the following ciphersuites</h:b>: 
               <selectables linebreak="yes">
                 <selectable>TLS_PSK_WITH_AES_128_CBC_SHA</selectable>
                 <selectable>TLS_PSK_WITH_AES_256_CBC_SHA</selectable>
