@@ -28,6 +28,8 @@
             <br>
             <a href="#Comment-5-">Comment: Comment-5-</a>
             <br>
+            <a href="#Comment-6-">Comment: Comment-6-</a>
+            <br>
         </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Local Area Network (WLAN) Access Systems</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
@@ -887,7 +889,7 @@
                     <a href="#FTP_ITC.1.1/Client" class="abbr">FTP_ITC.1.1/Client</a>
                 </div>
                 <div class="reqdesc">
-                    The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_35">WPA3-SAE</span>, <span class="selectable-content" id="_s_36">WPA3-SAE-PSK</span>, <span class="selectable-content" id="_s_37">WPA2-PSK</span>, <span class="selectable-content" id="_s_38">no other modes</span>] as defined by IEEE 802.11-2020</b> between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                    <span style="" class="comment " id="Comment-5-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will need to be revisted when the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 version of the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>'s definition of FTP_ITC.1 is available. For now, slight language updates have been made to bring it closer to the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 definition of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> while still maintaining the overall spirit of this requirement.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_35">WPA3-SAE</span>, <span class="selectable-content" id="_s_36">WPA3-SAE-PSK</span>, <span class="selectable-content" id="_s_37">WPA2-PSK</span>, <span class="selectable-content" id="_s_38">no other modes</span>] as defined by IEEE 802.11-2020</b> between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                 </div>
             </div>
             <div class="element">
@@ -921,7 +923,13 @@
                 <tr class="major-row">
                     <td rowspan="14"><a href="#T.NETWORK_DISCLOSURE">T.NETWORK_​DISCLOSURE</a>
                         <br>
-                    </td><td><a href="#FCS_CKM.1/WPA">FCS_CKM.1/WPA</a></td><td>Mitigates the threat by utilizing a secure key generation function for <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> functionality.</td>
+                    </td><td>FCS_COP.1/DataEncryption (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</td>
+                </tr>
+                <tr>
+                    <td>FTP_ITC.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server).</td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_CKM.1/WPA">FCS_CKM.1/WPA</a></td><td>Mitigates the threat by utilizing a secure key generation function for <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> functionality.</td>
                 </tr>
                 <tr>
                     <td><a href="#FCS_CKM.2/GTK">FCS_CKM.2/GTK</a></td><td>Mitigates the threat by securely distributing <abbr class="dyn-abbr"><a href="#abbr_GTK">GTK</a></abbr> keys to clients.</td>
@@ -930,22 +938,13 @@
                     <td><a href="#FCS_CKM.2/PMK">FCS_CKM.2/PMK</a></td><td>Mitigates the threat by securely receiving a key from an authentication server.</td>
                 </tr>
                 <tr>
-                    <td>FCS_COP.1/DataEncryption (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data.</td>
-                </tr>
-                <tr>
                     <td><a href="#FIA_8021X_EXT.1">FIA_8021X_EXT.1</a></td><td>Mitigates the threat by authenticating clients before allowing access to the controlled network.</td>
-                </tr>
-                <tr>
-                    <td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td>Mitigates the threat by generating and/or accepting secure pre-shared keys.</td>
                 </tr>
                 <tr>
                     <td><a href="#FIA_UAU.6">FIA_UAU.6</a></td><td>Mitigates the threat by re-authenticating users when specified criteria are met.</td>
                 </tr>
                 <tr>
                     <td><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td>Mitigates the threat by denying sessions based on undesirable characteristics.</td>
-                </tr>
-                <tr>
-                    <td>FTP_ITC.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server).</td>
                 </tr>
                 <tr>
                     <td><a href="#FTP_ITC.1/Client">FTP_ITC.1/Client</a></td><td>Mitigates the threat by providing a secure channel for <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> client traffic.</td>
@@ -962,6 +961,9 @@
                 <tr>
                     <td><a href="#FCS_RADSEC_EXT.3">FCS_RADSEC_EXT.3</a> (selection-based)</td><td>Mitigates the threat by verifying server identifiers when utilizing <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>.</td>
                 </tr>
+                <tr>
+                    <td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> (selection-based)</td><td>Mitigates the threat by generating and/or accepting secure pre-shared keys.</td>
+                </tr>
                 <tr class="major-row">
                     <td rowspan="8"><a href="#T.NETWORK_ACCESS">T.NETWORK_​ACCESS</a>
                         <br>
@@ -971,10 +973,10 @@
                     <td><a href="#FIA_UAU.6">FIA_UAU.6</a></td><td>Mitigates the threat by re-authenticating users when specified criteria are met.</td>
                 </tr>
                 <tr>
-                    <td><a href="#FMT_SMR_EXT.1">FMT_SMR_EXT.1</a></td><td>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</td>
+                    <td><a href="#FMT_SMF.1/AccessSystem">FMT_SMF.1/AccessSystem</a></td><td>Mitigates the threat by defining management functions that must be protected.</td>
                 </tr>
                 <tr>
-                    <td><a href="#FMT_SMF.1/AccessSystem">FMT_SMF.1/AccessSystem</a></td><td>Mitigates the threat by defining management functions that must be protected.</td>
+                    <td><a href="#FMT_SMR_EXT.1">FMT_SMR_EXT.1</a></td><td>Mitigates the threat by preventing remote administration functions from being exercised from a wireless client.</td>
                 </tr>
                 <tr>
                     <td><a href="#FTA_TSE.1">FTA_TSE.1</a></td><td>Mitigates the threat by denying sessions based on undesirable characteristics.</td>
@@ -991,30 +993,30 @@
                 <tr class="major-row">
                     <td rowspan="3"><a href="#T.TSF_FAILURE">T.TSF_​FAILURE</a>
                         <br>
-                    </td><td><a href="#FAU_GEN.1/WLAN">FAU_GEN.1/WLAN</a></td><td>Mitigates the threat by notifying administrators of irregular operation that could indicate a failure.</td>
+                    </td><td>FPT_TST_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by testing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for correct operation and entering a failure state if the tests fail.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FAU_GEN.1/WLAN">FAU_GEN.1/WLAN</a></td><td>Mitigates the threat by notifying administrators of irregular operation that could indicate a failure.</td>
                 </tr>
                 <tr>
                     <td><a href="#FPT_FLS.1/AS">FPT_FLS.1/AS</a></td><td>Mitigates the threat by attaining a secure state upon any self-test failures.</td>
                 </tr>
-                <tr>
-                    <td>FPT_TST_EXT.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by testing the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for correct operation and entering a failure state if the tests fail.</td>
-                </tr>
                 <tr class="major-row">
                     <td rowspan="7"><a href="#T.DATA_INTEGRITY">T.DATA_​INTEGRITY</a>
                         <br>
-                    </td><td><a href="#FCS_CKM.1/WPA">FCS_CKM.1/WPA</a></td><td>Mitigates the threat by generating a secure key used to encrypt and protect wireless traffic using <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr>.</td>
+                    </td><td>FCS_COP.1/DataEncryption (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</td>
+                </tr>
+                <tr>
+                    <td>FTP_ITC.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server) that maintains data confidentiality and integrity.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_CKM.1/WPA">FCS_CKM.1/WPA</a></td><td>Mitigates the threat by generating a secure key used to encrypt and protect wireless traffic using <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr>.</td>
                 </tr>
                 <tr>
                     <td><a href="#FCS_CKM.2/GTK">FCS_CKM.2/GTK</a></td><td>Mitigates the threat by securely distributing <abbr class="dyn-abbr"><a href="#abbr_GTK">GTK</a></abbr> keys to clients so that they are not disclosed, maintaining the integrity of the data the key is used to protect.</td>
                 </tr>
                 <tr>
                     <td><a href="#FCS_CKM.2/PMK">FCS_CKM.2/PMK</a></td><td>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining the integrity of the data the key is used to protect.</td>
-                </tr>
-                <tr>
-                    <td>FCS_COP.1/DataEncryption (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by encrypting data in transit to protect its confidentiality and integrity.</td>
-                </tr>
-                <tr>
-                    <td>FTP_ITC.1 (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing a secure channel for administrative traffic (e.g., 802.1X traffic, audit server) that maintains data confidentiality and integrity.</td>
                 </tr>
                 <tr>
                     <td><a href="#FTP_ITC.1/Client">FTP_ITC.1/Client</a></td><td>Mitigates the threat by providing a secure channel for <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> client traffic that protects the confidentiality and integrity of the data.</td>
@@ -1025,16 +1027,16 @@
                 <tr class="major-row">
                     <td rowspan="12"><a href="#T.REPLAY_ATTACK">T.REPLAY_​ATTACK</a>
                         <br>
-                    </td><td><a href="#FCS_CKM.1/WPA">FCS_CKM.1/WPA</a></td><td>Mitigates the threat by utilizing a secure key generation function for <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> functionality that is not subject to replay or guessing.</td>
+                    </td><td>FCS_COP.1/DataEncryption (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</td>
+                </tr>
+                <tr>
+                    <td><a href="#FCS_CKM.1/WPA">FCS_CKM.1/WPA</a></td><td>Mitigates the threat by utilizing a secure key generation function for <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> functionality that is not subject to replay or guessing.</td>
                 </tr>
                 <tr>
                     <td><a href="#FCS_CKM.2/GTK">FCS_CKM.2/GTK</a></td><td>Mitigates the threat by securely distributing <abbr class="dyn-abbr"><a href="#abbr_GTK">GTK</a></abbr> keys to clients so that they are not disclosed, maintaining confidentiality and preventing replay.</td>
                 </tr>
                 <tr>
                     <td><a href="#FCS_CKM.2/PMK">FCS_CKM.2/PMK</a></td><td>Mitigates the threat by securely receiving a key from an authentication server so that it is not disclosed, maintaining confidentiality and preventing replay.</td>
-                </tr>
-                <tr>
-                    <td>FCS_COP.1/DataEncryption (modified from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>Mitigates the threat by utilizing secure encryption and decryption algorithms to protect data from disclosure, modification, or replay.</td>
                 </tr>
                 <tr>
                     <td><a href="#FIA_8021X_EXT.1">FIA_8021X_EXT.1</a></td><td>Mitigates the threat by authenticating clients before allowing access to the controlled network and preventing replay of previous authentication sessions.</td>
@@ -1343,7 +1345,7 @@
                     <a href="#FCS_RADSEC_EXT.2.1" class="abbr">FCS_RADSEC_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                     <span style="" class="comment " id="Comment-5-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is a recreation of FCS_TLSC_EXT.1 as present in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> v2.2e with refinements and an additional element. It's unclear how this requirement should be handled moving forward as we move these types of requirements into the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP v2.0 contains some of the PSK ciphersuites listed here but not all of them.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> implementation shall support the following ciphersuites for use when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client: [<b>selection</b>: 
+                     <span style="" class="comment " id="Comment-6-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is a recreation of FCS_TLSC_EXT.1 as present in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> v2.2e with refinements and an additional element. It's unclear how this requirement should be handled moving forward as we move these types of requirements into the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP v2.0 contains some of the PSK ciphersuites listed here but not all of them.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client <b>that supports the following ciphersuites</b>: [<b>selection</b>: 
                     <ul>
                         <li style="">
                             <span class="selectable-content" id="_s_43">TLS_PSK_WITH_AES_128_CBC_SHA</span>
