@@ -343,11 +343,11 @@
               <h:p>The text of the requirement is replaced with:</h:p>
               <h:p>
               The TSF shall perform encryption/decryption in accordance with a
-              specified cryptographic algorithm AES used in [<h:i>Cipher Block Chaining (CBC), CCM mode Protocol (CCMP), and</h:i>
-              [<h:b>selection:</h:b> <h:i>Counter (encryption) mode (CTR), Galois-Counter Mode (GCM), GCMP, <h:b>no other</h:b></h:i>]
-              modes and cryptographic key sizes [<h:i>256 bits and [<h:b>selection: </h:b> 128 bits, 192 bits, <h:b>no other key sizes</h:b></h:i>] that meet the following:
-              [<h:i>AES as specified in ISO 18033-3, CBC as specified in ISO 10116, CCMP as specified in NIST SP 800-38C and IEEE 802.11-2020,</h:i>[<h:b>selection: </h:b>
-              <h:i>CTR as specified in ISO 10116, GCM as specified in ISO 19772, GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021, <h:b>no other standards</h:b></h:i>].
+              specified cryptographic algorithm AES used in [<h:i>CBC, <h:b>CCM mode Protocol (CCMP), and</h:b></h:i>
+              [<h:b>selection:</h:b> <h:i>CTR, GCM,<h:b> GCMP, no other</h:b></h:i>]
+              modes and cryptographic key sizes [<h:i><h:b>256 bits and </h:b>[<h:b>selection: </h:b> 128 bits, 192 bits, <h:b>no other key sizes</h:b></h:i>] that meet the following: 
+              AES as specified in ISO 18033-3, [<h:i>CBC as specified in ISO 10116, <h:b>CCMP as specified in NIST SP 800-38C and IEEE 802.11-2020,</h:b></h:i>[<h:b>selection: </h:b>
+              <h:i>CTR as specified in ISO 10116, GCM as specified in ISO 19772, <h:b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021, no other standards</h:b></h:i>].
               </h:p>
               <h:p><h:b>Application Note:</h:b>
                 This requirement is modified from its definition in the NDcPP by mandating the selection of CBC mode and 256 bit key sizes while also defining additional 
@@ -455,15 +455,15 @@
             
             Any element that is not specified in this section is unchanged from its definition in the Base-PP. The text of the requirement is replaced with:<h:br/><h:br/>
             
-            <h:b>FPT_TST_EXT.1.1: </h:b> The TSF shall run a suite of the following self-tests:
+            <h:b>FPT_TST_EXT.1.1: </h:b> The TSF shall run a suite of the following self-tests: [
             <h:ul>
               <h:li><h:i>During initial start-up (on power on) to verify the integrity of the TOE firmware and software;</h:i></h:li>
-              <h:li><h:i>Prior to providing any cryptographic service and [<h:b>selection: </h:b> at no other time, on-demand, continuously, [<h:b>assignment: </h:b>
+              <h:li><h:i>During start-up (prior to providing any cryptographic service) and [<h:b>selection: </h:b> at no other time, on-demand, continuously, [<h:b>assignment: </h:b>
               conditions under which self-tests should occur]] to verify correct operation of cryptographic implementation necessary to fulfil the TSF;</h:i></h:li>
               <h:li><h:i>[<h:b>selection: </h:b>no other, start-up, on-demand, continuous, at the conditions [<h:b>assignment: </h:b>conditions under which 
               self-tests should occur]] self-tests [[<h:b>assignment: </h:b>list an identifier for each self-test that is additional to those identified in the 
               first two bullet points]]</h:i></h:li>
-            </h:ul>
+            </h:ul>]
               to verify the correct operation of the TSF: [<h:i>integrity verification of stored TSF executable code through the 
               use of the TSF-provided cryptographic service specified in FCS_COP.1/SigGen</h:i>] and if failure detected [<h:i>take action as specified in FPT_TST_EXT.1.2.</h:i>].
             
@@ -575,7 +575,7 @@
             <h:p>This SFR has been modified from its definition in the Base-PP to mandate communications protocols that are necessary for a WLAN AS. Any element that
             is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
             <h:p>The text of the requirement is replaced with: </h:p>
-            <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>IEEE 802.1X</h:b>, [<h:b>selection: </h:b><h:i>IPsec, <h:b>RADIUS over TLS, </h:b></h:i>] <h:b>and</h:b>
+            <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>IEEE 802.1X</h:b>, [<h:b>selection: </h:b><h:i>IPsec, <h:b>RADIUS over TLS</h:b></h:i>] <h:b>and</h:b>
             [<h:b>selection: </h:b><h:i>SSH, TLS, DTLS, HTTPS, <h:b>no other protocols</h:b></h:i>] to provide a trusted communication channel between itself and authorized
             IT entities supporting the following capabilities: <h:b>802.1X authentication server</h:b>, audit server, [<h:b>selection: </h:b><h:i>authentication server, 
             [<h:b>assignment: </h:b>other capabilities], no other capabilities</h:i>] that is logically distinct from other communication channels and provides assured
@@ -681,7 +681,7 @@
             <title> The TSF shall be able to generate audit data of the following auditable
               events: <h:ol type="a">
                 <h:li>Start-up and shutdown of the audit functions;</h:li>
-                <h:li>All auditable events for the <h:i>not specified</h:i> level of audit; and</h:li>
+                <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
                 <h:li>[<h:i>Auditable events listed in the Auditable Events for Mandatory SFRs table (<xref to="at-mandatory"/>)</h:i>
                 <h:br/><comment>The modified audit events for FCS_IPSEC_EXT.1, FTP_ITC.1 and FPT_TST_EXT.1 have been omitted from the respective audit tables due 
                 to a change in the syntax making it impossible to add an audit entry for an SFR that is not defined within the PP-Module itself. 
@@ -1349,7 +1349,7 @@
 				</f-element>
 			    <f-element>
 		<title>
-			The TSF shall permit <h:i><h:b>the authorized IT entities</h:b></h:i> to initiate communication via the trusted channel.
+			The TSF shall permit [<h:i>the authorized IT entities</h:i>] to initiate communication via the trusted channel.
 		</title>
 	</f-element>
 			  <f-element>
@@ -1375,7 +1375,7 @@
           <consistency-rationale>This SFR defines an additional use for the cryptographic and self-protection mechanisms defined in the Base-PP.</consistency-rationale>
           <f-element>
             <title>The TSF shall distribute <h:b>the IEEE 802.11</h:b> keys in accordance with a
-              specified cryptographic key distribution method [<h:i>trusted channel protocol specified in FPT_ITT.1 (Base-PP) </h:i>] that meets the following: [<h:i>standards specified in the various iterations of FCS_COP.1</h:i>] <h:b>and
+              specified cryptographic key distribution method [<h:i>trusted channel protocol specified in FPT_ITT.1 (Base-PP)</h:i>] that meets the following: [<h:i>standards specified in the various iterations of FCS_COP.1</h:i>] <h:b>and
                 does not expose the cryptographic keys</h:b>.
             </title>
             <note role="application">
@@ -1430,9 +1430,9 @@
           <management>No specific management functions are identified.</management>
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>
-	    FCS_TLSC_EXT.1 TLS Client Protocol<h:br/>
-            <no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition<h:br/>
-            FIA_X509_EXT.1 X.509v3 Certificate Validation
+	    FCS_TLSC_EXT.1 TLS Client Protocol and<h:br/>
+            [<no-link>FIA_PSK_EXT.1</no-link> Pre-Shared Key Composition<h:br/> or
+            FIA_X509_EXT.1 X.509v3 Certificate Validation]
 	  </dependencies>
           <f-element>
             <title>
@@ -1487,9 +1487,8 @@
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>
 	    FCS_CKM.1 Cryptographic Key Generation<h:br/>
-            FCS_COP.1 Cryptographic Operation<h:br/>
+            FCS_TLSC_EXT.1 TLS Client Protocol<h:br/>
             <no-link>FCS_RADSEC_EXT.1</no-link> RadSec<h:br/>
-            FCS_RBG.1 Random Bit Generation
 	  </dependencies>
           <f-element>
           
