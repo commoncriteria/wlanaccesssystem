@@ -885,11 +885,11 @@ provide all of its security functionality.
               <p>The text of the requirement is replaced with:</p>
               <p>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a
-              specified cryptographic algorithm <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> used in [<i>Cipher Block Chaining (CBC), CCM mode Protocol (CCMP), and</i>
-              [<b>selection:</b> <i>Counter (encryption) mode (Counter (encryption mode) (<abbr class="dyn-abbr"><a href="#abbr_CTR">CTR</a></abbr>)), Galois-Counter Mode (GCM), GCMP, <b>no other</b></i>]
-              modes and cryptographic key sizes [<i>256 bits and [<b>selection: </b> 128 bits, 192 bits, <b>no other key sizes</b></i>] that meet the following:
-              [<i><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> as specified in ISO 18033-3, <abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr> as specified in ISO 10116, <abbr class="dyn-abbr"><a href="#abbr_CCMP">CCMP</a></abbr> as specified in NIST SP 800-38C and IEEE 802.11-2020,</i>[<b>selection: </b>
-              <i><abbr class="dyn-abbr"><a href="#abbr_CTR">CTR</a></abbr> as specified in ISO 10116, <abbr class="dyn-abbr"><a href="#abbr_GCM">GCM</a></abbr> as specified in ISO 19772, GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021, <b>no other standards</b></i>].
+              specified cryptographic algorithm <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> used in [<i>Cipher Block Chaining (<abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr>), <b>CCM mode Protocol (CCMP), and</b></i>
+              [<b>selection:</b> <i>Counter (encryption mode) (<abbr class="dyn-abbr"><a href="#abbr_CTR">CTR</a></abbr>), Galois-Counter Mode (<abbr class="dyn-abbr"><a href="#abbr_GCM">GCM</a></abbr>),<b> GCMP, no other</b></i>]
+              modes and cryptographic key sizes [<i><b>256 bits and </b>[<b>selection: </b> 128 bits, 192 bits, <b>no other key sizes</b></i>] that meet the following: 
+              <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> as specified in ISO 18033-3, [<i><abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr> as specified in ISO 10116, <b><abbr class="dyn-abbr"><a href="#abbr_CCMP">CCMP</a></abbr> as specified in NIST SP 800-38C and IEEE 802.11-2020,</b></i>[<b>selection: </b>
+              <i><abbr class="dyn-abbr"><a href="#abbr_CTR">CTR</a></abbr> as specified in ISO 10116, <abbr class="dyn-abbr"><a href="#abbr_GCM">GCM</a></abbr> as specified in ISO 19772, <b>GCMP as specified in NIST SP 800-38D and IEEE 802.11ax-2021, no other standards</b></i>].
               </p>
               <p><b>Application Note:</b>
                 This requirement is modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> by mandating the selection of <abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr> mode and 256 bit key sizes while also defining additional 
@@ -981,15 +981,15 @@ provide all of its security functionality.
             
             Any element that is not specified in this section is unchanged from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The text of the requirement is replaced with:<br/><br/>
             
-            <b>FPT_TST_EXT.1.1: </b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall run a suite of the following self-tests:
+            <b>FPT_TST_EXT.1.1: </b> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall run a suite of the following self-tests: [
             <ul>
               <li><i>During initial start-up (on power on) to verify the integrity of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> firmware and software;</i></li>
-              <li><i>Prior to providing any cryptographic service and [<b>selection: </b> at no other time, on-demand, continuously, [<b>assignment: </b>
+              <li><i>During start-up (prior to providing any cryptographic service) and [<b>selection: </b> at no other time, on-demand, continuously, [<b>assignment: </b>
               conditions under which self-tests should occur]] to verify correct operation of cryptographic implementation necessary to fulfil the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>;</i></li>
               <li><i>[<b>selection: </b>no other, start-up, on-demand, continuous, at the conditions [<b>assignment: </b>conditions under which 
               self-tests should occur]] self-tests [[<b>assignment: </b>list an identifier for each self-test that is additional to those identified in the 
               first two bullet points]]</i></li>
-            </ul>
+            </ul>]
               to verify the correct operation of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>: [<i>integrity verification of stored <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> executable code through the 
               use of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-provided cryptographic service specified in FCS_COP.1/SigGen</i>] and if failure detected [<i>take action as specified in FPT_TST_EXT.1.2.</i>].
             
@@ -1028,7 +1028,7 @@ provide all of its security functionality.
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to mandate communications protocols that are necessary for a <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_AS">AS</a></abbr>. Any element that
             is not mentioned in this section is unchanged from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</p>
             <p>The text of the requirement is replaced with: </p>
-            <p><b>FTP_ITC.1.1: </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using <b>IEEE 802.1X</b>, [<b>selection: </b><i>Internet Protocol Security (<abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr>), <b>Remote Authentication Dial In User Service (<abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr>) over Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>), </b></i>] <b>and</b>
+            <p><b>FTP_ITC.1.1: </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using <b>IEEE 802.1X</b>, [<b>selection: </b><i>Internet Protocol Security (<abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr>), <b>Remote Authentication Dial In User Service (<abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr>) over Transport Layer Security (<abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>)</b></i>] <b>and</b>
             [<b>selection: </b><i>SSH, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, DTLS, HTTPS, <b>no other protocols</b></i>] to provide a trusted communication channel between itself and authorized
             IT entities supporting the following capabilities: <b>802.1X authentication server</b>, audit server, [<b>selection: </b><i>authentication server, 
             [<b>assignment: </b>other capabilities], no other capabilities</i>] that is logically distinct from other communication channels and provides assured
@@ -1068,7 +1068,7 @@ provide all of its security functionality.
 <div class="element"><div class="reqid" id="FAU_GEN.1.1/WLAN"><a href="#FAU_GEN.1.1/WLAN" class="abbr">FAU_GEN.1.1/WLAN</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable
               events: <ol type="a">
                 <li>Start-up and shutdown of the audit functions;</li>
-                <li>All auditable events for the <i>not specified</i> level of audit; and</li>
+                <li>All auditable events for the [<i>not specified</i>] level of audit; and</li>
                 <li>[<i>Auditable events listed in the Auditable Events for Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a onclick="showTarget('at-mandatory')" href="#at-mandatory" class="at-mandatory-ref">Table  <span class="counter">2</span></a>)</i>
                 <br/><span style="" class="comment " id="Comment-3-">The modified audit events for FCS_IPSEC_EXT.1, FTP_ITC.1 and FPT_TST_EXT.1 have been omitted from the respective audit tables due 
                 to a change in the syntax making it impossible to add an audit entry for an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> that is not defined within the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> itself. 
@@ -1677,7 +1677,7 @@ provide all of its security functionality.
 		          
 		        </div></div>
 			    <div class="element"><div class="reqid" id="FTP_ITC.1.2/Client"><a href="#FTP_ITC.1.2/Client" class="abbr">FTP_ITC.1.2/Client</a></div><div class="reqdesc">
-			The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit <i><b>the authorized IT entities</b></i> to initiate communication via the trusted channel.
+			The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the authorized IT entities</i>] to initiate communication via the trusted channel.
 		</div></div>
 			  <div class="element"><div class="reqid" id="FTP_ITC.1.3/Client"><a href="#FTP_ITC.1.3/Client" class="abbr">FTP_ITC.1.3/Client</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<i>no services</i>].</div></div>
         
@@ -1805,7 +1805,7 @@ provide all of its security functionality.
         <div class="comp" id="FCS_CKM.2/DISTRIB"><h4>FCS_CKM.2/DISTRIB Cryptographic Key Distribution (802.11 Keys)</h4>
           
           <div class="element"><div class="reqid" id="FCS_CKM.2.1/DISTRIB"><a href="#FCS_CKM.2.1/DISTRIB" class="abbr">FCS_CKM.2.1/DISTRIB</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall distribute <b>the IEEE 802.11</b> keys in accordance with a
-              specified cryptographic key distribution method [<i>trusted channel protocol specified in FPT_ITT.1 (<abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>) </i>] that meets the following: [<i>standards specified in the various iterations of FCS_COP.1</i>] <b>and
+              specified cryptographic key distribution method [<i>trusted channel protocol specified in FPT_ITT.1 (<abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</i>] that meets the following: [<i>standards specified in the various iterations of FCS_COP.1</i>] <b>and
                 does not expose the cryptographic keys</b>.
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -2195,9 +2195,9 @@ provide all of its security functionality.
              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to implement RadSec using pre-shared key authentication in a manner that conforms to relevant <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> specifications.</p><p><a href="#FCS_RADSEC_EXT.3">FCS_RADSEC_EXT.3</a>,
              RadSec using Pre-Shared Keys and RSA,
              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to validate the external entity used for trusted communications.</p><h4>Management: FCS_RADSEC_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_RADSEC_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FCS_RADSEC_EXT.1 RadSec</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
-	    FCS_TLSC_EXT.1 <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Client Protocol<br/>
-            <span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition<br/>
-            FIA_X509_EXT.1 X.509v3 Certificate Validation
+	    FCS_TLSC_EXT.1 <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Client Protocol and<br/>
+            [<span class="no-link">FIA_PSK_EXT.1</span> Pre-Shared Key Composition<br/> or
+            FIA_X509_EXT.1 X.509v3 Certificate Validation]
 	  </td></tr></table><h4 id="ext-comp-FCS_RADSEC_EXT.1.1">FCS_RADSEC_EXT.1.1</h4>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as specified in RFC 6614 to communicate securely with a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> server.
             <h4 id="ext-comp-FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</h4>
@@ -2205,9 +2205,8 @@ provide all of its security functionality.
      <span class="assignable-content">some authentication method</span>].
               </div><h4>Management: FCS_RADSEC_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_RADSEC_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FCS_RADSEC_EXT.2 RadSec using Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
 	    FCS_CKM.1 Cryptographic Key Generation<br/>
-            FCS_COP.1 Cryptographic Operation<br/>
+            FCS_TLSC_EXT.1 <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Client Protocol<br/>
             <span class="no-link">FCS_RADSEC_EXT.1</span> RadSec<br/>
-            FCS_RBG.1 Random Bit Generation
 	  </td></tr></table><h4 id="ext-comp-FCS_RADSEC_EXT.2.1">FCS_RADSEC_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>assignment</b>: 
      <span class="assignable-content">list of allowed <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> versions</span>] and reject all other <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions. 
                 The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> implementation shall support the following ciphersuites for use when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client: [<b>assignment</b>: 
