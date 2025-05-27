@@ -47,7 +47,7 @@
       and to define functional and assurance requirements for such products.
       This PP-Module is intended for use with the following Base-PP:
       <h:ul>
-        <h:li>Network Device collaborative Protection Profile Version 4.0<comment>please update the reference links, </comment></h:li>
+        <h:li>Network Device collaborative Protection Profile Version 4.0<comment>please update the references in the bib </comment></h:li>
       </h:ul>
       This Base-PP is valid because a WLAN AS is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. 
       A network device typically implements this functionality.
