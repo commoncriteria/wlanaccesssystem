@@ -1327,7 +1327,7 @@
           have been made to bring it closer to the CC:2022 definition of this SFR while still maintaining the overall spirit of this requirement.</comment>
           The TSF shall provide a communication channel <h:b>using WPA3-Enterprise, WPA2-Enterprise and <selectables>
 		          <selectable>WPA3-SAE</selectable>
-		          <selectable>WPA3-SAE-PSK</selectable>
+		          <selectable>WPA3-SAE-PK</selectable>
               <selectable>WPA2-PSK</selectable>
               <selectable exclusive="yes">no other modes</selectable></selectables> as defined by IEEE 802.11-2020</h:b>
 		          
