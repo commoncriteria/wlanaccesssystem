@@ -32,6 +32,8 @@
             <br>
             <a href="#Comment-7-">Comment: Comment-7-</a>
             <br>
+            <a href="#Comment-8-">Comment: Comment-8-</a>
+            <br>
         </div>
         <h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Local Area Network (WLAN) Access Systems</h1>
         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
@@ -51,12 +53,6 @@
                 <th>Version</th><th>Date</th><th>Comment</th>
             </tr>
             <tr>
-                <td>2.0</td><td>2025-03-31</td><td>Incorporate NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td>
-            </tr>
-            <tr>
-                <td>1.0</td><td>2022-03-31</td><td>Initial Release</td>
-            </tr>
-            <tr>
                 <td>0.5</td><td>2022-01-20</td><td>Conversion to <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>; 
                     <br>
                      Updated to include <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> 3 and Wi-Fi 6. 
@@ -66,6 +62,12 @@
                      256 bit keys are required. 128 and 192 bit keys can additionally be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
                     <br>
                      Mandated Distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></td>
+            </tr>
+            <tr>
+                <td>1.0</td><td>2022-03-31</td><td>Initial Release</td>
+            </tr>
+            <tr>
+                <td>2.0</td><td>2025-03-31</td><td>Incorporate NIAP Technical Decisions, Update to <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022</td>
             </tr>
         </table>
         <h3>
@@ -80,9 +82,7 @@
         <p>
              The scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is to describe the security functionality of a Wireless Local Area Network (<abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr>) Access System (<abbr class="dyn-abbr"><a href="#abbr_AS">AS</a></abbr>) in terms of <a href="#bibCC">[CC]</a> and to define functional and assurance requirements for such products. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>: 
             <ul>
-                <li>
-                    Network Device collaborative Protection Profile Version 4.0<span style="" class="comment " id="Comment-1-">please update the references in the bib </span>
-                </li>
+                <li>Network Device collaborative Protection Profile Version 4.0</li>
             </ul>
              This <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is valid because a <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_AS">AS</a></abbr> is a device at the edge of a private network that establishes an encrypted IEEE 802.11 link that protects wireless data in transit from disclosure and modification. A network device typically implements this functionality. 
         </p>
@@ -249,7 +249,7 @@
                 <ul>
                     <li>Network Device collaborative Protection Profile Version 4.0</li>
                     <li>
-                        <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> Client, Version 1.0
+                        <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> Client, Version 2.0
                     </li>
                 </ul>
             </dd>
@@ -655,7 +655,7 @@
                         <li>
                             [<i>Auditable events listed in the Auditable Events for Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> table (<a href="#at-mandatory" class="at-mandatory-ref">Table <span class="counter">2</span></a>)</i> 
                             <br>
-                            <span style="" class="comment " id="Comment-4-">The modified audit events for FCS_IPSEC_EXT.1, FTP_ITC.1 and FPT_TST_EXT.1 have been omitted from the respective audit tables due to a change in the syntax making it impossible to add an audit entry for an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> that is not defined within the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> itself. The modifications made to these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>' audit events can likely be covered through application of the original audit events or modification to the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> itself. If this is insufficient, these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> may need to be converted to iterations instead of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</span>
+                            <span style="" class="comment " id="Comment-3-">The modified audit events for FCS_IPSEC_EXT.1, FTP_ITC.1 and FPT_TST_EXT.1 have been omitted from the respective audit tables due to a change in the syntax making it impossible to add an audit entry for an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> that is not defined within the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> itself. The modifications made to these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>' audit events can likely be covered through application of the original audit events or modification to the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> itself. If this is insufficient, these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> may need to be converted to iterations instead of modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</span>
                         </li>
                         <li>
                             <i>Failure of wireless sensor communication</i>
@@ -702,7 +702,7 @@
                     <a href="#FCS_CKM.1.1/WPA" class="abbr">FCS_CKM.1.1/WPA</a>
                 </div>
                 <div class="reqdesc">
-                     <span style="" class="comment " id="Comment-5-">It's not clear how CNSA 1.0 requirements are applied (if at all) to 802.11 crypto. This comment also applies to <a href="#FCS_CKM.2/GTK">FCS_CKM.2/GTK</a> and <a href="#FCS_CKM.2/PMK">FCS_CKM.2/PMK</a>. No substantive changes have been made to these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> yet.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>symmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm [<i>PRF-384 and [<b>selection</b>: <span class="selectable-content" id="_s_17">PRF-512</span>, <span class="selectable-content" id="_s_18">PRF-704</span>, <span class="selectable-content" id="_s_19">no other algorithm</span>]</i>] and specified cryptographic key sizes [<i>256 bits and [<b>selection</b>: <span class="selectable-content" id="_s_20">128 bits</span>, <span class="selectable-content" id="_s_21">192 bits</span>, <span class="selectable-content" id="_s_22">no other key sizes</span>]</i>] <b>using a Random Bit Generator as specified in FCS_RBG.1</b> that meet the following: [<i>IEEE 802.11-2020 and [<b>selection</b>: <span class="selectable-content" id="_s_23">IEEE 802.11ax-2021</span>, <span class="selectable-content" id="_s_24">no other standards</span>]</i>]. 
+                     <span style="" class="comment " id="Comment-4-">It's not clear how CNSA 1.0 requirements are applied (if at all) to 802.11 crypto. This comment also applies to <a href="#FCS_CKM.2/GTK">FCS_CKM.2/GTK</a> and <a href="#FCS_CKM.2/PMK">FCS_CKM.2/PMK</a>. No substantive changes have been made to these <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> yet.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall generate <b>symmetric</b> cryptographic keys in accordance with a specified cryptographic key generation algorithm [<i>PRF-384 and [<b>selection</b>: <span class="selectable-content" id="_s_17">PRF-512</span>, <span class="selectable-content" id="_s_18">PRF-704</span>, <span class="selectable-content" id="_s_19">no other algorithm</span>]</i>] and specified cryptographic key sizes [<i>256 bits and [<b>selection</b>: <span class="selectable-content" id="_s_20">128 bits</span>, <span class="selectable-content" id="_s_21">192 bits</span>, <span class="selectable-content" id="_s_22">no other key sizes</span>]</i>] <b>using a Random Bit Generator as specified in FCS_RBG.1</b> that meet the following: [<i>IEEE 802.11-2020 and [<b>selection</b>: <span class="selectable-content" id="_s_23">IEEE 802.11ax-2021</span>, <span class="selectable-content" id="_s_24">no other standards</span>]</i>]. 
                     <div class="appnote">
                         <span class="note-header">Application Note: </span><span class="note">
                             <p> The cryptographic key derivation algorithm required by IEEE 802.11-2020 (Section 12.7.1.2) and verified in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and outputs 384 bits. The use of GCMP is defined in IEEE 802.11ax-2021 (Section 12.5.5) and requires a Key Derivation Function (KDF) based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys). This KDF outputs 704 bits. </p>
@@ -779,7 +779,7 @@
                                  The point of performing 802.1X authentication is to provide access to the network (assuming the authentication was successful and that all 802.11 negotiations are performed successfully); in the terminology of 802.1X, this means the wireless client has access to the "controlled port" maintained by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. 
                             </p>
                             <p>
-                                <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> is defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a>.
+                                <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> is defined in the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.1</a>.
                             </p>
                         </span>
                     </div>
@@ -894,7 +894,7 @@
                     <a href="#FTP_ITC.1.1/Client" class="abbr">FTP_ITC.1.1/Client</a>
                 </div>
                 <div class="reqdesc">
-                    <span style="" class="comment " id="Comment-6-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will need to be revisted when the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 version of the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>'s definition of FTP_ITC.1 is available. For now, slight language updates have been made to bring it closer to the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 definition of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> while still maintaining the overall spirit of this requirement.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_35">WPA3-SAE</span>, <span class="selectable-content" id="_s_36">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_37">WPA2-PSK</span>, <span class="selectable-content" id="_s_38">no other modes</span>] as defined by IEEE 802.11-2020</b> between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
+                    <span style="" class="comment " id="Comment-5-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> will need to be revisited when the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 version of the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>'s definition of FTP_ITC.1 is available. For now, slight language updates have been made to bring it closer to the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 definition of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> while still maintaining the overall spirit of this requirement.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_35">WPA3-SAE</span>, <span class="selectable-content" id="_s_36">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_37">WPA2-PSK</span>, <span class="selectable-content" id="_s_38">no other modes</span>] as defined by IEEE 802.11-2020</b> between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured identification of its end points and protection of the channel data from modification or disclosure. 
                 </div>
             </div>
             <div class="element">
@@ -1120,10 +1120,10 @@
                 <td>FCS_COP.1/DataEncryption</td><td>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> by adding additional <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> modes consistent with the standards referenced in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and by mandating specific selections that are relevant to the technology type of the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</td>
             </tr>
             <tr>
-                <td>FPT_TST_EXT.1</td><td> <span style="" class="comment " id="Comment-2-">For <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 Part 2 conformance this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> may be replaced in the next <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, the modified audit event associated with this modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</span> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> by defining a minimum baseline for what self-tests must be run. Additional self-tests may still be specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author. </td>
+                <td>FPT_TST_EXT.1</td><td> <span style="" class="comment " id="Comment-1-">For <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 Part 2 conformance this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> may be replaced in the next <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> release with FPT_TST.1. If so, then corresponding changes will need to be made here as well. Additionally, the modified audit event associated with this modified <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been removed due to an incompatibility with the schema. The audit event modifications do not materially change the requirements laid out in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</span> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> by defining a minimum baseline for what self-tests must be run. Additional self-tests may still be specified by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author. </td>
             </tr>
             <tr>
-                <td>FTP_ITC.1</td><td> <span style="" class="comment " id="Comment-3-">For <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 updates, the modified audit events associated with this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> have been removed. The modified audit events are not fundamentally different from those already defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (both events would already fall into the category of 'Failure of the trusted channel functions', as detection of modification would cause an integrity error and failure of a trusted channel) and new <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> syntax is incompatible with modified audit events. </span> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The original protocols specified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> may still be selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.</td>
+                <td>FTP_ITC.1</td><td> <span style="" class="comment " id="Comment-2-">For <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 updates, the modified audit events associated with this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> have been removed. The modified audit events are not fundamentally different from those already defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> (both events would already fall into the category of 'Failure of the trusted channel functions', as detection of modification would cause an integrity error and failure of a trusted channel) and new <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> syntax is incompatible with modified audit events. </span> This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> modifies the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s definition of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> by specifying a minimum baseline of required communications protocols and also includes additional protocols not originally defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The original protocols specified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> may still be selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author.</td>
             </tr>
             <tr>
                 <th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th>
@@ -1323,7 +1323,7 @@
                                 This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is applicable if "<abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>" is selected in FTP_ITC.1.1.
                             </p>
                             <p>
-                                 If <a href="#s-x509-certs">X.509v3 certificates</a> is selected in <a href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>, then FCS_TLSC_EXT.2 from the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.0</a> must be claimed. If <a href="#s-radsec-psk">pre-shared keys</a> is selected in <a href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>, then <a href="#FCS_RADSEC_EXT.2">FCS_RADSEC_EXT.2</a> and <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must be claimed. 
+                                 If <a href="#s-x509-certs">X.509v3 certificates</a> is selected in <a href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>, then FCS_TLSC_EXT.2 from the <a href="https://www.niap-ccevs.org/protectionprofiles/465">Functional Package for Transport Layer Security (TLS), version 2.1</a> must be claimed. If <a href="#s-radsec-psk">pre-shared keys</a> is selected in <a href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>, then <a href="#FCS_RADSEC_EXT.2">FCS_RADSEC_EXT.2</a> and <a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a> in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> must be claimed. 
                             </p>
                         </span>
                     </div>
@@ -1340,7 +1340,7 @@
                     <a href="#FCS_RADSEC_EXT.2.1" class="abbr">FCS_RADSEC_EXT.2.1</a>
                 </div>
                 <div class="reqdesc">
-                     <span style="" class="comment " id="Comment-7-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is a recreation of FCS_TLSC_EXT.1 as present in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> v2.2e with refinements and an additional element. It's unclear how this requirement should be handled moving forward as we move these types of requirements into the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP v2.0 contains some of the PSK ciphersuites listed here but not all of them.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client <b>that supports the following ciphersuites</b>: [<b>selection</b>: 
+                     <span style="" class="comment " id="Comment-6-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is a recreation of FCS_TLSC_EXT.1 as present in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> v2.2e with refinements and an additional element. It's unclear how this requirement should be handled moving forward as we move these types of requirements into the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP v2.0 contains some of the PSK ciphersuites listed here but not all of them.</span> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_41"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_42"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client <b>that supports the following ciphersuites</b>: [<b>selection</b>: 
                     <ul>
                         <li style="">
                             <span class="selectable-content" id="_s_43">TLS_PSK_WITH_AES_128_CBC_SHA</span>
@@ -1989,10 +1989,10 @@
                     </span></td>
             </tr>
             <tr>
-                <td><span id="bibNDcPP">[<abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</a>, Version 4.0, 6 December 2023 </span></td>
+                <td><span id="bibNDcPP">[<abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection Profile for Network Devices</a>, Version 4.0, 6 December 2023 <span style="" class="comment " id="Comment-7-">Adjust date when published.</span> </span></td>
             </tr>
             <tr>
-                <td><span id="bibNDSD">[<abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 3.0e, 6 December 2023 </span></td>
+                <td><span id="bibNDSD">[<abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> SD]</span></td><td><span class="description"> <a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document - Evaluation Activities for Network Device cPP</a>, Version 4.0, 6 December 2023 <span style="" class="comment " id="Comment-8-">Adjust date when published.</span> </span></td>
             </tr>
         </table>
     </body>
