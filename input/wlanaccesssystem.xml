@@ -1942,27 +1942,6 @@
     The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.  
   </appendix>
   
-  <bibliography>
-    <cc-entry/>
+  <bibliography/>
     
-    
-    <entry id="bibNDcPP">
-      <tag>NDcPP</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E.pdf">collaborative Protection
-          Profile for Network Devices</h:a>, Version 4.0, 6 December 2023 <comment>Adjust date when
-            published.</comment>
-      </description>
-    </entry>
-    
-    <entry id="bibNDSD">
-      <tag>NDcPP SD</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/CPP_ND_V3.0E-SD.pdf">Supporting Document -
-          Evaluation Activities for Network Device cPP</h:a>, Version 4.0, 6 December 2023 <comment>Adjust date when
-            published.</comment>
-      </description>
-    </entry>
-
-  </bibliography>
 </Module>
