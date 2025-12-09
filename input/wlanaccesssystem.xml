@@ -1338,9 +1338,7 @@
 			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
 			  </consistency-rationale>
 			  <f-element>
-			  <title><comment>This SFR will need to be revisited when the CC:2022 version of the NDcPP's definition of FTP_ITC.1 is available. For now, slight language updates 
-          have been made to bring it closer to the CC:2022 definition of this SFR while still maintaining the overall spirit of this requirement.</comment>
-          The TSF shall provide a communication channel <h:b>using WPA3-Enterprise, WPA2-Enterprise and <selectables>
+			  <title>The TSF shall provide a communication channel <h:b>using WPA3-Enterprise, WPA2-Enterprise and <selectables>
 		          <selectable>WPA3-SAE</selectable>
 		          <selectable>WPA3-SAE-PK</selectable>
               <selectable>WPA2-PSK</selectable>
