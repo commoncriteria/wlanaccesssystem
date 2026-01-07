@@ -882,8 +882,7 @@ provide all of its security functionality.
 		<h4 id="@id" class="indexable" data-level="4">5.1.1.1 Cryptographic Support (FCS)</h4><div class="comp" id="@id"><h4>FCS_COP.1/AEAD: Cryptographic Operation - Authenticated Encryption with Associated Data</h4><span class="description">
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified frmo its definition in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> to mandate selection of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</p>
               <p>The text of FCS_COP.1.1/AEAD is replaced with:</p>
-              <p>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>].
+              <p><b>FCS_COP.1.1/AEAD </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<b>selection:</b> <i>Cryptographic algorithm</i>] and cryptographic key sizes [<b>selection:</b> <i>Cryptographic key sizes</i>] that meet the following: [<b>selection:</b> <i>List of standards</i>].
               </p><p>
               The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD. In the last column, an X indicates it is mandatory for the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to include this row, and an O indicates that the row is optional and need not be included in the table if the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> does not perform that function. Note that it is not necessary for the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to reproduce this final column in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
               </p>
@@ -917,8 +916,7 @@ provide all of its security functionality.
               <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> to mandate the 
               inclusion of <abbr class="dyn-abbr"><a href="#abbr_CCM">CCM</a></abbr> mode as defined in FCS_COP.1/AEAD.</p>
               <p>The text of FCS_COP.1.1/DataEncryption is replaced with:</p>
-              <p>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a
+              <p><b>FCS_COP.1.1/DataEncryption </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform encryption/decryption in accordance with a
               specified cryptographic algorithm <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr> operating in <b><abbr class="dyn-abbr"><a href="#abbr_CCM">CCM</a></abbr> mode as defined in
                 FCS_COP.1/AEAD and</b> [selection:<i><ul>                  
                   <li><abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr> mode as defined in FCS_COP.1/SKC</li>                  
@@ -933,80 +931,12 @@ provide all of its security functionality.
                 part of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (e.g., <abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr> mode would need to be supported if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides VPN gateway functionality and supports <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CBC for ESP) but are not required 
                 specifically for conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-module. A selection for 'no other modes' has not been added as it is expected that a conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will require the use of at least one of <abbr class="dyn-abbr"><a href="#abbr_CBC">CBC</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_CTR">CTR</a></abbr>, XTS, and <abbr class="dyn-abbr"><a href="#abbr_GCM">GCM</a></abbr> modes to function in its evaluated configuration.
               </p>
-              
-              <br/><br/>
-              <p><b>Evaluation Activities:</b><br/>
-              <b><i><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></i></b><br/>There are no additional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> evaluation activities for this component beyond what the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> requires.<br/><br/>
-              <b><i>Guidance</i></b><br/>There are no additional guidance evaluation activities for this component beyond what the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> requires.<br/><br/>
-              <b><i>Tests</i></b><br/>
-                In addition to the tests required by the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>, the evaluator will perform the following testing:
-              <p><b><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM Tests</b></p>
-              <p>The evaluator will test the generation-encryption and decryption-verification functionality of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM for the following input parameter and tag lengths:</p>
-              <p><b>128 bit and 256 bit keys</b></p>
-              <p><b>Two payload lengths</b>. One payload length will be the shortest supported payload length,
-                greater than or equal to zero bytes. The other payload length will be the longest supported
-                payload length, less than or equal to 32 bytes (256 bits).</p>
-              <p><b>Two or three associated data lengths</b>.
-                  One associated data length will be 0, if supported.
-                  One associated data length will be the shortest supported payload length,
-                  greater than or equal to zero bytes.
-                  One associated data length will be the longest supported payload length, less than
-                  or equal to 32 bytes (256 bits).
-                  If the implementation supports an associated data length of 216
-                  bytes, an associated data length of 216 bytes will be tested.
-              </p>
-              <p><b>Nonce lengths</b>.
-                  All supported nonce lengths between 7 and 13 bytes, inclusive, will be tested.
-              </p>
-              <p><b>Tag lengths</b>.
-                  All supported tag lengths of 4, 6, 8, 10, 12, 14, and 16 bytes will be tested.
-              </p>
-              <p>
-                  Due to the restrictions that IEEE 802.11 specifies for this mode
-                  (nonce length of 13 and tag length of 8),
-                  it is acceptable to test a subset of the supported lengths as long as the selections
-                  fall into the ranges specified above.
-                  In this case, the evaluator will ensure that these are the only supported lengths.
-                  To test the generation-encryption functionality of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM, the evaluator will
-                  perform the following four tests:
-              </p>
-              <p>
-                <ul>
-                  <li>Test FCS_COP.1/DataEncryption:1: For each supported key and associated data length and any supported payload, nonce
-                    and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                    associated data and payload values, and obtain the resulting ciphertext.</li>
-                  <li>Test FCS_COP.1/DataEncryption:2:For each supported key and payload length and any supported associated data, nonce
-                    and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                    associated data and payload values, and obtain the resulting ciphertext.</li>
-                  <li>Test FCS_COP.1/DataEncryption:3: For each supported key and nonce length and any supported associated data, payload,
-                    and tag length, the evaluator will supply one key value and 10 associated data, payload and
-                    nonce value 3-tuples, and obtain the resulting ciphertext.</li>
-                  <li>For each supported key and tag length and any supported associated data, payload, and
-                    nonce length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                    associated data and payload values and, obtain the resulting ciphertext</li>
-                </ul>
-                To determine correctness in each of the above tests, the evaluator will compare the ciphertext with the
-                result of generation-encryption of the same inputs with a known good implementation.</p>
-              <p>
-                To test the decryption-verification functionality of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCM, for each combination of supported
-                associated data length, payload length, nonce length, and tag length, the evaluator will supply a key
-                value and 15 nonce, associated data and ciphertext 3-tuples, and obtain either a fail result or a pass
-                result with the decrypted payload.
-                The evaluator will supply 10 tuples that should fail and 5 that should pass per set of 15.
-              </p>
-              <p>
-                Additionally, the evaluator will use tests from the IEEE 802.11-02/362r6 document “Proposed Test
-                vectors for IEEE 802.11 TGi”, dated September 10, 2002, Section 2.1 <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCMP Encapsulation Example
-                and Section 2.2 Additional <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCMP Test Vectors to verify further the IEEE 802.11-2020
-                implementation of <abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr>-CCMP.
-              </p>
-              </p>
             </span></div><h4 id="@id" class="indexable" data-level="4">5.1.1.2 Trusted Path/Channels (FTP)</h4><div class="comp" id="@id"><h4>FTP_ITC.1: Inter-TSF Trusted Channel</h4><span class="description">
             
             <p>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> has been modified from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to mandate communications protocols that are necessary for a <abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_AS">AS</a></abbr>. Any element that
             is not mentioned in this section is unchanged from its definition in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</p>
-            <p>The text of the requirement is replaced with: </p>
-            <p><b>FTP_ITC.1.1: </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using <b>IEEE 802.1X</b>, [<b>selection: </b><i><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr>, <b><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></b></i>] <b>and</b>
+            <p>The text of FTP_ITC.1.1 is replaced with: </p>
+            <p><b>FTP_ITC.1.1 </b>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of using <b>IEEE 802.1X</b>, [<b>selection: </b><i><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr>, <b><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></b></i>] <b>and</b>
             [<b>selection: </b><i>SSH, <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr>, DTLS, HTTPS, <b>no other protocols</b></i>] to provide a trusted communication channel between itself and authorized
             IT entities supporting the following capabilities: <b>802.1X authentication server</b>, audit server, [<b>selection: </b><i>authentication server, 
             [<b>assignment: </b>other capabilities], no other capabilities</i>] that is logically distinct from other communication channels and provides assured
