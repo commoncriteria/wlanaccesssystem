@@ -343,8 +343,7 @@
             <description>
               <h:p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-CCM mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</h:p>
               <h:p>The text of FCS_COP.1.1/AEAD is replaced with:</h:p>
-              <h:p>
-              The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>].
+              <h:p><h:b>FCS_COP.1.1/AEAD </h:b>The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>].
               </h:p><h:p>
               The following table provides the allowable choices for completion of the selection operations of FCS_COP.1.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the ST.
               </h:p>
@@ -385,8 +384,7 @@
               <h:p>This SFR has been modified from its definition in the NDcPP to mandate the 
               inclusion of CCM mode as defined in FCS_COP.1/AEAD.</h:p>
               <h:p>The text of FCS_COP.1.1/DataEncryption is replaced with:</h:p>
-              <h:p>
-              The TSF shall perform encryption/decryption in accordance with a
+              <h:p><h:b>FCS_COP.1.1/DataEncryption </h:b>The TSF shall perform encryption/decryption in accordance with a
               specified cryptographic algorithm AES operating in <h:b>CCM mode as defined in
                 FCS_COP.1/AEAD and</h:b> [selection:<h:i><h:ul>                  
                   <h:li>CBC mode as defined in FCS_COP.1/SKC</h:li>                  
@@ -400,74 +398,6 @@
                 If the TOE supports AES-GCMP as defined in IEEE 802.11ax-2021, support for GCM mode is also selected. Other AES modes are selectable if needed by another 
                 part of the TSF (e.g., CBC mode would need to be supported if the TOE provides VPN gateway functionality and supports AES-CBC for ESP) but are not required 
                 specifically for conformance to this PP-module. A selection for 'no other modes' has not been added as it is expected that a conformant TOE will require the use of at least one of CBC, CTR, XTS, and GCM modes to function in its evaluated configuration.
-              </h:p>
-              
-              <h:br/><h:br/>
-              <h:p><h:b>Evaluation Activities:</h:b><h:br/>
-              <h:b><h:i>TSS</h:i></h:b><h:br/>There are no additional TSS evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/>
-              <h:b><h:i>Guidance</h:i></h:b><h:br/>There are no additional guidance evaluation activities for this component beyond what the NDcPP requires.<h:br/><h:br/>
-              <h:b><h:i>Tests</h:i></h:b><h:br/>
-                In addition to the tests required by the NDcPP, the evaluator will perform the following testing:
-              <h:p><h:b>AES-CCM Tests</h:b></h:p>
-              <h:p>The evaluator will test the generation-encryption and decryption-verification functionality of AES-CCM for the following input parameter and tag lengths:</h:p>
-              <h:p><h:b>128 bit and 256 bit keys</h:b></h:p>
-              <h:p><h:b>Two payload lengths</h:b>. One payload length will be the shortest supported payload length,
-                greater than or equal to zero bytes. The other payload length will be the longest supported
-                payload length, less than or equal to 32 bytes (256 bits).</h:p>
-              <h:p><h:b>Two or three associated data lengths</h:b>.
-                  One associated data length will be 0, if supported.
-                  One associated data length will be the shortest supported payload length,
-                  greater than or equal to zero bytes.
-                  One associated data length will be the longest supported payload length, less than
-                  or equal to 32 bytes (256 bits).
-                  If the implementation supports an associated data length of 216
-                  bytes, an associated data length of 216 bytes will be tested.
-              </h:p>
-              <h:p><h:b>Nonce lengths</h:b>.
-                  All supported nonce lengths between 7 and 13 bytes, inclusive, will be tested.
-              </h:p>
-              <h:p><h:b>Tag lengths</h:b>.
-                  All supported tag lengths of 4, 6, 8, 10, 12, 14, and 16 bytes will be tested.
-              </h:p>
-              <h:p>
-                  Due to the restrictions that IEEE 802.11 specifies for this mode
-                  (nonce length of 13 and tag length of 8),
-                  it is acceptable to test a subset of the supported lengths as long as the selections
-                  fall into the ranges specified above.
-                  In this case, the evaluator will ensure that these are the only supported lengths.
-                  To test the generation-encryption functionality of AES-CCM, the evaluator will
-                  perform the following four tests:
-              </h:p>
-              <h:p>
-                <h:ul>
-                  <h:li>Test FCS_COP.1/DataEncryption:1: For each supported key and associated data length and any supported payload, nonce
-                    and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                    associated data and payload values, and obtain the resulting ciphertext.</h:li>
-                  <h:li>Test FCS_COP.1/DataEncryption:2:For each supported key and payload length and any supported associated data, nonce
-                    and tag length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                    associated data and payload values, and obtain the resulting ciphertext.</h:li>
-                  <h:li>Test FCS_COP.1/DataEncryption:3: For each supported key and nonce length and any supported associated data, payload,
-                    and tag length, the evaluator will supply one key value and 10 associated data, payload and
-                    nonce value 3-tuples, and obtain the resulting ciphertext.</h:li>
-                  <h:li>For each supported key and tag length and any supported associated data, payload, and
-                    nonce length, the evaluator will supply one key value, one nonce value and 10 pairs of
-                    associated data and payload values and, obtain the resulting ciphertext</h:li>
-                </h:ul>
-                To determine correctness in each of the above tests, the evaluator will compare the ciphertext with the
-                result of generation-encryption of the same inputs with a known good implementation.</h:p>
-              <h:p>
-                To test the decryption-verification functionality of AES-CCM, for each combination of supported
-                associated data length, payload length, nonce length, and tag length, the evaluator will supply a key
-                value and 15 nonce, associated data and ciphertext 3-tuples, and obtain either a fail result or a pass
-                result with the decrypted payload.
-                The evaluator will supply 10 tuples that should fail and 5 that should pass per set of 15.
-              </h:p>
-              <h:p>
-                Additionally, the evaluator will use tests from the IEEE 802.11-02/362r6 document “Proposed Test
-                vectors for IEEE 802.11 TGi”, dated September 10, 2002, Section 2.1 AES-CCMP Encapsulation Example
-                and Section 2.2 Additional AES-CCMP Test Vectors to verify further the IEEE 802.11-2020
-                implementation of AES-CCMP.
-              </h:p>
               </h:p>
             </description>
 
@@ -488,8 +418,8 @@
             
             <h:p>This SFR has been modified from its definition in the Base-PP to mandate communications protocols that are necessary for a WLAN AS. Any element that
             is not mentioned in this section is unchanged from its definition in the Base-PP.</h:p>
-            <h:p>The text of the requirement is replaced with: </h:p>
-            <h:p><h:b>FTP_ITC.1.1: </h:b>The TSF shall be capable of using <h:b>IEEE 802.1X</h:b>, [<h:b>selection: </h:b><h:i>IPsec, <h:b>RADIUS over TLS</h:b></h:i>] <h:b>and</h:b>
+            <h:p>The text of FTP_ITC.1.1 is replaced with: </h:p>
+            <h:p><h:b>FTP_ITC.1.1 </h:b>The TSF shall be capable of using <h:b>IEEE 802.1X</h:b>, [<h:b>selection: </h:b><h:i>IPsec, <h:b>RADIUS over TLS</h:b></h:i>] <h:b>and</h:b>
             [<h:b>selection: </h:b><h:i>SSH, TLS, DTLS, HTTPS, <h:b>no other protocols</h:b></h:i>] to provide a trusted communication channel between itself and authorized
             IT entities supporting the following capabilities: <h:b>802.1X authentication server</h:b>, audit server, [<h:b>selection: </h:b><h:i>authentication server, 
             [<h:b>assignment: </h:b>other capabilities], no other capabilities</h:i>] that is logically distinct from other communication channels and provides assured
