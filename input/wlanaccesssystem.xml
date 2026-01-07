@@ -238,8 +238,8 @@
             compromise of the TSF. 
           </description>
           <consistency-rationale>This threat is an extension of the T.SECURITY_FUNCTIONALITY_FAILURE threat defined by the Base-PP.</consistency-rationale>
+          <addressed-by>FPT_TST_EXT.1 (from Base-PP)</addressed-by><rationale>Mitigates the threat by defining a set of self-tests occur and a requirement for the TOE to fail sure in the event of a failure of any self-tests.</rationale>
           <addressed-by>FAU_GEN.1/WLAN</addressed-by><rationale>Mitigates the threat by notifying administrators of irregular operation that could indicate a failure.</rationale>
-          <addressed-by>FPT_FLS.1/AS</addressed-by><rationale>Mitigates the threat by attaining a secure state upon any self-test failures.</rationale>
         </threat>
         
         <threat name="T.DATA_INTEGRITY">
@@ -339,9 +339,42 @@
         <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
          
           <base-sfr-spec cc-id="fcs_cop.1" iteration="AEAD" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data">
-            <consistency-rationale></consistency-rationale>
-            <description>We do not have a way to mandate specific selections in a crypto catalog SFR,
-              however, CBC mode must be claimed and 256 bits must be selected for it</description>
+            <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by mandating certain selections be chosen in it.</consistency-rationale>
+            <description>
+              <h:p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-CBC mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</h:p>
+              <h:p>The text of the requirement is replaced with:</h:p>
+              <h:p>
+              The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>]
+              </h:p><h:p>
+              The following table provides the allowable choices for completion of the selection operations of FCS_COP.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the table that does into the ST.
+              </h:p>
+              <h:b>Allowable choices for FCS_COP.1/AEAD</h:b><h:br/>
+              <h:table>
+                <h:tr>
+                  <h:th>Identifier</h:th>
+                  <h:th>Cryptographic algorithm</h:th>
+                  <h:th>Cryptographic Key Sizes</h:th>
+                  <h:th>List of standards</h:th>
+                  <h:th>Mandatory or Optional</h:th>
+                </h:tr>
+                <h:tr>
+                  <h:td>AES-CCM</h:td>
+                  <h:td>AES in CCM mode with unpredictable, non-repeating nonce, minimum size of 64 bits</h:td>
+                  <h:td>256 bits</h:td>
+                  <h:td><h:p>[<h:b>selection:</h:b> <h:i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</h:i>] [AES]</h:p><h:p>
+                    [<h:b>selection:</h:b> <h:i>ISO/IEC 19772:2020 (Clause 7), NIST SP 800-38C</h:i>] [CCM]</h:p></h:td>
+                  <h:td>X</h:td>
+                </h:tr>
+                <h:tr>
+                  <h:td>AES-GCM</h:td>
+                  <h:td>AES in GCM mode with non-repeating IVs using [<h:b>selection:</h:b> <h:i>deterministic, RBG-based</h:i>], IV construction; the tag must be of length [<h:b>selection:</h:b> <h:i>96, 104, 112, 120, 128</h:i>] bits.</h:td>
+                  <h:td>256 bits</h:td>
+                  <h:td><h:p>[<h:b>selection:</h:b> <h:i>ISO/IEC 18033-3:2010 (Subclause 5.2), FIPS PUB 197</h:i>] [AES]</h:p><h:p>
+                    [<h:b>selection:</h:b> <h:i>ISO/IEC 19772:2020 (Clause 10), NIST SP 800-38D</h:i>] [GCM]</h:p></h:td>
+                  <h:td>O</h:td>
+                </h:tr>
+              </h:table>
+              </description>
             <no-change/>
           </base-sfr-spec>
           
@@ -366,7 +399,7 @@
                 This requirement is modified from its definition in the NDcPP by mandating the selection of CCM mode in support of AES-CCMP as defined in IEEE 802.11-2020.
                 If the TOE supports AES-GCMP as defined in IEEE 802.11ax-2021, support for GCM mode is also selected. Other AES modes are selectable if needed by another 
                 part of the TSF (e.g., CBC mode would need to be supported if the TOE provides VPN gateway functionality and supports AES-CBC for ESP) but are not required 
-                specifically for conformance to this PP-module.
+                specifically for conformance to this PP-module. A selection for 'no other modes' has not been added as it is expected that a conformant TOE will require the use of at least one of CBC, CTR, XTS, and GCM modes to function in its evaluated configuration.
               </h:p>
               
               <h:br/><h:br/>
@@ -1123,38 +1156,6 @@
       </sec:man_fmt>
       
       
-      <sec:man_fpt title="Protection of the TSF (FPT)">
-        
-        <f-component name="Failure with Preservation of Secure State" cc-id="fpt_fls.1" iteration="AS">
-          <consistency-rationale>This SFR extends the functionality described by FPT_TST_EXT.1 in the Base-PP by defining the specific TSF reaction in the event of a failed self-test.</consistency-rationale>
-          <f-element>
-            <title>The TSF shall preserve a secure state when the following types of failures occur: [<h:i>failure of
-              the self-tests</h:i>].</title>
-            <note role="application">
-              The intent of this requirement is to express the fail secure capabilities that the TOE
-              possesses.
-	      This means that the TOE must be able to attain a secure, safe state (shutdown) when any of
-              the identified failures occur.
-            </note>
-            <aactivity>
-              <TSS>The evaluator will examine the TSS to determine that the TOE’s implementation of the fail secure
-                functionality is documented. The evaluator will examine the TSS to ensure that it describes all failure
-                conditions and how a secure state is preserved if any of these failures occur. The evaluator will ensure that 
-                the definition of a secure state is suitable to ensure the continued protection of any key material and user data.<h:br/><h:br/>
-              </TSS>
-              <Guidance>The evaluator will examine the operational guidance to verify that it describes applicable recovery instructions 
-		      for each TSF failure state.<h:br/><h:br/></Guidance>
-              <Tests>For each failure mode specified in the ST, the evaluator will ensure that the TOE attains a secure state
-                (e.g., shutdown) after initiating each failure mode type.
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event>
-            <audit-event-descr>Failure of the TSF.</audit-event-descr>
-            <audit-event-info>Indication that the TSF has failed with the type of failure that occurred.</audit-event-info>
-          </audit-event>
-        </f-component>
-      </sec:man_fpt>
       
       <sec:man_fta title="TOE Access (FTA)">
        
@@ -1816,6 +1817,15 @@
     The TOE does not require any additional supplementary information to describe its entropy sources beyond the requirements outlined in the Base-PP.  
   </appendix>
   
-  <bibliography/>
+  <bibliography>
+    <cc-entry/>
+    <entry id="bibNDcPP">
+      <tag>NDcPP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/524">
+          collaborative Protection Profile for Network Devices, Version 4.0, December 22, 2025</h:a>
+      </description>
+    </entry>
+  </bibliography>
     
 </Module>
