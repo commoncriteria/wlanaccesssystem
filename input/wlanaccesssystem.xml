@@ -342,7 +342,7 @@
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by mandating certain selections be chosen in it.</consistency-rationale>
             <description>
               <h:p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-CBC mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</h:p>
-              <h:p>The text of the requirement is replaced with:</h:p>
+              <h:p>The text of FCS_COP.1.1/AEAD is replaced with:</h:p>
               <h:p>
               The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>].
               </h:p><h:p>
@@ -384,7 +384,7 @@
             <description>
               <h:p>This SFR has been modified from its definition in the NDcPP to mandate the 
               inclusion of CCM mode as defined in FCS_COP.1/AEAD.</h:p>
-              <h:p>The text of the requirement is replaced with:</h:p>
+              <h:p>The text of FCS_COP.1.1/DataEncryption is replaced with:</h:p>
               <h:p>
               The TSF shall perform encryption/decryption in accordance with a
               specified cryptographic algorithm AES operating in <h:b>CCM mode as defined in
