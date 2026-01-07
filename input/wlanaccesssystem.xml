@@ -344,11 +344,11 @@
               <h:p>This SFR has been modified frmo its definition in the NDcPP to mandate selection of AES-CBC mode and 256-bit key sizes. Other selections may still be made if they are needed for other part of the TSF.</h:p>
               <h:p>The text of the requirement is replaced with:</h:p>
               <h:p>
-              The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>]
+              The TSF shall perform [authenticated encryption with associated data] in accordance with a specified cryptographic algorithm [<h:b>selection:</h:b> <h:i>Cryptographic algorithm</h:i>] and cryptographic key sizes [<h:b>selection:</h:b> <h:i>Cryptographic key sizes</h:i>] that meet the following: [<h:b>selection:</h:b> <h:i>List of standards</h:i>].
               </h:p><h:p>
-              The following table provides the allowable choices for completion of the selection operations of FCS_COP.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the table that does into the ST.
+              The following table provides the allowable choices for completion of the selection operations of FCS_COP.1/AEAD. In the last column, an X indicates it is mandatory for the ST author to include this row, and an O indicates that the row is optional and need not be included in the table if the TSF does not perform that function. Note that it is not necessary for the ST author to reproduce this final column in the ST.
               </h:p>
-              <h:b>Allowable choices for FCS_COP.1/AEAD</h:b><h:br/>
+              <h:b>Allowable choices for FCS_COP.1/AEAD:</h:b><h:br/>
               <h:table>
                 <h:tr>
                   <h:th>Identifier</h:th>
