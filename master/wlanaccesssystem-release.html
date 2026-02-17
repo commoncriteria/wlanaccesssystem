@@ -629,7 +629,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/><a href="#Comment-4-">Comment: Comment-4-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Local Area Network (WLAN) Access Systems</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Wireless Local Area Network (WLAN) Access Systems</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2025-03-31<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>0.5</td><td>2022-01-20</td><td>Conversion to <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>; <br/> 
         Updated to include <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> 3 and Wi-Fi 6. <br/>
         <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> 3 is required. <abbr class="dyn-abbr"><a href="#abbr_WPA">WPA</a></abbr> 2 can additionally be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/>
@@ -728,7 +728,7 @@ The following sections list Common Criteria and technology terms used in this do
     
     <h2 class="indexable" data-level="2" id="Use_Cases">1.4 Use Cases</h2>
       <dl><dt id="usecase-standalone"> [USE CASE 1] Standalone Device</dt><dd><span class="description">
-        The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a standalone network device that serves as a single network endpoint that provides connectivity to wireless clients.
+        The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a standalone network device that serves as a single network endpoint providing connectivity to wireless clients.
         </span></dd><dt id="usecase-distributed"> [USE CASE 2] Distributed System</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is a distributed system consisting of multiple network devices that collectively serve as the wireless network endpoint. In addition to claiming the relevant "Distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>" requirement in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr>,
           this use case also requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to claim the optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> <a href="#FCS_CKM.2/DISTRIB">FCS_CKM.2/DISTRIB</a> to describe the key distribution method between distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components.</span></dd></dl> 
      
@@ -988,8 +988,8 @@ provide all of its security functionality.
       Note:
     </span><span class="note">
 	      <p>
-          The auditable events defined in <a onclick="showTarget('at-mandatory')" href="#at-mandatory" class="at-mandatory-ref">Table  <span class="counter">2</span></a> and <a onclick="showTarget('at-sel-based')" href="#at-sel-based" class="at-sel-based-ref">Table  <span class="counter">8</span></a> are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that
-          are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and are intended to extend FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. The events in the Auditable Events table 
+          The auditable events defined in <a onclick="showTarget('at-mandatory')" href="#at-mandatory" class="at-mandatory-ref">Table  <span class="counter">2</span></a>, <a onclick="showTarget('at-optional')" href="#at-optional" class="at-optional-ref">Table  <span class="counter">7</span></a>, and <a onclick="showTarget('at-sel-based')" href="#at-sel-based" class="at-sel-based-ref">Table  <span class="counter">8</span></a> are for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that
+	        are explicitly defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and are intended to extend FAU_GEN.1 in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> (only <a onclick="showTarget('at-mandatory')" href="#at-mandatory" class="at-mandatory-ref">Table  <span class="counter">2</span></a> is referenced in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> because the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> in the other sections do not have any associated auditable events). The events in the Auditable Events table 
           should be combined with those of the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> in the context of a conforming Security Target.
 	      </p>
 	      <p>
@@ -1039,7 +1039,7 @@ provide all of its security functionality.
 	      <p>
 		The cryptographic key derivation algorithm required by IEEE 802.11-2020 (Section
 		12.7.1.2) and verified in WPA2 certification is PRF-384, which uses the HMAC-SHA-1 function and
-		outputs 384 bits.
+		outputs a 384 bit key.
 		The use of GCMP is defined in IEEE 802.11ax-2021 (Section 12.5.5) and
 		requires a
 		Key Derivation Function (KDF) based on HMAC-SHA-256 (for 128-bit symmetric keys) or HMAC-SHA-384 (for 256-bit symmetric keys).
@@ -1197,7 +1197,7 @@ provide all of its security functionality.
           
           
           <div class="element"><div class="reqid" id="FMT_SMR_EXT.1.1"><a href="#FMT_SMR_EXT.1.1" class="abbr">FMT_SMR_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that the ability to administer remotely the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from a wireless client
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that the ability to remotely administer the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from a wireless client
               shall be disabled by default.
             </div></div>
         
@@ -1233,7 +1233,7 @@ provide all of its security functionality.
 	  <h3 id="man_ftp" class="indexable" data-level="3">5.2.7 Trusted Path/Channels (FTP)</h3>
 		  <div class="comp" id="FTP_ITC.1/Client"><h4>FTP_ITC.1/Client Inter-TSF Trusted Channel (WLAN Client Communications)</h4>
 		  
-			  <div class="element"><div class="reqid" id="FTP_ITC.1.1/Client"><a href="#FTP_ITC.1.1/Client" class="abbr">FTP_ITC.1.1/Client</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_29">WPA3-SAE</span>, <span class="selectable-content" id="_s_30">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_31">WPA2-PSK</span>, <span class="selectable-content" id="_s_32">no other modes</span>] as defined by IEEE 802.11-2020</b>
+			  <div class="element"><div class="reqid" id="FTP_ITC.1.1/Client"><a href="#FTP_ITC.1.1/Client" class="abbr">FTP_ITC.1.1/Client</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a communication channel <b>using WPA3-Enterprise, WPA2-Enterprise and [<b>selection</b>: <span class="selectable-content" id="_s_29">WPA3-SAE</span>, <span class="selectable-content" id="_s_30">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_31">WPA2-PSK</span>, <span class="selectable-content" id="_s_32">no other modes</span>] as defined by IEEE 802.11-2020 to provide a trusted channel</b>
 		          
 		          between itself and <b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b> that is logically distinct from other communication channels and provides assured
 		          identification of its end points and protection of the channel data from modification or
@@ -1241,7 +1241,7 @@ provide all of its security functionality.
 		          
 		        </div></div>
 			    <div class="element"><div class="reqid" id="FTP_ITC.1.2/Client"><a href="#FTP_ITC.1.2/Client" class="abbr">FTP_ITC.1.2/Client</a></div><div class="reqdesc">
-			The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i>the authorized IT entities</i>] to initiate communication via the trusted channel.
+			The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall permit [<i><b><abbr class="dyn-abbr"><a href="#abbr_WLAN">WLAN</a></abbr> clients</b></i>] to initiate communication via the trusted channel.
 		</div></div>
 			  <div class="element"><div class="reqid" id="FTP_ITC.1.3/Client"><a href="#FTP_ITC.1.3/Client" class="abbr">FTP_ITC.1.3/Client</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall initiate communication via the trusted channel for [<i>no services</i>].</div></div>
         
@@ -1345,8 +1345,7 @@ provide all of its security functionality.
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements.
 	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FCS_RADSEC_EXT.1">FCS_RADSEC_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the implementation of RadSec and the peer authentication method that it uses. 
             This relies on the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> requirements defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and may also use the X.509v3 certificate validation methods
-            specified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, depending on the selected peer authentication method.</td></tr><tr><td><a href="#FCS_RADSEC_EXT.2">FCS_RADSEC_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the implementation of RadSec when pre-shared key authentication is used. This functionality is outside the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, but it relies on 
-            the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client protocol implementation, cryptographic algorithms, and random bit generation functions defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FCS_RADSEC_EXT.3">FCS_RADSEC_EXT.3</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the implementation of RadSec when pre-shared key authentication with RSA is used. This functionality is outside the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, but it relies on 
+            specified in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, depending on the selected peer authentication method.</td></tr><tr><td><a href="#FCS_RADSEC_EXT.2">FCS_RADSEC_EXT.2</a></td><td></td></tr><tr><td><a href="#FCS_RADSEC_EXT.3">FCS_RADSEC_EXT.3</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the implementation of RadSec when pre-shared key authentication with RSA is used. This functionality is outside the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, but it relies on 
             the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client protocol implementation, cryptographic algorithms, and random bit generation functions defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines parameters for pre-shared key generation. The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> supports pre-shared keys as a potential authentication method for <abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> 
             does not prevent this from being used but does define restrictions on how pre-shared keys may be generated and what constitutes an acceptable key. 
             This may also be used for RadSec, which is outside the original scope of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
@@ -1439,36 +1438,35 @@ provide all of its security functionality.
           
           
           
-          
-          <div class="element"><div class="reqid" id="FCS_RADSEC_EXT.2.1"><a href="#FCS_RADSEC_EXT.2.1" class="abbr">FCS_RADSEC_EXT.2.1</a></div><div class="reqdesc"> <span style="" class="comment " id="Comment-4-">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is a recreation of FCS_TLSC_EXT.1 as present in the <abbr class="dyn-abbr"><a href="#abbr_NDcPP">NDcPP</a></abbr> v2.2e with refinements and an additional element. It's unclear how this requirement should be handled moving forward as we move 
-            these types of requirements into the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP. The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> FP v2.0 contains some of the PSK ciphersuites listed here but not all of them.</span>
-            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>selection</b>: <span class="selectable-content" id="_s_35"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 (RFC 5246)</span>, <span class="selectable-content" id="_s_36"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.1 (RFC 4346)</span>] and <b>no earlier</b> <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client <b>that supports the following ciphersuites</b>: 
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_37">TLS_PSK_WITH_AES_128_CBC_SHA</span></li><li style=""><span class="selectable-content" id="_s_38">TLS_PSK_WITH_AES_256_CBC_SHA</span></li><li style=""><span class="selectable-content" id="_s_39">TLS_DHE_PSK_WITH_AES_128_CBC_SHA</span></li><li style=""><span class="selectable-content" id="_s_40">TLS_DHE_PSK_WITH_AES_256_CBC_SHA</span></li><li style=""><span class="selectable-content" id="s-rsa_psk_aes_128_cbc">TLS_RSA_PSK_WITH_AES_128_CBC_SHA</span></li><li style=""><span class="selectable-content" id="s-rsa_psk_aes_256_cbc">TLS_RSA_PSK_WITH_AES_256_CBC_SHA</span></li><li style=""><span class="selectable-content" id="_s_43">TLS_PSK_WITH_AES_128_GCM_SHA256</span></li><li style=""><span class="selectable-content" id="_s_44">TLS_PSK_WITH_AES_256_GCM_SHA384</span></li><li style=""><span class="selectable-content" id="_s_45">TLS_DHE_PSK_WITH_AES_128_GCM_SHA256</span></li><li style=""><span class="selectable-content" id="_s_46">TLS_DHE_PSK_WITH_AES_256_GCM_SHA384</span></li><li style=""><span class="selectable-content" id="s-rsa_psk_aes_128_gcm">TLS_RSA_PSK_WITH_AES_128_GCM_SHA256</span></li><li style=""><span class="selectable-content" id="s-rsa_psk_aes_256_gcm">TLS_RSA_PSK_WITH_AES_256_GCM_SHA384</span></li></ul>].
+          <div class="element"><div class="reqid" id="FCS_RADSEC_EXT.2.1"><a href="#FCS_RADSEC_EXT.2.1" class="abbr">FCS_RADSEC_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement <b><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 and</b>
+              [<b>selection</b>: <span class="selectable-content" id="_s_35"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.3</span>, <span class="selectable-content" id="_s_36">no other <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> versions</span>] when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client that supports the following ciphersuites: 
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_37"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.2 ciphersuites:[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_38">TLS_ECDHE_PSK_WITH_AES_256_GCM_SHA384 as defined in RFC 8442</span></li><li style=""><span class="selectable-content" id="_s_39">TLS_DHE_PSK_WITH_AES_256_GCM_SHA384 as defined in RFC 5487</span></li></ul>]
+                </span></li><li style=""><span class="selectable-content" id="_s_40">
+                  <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.3 ciphersuites:
+                  <ul>
+                    <li>TLS_AES_256_GCM_SHA384 as defined in RFC 8446</li>
+                  </ul>
+                  [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_41">TLS_AES_128_GCM_SHA256 as defined in RFC 8446</span></li><li style=""><span class="selectable-content" id="_s_42">[<b>assignment</b>: 
+     <span class="assignable-content">other <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> 1.3 ciphersuites</span>]</span></li></ul>]
+                </span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-	      <p>
-		If any of the TLS_RSA_PSK ciphersuites are selected by the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author,
-	        it is necessary to claim the selection-based requirement <a href="#FCS_RADSEC_EXT.3">FCS_RADSEC_EXT.3</a>.
-	      </p>
-	      <p>
-		The above ciphersuites are only for use when the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client,
-		not for other uses of the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> protocol. 
-		The ciphersuites to be tested in the evaluated configuration are limited by this requirement. 
-		The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author should select the ciphersuites that are supported.
-		If "X.509v3 certificates" is selected in <a href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>, 
-		the ciphersuites selected in (and tested by) FCS_TLSC_EXT.2.1 are also supported for
-		<abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client use.
-	      </p>
+              
+              <p>
+                The above ciphersuites are only for use when the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client,
+                not for other uses of the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> protocol. 
+                The ciphersuites to be tested in the evaluated configuration are limited by this requirement. 
+                The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author should select the ciphersuites that are supported.<br/><br/>
+                This requirement must be included if <a href="#s-radsec-psk">pre-shared keys</a> is selected in <a href="#FCS_RADSEC_EXT.1.2">FCS_RADSEC_EXT.1.2</a>.
+              </p>
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FCS_RADSEC_EXT.2.2"><a href="#FCS_RADSEC_EXT.2.2" class="abbr">FCS_RADSEC_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_49">accept</span>, <span class="selectable-content" id="_s_50">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.</div></div>
+          <div class="element"><div class="reqid" id="FCS_RADSEC_EXT.2.2"><a href="#FCS_RADSEC_EXT.2.2" class="abbr">FCS_RADSEC_EXT.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_43">accept</span>, <span class="selectable-content" id="_s_44">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.</div></div>
           
         </div>
         
         
-        <div class="comp" id="FCS_RADSEC_EXT.3"><h4>FCS_RADSEC_EXT.3 RadSec using Pre-Shared Keys and RSA</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FCS_RADSEC_EXT.2.1">FCS_RADSEC_EXT.2.1</a>.
-           </i></b></div>
+        <div class="comp" id="FCS_RADSEC_EXT.3"><h4>FCS_RADSEC_EXT.3 RadSec using Pre-Shared Keys and RSA</h4><div class="statustag"></div>
 		  
           
           
@@ -1498,7 +1496,7 @@ provide all of its security functionality.
               If the client supports wildcards, the client must follow the best practices regarding matching; these best practices are captured in the evaluation activity.
 	      </p>
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FCS_RADSEC_EXT.3.2"><a href="#FCS_RADSEC_EXT.3.2" class="abbr">FCS_RADSEC_EXT.3.2</a></div><div class="reqdesc">When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="_s_51">not establish the connection</span>, <span class="selectable-content" id="_s_52">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_53">[<b>assignment</b>: 
+          <div class="element"><div class="reqid" id="FCS_RADSEC_EXT.3.2"><a href="#FCS_RADSEC_EXT.3.2" class="abbr">FCS_RADSEC_EXT.3.2</a></div><div class="reqdesc">When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="_s_45">not establish the connection</span>, <span class="selectable-content" id="_s_46">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_47">[<b>assignment</b>: 
      <span class="assignable-content">other action</span>]</span>] if the presented server certificate is deemed invalid.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1529,18 +1527,18 @@ provide all of its security functionality.
           
           
           
-          <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.1"><a href="#FIA_PSK_EXT.1.1" class="abbr">FIA_PSK_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_54"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_55"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_56">WPA3-SAE</span>, <span class="selectable-content" id="_s_57">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_58">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_59">[<b>assignment</b>: 
+          <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.1"><a href="#FIA_PSK_EXT.1.1" class="abbr">FIA_PSK_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_48"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_49"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_50">WPA3-SAE</span>, <span class="selectable-content" id="_s_51">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_52">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_53">[<b>assignment</b>: 
      <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>]. 
             </div></div>
           <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.2"><a href="#FIA_PSK_EXT.1.2" class="abbr">FIA_PSK_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept text-based pre-shared keys that: <ul>
-              <li>are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_60">[<b>assignment</b>: 
-     <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_61">no other lengths</span>];</li>
+              <li>are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_54">[<b>assignment</b>: 
+     <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_55">no other lengths</span>];</li>
               <li>are composed of any combination of upper and lower case letters, numbers, and special
                 characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”).
               </li>
             </ul>
             </div></div>
-          <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.3"><a href="#FIA_PSK_EXT.1.3" class="abbr">FIA_PSK_EXT.1.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_62">accept</span>, <span class="selectable-content" id="_s_63">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
+          <div class="element"><div class="reqid" id="FIA_PSK_EXT.1.3"><a href="#FIA_PSK_EXT.1.3" class="abbr">FIA_PSK_EXT.1.3</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_56">accept</span>, <span class="selectable-content" id="_s_57">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1553,7 +1551,7 @@ provide all of its security functionality.
 		For the length of the text-based pre-shared keys, a common length (22 characters) is required to help
 		promote interoperability.
 		If other lengths are supported, they should be listed in the assignment;
-		this assignment can also specify a range of values (e.g., "lengths from 5 to 55 characters") as well.
+		this assignment can also specify a range of values (e.g., "lengths from 5 to 55 characters").
 	      </p>
 	      <p>
 		For <a href="#FIA_PSK_EXT.1.3">FIA_PSK_EXT.1.3</a>, the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author specifies whether the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> merely accepts bit-based pre-shared keys
@@ -1591,18 +1589,19 @@ provide all of its security functionality.
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall perform peer authentication using [<b>assignment</b>: 
      <span class="assignable-content">some authentication method</span>].
               </div><h4>Management: FCS_RADSEC_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_RADSEC_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FCS_RADSEC_EXT.2 RadSec using Pre-Shared Keys</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
-	    FCS_CKM.1 Cryptographic Key Generation<br/>
-            FCS_TLSC_EXT.1 <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Client Protocol<br/>
+            FCS_CKM.1 Cryptographic Key Generation<br/>
+            FCS_COP.1 Cryptographic Operation<br/>
             <span class="no-link">FCS_RADSEC_EXT.1</span> RadSec<br/>
-	  </td></tr></table><h4 id="ext-comp-FCS_RADSEC_EXT.2.1">FCS_RADSEC_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>assignment</b>: 
-     <span class="assignable-content">list of allowed <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> versions</span>] and reject all other <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> and SSL versions. 
-                The <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> implementation shall support the following ciphersuites for use when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client: [<b>assignment</b>: 
-     <span class="assignable-content">list of supported ciphersuites</span>].<h4 id="ext-comp-FCS_RADSEC_EXT.2.2">FCS_RADSEC_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_49">accept</span>, <span class="selectable-content" id="_s_50">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.</div><h4>Management: FCS_RADSEC_EXT.3</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_RADSEC_EXT.3</h4><p>There are no auditable events foreseen.</p><h4>FCS_RADSEC_EXT.3 RadSec using Pre-Shared Keys and RSA</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+            FCS_RBG.1 Random Bit Generation
+          </td></tr></table><h4 id="ext-comp-FCS_RADSEC_EXT.2.1">FCS_RADSEC_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement [<b>assignment</b>: 
+     <span class="assignable-content">list of allowed <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> versions</span>] when acting as a <abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> client that supports
+                the following ciphersuites: [<b>assignment</b>: 
+     <span class="assignable-content">list of supported ciphersuites</span>].<h4 id="ext-comp-FCS_RADSEC_EXT.2.2">FCS_RADSEC_EXT.2.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_43">accept</span>, <span class="selectable-content" id="_s_44">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.</div><h4>Management: FCS_RADSEC_EXT.3</h4><p>No specific management functions are identified.</p><h4>Audit: FCS_RADSEC_EXT.3</h4><p>There are no auditable events foreseen.</p><h4>FCS_RADSEC_EXT.3 RadSec using Pre-Shared Keys and RSA</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
 	    <a href="#FCS_RADSEC_EXT.2">FCS_RADSEC_EXT.2</a> RadSec using Pre-Shared Keys<br/>
             <span class="no-link">FIA_X509_EXT.1</span> X.509v3 Certificate Validation<br/>
           </td></tr></table><h4 id="ext-comp-FCS_RADSEC_EXT.3.1">FCS_RADSEC_EXT.3.1</h4>
               When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall verify that the presented identifier matches the reference identifier per RFC 6125 section 6.
-            <h4 id="ext-comp-FCS_RADSEC_EXT.3.2">FCS_RADSEC_EXT.3.2</h4>When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="_s_51">not establish the connection</span>, <span class="selectable-content" id="_s_52">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_53">[<b>assignment</b>: 
+            <h4 id="ext-comp-FCS_RADSEC_EXT.3.2">FCS_RADSEC_EXT.3.2</h4>When the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> negotiates a TLS_RSA_PSK cipher suite, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="_s_45">not establish the connection</span>, <span class="selectable-content" id="_s_46">request authorization to establish the connection</span>, <span class="selectable-content" id="_s_47">[<b>assignment</b>: 
      <span class="assignable-content">other action</span>]</span>] if the presented server certificate is deemed invalid.</div></div></span><span data-sortkey="Identification and Authentication (FIA)"><h3 id="ext-comp-FIA" class="indexable" data-level="3">C.2.2 Identification and Authentication (FIA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FIA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FIA_8021X_EXT" class="indexable" data-level="4">C.2.2.1 FIA_8021X_EXT 802.1X Port Access Entity (Authenticator) Authentication</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe requirements for implementation of 802.1X port-based network access control.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_8021X_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_8021X_EXT.1">FIA_8021X_EXT.1</a>,
@@ -1615,22 +1614,21 @@ provide all of its security functionality.
             conforming to RFCs 2865 and 3579.<h4 id="ext-comp-FIA_8021X_EXT.1.3">FIA_8021X_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no access to its 802.1X controlled port is given to the
             wireless client prior to successful completion of this authentication exchange.</div></div><h3 id="ext-comp-FIA_PSK_EXT" class="indexable" data-level="4">C.2.2.2 FIA_PSK_EXT Pre-Shared Key Composition</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe requirements for the creation and composition of pre-shared keys used to establish trusted communications channels.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FIA_PSK_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FIA_PSK_EXT.1">FIA_PSK_EXT.1</a>,
              Pre-Shared Key Composition,
-             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to support pre-shared keys that meet various characteristics for specific communications usage.</p><h4>Management: FIA_PSK_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_RBG.1 Random Bit Generation</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>selection</b>: <span class="selectable-content" id="_s_54"><abbr class="dyn-abbr"><a href="#abbr_RADIUS">RADIUS</a></abbr> over <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> (RadSec)</span>, <span class="selectable-content" id="_s_55"><abbr class="dyn-abbr"><a href="#abbr_IPsec">IPsec</a></abbr></span>, <span class="selectable-content" id="_s_56">WPA3-SAE</span>, <span class="selectable-content" id="_s_57">WPA3-SAE-PK</span>, <span class="selectable-content" id="_s_58">IEEE 802.11 WPA2-PSK</span>, <span class="selectable-content" id="_s_59">[<b>assignment</b>: 
-     <span class="assignable-content">other protocols that use pre-shared keys</span>]</span>]. 
-            <h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept text-based pre-shared keys that: <ul>
-              <li>are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_60">[<b>assignment</b>: 
-     <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_61">no other lengths</span>];</li>
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to support pre-shared keys that meet various characteristics for specific communications usage.</p><h4>Management: FIA_PSK_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FIA_PSK_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FIA_PSK_EXT.1 Pre-Shared Key Composition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_RBG.1 Random Bit Generation</td></tr></table><h4 id="ext-comp-FIA_PSK_EXT.1.1">FIA_PSK_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to use pre-shared keys for [<b>assignment</b>: 
+     <span class="assignable-content">pre-shared key protocols</span>].<h4 id="ext-comp-FIA_PSK_EXT.1.2">FIA_PSK_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to accept text-based pre-shared keys that: <ul>
+              <li>are 22 characters and [<b>selection</b>: <span class="selectable-content" id="_s_54">[<b>assignment</b>: 
+     <span class="assignable-content">other supported lengths</span>]</span>, <span class="selectable-content" id="_s_55">no other lengths</span>];</li>
               <li>are composed of any combination of upper and lower case letters, numbers, and special
                 characters (that include: “!”, “@”, “#”, “$”, “%”, “^”, “&amp;”, “*”, “(“, and “)”).
               </li>
             </ul>
-            <h4 id="ext-comp-FIA_PSK_EXT.1.3">FIA_PSK_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_62">accept</span>, <span class="selectable-content" id="_s_63">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
+            <h4 id="ext-comp-FIA_PSK_EXT.1.3">FIA_PSK_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b>: <span class="selectable-content" id="_s_56">accept</span>, <span class="selectable-content" id="_s_57">generate using the random bit generator specified in FCS_RBG.1</span>] bit-based pre-shared keys.
             </div></div></span><span data-sortkey="Security Management (FMT)"><h3 id="ext-comp-FMT" class="indexable" data-level="3">C.2.3 Security Management (FMT)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FMT class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FMT_SMR_EXT" class="indexable" data-level="4">C.2.3.1 FMT_SMR_EXT Security Management Restrictions</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family describe architectural restrictions on security administration that are not defined in <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_SMR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_SMR_EXT.1">FMT_SMR_EXT.1</a>,
              No Administration from Client,
              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to reject remote administration from a wireless client by default.</p><h4>Management: FMT_SMR_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FMT_SMR_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FMT_SMR_EXT.1 No Administration from Client</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FMT_SMF.1 Specification of Management Functions</td></tr></table><h4 id="ext-comp-FMT_SMR_EXT.1.1">FMT_SMR_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that the ability to administer remotely the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from a wireless client
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that the ability to remotely administer the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from a wireless client
               shall be disabled by default.
             </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
@@ -1701,11 +1699,6 @@ provide all of its security functionality.
       <tr>
         <td><a href="#FMT_SMR_EXT.1">FMT_SMR_EXT.1</a></td>
         <td>No Administration from Client</td>
-        <td>All</td>
-      </tr>
-      <tr>
-        <td>FPT_FLS.1/<abbr class="dyn-abbr"><a href="#abbr_AS">AS</a></abbr></td>
-        <td>Failure with Preservation of Secure State</td>
         <td>All</td>
       </tr>
       <tr>

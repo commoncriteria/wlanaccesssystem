@@ -3,14 +3,12 @@ output/wlanaccesssystem-release-linkable.html: SKC
 output/wlanaccesssystem-release-linkable.html: Subclause
 output/wlanaccesssystem-release-linkable.html: crypto
 output/wlanaccesssystem-release-linkable.html: frmo
-output/wlanaccesssystem-release-linkable.html: v2
 output/wlanaccesssystem-release.html: CNSA
 output/wlanaccesssystem-release.html: SKC
 output/wlanaccesssystem-release.html: Subclause
 output/wlanaccesssystem-release.html: crypto
 output/wlanaccesssystem-release.html: frmo
 output/wlanaccesssystem-release.html: identifier’s
-output/wlanaccesssystem-release.html: v2
 output/wlanaccesssystem-sd.html: evaluator’s
 output/wlanaccesssystem-sd.html: fail’
 output/wlanaccesssystem-sd.html: pass’
@@ -20,4 +18,3 @@ output/wlanaccesssystem.html: Subclause
 output/wlanaccesssystem.html: crypto
 output/wlanaccesssystem.html: frmo
 output/wlanaccesssystem.html: identifier’s
-output/wlanaccesssystem.html: v2
