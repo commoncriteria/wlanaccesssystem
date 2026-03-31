@@ -336,7 +336,7 @@
       </sec-func-req-dir>
       <modified-sfrs>
         <!-- 5.1.1.1  -->
-        <section title="Cryptographic Support (FCS)" id="nd-m-fcs">
+        <section title="Class FCS: Cryptographic Support" id="nd-m-fcs">
          
           <base-sfr-spec cc-id="fcs_cop.1" iteration="AEAD" id="nd-fcs-cop-1-aead" title="Cryptographic Operation - Authenticated Encryption with Associated Data">
             <consistency-rationale>This PP-Module modifies the Base-PP's definition of the SFR by mandating certain selections be chosen in it.</consistency-rationale>
@@ -407,7 +407,7 @@
           
         </section>
         
-        <section id="nd-m-ftp" title="Trusted Path/Channels (FTP)">
+        <section id="nd-m-ftp" title="Class FTP: Trusted Path/Channels">
           <base-sfr-spec cc-id="ftp_itc.1" id="nd-m-ftp-itc-1" title="Inter-TSF Trusted Channel">
             <consistency-rationale>
             <comment>For CC:2022 updates, the modified audit events associated with this SFR have been removed. The modified audit events are not fundamentally different from those already defined in the Base-PP for the SFR 
@@ -518,7 +518,7 @@
       
       </section>
       
-      <sec:man_fau title="Security Audit (FAU)">
+      <sec:man_fau title="Class FAU: Security Audit">
         <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="WLAN">
           <consistency-rationale>This SFR iterates the FAU_GEN.1 SFR defined in the Base-PP to define auditable events for the functionality that is specific to this PP-Module.</consistency-rationale>
 <f-element>
@@ -590,7 +590,7 @@
         </f-component>
       </sec:man_fau>
       
-      <sec:man_fcs title="Cryptographic Support (FCS)">
+      <sec:man_fcs title="Class FCS: Cryptographic Support">
         
         <!-- previously FCS_CKM.1(2). Covers key gen for both WPA2 and WPA3 -->
         <f-component name="Cryptographic Key Generation (Symmetric Keys for WPA2 Connections)" cc-id="fcs_ckm.1" iteration="WPA">
@@ -871,7 +871,7 @@
       </sec:man_fcs>
       
       
-      <sec:man_fia title="Identification and Authentication (FIA)">
+      <sec:man_fia title="Class FIA: Identification and Authentication">
       <!-- FIA_AFL.1 no longer needed, removed -->
         
         
@@ -1006,7 +1006,7 @@
       </f-component>
       </sec:man_fia>
       
-      <sec:man_fmt title="Security Management (FMT)">
+      <sec:man_fmt title="Class FMT: Security Management">
         <f-component name="Specification of Management Functions (WLAN Access Systems)" id="fel-managementfun-as" cc-id="fmt_smf.1" iteration="AccessSystem">
 			<consistency-rationale>This SFR defines additional management functionality that is specific to the Module’s product type and would therefore not be expected to be present in the Base-PP.</consistency-rationale>
 			<f-element>
@@ -1087,7 +1087,7 @@
       
       
       
-      <sec:man_fta title="TOE Access (FTA)">
+      <sec:man_fta title="Class FTA: TOE Access">
        
         <f-component name="TOE Session Establishment" cc-id="fta_tse.1">
           <consistency-rationale>This SFR applies restrictions on establishment of wireless communications, which is a logical interface that extends the scope of what the Base-PP originally defined.</consistency-rationale>
@@ -1139,7 +1139,7 @@
           </audit-event>
         </f-component>
       </sec:man_fta>
-	  <sec:man_ftp title="Trusted Path/Channels (FTP)">
+      <sec:man_ftp title="Class FTP: Trusted Path/Channels">
 		  <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (WLAN Client Communications)" iteration="Client">
 		  <consistency-rationale>
 			  This SFR iterates the FTP_ITC.1 SFR defined in the Base-PP to define trusted communication channels for the functionality that is specific to this PP-Module.
@@ -1178,7 +1178,7 @@
       <section title="Auditable Events for Optional SFRs" id="sec-audit-optional">
         <audit-table id="at-optional" table="optional"/>
       </section>
-      <sec:opt_fcs title="Cryptographic Support (FCS)">
+      <sec:opt_fcs title="Class FCS: Cryptographic Support">
         
        
         <f-component name="Cryptographic Key Distribution (802.11 Keys)" cc-id="fcs_ckm.2" iteration="DISTRIB">
@@ -1224,7 +1224,7 @@
         <audit-table id="at-sel-based" table="sel-based"/>
       </section>
       
-      <sec:sel_fcs title="Cryptographic Support (FCS)">
+      <sec:sel_fcs title="Class FCS: Cryptographic Support">
         
         <ext-comp-def title="RadSec" fam-id="FCS_RADSEC_EXT">
           <fam-behavior>Components in this family describe requirements for implementation of the RadSec (RADIUS over TLS) protocol.</fam-behavior> 
@@ -1470,7 +1470,7 @@
         
       </sec:sel_fcs> 
       
-      <sec:sel_fia title="Identification and Authentication (FIA)">
+      <sec:sel_fia title="Class FIA: Identification and Authentication">
         
         <ext-comp-def title="Pre-Shared Key Composition" fam-id="FIA_PSK_EXT">
           <fam-behavior>Components in this family describe requirements for the creation and composition of pre-shared keys used to establish trusted communications channels.</fam-behavior> 
