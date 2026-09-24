@@ -46,13 +46,6 @@
         
   </RevisionHistory>
   
-  <include-pkg id="pkgTLS">
-    <git>
-      <url>https://github.com/commoncriteria/tls/</url>
-      <branch>release-2.1</branch>
-    </git>
-    <url>https://www.niap-ccevs.org/protectionprofiles/465</url>
-  </include-pkg>
   
   <!-- TODO: no open items -->
   
@@ -152,11 +145,32 @@
       <cc-pt3-conf>conformant</cc-pt3-conf>
       <cc-pp-conf/>
       <cc-pp-config-with>
-        <PP-cc-ref>Network Device collaborative Protection Profile Version 4.0</PP-cc-ref>
+        <PP-cc-ref>
+			<!-- Network Device collaborative Protection Profile Version 4.0 -->
+			<cc-doc-ref id="ndcpp" 
+				name="Network Device collaborative Protection Profile"      
+				version="4.0"                            
+				short="ND"                             
+				product="network device"     
+				plural="network devices"
+                doctype="cPP">     
+				<url>https://www.niap-ccevs.org/protectionprofiles/524</url>
+			</cc-doc-ref>
+		</PP-cc-ref>
         <Mod-cc-ref>PP-Module for WLAN Client, Version 2.0</Mod-cc-ref>
       </cc-pp-config-with>
       <cc-pkg-claim>
-        <FP-cc-ref conf="conformant">Functional Package for Transport Layer Security, Version 2.0</FP-cc-ref>
+        <FP-cc-ref conf="conformant">
+			<!-- Functional Package for Transport Layer Security Version 2.1 -->
+			<cc-doc-ref id="tls">
+				<git>
+					<url>https://github.com/commoncriteria/tls</url>
+					<branch>release-2.1</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/519</url>
+				<depends on="fcs-eap-ext-1"/>
+			</cc-doc-ref>
+		</FP-cc-ref>
       </cc-pkg-claim>
     </CClaimsInfo>
 
@@ -326,8 +340,7 @@
     </sec:Security_Objectives_Rationale>
   </sec:Security_Objectives>
   <sec:Security_Requirements>
-    <base-pp id="ND" version="4.0" name="Network Device" product="Network Device" short="ND">
-      <url>https://www.niap-ccevs.org/protectionprofiles/482</url>
+    <base-pp ref="ndcpp">
   	  <cPP/>
 
       <sec-func-req-dir>
@@ -926,7 +939,7 @@
             terminology of 802.1X, this means the wireless client has access to the "controlled port" maintained by
             the TOE.
 	    </h:p>
-      <h:p>TLS is defined in the <xref to="pkgTLS"/>.</h:p>
+      <h:p>TLS is defined in the <xref to="tls"/>.</h:p>
           </note>
             <aactivity>
               <TSS>
@@ -1264,7 +1277,7 @@
 	      <h:p>This SFR is applicable if "RADIUS over TLS" is selected in FTP_ITC.1.1.</h:p>
 	      <h:p>
 		If <xref to="s-x509-certs"/> is selected in FCS_RADSEC_EXT.1.2,
-		then FCS_TLSC_EXT.2 from the <xref to="pkgTLS"/> must be claimed. 
+		then FCS_TLSC_EXT.2 from the <xref to="tls"/> must be claimed. 
 		If <xref to="s-radsec-psk"/> is selected in FCS_RADSEC_EXT.1.2, then FCS_RADSEC_EXT.2 and FIA_PSK_EXT.1 in this PP-Module must be claimed.
 	      </h:p>
             </note>
@@ -1367,7 +1380,7 @@
                 bit-based pre-shared key (or both).
                 
               </Guidance>
-              <Tests>The testing for this requirement is addressed by the functional claims made in <xref to="pkg-tls"/> for this interface. </Tests>
+              <Tests>The testing for this requirement is addressed by the functional claims made in <xref to="tls"/> for this interface. </Tests>
             </aactivity>
           </f-element>
           <audit-event/>
